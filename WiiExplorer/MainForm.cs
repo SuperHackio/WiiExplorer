@@ -41,8 +41,8 @@ namespace WiiExplorer
             OpenWith = null;
         }
 
-        OpenFileDialog ofd = new OpenFileDialog() { Filter = "RARC Archives|*.arc|All Files|*.*" };
-        SaveFileDialog sfd = new SaveFileDialog() { Filter = "RARC Archives|*.arc|All Files|*.*" };
+        OpenFileDialog ofd = new OpenFileDialog() { Filter = "Revolution Archives|*.arc|All Files|*.*" };
+        SaveFileDialog sfd = new SaveFileDialog() { Filter = "Revolution Archives|*.arc|All Files|*.*" };
 
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
