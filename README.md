@@ -24,3 +24,4 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
 Previews:<br/>
 ![WiiExplorer opened to a map file from Super Mario Galaxy 2](https://cdn.discordapp.com/attachments/428011900651962372/734965911374659614/unknown.png)
 ![WiiExplorer opened to a map file from Super Mario Sunshine](https://cdn.discordapp.com/attachments/428011900651962372/734967207175389225/unknown.png)
+![WiiExplorer rearrange files by dragging](https://user-images.githubusercontent.com/44330283/88503889-ce7c2b00-cf87-11ea-9d02-f9a1d5e20484.gif)
