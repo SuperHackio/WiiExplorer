@@ -32,6 +32,8 @@ namespace WiiExplorer
                     }
                 }
             }
+
+            RootNameTextBox.ContextMenu = new ContextMenu();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace WiiExplorer
 
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
-        
+
         RARC Archive;
         bool Edited = false;
         static List<string> KnownExtensions = new List<string>
@@ -856,6 +858,14 @@ namespace WiiExplorer
                 MainToolStripProgressBar.Value = 100;
                 MainToolStripStatusLabel.Text = $"Created a new Archive from \"{BFB.FileName}\"";
                 Text = $"WiiExplorer {Application.ProductVersion} - New Archive";
+            }
+        }
+
+        private void ArchiveTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ArchiveContextMenuStrip.Show(ArchiveTreeView, e.Location);
             }
         }
     }
