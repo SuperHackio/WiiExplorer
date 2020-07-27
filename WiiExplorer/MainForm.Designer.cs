@@ -339,7 +339,7 @@
             this.ContextExportAllToolStripMenuItem,
             this.ContextReplaceSelectedToolStripMenuItem});
             this.ArchiveContextMenuStrip.Name = "ArchiveContextMenuStrip";
-            this.ArchiveContextMenuStrip.Size = new System.Drawing.Size(244, 180);
+            this.ArchiveContextMenuStrip.Size = new System.Drawing.Size(244, 202);
             // 
             // ContextDeleteSelectedToolStripMenuItems
             // 
@@ -371,6 +371,7 @@
             this.ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString = "Alt+R";
             this.ContextReplaceSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
+            this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
             // ContextAddFileToolStripMenuItem
             // 
