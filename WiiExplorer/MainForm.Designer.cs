@@ -56,14 +56,14 @@
             this.RootNameLabel = new System.Windows.Forms.Label();
             this.ArchiveTreeView = new System.Windows.Forms.TreeView();
             this.ArchiveContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ContextDeleteSelectedToolStripMenuItems = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextRenameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextExportSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextAddFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextAddFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextImportFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextDeleteSelectedToolStripMenuItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextRenameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextExportSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.RootPanel.SuspendLayout();
@@ -339,39 +339,7 @@
             this.ContextExportAllToolStripMenuItem,
             this.ContextReplaceSelectedToolStripMenuItem});
             this.ArchiveContextMenuStrip.Name = "ArchiveContextMenuStrip";
-            this.ArchiveContextMenuStrip.Size = new System.Drawing.Size(244, 202);
-            // 
-            // ContextDeleteSelectedToolStripMenuItems
-            // 
-            this.ContextDeleteSelectedToolStripMenuItems.Name = "ContextDeleteSelectedToolStripMenuItems";
-            this.ContextDeleteSelectedToolStripMenuItems.ShortcutKeyDisplayString = "Ctrl+Del";
-            this.ContextDeleteSelectedToolStripMenuItems.Size = new System.Drawing.Size(243, 22);
-            this.ContextDeleteSelectedToolStripMenuItems.Text = "Delete Selected";
-            this.ContextDeleteSelectedToolStripMenuItems.Click += new System.EventHandler(this.DeleteSelectedToolStripMenuItem_Click);
-            // 
-            // ContextRenameToolStripMenuItem
-            // 
-            this.ContextRenameToolStripMenuItem.Name = "ContextRenameToolStripMenuItem";
-            this.ContextRenameToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+R";
-            this.ContextRenameToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextRenameToolStripMenuItem.Text = "Rename Selected";
-            this.ContextRenameToolStripMenuItem.Click += new System.EventHandler(this.RenameSelectedToolStripMenuItem_Click);
-            // 
-            // ContextExportSelectToolStripMenuItem
-            // 
-            this.ContextExportSelectToolStripMenuItem.Name = "ContextExportSelectToolStripMenuItem";
-            this.ContextExportSelectToolStripMenuItem.ShortcutKeyDisplayString = "Alt+S";
-            this.ContextExportSelectToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextExportSelectToolStripMenuItem.Text = "Export Selected";
-            this.ContextExportSelectToolStripMenuItem.Click += new System.EventHandler(this.ExportSelectedToolStripMenuItem_Click);
-            // 
-            // ContextReplaceSelectedToolStripMenuItem
-            // 
-            this.ContextReplaceSelectedToolStripMenuItem.Name = "ContextReplaceSelectedToolStripMenuItem";
-            this.ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString = "Alt+R";
-            this.ContextReplaceSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
-            this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
+            this.ArchiveContextMenuStrip.Size = new System.Drawing.Size(244, 180);
             // 
             // ContextAddFileToolStripMenuItem
             // 
@@ -397,6 +365,30 @@
             this.ContextImportFolderToolStripMenuItem.Text = "Import Folder";
             this.ContextImportFolderToolStripMenuItem.Click += new System.EventHandler(this.ImportFolderToolStripMenuItem_Click);
             // 
+            // ContextDeleteSelectedToolStripMenuItems
+            // 
+            this.ContextDeleteSelectedToolStripMenuItems.Name = "ContextDeleteSelectedToolStripMenuItems";
+            this.ContextDeleteSelectedToolStripMenuItems.ShortcutKeyDisplayString = "Ctrl+Del";
+            this.ContextDeleteSelectedToolStripMenuItems.Size = new System.Drawing.Size(243, 22);
+            this.ContextDeleteSelectedToolStripMenuItems.Text = "Delete Selected";
+            this.ContextDeleteSelectedToolStripMenuItems.Click += new System.EventHandler(this.DeleteSelectedToolStripMenuItem_Click);
+            // 
+            // ContextRenameToolStripMenuItem
+            // 
+            this.ContextRenameToolStripMenuItem.Name = "ContextRenameToolStripMenuItem";
+            this.ContextRenameToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+R";
+            this.ContextRenameToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.ContextRenameToolStripMenuItem.Text = "Rename Selected";
+            this.ContextRenameToolStripMenuItem.Click += new System.EventHandler(this.RenameSelectedToolStripMenuItem_Click);
+            // 
+            // ContextExportSelectToolStripMenuItem
+            // 
+            this.ContextExportSelectToolStripMenuItem.Name = "ContextExportSelectToolStripMenuItem";
+            this.ContextExportSelectToolStripMenuItem.ShortcutKeyDisplayString = "Alt+S";
+            this.ContextExportSelectToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.ContextExportSelectToolStripMenuItem.Text = "Export Selected";
+            this.ContextExportSelectToolStripMenuItem.Click += new System.EventHandler(this.ExportSelectedToolStripMenuItem_Click);
+            // 
             // ContextExportAllToolStripMenuItem
             // 
             this.ContextExportAllToolStripMenuItem.Name = "ContextExportAllToolStripMenuItem";
@@ -404,6 +396,14 @@
             this.ContextExportAllToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.ContextExportAllToolStripMenuItem.Text = "Export All";
             this.ContextExportAllToolStripMenuItem.Click += new System.EventHandler(this.ExportAllToolStripMenuItem_Click);
+            // 
+            // ContextReplaceSelectedToolStripMenuItem
+            // 
+            this.ContextReplaceSelectedToolStripMenuItem.Name = "ContextReplaceSelectedToolStripMenuItem";
+            this.ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString = "Alt+R";
+            this.ContextReplaceSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
+            this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
             // MainForm
             // 
