@@ -7,6 +7,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Diagnostics;
 
 namespace WiiExplorer
 {
@@ -43,8 +44,8 @@ namespace WiiExplorer
             OpenWith = null;
         }
 
-        OpenFileDialog ofd = new OpenFileDialog() { Filter = "Revolution Archives|*.arc|All Files|*.*" };
-        SaveFileDialog sfd = new SaveFileDialog() { Filter = "Revolution Archives|*.arc|All Files|*.*" };
+        OpenFileDialog ofd = new OpenFileDialog() { Filter = "All Supported Files|*.arc;*.szs|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|All Files|*.*" };
+        SaveFileDialog sfd = new SaveFileDialog() { Filter = "All Supported Files|*.arc;*.szs|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|All Files|*.*" };
 
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
@@ -467,21 +468,30 @@ namespace WiiExplorer
 
         #endregion
         
-        private void EnableControls()
+        private void SetControlsEnabled(bool toggle = true, bool affectall = false)
         {
-            EditToolStripMenuItem.Enabled = true;
-            AddFileToolStripMenuItem.Enabled = true;
-            AddFolderToolStripMenuItem.Enabled = true;
-            DeleteSelectedToolStripMenuItem.Enabled = true;
-            RenameSelectedToolStripMenuItem.Enabled = true;
-            ExportSelectedToolStripMenuItem.Enabled = true;
-            ExportAllToolStripMenuItem.Enabled = true;
-            ReplaceSelectedToolStripMenuItem.Enabled = true;
-            ImportFolderToolStripMenuItem.Enabled = true;
-            ArchiveTreeView.Enabled = true;
-            RootNameTextBox.Enabled = true;
-            SaveToolStripMenuItem.Enabled = true;
-            SaveAsToolStripMenuItem.Enabled = true;
+            EditToolStripMenuItem.Enabled = toggle;
+            AddFileToolStripMenuItem.Enabled = toggle;
+            AddFolderToolStripMenuItem.Enabled = toggle;
+            DeleteSelectedToolStripMenuItem.Enabled = toggle;
+            RenameSelectedToolStripMenuItem.Enabled = toggle;
+            ExportSelectedToolStripMenuItem.Enabled = toggle;
+            ExportAllToolStripMenuItem.Enabled = toggle;
+            ReplaceSelectedToolStripMenuItem.Enabled = toggle;
+            ImportFolderToolStripMenuItem.Enabled = toggle;
+            ArchiveTreeView.Enabled = toggle;
+            RootNameTextBox.Enabled = toggle;
+            SaveToolStripMenuItem.Enabled = toggle;
+            SaveAsToolStripMenuItem.Enabled = toggle;
+
+            if (affectall)
+            {
+                FileToolStripMenuItem.Enabled = toggle;
+                NewToolStripMenuItem.Enabled = toggle;
+                NewFromFolderToolStripMenuItem.Enabled = toggle;
+                OpenToolStripMenuItem.Enabled = toggle;
+                Yaz0ToolStripComboBox.Enabled = toggle;
+            }
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -493,7 +503,7 @@ namespace WiiExplorer
             RootNameTextBox.Text = "New Archive";
 
             Edited = false;
-            EnableControls();
+            SetControlsEnabled();
             MainToolStripProgressBar.Value = 100;
             MainToolStripStatusLabel.Text = "Created a new Archive.";
             Text = $"WiiExplorer {Application.ProductVersion} - New Archive";
@@ -520,8 +530,10 @@ namespace WiiExplorer
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
             RootNameTextBox.Text = Archive.Root.Name;
 
+            RARC.File InitSensor = Archive["AirBubble/ActorInfo/InitSensor.bcsv"] as RARC.File;
+            Archive["AirBubble/ActorInfo/InitSensor.bcsv"] = InitSensor;
             Edited = false;
-            EnableControls();
+            SetControlsEnabled();
             MainToolStripProgressBar.Value = 100;
             MainToolStripStatusLabel.Text = $"Archive loaded successfully!";
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
@@ -564,12 +576,23 @@ namespace WiiExplorer
             Archive.FromTreeNode(RootNode);
             MainToolStripProgressBar.Value = 80;
             Archive.Save(Filename);
-            YAZ0.Compress(Filename, Program.Yaz0Mode == 2);
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            if (Program.Yaz0Mode != 0)
+                Yaz0BackgroundWorker.RunWorkerAsync(Filename);
+            SetControlsEnabled(false, true);
+            while (Yaz0BackgroundWorker.IsBusy)
+            {
+                MainToolStripStatusLabel.Text = $"{(Program.Yaz0Mode == 2 ? "Fast ":"")}Yaz0 Encoding, Please Wait. ({timer.Elapsed.ToString("mm\\:ss")} Elapsed)";
+                Application.DoEvents();
+            }
+            timer.Stop();
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
 
             Edited = false;
             MainToolStripProgressBar.Value = 100;
-            MainToolStripStatusLabel.Text = $"Archive saved successfully!";
+            MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $"({timer.Elapsed.ToString("mm\\:ss")} Elapsed)":"")}";
+            SetControlsEnabled(affectall:true);
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
             Properties.Settings.Default.PreviousOpenArchivePath = new FileInfo(Filename).DirectoryName;
             Properties.Settings.Default.Save();
@@ -583,7 +606,6 @@ namespace WiiExplorer
                 return;
             }
 
-
             TreeNode tmp = ArchiveTreeView.SelectedNode;
             Fileofd.InitialDirectory = Properties.Settings.Default.PreviousAddFilePath;
             if (Fileofd.ShowDialog() == DialogResult.OK && Fileofd.FileName != "")
@@ -596,21 +618,21 @@ namespace WiiExplorer
                     if (ArchiveImageList.Images.ContainsKey("*" + fi.Extension))
                         imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
                     if (ArchiveTreeView.SelectedNode == null)
-                        ArchiveTreeView.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                        ArchiveTreeView.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
                     else
                     {
                         //Add file to directory
                         if (ArchiveTreeView.SelectedNode.Tag is null)
                         {
-                            ArchiveTreeView.SelectedNode.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                            ArchiveTreeView.SelectedNode.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
                         }
                         else if (ArchiveTreeView.SelectedNode.Parent == null)
                         {
-                            ArchiveTreeView.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                            ArchiveTreeView.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
                         }
                         else
                         {
-                            ArchiveTreeView.SelectedNode.Parent.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                            ArchiveTreeView.SelectedNode.Parent.Nodes.Add(new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileNames[i]), ImageIndex = imageindex, SelectedImageIndex = imageindex });
                         }
                     }
                 }
@@ -725,7 +747,7 @@ namespace WiiExplorer
                 if (Fileofd.ShowDialog() == DialogResult.OK && Fileofd.FileName != "")
                 {
                     string oldname = ArchiveTreeView.SelectedNode.Text;
-                    RARCFile file = new RARCFile(ofd.FileName);
+                    RARC.File file = new RARC.File(ofd.FileName);
                     TreeNode ParentNode = ArchiveTreeView.SelectedNode.Parent;
                     int selectindex = ArchiveTreeView.SelectedNode.Index;
                     ArchiveTreeView.SelectedNode.Remove();
@@ -734,9 +756,9 @@ namespace WiiExplorer
                     if (ArchiveImageList.Images.ContainsKey("*" + fi.Extension))
                         imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
                     if (ParentNode == null)
-                        ArchiveTreeView.Nodes.Insert(selectindex, new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileName), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                        ArchiveTreeView.Nodes.Insert(selectindex, new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileName), ImageIndex = imageindex, SelectedImageIndex = imageindex });
                     else
-                        ParentNode.Nodes.Insert(selectindex, new TreeNode(fi.Name) { Tag = new RARCFile(Fileofd.FileName), ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                        ParentNode.Nodes.Insert(selectindex, new TreeNode(fi.Name) { Tag = new RARC.File(Fileofd.FileName), ImageIndex = imageindex, SelectedImageIndex = imageindex });
 
 
                     Properties.Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
@@ -746,7 +768,7 @@ namespace WiiExplorer
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = (e.CloseReason == CloseReason.UserClosing & Edited) && MessageBox.Show("You have unsaved changes.\nAre you sure you want to quit?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No;
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = Yaz0BackgroundWorker.IsBusy || (e.CloseReason == CloseReason.UserClosing & Edited) && MessageBox.Show("You have unsaved changes.\nAre you sure you want to quit?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No;
 
         private void Yaz0ToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e) => Program.Yaz0Mode = (byte)Yaz0ToolStripComboBox.SelectedIndex;
 
@@ -767,7 +789,7 @@ namespace WiiExplorer
                     else if (Directory.Exists(Exportsfd.FileName))
                         Directory.Delete(Exportsfd.FileName, true);
 
-                    RARCDirectory test = TN.FromTreeNode();
+                    RARC.Directory test = TN.FromTreeNode();
                     Directory.CreateDirectory(Exportsfd.FileName);
                     test.Export(Exportsfd.FileName);
                     MainToolStripStatusLabel.Text = $"\"{TN.Text}\" has been saved!";
@@ -791,7 +813,7 @@ namespace WiiExplorer
                 Exportsfd.InitialDirectory = Properties.Settings.Default.PreviousExportPath;
                 if (Exportsfd.ShowDialog() == DialogResult.OK && Exportsfd.FileName != "")
                 {
-                    File.WriteAllBytes(Exportsfd.FileName, ((RARCFile)TN.Tag).FileData);
+                    File.WriteAllBytes(Exportsfd.FileName, ((RARC.File)TN.Tag).FileData);
                     MainToolStripStatusLabel.Text = $"\"{TN.Text}\" has been saved!";
 
                     Properties.Settings.Default.PreviousExportPath = new FileInfo(Exportsfd.FileName).DirectoryName;
@@ -807,7 +829,7 @@ namespace WiiExplorer
             else if (ArchiveTreeView.SelectedNode.Tag == null)
                 MainToolStripStatusLabel.Text = $"Folder \"{ArchiveTreeView.SelectedNode.Text}\" ({ArchiveTreeView.SelectedNode.Nodes.Count} Item{(ArchiveTreeView.SelectedNode.Nodes.Count > 1 ? "s":"")})";
             else
-                MainToolStripStatusLabel.Text = $"File \"{ArchiveTreeView.SelectedNode.Text}\" ({((RARCFile)ArchiveTreeView.SelectedNode.Tag).FileData.Length} Bytes)";
+                MainToolStripStatusLabel.Text = $"File \"{ArchiveTreeView.SelectedNode.Text}\" ({((RARC.File)ArchiveTreeView.SelectedNode.Tag).FileData.Length} Bytes)";
         }
 
         private void ImportFolderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -854,7 +876,7 @@ namespace WiiExplorer
                 Properties.Settings.Default.Save();
 
                 Edited = true;
-                EnableControls();
+                SetControlsEnabled();
                 MainToolStripProgressBar.Value = 100;
                 MainToolStripStatusLabel.Text = $"Created a new Archive from \"{BFB.FileName}\"";
                 Text = $"WiiExplorer {Application.ProductVersion} - New Archive";
@@ -867,6 +889,11 @@ namespace WiiExplorer
             {
                 ArchiveContextMenuStrip.Show(ArchiveTreeView, e.Location);
             }
+        }
+
+        private void Yaz0BackgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            YAZ0.Compress((string)e.Argument, Program.Yaz0Mode == 2);
         }
     }
 }

@@ -64,6 +64,7 @@
             this.ContextExportSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Yaz0BackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.RootPanel.SuspendLayout();
@@ -405,6 +406,10 @@
             this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
             this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
+            // Yaz0BackgroundWorker
+            // 
+            this.Yaz0BackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Yaz0BackgroundWorker_DoWork);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +474,7 @@
         private System.Windows.Forms.ToolStripMenuItem ContextAddFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ContextImportFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ContextExportAllToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker Yaz0BackgroundWorker;
     }
 }
 

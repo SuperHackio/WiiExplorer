@@ -20,34 +20,37 @@ namespace WiiExplorer
             return Nodes.ToArray();
         }
 
-        private static TreeNode ToTreeNode(this RARCDirectory Dir, int FolderClosedID, ImageList images)
+        private static TreeNode ToTreeNode(this RARC.Directory Dir, int FolderClosedID, ImageList images)
         {
             TreeNode Final = new TreeNode(Dir.Name) { ImageIndex = FolderClosedID, SelectedImageIndex = FolderClosedID };
-            for (int i = 0; i < Dir.SubDirectories.Count; i++)
-                Final.Nodes.Add(Dir.SubDirectories[i].ToTreeNode(FolderClosedID, images));
-            for (int i = 0; i < Dir.Files.Count; i++)
+            foreach (KeyValuePair<string, object> item in Dir.Items)
             {
-                FileInfo fi = new FileInfo(Dir.Files[i].Name);
-                int imageindex = 2;
-                if (images.Images.ContainsKey("*" + fi.Extension))
-                    imageindex = images.Images.IndexOfKey("*" + fi.Extension);
-                Final.Nodes.Add(new TreeNode(Dir.Files[i].Name) { Tag = Dir.Files[i], ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                if (item.Value is RARC.Directory dir)
+                    Final.Nodes.Add(dir.ToTreeNode(FolderClosedID, images));
+                else if (item.Value is RARC.File file)
+                {
+                    FileInfo fi = new FileInfo(file.Name);
+                    int imageindex = 2;
+                    if (images.Images.ContainsKey("*" + fi.Extension))
+                        imageindex = images.Images.IndexOfKey("*" + fi.Extension);
+                    Final.Nodes.Add(new TreeNode(file.Name) { Tag = file, ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                }
             }
             return Final;
         }
 
         public static void FromTreeNode(this RARC Arc, TreeNode Root) => Arc.Root = FromTreeNode(Root);
 
-        public static RARCDirectory FromTreeNode(this TreeNode TN)
+        public static RARC.Directory FromTreeNode(this TreeNode TN)
         {
-            RARCDirectory Dir = new RARCDirectory() { Name = TN.Text };
+            RARC.Directory Dir = new RARC.Directory() { Name = TN.Text };
             for (int i = 0; i < TN.Nodes.Count; i++)
                 if (TN.Nodes[i].Tag == null)
-                    Dir.SubDirectories.Add(FromTreeNode(TN.Nodes[i]));
+                    Dir.Items.Add(TN.Nodes[i].Text, FromTreeNode(TN.Nodes[i]));
                 else
                 {
-                    Dir.Files.Add((RARCFile)TN.Nodes[i].Tag);
-                    Dir.Files[Dir.Files.Count - 1].Name = TN.Nodes[i].Text;
+                    ((RARC.File)TN.Nodes[i].Tag).Name = TN.Nodes[i].Text;
+                    Dir.Items.Add(TN.Nodes[i].Text, (RARC.File)TN.Nodes[i].Tag);
                 }
             return Dir;
         }
