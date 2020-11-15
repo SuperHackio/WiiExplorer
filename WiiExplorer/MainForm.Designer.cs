@@ -47,12 +47,14 @@
             this.ExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Yaz0ToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.ItemPropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArchiveImageList = new System.Windows.Forms.ImageList(this.components);
             this.MainFormStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.RootPanel = new System.Windows.Forms.Panel();
             this.RootNameTextBox = new System.Windows.Forms.TextBox();
+            this.KeepIDsSyncedCheckBox = new System.Windows.Forms.CheckBox();
             this.RootNameLabel = new System.Windows.Forms.Label();
             this.ArchiveTreeView = new System.Windows.Forms.TreeView();
             this.ArchiveContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -76,7 +78,8 @@
             this.MainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.EditToolStripMenuItem,
-            this.Yaz0ToolStripComboBox});
+            this.Yaz0ToolStripComboBox,
+            this.ItemPropertiesToolStripMenuItem});
             this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainFormMenuStrip.Name = "MainFormMenuStrip";
             this.MainFormMenuStrip.Size = new System.Drawing.Size(464, 27);
@@ -243,6 +246,15 @@
     "ns smaller filesizes.\r\nYaz0 On by Default";
             this.Yaz0ToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.Yaz0ToolStripComboBox_SelectedIndexChanged);
             // 
+            // ItemPropertiesToolStripMenuItem
+            // 
+            this.ItemPropertiesToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.ItemPropertiesToolStripMenuItem.Enabled = false;
+            this.ItemPropertiesToolStripMenuItem.Name = "ItemPropertiesToolStripMenuItem";
+            this.ItemPropertiesToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
+            this.ItemPropertiesToolStripMenuItem.Text = "Item Properties";
+            this.ItemPropertiesToolStripMenuItem.Click += new System.EventHandler(this.ItemPropertiesToolStripMenuItem_Click);
+            // 
             // ArchiveImageList
             // 
             this.ArchiveImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ArchiveImageList.ImageStream")));
@@ -278,6 +290,7 @@
             // RootPanel
             // 
             this.RootPanel.Controls.Add(this.RootNameTextBox);
+            this.RootPanel.Controls.Add(this.KeepIDsSyncedCheckBox);
             this.RootPanel.Controls.Add(this.RootNameLabel);
             this.RootPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.RootPanel.Location = new System.Drawing.Point(0, 27);
@@ -291,8 +304,25 @@
             this.RootNameTextBox.Enabled = false;
             this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
             this.RootNameTextBox.Name = "RootNameTextBox";
-            this.RootNameTextBox.Size = new System.Drawing.Size(400, 20);
+            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
             this.RootNameTextBox.TabIndex = 0;
+            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
+            // 
+            // KeepIDsSyncedCheckBox
+            // 
+            this.KeepIDsSyncedCheckBox.AutoSize = true;
+            this.KeepIDsSyncedCheckBox.Checked = true;
+            this.KeepIDsSyncedCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.KeepIDsSyncedCheckBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.KeepIDsSyncedCheckBox.Enabled = false;
+            this.KeepIDsSyncedCheckBox.Location = new System.Drawing.Point(331, 0);
+            this.KeepIDsSyncedCheckBox.Name = "KeepIDsSyncedCheckBox";
+            this.KeepIDsSyncedCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.KeepIDsSyncedCheckBox.Size = new System.Drawing.Size(133, 20);
+            this.KeepIDsSyncedCheckBox.TabIndex = 2;
+            this.KeepIDsSyncedCheckBox.Text = "Auto-Calculate File IDs";
+            this.KeepIDsSyncedCheckBox.UseVisualStyleBackColor = true;
+            this.KeepIDsSyncedCheckBox.CheckedChanged += new System.EventHandler(this.KeepIDsSyncedCheckBox_CheckedChanged);
             // 
             // RootNameLabel
             // 
@@ -315,6 +345,7 @@
             this.ArchiveTreeView.ImageList = this.ArchiveImageList;
             this.ArchiveTreeView.Location = new System.Drawing.Point(0, 47);
             this.ArchiveTreeView.Name = "ArchiveTreeView";
+            this.ArchiveTreeView.PathSeparator = "/";
             this.ArchiveTreeView.SelectedImageIndex = 0;
             this.ArchiveTreeView.Size = new System.Drawing.Size(464, 282);
             this.ArchiveTreeView.TabIndex = 1;
@@ -475,6 +506,8 @@
         private System.Windows.Forms.ToolStripMenuItem ContextImportFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ContextExportAllToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker Yaz0BackgroundWorker;
+        private System.Windows.Forms.ToolStripMenuItem ItemPropertiesToolStripMenuItem;
+        private System.Windows.Forms.CheckBox KeepIDsSyncedCheckBox;
     }
 }
 

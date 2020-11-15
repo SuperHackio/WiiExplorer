@@ -33,26 +33,51 @@ namespace WiiExplorer
                     int imageindex = 2;
                     if (images.Images.ContainsKey("*" + fi.Extension))
                         imageindex = images.Images.IndexOfKey("*" + fi.Extension);
-                    Final.Nodes.Add(new TreeNode(file.Name) { Tag = file, ImageIndex = imageindex, SelectedImageIndex = imageindex });
+                    Final.Nodes.Add(new TreeNode(file.Name) { ImageIndex = imageindex, SelectedImageIndex = imageindex });
                 }
             }
             return Final;
         }
 
-        public static void FromTreeNode(this RARC Arc, TreeNode Root) => Arc.Root = FromTreeNode(Root);
-
-        public static RARC.Directory FromTreeNode(this TreeNode TN)
+        public static void FromTreeNode(this RARC Arc, TreeView Root)
         {
-            RARC.Directory Dir = new RARC.Directory() { Name = TN.Text };
-            for (int i = 0; i < TN.Nodes.Count; i++)
-                if (TN.Nodes[i].Tag == null)
-                    Dir.Items.Add(TN.Nodes[i].Text, FromTreeNode(TN.Nodes[i]));
-                else
+            string[] NewFileOrder = new string[Root.Nodes.Count];
+            for (int i = 0; i < Root.Nodes.Count; i++)
+            {
+                if (Arc[Root.Nodes[i].FullPath] is RARC.Directory)
                 {
-                    ((RARC.File)TN.Nodes[i].Tag).Name = TN.Nodes[i].Text;
-                    Dir.Items.Add(TN.Nodes[i].Text, (RARC.File)TN.Nodes[i].Tag);
+                    FromTreeNode(Arc, Root.Nodes[i]);
                 }
-            return Dir;
+                NewFileOrder[i] = Root.Nodes[i].Text;
+            }
+            Arc.Root.SortItemsByOrder(NewFileOrder);
+        }
+
+        public static void FromTreeNode(RARC Arc, TreeNode TN)
+        {
+            string[] NewFileOrder = new string[TN.Nodes.Count];
+            for (int i = 0; i < TN.Nodes.Count; i++)
+            {
+                if (Arc[TN.Nodes[i].FullPath] is RARC.Directory)
+                    FromTreeNode(Arc, TN.Nodes[i]);
+
+                NewFileOrder[i] = TN.Nodes[i].Text;
+            }
+            ((RARC.Directory)Arc[TN.FullPath]).SortItemsByOrder(NewFileOrder);
+        }
+        
+        public static TreeNode FindTreeNodeByFullPath(this TreeNodeCollection collection, string fullPath, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
+        {
+            var foundNode = collection.Cast<TreeNode>().FirstOrDefault(tn => string.Equals(tn.FullPath, fullPath, comparison));
+            if (null == foundNode)
+                foreach (var childNode in collection.Cast<TreeNode>())
+                {
+                    var foundChildNode = FindTreeNodeByFullPath(childNode.Nodes, fullPath, comparison);
+                    if (null != foundChildNode)
+                        return foundChildNode;
+                }
+
+            return foundNode;
         }
     }
 }

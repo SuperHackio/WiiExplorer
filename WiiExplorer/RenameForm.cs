@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hack.io.RARC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,14 @@ namespace WiiExplorer
 { 
     public partial class RenameForm : Form
     {
-        public RenameForm(string OGName, bool IsFolder)
+        public RenameForm(object Item)
         {
             InitializeComponent();
             CenterToParent();
             MaximumSize = new Size(Screen.GetBounds(Location).Width, Height);
+            string OGName = ((dynamic)Item).Name;
             Text = Text.Replace("[]", $"\"{OGName}\"");
-            if (!IsFolder)
+            if (!(Item is RARC.Directory))
             {
                 FileInfo fi = new FileInfo(OGName);
                 string[] splits = fi.Name.Split('.');
