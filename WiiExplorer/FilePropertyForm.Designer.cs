@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilePropertyForm));
             this.NameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.NameTextBox = new WiiExplorer.ColourTextBox();
+            this.IDNumericUpDown = new WiiExplorer.ColourNumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.FileSettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.AutoDetectSettingsButton = new System.Windows.Forms.Button();
@@ -61,14 +61,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(53, 13);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(112, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(115, 20);
             this.NameTextBox.TabIndex = 1;
             // 
             // IDNumericUpDown
             // 
             this.IDNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.IDNumericUpDown.Location = new System.Drawing.Point(214, 13);
+            this.IDNumericUpDown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.IDNumericUpDown.Location = new System.Drawing.Point(217, 13);
             this.IDNumericUpDown.Maximum = new decimal(new int[] {
             65534,
             0,
@@ -80,13 +81,18 @@
             0,
             -2147483648});
             this.IDNumericUpDown.Name = "IDNumericUpDown";
-            this.IDNumericUpDown.Size = new System.Drawing.Size(58, 20);
+            this.IDNumericUpDown.Size = new System.Drawing.Size(55, 20);
             this.IDNumericUpDown.TabIndex = 3;
+            this.IDNumericUpDown.TextValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 16);
+            this.label1.Location = new System.Drawing.Point(174, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 4;
@@ -112,9 +118,10 @@
             // 
             // AutoDetectSettingsButton
             // 
-            this.AutoDetectSettingsButton.Location = new System.Drawing.Point(221, 0);
+            this.AutoDetectSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AutoDetectSettingsButton.Location = new System.Drawing.Point(206, 0);
             this.AutoDetectSettingsButton.Name = "AutoDetectSettingsButton";
-            this.AutoDetectSettingsButton.Size = new System.Drawing.Size(38, 23);
+            this.AutoDetectSettingsButton.Size = new System.Drawing.Size(54, 23);
             this.AutoDetectSettingsButton.TabIndex = 5;
             this.AutoDetectSettingsButton.Text = "Auto";
             this.AutoDetectSettingsButton.UseVisualStyleBackColor = true;
@@ -175,6 +182,7 @@
             // OKButton
             // 
             this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.OKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OKButton.Location = new System.Drawing.Point(217, 182);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(55, 23);
@@ -186,6 +194,7 @@
             // DiscardButton
             // 
             this.DiscardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DiscardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DiscardButton.Location = new System.Drawing.Point(155, 182);
             this.DiscardButton.Name = "DiscardButton";
             this.DiscardButton.Size = new System.Drawing.Size(55, 23);
@@ -223,8 +232,8 @@
         #endregion
 
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.NumericUpDown IDNumericUpDown;
+        private ColourTextBox NameTextBox;
+        private ColourNumericUpDown IDNumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox FileSettingsGroupBox;
         private System.Windows.Forms.CheckBox IsYAZ0CheckBox;

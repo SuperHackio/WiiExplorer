@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,6 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcUtil.cs" />
+    <Compile Include="Extra Controls\ColourComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extra Controls\ColourNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extra Controls\ColourTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FilePropertyForm.cs">
       <SubType>Form</SubType>
     </Compile>

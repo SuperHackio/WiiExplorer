@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenameForm));
-            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new ColourTextBox();
             this.InfoLabel = new System.Windows.Forms.Label();
             this.TextPanel = new System.Windows.Forms.Panel();
-            this.ExtensionTextBox = new System.Windows.Forms.TextBox();
+            this.ExtensionTextBox = new ColourTextBox();
             this.ExtensionLabel = new System.Windows.Forms.Label();
             this.TextPanel.SuspendLayout();
             this.SuspendLayout();
@@ -110,9 +110,9 @@
 
         #endregion
         private System.Windows.Forms.Label InfoLabel;
-        public System.Windows.Forms.TextBox NameTextBox;
+        public ColourTextBox NameTextBox;
         private System.Windows.Forms.Panel TextPanel;
-        public System.Windows.Forms.TextBox ExtensionTextBox;
+        public ColourTextBox ExtensionTextBox;
         private System.Windows.Forms.Label ExtensionLabel;
     }
 }

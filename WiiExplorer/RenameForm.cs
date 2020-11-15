@@ -34,6 +34,14 @@ namespace WiiExplorer
                 ExtensionLabel.Enabled = false;
                 NameTextBox.Text = OGName;
             }
+
+
+            ForeColor = Program.ProgramColours.TextColour;
+            BackColor = Program.ProgramColours.ControlBackColor;
+            NameTextBox.BackColor = ExtensionTextBox.BackColor = Program.ProgramColours.ControlBackColor;
+            NameTextBox.ForeColor = ExtensionTextBox.ForeColor = Program.ProgramColours.TextColour;
+            NameTextBox.BorderColor = ExtensionTextBox.BorderColor = Program.ProgramColours.BorderColour;
+
         }
         bool complete = false;
 

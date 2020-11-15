@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Diagnostics;
+using WiiExplorer.Properties;
 
 namespace WiiExplorer
 {
@@ -35,6 +36,7 @@ namespace WiiExplorer
             }
 
             RootNameTextBox.ContextMenu = new ContextMenu();
+            ReloadTheme();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -587,7 +589,7 @@ namespace WiiExplorer
 
             Edited = false;
             MainToolStripProgressBar.Value = 100;
-            MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $"({timer.Elapsed.ToString("mm\\:ss")} Elapsed)":"")}";
+            MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $" ({timer.Elapsed.ToString("mm\\:ss")} Elapsed)":"")}";
             SetControlsEnabled(affectall:true);
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
             Properties.Settings.Default.PreviousSaveArchivePath = new FileInfo(Filename).DirectoryName;
@@ -938,6 +940,186 @@ namespace WiiExplorer
             {
                 Archive.KeepFileIDsSynced = KeepIDsSyncedCheckBox.Checked;
                 Edited = true;
+            }
+        }
+
+        private void SwitchThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.IsDarkMode = !Settings.Default.IsDarkMode;
+            ReloadTheme();
+            Settings.Default.Save();
+        }
+        private void ReloadTheme()
+        {
+            ForeColor = Program.ProgramColours.TextColour;
+            BackColor = Program.ProgramColours.ControlBackColor;
+            MainFormMenuStrip.Renderer = Settings.Default.IsDarkMode ? new MyRenderer() : default;
+            for (int i = 0; i < FileToolStripMenuItem.DropDownItems.Count; i++)
+            {
+                FileToolStripMenuItem.DropDownItems[i].BackColor = Program.ProgramColours.WindowColour;
+                FileToolStripMenuItem.DropDownItems[i].ForeColor = Program.ProgramColours.TextColour;
+            }
+            for (int i = 0; i < EditToolStripMenuItem.DropDownItems.Count; i++)
+            {
+                EditToolStripMenuItem.DropDownItems[i].BackColor = Program.ProgramColours.WindowColour;
+                EditToolStripMenuItem.DropDownItems[i].ForeColor = Program.ProgramColours.TextColour;
+            }
+            Yaz0ToolStripComboBox.BackColor = Program.ProgramColours.WindowColour;
+            Yaz0ToolStripComboBox.ForeColor = Program.ProgramColours.TextColour;
+            RootNameTextBox.BackColor = RootNameTextBox.BorderColor = Program.ProgramColours.ControlBackColor;
+            RootNameTextBox.ForeColor = KeepIDsSyncedCheckBox.ForeColor = Program.ProgramColours.TextColour;
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                Controls[i].BackColor = Program.ProgramColours.ControlBackColor;
+                Controls[i].ForeColor = Program.ProgramColours.TextColour;
+            }
+            MainToolStripProgressBar.BackColor = Program.ProgramColours.WindowColour;
+        }
+
+        #region MenuStrip Managers
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            public MyRenderer() : base(new MyColors()) { }
+
+            protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
+            {
+                if (e.Item is ToolStripMenuItem)
+                    e.ArrowColor = Program.ProgramColours.TextColour;
+                base.OnRenderArrow(e);
+            }
+        }
+
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color ButtonSelectedHighlight => Color.Black;
+
+            public override Color ButtonSelectedHighlightBorder => Color.Black;
+
+            public override Color ButtonPressedHighlight => Color.Black;
+
+            public override Color ButtonPressedHighlightBorder => Color.Black;
+
+            public override Color ButtonCheckedHighlight => Color.Black;
+
+            public override Color ButtonCheckedHighlightBorder => Color.Black;
+
+            public override Color ButtonPressedBorder => Color.Black;
+
+            public override Color ButtonSelectedBorder => Color.Black;
+
+            public override Color ButtonCheckedGradientBegin => Color.Black;
+
+            public override Color ButtonCheckedGradientMiddle => Color.Black;
+
+            public override Color ButtonCheckedGradientEnd => Color.Black;
+
+            public override Color ButtonSelectedGradientBegin => Color.Black;
+
+            public override Color ButtonSelectedGradientMiddle => Color.Black;
+
+            public override Color ButtonSelectedGradientEnd => Color.Black;
+
+            public override Color ButtonPressedGradientBegin => Color.Black;
+
+            public override Color ButtonPressedGradientMiddle => Color.Black;
+
+            public override Color ButtonPressedGradientEnd => Color.Black;
+
+            public override Color CheckBackground => Color.Black;
+
+            public override Color CheckSelectedBackground => Color.Black;
+
+            public override Color CheckPressedBackground => Color.Black;
+
+            public override Color GripDark => Color.Black;
+
+            public override Color GripLight => Color.Black;
+
+            public override Color ImageMarginGradientBegin => Color.Black;
+
+            public override Color ImageMarginGradientMiddle => Color.Black;
+
+            public override Color ImageMarginGradientEnd => Color.Black;
+
+            public override Color ImageMarginRevealedGradientBegin => Color.Black;
+
+            public override Color ImageMarginRevealedGradientMiddle => Color.Black;
+
+            public override Color ImageMarginRevealedGradientEnd => Color.Black;
+
+            public override Color MenuStripGradientBegin => Color.Black;
+
+            public override Color MenuStripGradientEnd => Color.Black;
+
+            public override Color MenuItemSelected => Color.Black;
+
+            public override Color MenuItemBorder => Color.Black;
+
+            public override Color MenuBorder => Color.Black;
+
+            public override Color MenuItemSelectedGradientBegin => Color.Black;
+
+            public override Color MenuItemSelectedGradientEnd => Color.Black;
+
+            public override Color MenuItemPressedGradientBegin => Color.Black;
+
+            public override Color MenuItemPressedGradientMiddle => Color.White;
+
+            public override Color MenuItemPressedGradientEnd => Color.Black;
+
+            public override Color RaftingContainerGradientBegin => Color.Black;
+
+            public override Color RaftingContainerGradientEnd => Color.Black;
+
+            public override Color SeparatorDark => Color.Black;
+
+            public override Color SeparatorLight => Color.Black;
+
+            public override Color StatusStripGradientBegin => Color.Black;
+
+            public override Color StatusStripGradientEnd => Color.Black;
+
+            public override Color ToolStripBorder => Color.Black;
+
+            public override Color ToolStripDropDownBackground => Color.Black;
+
+            public override Color ToolStripGradientBegin => Color.Black;
+
+            public override Color ToolStripGradientMiddle => Color.Black;
+
+            public override Color ToolStripGradientEnd => Color.Black;
+
+            public override Color ToolStripContentPanelGradientBegin => Color.Black;
+
+            public override Color ToolStripContentPanelGradientEnd => Color.Black;
+
+            public override Color ToolStripPanelGradientBegin => Color.Black;
+
+            public override Color ToolStripPanelGradientEnd => Color.Black;
+
+            public override Color OverflowButtonGradientBegin => Color.Black;
+
+            public override Color OverflowButtonGradientMiddle => Color.Black;
+
+            public override Color OverflowButtonGradientEnd => Color.Black;
+        }
+        #endregion
+
+        private void MainFormMenuStrip_Paint(object sender, PaintEventArgs e)
+        {
+            for (int i = 0; i < MainFormMenuStrip.Items.Count; i++)
+            {
+                if (MainFormMenuStrip.Items[i] is ToolStripComboBox cb)
+                {
+                    Rectangle r = new Rectangle(
+                        cb.ComboBox.Location.X - 1,
+                        cb.ComboBox.Location.Y - 1,
+                        cb.ComboBox.Size.Width + 1,
+                        cb.ComboBox.Size.Height + 1);
+
+                    Pen cbBorderPen = new Pen(Program.ProgramColours.BorderColour);
+                    e.Graphics.FillRectangle(cbBorderPen.Brush, r);
+                }
             }
         }
     }
