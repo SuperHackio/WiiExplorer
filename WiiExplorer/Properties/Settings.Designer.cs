@@ -70,5 +70,17 @@ namespace WiiExplorer.Properties {
                 this["PreviousExportPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PreviousSaveArchivePath {
+            get {
+                return ((string)(this["PreviousSaveArchivePath"]));
+            }
+            set {
+                this["PreviousSaveArchivePath"] = value;
+            }
+        }
     }
 }

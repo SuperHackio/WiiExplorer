@@ -549,7 +549,7 @@ namespace WiiExplorer
         {
             if (Archive.FileName is null)
             {
-                sfd.InitialDirectory = Properties.Settings.Default.PreviousOpenArchivePath;
+                sfd.InitialDirectory = Properties.Settings.Default.PreviousSaveArchivePath;
                 if (sfd.ShowDialog() == DialogResult.OK && sfd.FileName != "")
                     SaveArchive(sfd.FileName);
                 else
@@ -561,7 +561,7 @@ namespace WiiExplorer
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ofd.InitialDirectory = Properties.Settings.Default.PreviousOpenArchivePath;
+            sfd.InitialDirectory = Properties.Settings.Default.PreviousSaveArchivePath;
             if (sfd.ShowDialog() == DialogResult.OK && sfd.FileName != "")
                 SaveArchive(sfd.FileName);
         }
@@ -590,7 +590,7 @@ namespace WiiExplorer
             MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $"({timer.Elapsed.ToString("mm\\:ss")} Elapsed)":"")}";
             SetControlsEnabled(affectall:true);
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
-            Properties.Settings.Default.PreviousOpenArchivePath = new FileInfo(Filename).DirectoryName;
+            Properties.Settings.Default.PreviousSaveArchivePath = new FileInfo(Filename).DirectoryName;
             Properties.Settings.Default.Save();
         }
 
