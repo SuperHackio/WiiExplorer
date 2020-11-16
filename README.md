@@ -4,6 +4,7 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
 
 ## Features
 - Graphical User Interface (GUI)
+  - Dark Mode
 - Create new Archives
   - From nothing
   - Convert a Folder into an Archive
@@ -13,15 +14,24 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - Replace Files/Folders
   - Import folders with content inside
   - Drag files/folders around to organize them
+  - Change File Settings
 - Export the entire archive or individual files/folders
 - Resizable window
-- Compression options (YAZ0, YAZ0 Fast, or no compression)
+- Compression options (YAZ0 Strong, YAZ0 Fast, or Yaz0 Off)
 - Known file extensions have custom icons
   - The list of known extensions is easily editable
   - Adding/Editing/Removing icons is easy (They're just .png)
 - Supports being the Default Application for Archive files<br/>(Open With > Choose "Another app on this PC" > Navigate to and Choose "WiiExplorer.exe". Be sure to enable "Always use this app to open .arc files")
 
-Previews:<br/>
-![WiiExplorer opened to a map file from Super Mario Galaxy 2](https://cdn.discordapp.com/attachments/428011900651962372/734965911374659614/unknown.png)
-![WiiExplorer opened to a map file from Super Mario Sunshine](https://cdn.discordapp.com/attachments/428011900651962372/734967207175389225/unknown.png)
-![WiiExplorer rearrange files by dragging](https://user-images.githubusercontent.com/44330283/88503889-ce7c2b00-cf87-11ea-9d02-f9a1d5e20484.gif)
+## Known Supported Games
+- *Super Mario Galaxy*
+- *Super Mario Galaxy 2*
+- *Super Mario Sunshine*
+- *The Legend of Zelda: Twilight Princess*
+
+## Previews
+![Kuribo.arc from Super Mario Galaxy 2](https://user-images.githubusercontent.com/44330283/99214070-1cf64500-2784-11eb-8601-e9da8f262e7f.png)
+![Bianco Hills Scenario 0 from Super Mario Sunshine](https://user-images.githubusercontent.com/44330283/99214140-44e5a880-2784-11eb-962f-79d1dbddd9e5.png)
+![Sequenced Music Archive from The Legend of Zelda Twilight Princess](https://user-images.githubusercontent.com/44330283/99214191-62b30d80-2784-11eb-8512-59a648d4c7b4.png)
+![Sorting Demonstration](https://user-images.githubusercontent.com/44330283/99215254-3baa0b00-2787-11eb-9c9c-65aff535f4fa.gif)
+![File Properties Demonstration](https://user-images.githubusercontent.com/44330283/99215453-cc80e680-2787-11eb-82c6-9da74fb0bb8a.png)
