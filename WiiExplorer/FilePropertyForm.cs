@@ -28,15 +28,16 @@ namespace WiiExplorer
             IDNumericUpDown.Enabled = !Archive.KeepFileIDsSynced;
             CenterToParent();
 
-
-            AutoDetectSettingsButton.BackColor = BackColor = NameTextBox.BackColor = IDNumericUpDown.BackColor = Program.ProgramColours.ControlBackColor;
-            AutoDetectSettingsButton.ForeColor = ForeColor = NameTextBox.ForeColor = IDNumericUpDown.ForeColor = Program.ProgramColours.TextColour;
-            NameTextBox.BorderColor = IDNumericUpDown.BorderColor = Program.ProgramColours.BorderColour;
             for (int i = 0; i < Controls.Count; i++)
             {
                 Controls[i].BackColor = Program.ProgramColours.ControlBackColor;
                 Controls[i].ForeColor = Program.ProgramColours.TextColour;
             }
+            AutoDetectSettingsButton.BackColor = BackColor = Program.ProgramColours.ControlBackColor;
+            AutoDetectSettingsButton.ForeColor = ForeColor = NameTextBox.ForeColor = IDNumericUpDown.ForeColor = Program.ProgramColours.TextColour;
+            NameTextBox.BackColor = IDNumericUpDown.BackColor = Program.ProgramColours.WindowColour;
+            NameTextBox.BorderColor = IDNumericUpDown.BorderColor = Program.ProgramColours.BorderColour;
+            //FileSettingsGroupBox.BackColor = Program.ProgramColours.WindowColour;
         }
 
         private void FilePropertyForm_Load(object sender, EventArgs e)

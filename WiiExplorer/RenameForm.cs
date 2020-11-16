@@ -39,7 +39,8 @@ namespace WiiExplorer
 
             ForeColor = Program.ProgramColours.TextColour;
             BackColor = Program.ProgramColours.ControlBackColor;
-            NameTextBox.BackColor = OKButton.BackColor = DiscardButton.BackColor = ExtensionTextBox.BackColor = Program.ProgramColours.ControlBackColor;
+            OKButton.BackColor = DiscardButton.BackColor = Program.ProgramColours.ControlBackColor;
+            NameTextBox.BackColor = ExtensionTextBox.BackColor = Program.ProgramColours.WindowColour;
             NameTextBox.ForeColor = OKButton.ForeColor = DiscardButton.ForeColor = ExtensionTextBox.ForeColor = Program.ProgramColours.TextColour;
             NameTextBox.BorderColor = ExtensionTextBox.BorderColor = Program.ProgramColours.BorderColour;
         }

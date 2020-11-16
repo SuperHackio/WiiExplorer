@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Diagnostics;
 using WiiExplorer.Properties;
+using System.Reflection;
 
 namespace WiiExplorer
 {
@@ -33,6 +34,7 @@ namespace WiiExplorer
 
             RootNameTextBox.ContextMenu = new ContextMenu();
             ReloadTheme();
+            Yaz0ToolStripComboBox.ComboBox.SetDoubleBuffered();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -88,8 +90,8 @@ namespace WiiExplorer
                                                     new Point(RightPos, NodeOver.Bounds.Top - 5)};
 
 
-            g.FillPolygon(System.Drawing.Brushes.Black, LeftTriangle);
-            g.FillPolygon(System.Drawing.Brushes.Black, RightTriangle);
+            g.FillPolygon(Brushes.Black, LeftTriangle);
+            g.FillPolygon(Brushes.Black, RightTriangle);
             g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
 
         }//eom
@@ -122,8 +124,8 @@ namespace WiiExplorer
                                                     new Point(RightPos, NodeOver.Bounds.Bottom - 5)};
 
 
-            g.FillPolygon(System.Drawing.Brushes.Black, LeftTriangle);
-            g.FillPolygon(System.Drawing.Brushes.Black, RightTriangle);
+            g.FillPolygon(Brushes.Black, LeftTriangle);
+            g.FillPolygon(Brushes.Black, RightTriangle);
             g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Bottom), new Point(RightPos, NodeOver.Bounds.Bottom));
         }//eom
 
@@ -151,8 +153,8 @@ namespace WiiExplorer
                                                     new Point(RightPos, NodeOver.Bounds.Top - 5)};
 
 
-            g.FillPolygon(System.Drawing.Brushes.Black, LeftTriangle);
-            g.FillPolygon(System.Drawing.Brushes.Black, RightTriangle);
+            g.FillPolygon(Brushes.Black, LeftTriangle);
+            g.FillPolygon(Brushes.Black, RightTriangle);
             g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
 
         }//eom
@@ -168,7 +170,7 @@ namespace WiiExplorer
                                                     new Point(RightPos, NodeOver.Bounds.Y + (NodeOver.Bounds.Height / 2) - 5)};
 
             this.Refresh();
-            g.FillPolygon(System.Drawing.Brushes.Black, RightTriangle);
+            g.FillPolygon(Brushes.Black, RightTriangle);
         }//eom
 
         private void SetNewNodeMap(TreeNode tnNode, bool boolBelowNode)
@@ -517,8 +519,8 @@ namespace WiiExplorer
         {
             if (!(Edited && MessageBox.Show("You have unsaved changes.\nAre you sure you want to open another file?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No))
             {
-                ofd.InitialDirectory = Properties.Settings.Default.PreviousOpenArchivePath;
-                string tmp = Properties.Settings.Default.PreviousOpenArchivePath;
+                ofd.InitialDirectory = Settings.Default.PreviousOpenArchivePath;
+                string tmp = Settings.Default.PreviousOpenArchivePath;
                 if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName != "")
                     OpenArchive(ofd.FileName);
             }
@@ -539,15 +541,15 @@ namespace WiiExplorer
             MainToolStripProgressBar.Value = 100;
             MainToolStripStatusLabel.Text = $"Archive loaded successfully!";
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
-            Properties.Settings.Default.PreviousOpenArchivePath = new FileInfo(Filename).DirectoryName;
-            Properties.Settings.Default.Save();
+            Settings.Default.PreviousOpenArchivePath = new FileInfo(Filename).DirectoryName;
+            Settings.Default.Save();
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Archive.FileName is null)
             {
-                sfd.InitialDirectory = Properties.Settings.Default.PreviousSaveArchivePath;
+                sfd.InitialDirectory = Settings.Default.PreviousSaveArchivePath;
                 if (sfd.ShowDialog() == DialogResult.OK && sfd.FileName != "")
                     SaveArchive(sfd.FileName);
                 else
@@ -559,7 +561,7 @@ namespace WiiExplorer
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            sfd.InitialDirectory = Properties.Settings.Default.PreviousSaveArchivePath;
+            sfd.InitialDirectory = Settings.Default.PreviousSaveArchivePath;
             if (sfd.ShowDialog() == DialogResult.OK && sfd.FileName != "")
                 SaveArchive(sfd.FileName);
         }
@@ -588,8 +590,8 @@ namespace WiiExplorer
             MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $" ({timer.Elapsed.ToString("mm\\:ss")} Elapsed)":"")}";
             SetControlsEnabled(affectall:true);
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
-            Properties.Settings.Default.PreviousSaveArchivePath = new FileInfo(Filename).DirectoryName;
-            Properties.Settings.Default.Save();
+            Settings.Default.PreviousSaveArchivePath = new FileInfo(Filename).DirectoryName;
+            Settings.Default.Save();
         }
 
         private void AddFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -713,8 +715,8 @@ namespace WiiExplorer
                 Archive.Export(new DirectoryInfo(Exportsfd.FileName).Parent.FullName, true);
                 MainToolStripProgressBar.Value = 100;
                 MainToolStripStatusLabel.Text = $"Full Archive \"{Archive.Root.Name}\" has been saved!";
-                Properties.Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
-                Properties.Settings.Default.Save();
+                Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
+                Settings.Default.Save();
             }
         }
 
@@ -824,8 +826,8 @@ namespace WiiExplorer
                     Directory.CreateDirectory(Exportsfd.FileName);
                     Item.Export(Exportsfd.FileName);
                     MainToolStripStatusLabel.Text = $"\"{Item.Name}\" has been saved!";
-                    Properties.Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
+                    Settings.Default.Save();
                 }
             }
             else
@@ -841,14 +843,14 @@ namespace WiiExplorer
                     }
                 }
                 Exportsfd.Filter = ext;
-                Exportsfd.InitialDirectory = Properties.Settings.Default.PreviousExportPath;
+                Exportsfd.InitialDirectory = Settings.Default.PreviousExportPath;
                 if (Exportsfd.ShowDialog() == DialogResult.OK && Exportsfd.FileName != "")
                 {
                     Item.Save(Exportsfd.FileName);
                     MainToolStripStatusLabel.Text = $"\"{Item.Name}\" has been saved!";
 
-                    Properties.Settings.Default.PreviousExportPath = new FileInfo(Exportsfd.FileName).DirectoryName;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.PreviousExportPath = new FileInfo(Exportsfd.FileName).DirectoryName;
+                    Settings.Default.Save();
                 }
             }
         }
@@ -915,7 +917,7 @@ namespace WiiExplorer
             if (Edited && MessageBox.Show("You have unsaved changes.\nAre you sure you want to start a new file?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 return;
 
-            CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Properties.Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
+            CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
             if (BFB.ShowDialog() == CommonFileDialogResult.Ok && !BFB.FileName.Equals(""))
             {
                 Archive = new RARC();
@@ -924,8 +926,8 @@ namespace WiiExplorer
                 RootNameTextBox.Text = Archive.Root.Name;
                 KeepIDsSyncedCheckBox.Checked = Archive.KeepFileIDsSynced;
                 ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
-                Properties.Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
-                Properties.Settings.Default.Save();
+                Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
+                Settings.Default.Save();
 
                 Edited = true;
                 SetControlsEnabled();
@@ -987,6 +989,11 @@ namespace WiiExplorer
 
         private void ReloadTheme()
         {
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                Controls[i].BackColor = Program.ProgramColours.ControlBackColor;
+                Controls[i].ForeColor = Program.ProgramColours.TextColour;
+            }
             ForeColor = Program.ProgramColours.TextColour;
             BackColor = Program.ProgramColours.ControlBackColor;
             MainFormMenuStrip.Renderer = Settings.Default.IsDarkMode ? new MyRenderer() : default;
@@ -1006,16 +1013,9 @@ namespace WiiExplorer
                 ArchiveContextMenuStrip.Items[i].BackColor = Program.ProgramColours.WindowColour;
                 ArchiveContextMenuStrip.Items[i].ForeColor = Program.ProgramColours.TextColour;
             }
-            Yaz0ToolStripComboBox.BackColor = Program.ProgramColours.WindowColour;
-            Yaz0ToolStripComboBox.ForeColor = Program.ProgramColours.TextColour;
-            RootNameTextBox.BackColor = RootNameTextBox.BorderColor = Program.ProgramColours.ControlBackColor;
-            RootNameTextBox.ForeColor = KeepIDsSyncedCheckBox.ForeColor = Program.ProgramColours.TextColour;
-            for (int i = 0; i < Controls.Count; i++)
-            {
-                Controls[i].BackColor = Program.ProgramColours.ControlBackColor;
-                Controls[i].ForeColor = Program.ProgramColours.TextColour;
-            }
-            MainToolStripProgressBar.BackColor = Program.ProgramColours.WindowColour;
+            MainToolStripProgressBar.BackColor = RootNameTextBox.BackColor = Yaz0ToolStripComboBox.BackColor = ArchiveTreeView.BackColor = Program.ProgramColours.WindowColour;
+            RootNameTextBox.BorderColor = Program.ProgramColours.BorderColour;
+            Yaz0ToolStripComboBox.ForeColor = RootNameTextBox.ForeColor = KeepIDsSyncedCheckBox.ForeColor = Program.ProgramColours.TextColour;
         }
 
         #region MenuStrip Managers
@@ -1160,9 +1160,11 @@ namespace WiiExplorer
                         cb.ComboBox.Size.Height + 1);
 
                     Pen cbBorderPen = new Pen(Program.ProgramColours.BorderColour);
-                    e.Graphics.FillRectangle(cbBorderPen.Brush, r);
+                    e.Graphics.DrawRectangle(cbBorderPen, r);
                 }
             }
+            if (!Yaz0ToolStripComboBox.ComboBox.DroppedDown)
+            RootNameLabel.Focus();
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -1174,6 +1176,18 @@ namespace WiiExplorer
                 else
                     AddFileToolStripMenuItem_Click(sender, EventArgs.Empty);
             }
+        }
+    }
+
+    public static class ControlEx
+    {
+        [DebuggerStepThrough]
+        public static void SetDoubleBuffered(this Control control)
+        {
+            // set instance non-public property with name "DoubleBuffered" to true
+            typeof(Control).InvokeMember("DoubleBuffered",
+                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null, control, new object[] { true });
         }
     }
 }
