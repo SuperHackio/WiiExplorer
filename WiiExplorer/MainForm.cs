@@ -27,12 +27,8 @@ namespace WiiExplorer
                 string[] exts = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "ExtensionList.txt");
                 KnownExtensions.AddRange(exts);
                 for (int i = 0; i < exts.Length; i++)
-                {
                     if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Icons\\" + exts[i].Split('|')[0] + ".png"))
-                    {
                         ArchiveImageList.Images.Add(exts[i].Split('|')[1], new Bitmap(AppDomain.CurrentDomain.BaseDirectory + "\\Icons\\" + exts[i].Split('|')[0] + ".png"));
-                    }
-                }
             }
 
             RootNameTextBox.ContextMenu = new ContextMenu();
@@ -598,21 +594,15 @@ namespace WiiExplorer
 
         private void AddFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (RootNameTextBox.Focused)
-            {
-                RootNameTextBox.SelectAll();
-                return;
-            }
-
             TreeNode tmp = ArchiveTreeView.SelectedNode;
-            Fileofd.InitialDirectory = Properties.Settings.Default.PreviousAddFilePath;
+            Fileofd.InitialDirectory = Settings.Default.PreviousAddFilePath;
             if (Fileofd.ShowDialog() == DialogResult.OK && Fileofd.FileName != "")
             {
                 ArchiveTreeView.SelectedNode = tmp;
                 AddItemToRARC(Fileofd.FileNames);
                 MainToolStripStatusLabel.Text = $"{Fileofd.FileNames.Length} File{(Fileofd.FileNames.Length > 1 ? "s":"")} added.";
-                Properties.Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
-                Properties.Settings.Default.Save();
+                Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
+                Settings.Default.Save();
             }
             ArchiveTreeView.SelectedNode = tmp;
 
@@ -621,24 +611,28 @@ namespace WiiExplorer
 
         private void AddFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TreeNode newnode = new TreeNode("New Folder") { ImageIndex = 0, SelectedImageIndex = 0 };
+            TreeNode NewTreeNode = new TreeNode("New Folder") { ImageIndex = 0, SelectedImageIndex = 0 };
 
             //SelectedNode is NULL, put the new file on the root
             if (ArchiveTreeView.SelectedNode == null)
-                ArchiveTreeView.Nodes.Add(newnode);
+                ArchiveTreeView.Nodes.Add(NewTreeNode);
             //Determine where to put it otherwise
             else
             {
                 if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory)
-                    ArchiveTreeView.SelectedNode.Nodes.Add(newnode);
+                    ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
                 else if (ArchiveTreeView.SelectedNode.Parent == null)
-                    ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, newnode);
+                    ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
                 else
-                    ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, newnode);
+                    ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
             }
 
-            ArchiveTreeView.SelectedNode = newnode;
-            Archive[newnode.FullPath] = new RARC.Directory() { Name = "NewFolder" };
+            ArchiveTreeView.SelectedNode = NewTreeNode;
+            int y = 2;
+            string folderstring = "New Folder";
+            while (Archive.ItemExists(NewTreeNode.FullPath))
+                NewTreeNode.Text = folderstring + $" ({y++})";
+            Archive[NewTreeNode.FullPath] = new RARC.Directory() { Name = NewTreeNode.Text };
 
             Edited = true;
             MainToolStripStatusLabel.Text = $"New Folder added.";
@@ -669,6 +663,12 @@ namespace WiiExplorer
                     else
                         ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
                 }
+                int y = 2;
+                string ogname = Path.GetFileNameWithoutExtension(FileNames[i]);
+                string ogextension = fi.Extension;
+                while (Archive.ItemExists(NewTreeNode.FullPath))
+                    NewTreeNode.Text = ogname+$" ({y++})"+ogextension;
+                CurrentFile.Name = NewTreeNode.Text;
                 Archive[NewTreeNode.FullPath] = CurrentFile;
             }
         }
@@ -689,13 +689,10 @@ namespace WiiExplorer
         {
             if (ArchiveTreeView.SelectedNode == null)
                 return;
-            RenameForm RN = new RenameForm(Archive[ArchiveTreeView.SelectedNode.FullPath]);
             string tmp = ArchiveTreeView.SelectedNode.Text;
+            RenameForm RN = new RenameForm(ArchiveTreeView, Archive);
             if (RN.ShowDialog() != DialogResult.OK)
                 return;
-            string oldpath = ArchiveTreeView.SelectedNode.FullPath;
-            ArchiveTreeView.SelectedNode.Text = RN.NameTextBox.Text+RN.ExtensionTextBox.Text;
-            Archive.MoveItem(oldpath, ArchiveTreeView.SelectedNode.FullPath);
 
             Edited = true;
             MainToolStripStatusLabel.Text = $"\"{tmp}\" renamed to \"{RN.NameTextBox.Text+RN.ExtensionTextBox.Text}\"";
@@ -728,30 +725,53 @@ namespace WiiExplorer
 
             string OldPath = ArchiveTreeView.SelectedNode.FullPath;
             dynamic Item = Archive[OldPath];
-            if (Item is RARC.Directory dir)
+            if (Item is RARC.Directory)
             {
-                CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Properties.Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
+                CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
                 if (BFB.ShowDialog() == CommonFileDialogResult.Ok && !BFB.FileName.Equals(""))
                 {
                     string oldname = ArchiveTreeView.SelectedNode.Text;
-                    
-                    dir.Clear();
-                    ArchiveTreeView.SelectedNode.Nodes.Clear();
-                    ArchiveTreeView.SelectedNode.Text = new DirectoryInfo(BFB.FileName).Name;
-                    Archive.MoveItem(dir.FullPath, ArchiveTreeView.SelectedNode.FullPath);
-                    dir.CreateFromFolder(BFB.FileName);
+                    DirectoryInfo fi = new DirectoryInfo(BFB.FileName);
 
+                    ArchiveTreeView.SelectedNode.Text = fi.Name;
+                    int y = 2;
+                    string ogname = Path.GetFileNameWithoutExtension(fi.Name);
+                    while (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && Archive[ArchiveTreeView.SelectedNode.FullPath] != Archive[OldPath])
+                    {
+                        ArchiveTreeView.SelectedNode.Text = ogname + $" ({y++})";
+                    }
+                    ArchiveTreeView.SelectedNode.ImageIndex = ArchiveTreeView.SelectedNode.SelectedImageIndex = 0;
+                    Archive[OldPath] = null;
+                    RARC.Directory dir = new RARC.Directory() { Name = ArchiveTreeView.SelectedNode.Text };
+                    Archive[ArchiveTreeView.SelectedNode.FullPath] = dir;
+                    dir.CreateFromFolder(BFB.FileName);
+                    string currentpath = ArchiveTreeView.SelectedNode.FullPath;
+                    int previndex = ArchiveTreeView.SelectedNode.Index;
                     ArchiveTreeView.Nodes.Clear();
                     ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
-                    ArchiveTreeView.SelectedNode = ArchiveTreeView.Nodes.FindTreeNodeByFullPath(OldPath);
-                    Properties.Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
-                    Properties.Settings.Default.Save();
+                    ArchiveTreeView.SelectedNode = ArchiveTreeView.Nodes.FindTreeNodeByFullPath(currentpath);
+                    TreeNode tmp = ArchiveTreeView.SelectedNode;
+                    if (tmp.Parent == null)
+                    {
+                        ArchiveTreeView.Nodes.Remove(tmp);
+                        ArchiveTreeView.Nodes.Insert(previndex, tmp);
+                    }
+                    else
+                    {
+                        TreeNode Parent = tmp.Parent;
+                        Parent.Nodes.Remove(tmp);
+                        Parent.Nodes.Insert(previndex, tmp);
+                    }
+
+                    Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
+                    Settings.Default.Save();
+                    Edited = true;
                     MainToolStripStatusLabel.Text = $"\"{new DirectoryInfo(BFB.FileName).Name}\" has replaced \"{oldname}\"!";
                 }
             }
             else if (Item is RARC.File file)
             {
-                Fileofd.InitialDirectory = Properties.Settings.Default.PreviousAddFilePath;
+                Fileofd.InitialDirectory = Settings.Default.PreviousAddFilePath;
                 if (Fileofd.ShowDialog() == DialogResult.OK && Fileofd.FileName != "")
                 {
                     string oldname = ArchiveTreeView.SelectedNode.Text;
@@ -761,15 +781,20 @@ namespace WiiExplorer
                         imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
 
                     ArchiveTreeView.SelectedNode.Text = fi.Name;
+                    int y = 2;
+                    string ogname = Path.GetFileNameWithoutExtension(fi.Name);
+                    string ogextension = fi.Extension;
+                    while (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath))
+                    {
+                        ArchiveTreeView.SelectedNode.Text = ogname + $" ({y++})" + ogextension;
+                    }
                     ArchiveTreeView.SelectedNode.ImageIndex = ArchiveTreeView.SelectedNode.SelectedImageIndex = imageindex;
                     Archive[OldPath] = null;
-                    Archive[ArchiveTreeView.SelectedNode.FullPath] = new RARC.File(Fileofd.FileName);
-                    
-                    ArchiveTreeView.SelectedNode = ArchiveTreeView.Nodes.FindTreeNodeByFullPath(OldPath);
+                    Archive[ArchiveTreeView.SelectedNode.FullPath] = new RARC.File(Fileofd.FileName) { Name = ArchiveTreeView.SelectedNode.Text };
 
-
-                    Properties.Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
+                    Settings.Default.Save();
+                    Edited = true;
                     MainToolStripStatusLabel.Text = $"\"{new FileInfo(Fileofd.FileName).Name}\" has replaced \"{oldname}\"!";
                 }
             }
@@ -844,35 +869,42 @@ namespace WiiExplorer
 
         private void ImportFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Properties.Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
+            CommonOpenFileDialog BFB = new CommonOpenFileDialog() { InitialDirectory = Settings.Default.PreviousAddFilePath, Multiselect = false, IsFolderPicker = true };
             if (BFB.ShowDialog() == CommonFileDialogResult.Ok && !BFB.FileName.Equals(""))
             {
-                TreeNode newnode = new TreeNode(new DirectoryInfo(BFB.FileName).Name) { ImageIndex = 0, SelectedImageIndex = 0 };
+                string ogname = new DirectoryInfo(BFB.FileName).Name;
+                TreeNode NewTreeNode = new TreeNode(ogname) { ImageIndex = 0, SelectedImageIndex = 0 };
 
                 //SelectedNode is NULL, put the new file on the root
                 if (ArchiveTreeView.SelectedNode == null)
-                    ArchiveTreeView.Nodes.Add(newnode);
+                    ArchiveTreeView.Nodes.Add(NewTreeNode);
                 //Determine where to put it otherwise
                 else
                 {
                     if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory)
-                        ArchiveTreeView.SelectedNode.Nodes.Add(newnode);
+                        ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
                     else if (ArchiveTreeView.SelectedNode.Parent == null)
-                        ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, newnode);
+                        ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
                     else
-                        ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, newnode);
+                        ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
                 }
 
-                ArchiveTreeView.SelectedNode = newnode;
+                ArchiveTreeView.SelectedNode = NewTreeNode;
                 RARC.Directory dir = new RARC.Directory(BFB.FileName);
-                Archive[newnode.FullPath] = dir;
+                int y = 2;
+                while (Archive.ItemExists(NewTreeNode.FullPath))
+                {
+                    NewTreeNode.Text = ogname + $" ({y++})";
+                }
+                dir.Name = NewTreeNode.Text;
+                Archive[NewTreeNode.FullPath] = dir;
 
                 ArchiveTreeView.Nodes.Clear();
                 ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
-                ArchiveTreeView.SelectedNode = newnode;
-                newnode.Expand();
-                Properties.Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
-                Properties.Settings.Default.Save();
+                ArchiveTreeView.SelectedNode = NewTreeNode;
+
+                Settings.Default.PreviousAddFilePath = new DirectoryInfo(BFB.FileName).Parent.FullName;
+                Settings.Default.Save();
                 Edited = true;
                 MainToolStripStatusLabel.Text = $"Folder \"{BFB.FileName}\" Imported.";
             }
@@ -923,9 +955,12 @@ namespace WiiExplorer
                 ItemPropertiesToolStripMenuItem.Enabled = false;
                 return;
             }
-            FilePropertyForm FPF = new FilePropertyForm((RARC.File)Archive[ArchiveTreeView.SelectedNode.FullPath], !Archive.KeepFileIDsSynced);
+            FilePropertyForm FPF = new FilePropertyForm(ArchiveTreeView, Archive);
             if (FPF.ShowDialog() == DialogResult.OK)
+            {
                 Edited = true;
+                MainToolStripStatusLabel.Text = $"Properties of \"{ArchiveTreeView.SelectedNode.Text}\" have been updated.";
+            }
         }
 
         private void RootNameTextBox_TextChanged(object sender, EventArgs e)
@@ -949,11 +984,13 @@ namespace WiiExplorer
             ReloadTheme();
             Settings.Default.Save();
         }
+
         private void ReloadTheme()
         {
             ForeColor = Program.ProgramColours.TextColour;
             BackColor = Program.ProgramColours.ControlBackColor;
             MainFormMenuStrip.Renderer = Settings.Default.IsDarkMode ? new MyRenderer() : default;
+            ArchiveContextMenuStrip.Renderer = Settings.Default.IsDarkMode ? new MyRenderer() : default;
             for (int i = 0; i < FileToolStripMenuItem.DropDownItems.Count; i++)
             {
                 FileToolStripMenuItem.DropDownItems[i].BackColor = Program.ProgramColours.WindowColour;
@@ -963,6 +1000,11 @@ namespace WiiExplorer
             {
                 EditToolStripMenuItem.DropDownItems[i].BackColor = Program.ProgramColours.WindowColour;
                 EditToolStripMenuItem.DropDownItems[i].ForeColor = Program.ProgramColours.TextColour;
+            }
+            for (int i = 0; i < ArchiveContextMenuStrip.Items.Count; i++)
+            {
+                ArchiveContextMenuStrip.Items[i].BackColor = Program.ProgramColours.WindowColour;
+                ArchiveContextMenuStrip.Items[i].ForeColor = Program.ProgramColours.TextColour;
             }
             Yaz0ToolStripComboBox.BackColor = Program.ProgramColours.WindowColour;
             Yaz0ToolStripComboBox.ForeColor = Program.ProgramColours.TextColour;
@@ -1120,6 +1162,17 @@ namespace WiiExplorer
                     Pen cbBorderPen = new Pen(Program.ProgramColours.BorderColour);
                     e.Graphics.FillRectangle(cbBorderPen.Brush, r);
                 }
+            }
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.A)
+            {
+                if (RootNameTextBox.Focused)
+                    RootNameTextBox.SelectAll();
+                else
+                    AddFileToolStripMenuItem_Click(sender, EventArgs.Empty);
             }
         }
     }

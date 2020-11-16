@@ -13,7 +13,7 @@ namespace WiiExplorer
 {
     public partial class FilePropertyForm : Form
     {
-        public FilePropertyForm(RARC.File currentfile, bool AllowCustomID)
+        public FilePropertyForm(TreeView treeview, RARC archive)
         {
             InitializeComponent();
             CancelButton = DiscardButton;
@@ -22,8 +22,10 @@ namespace WiiExplorer
             ARAMRadioButton.Tag = RARC.FileAttribute.PRELOAD_TO_ARAM;
             DVDRadioButton.Tag = RARC.FileAttribute.LOAD_FROM_DVD;
 
-            CurrentFile = currentfile;
-            IDNumericUpDown.Enabled = AllowCustomID;
+            ArchiveTreeView = treeview;
+            Archive = archive;
+            CurrentFile = Archive[ArchiveTreeView.SelectedNode.FullPath] as RARC.File;
+            IDNumericUpDown.Enabled = !Archive.KeepFileIDsSynced;
             CenterToParent();
 
 
@@ -49,6 +51,8 @@ namespace WiiExplorer
         }
 
         RARC.File CurrentFile;
+        RARC Archive;
+        TreeView ArchiveTreeView;
 
         private void OKButton_Click(object sender, EventArgs e)
         {
@@ -83,6 +87,17 @@ namespace WiiExplorer
         {
             if (DialogResult == DialogResult.OK)
             {
+                string prevname = ArchiveTreeView.SelectedNode.Text;
+                string prevpath = ArchiveTreeView.SelectedNode.FullPath;
+                ArchiveTreeView.SelectedNode.Text = NameTextBox.Text;
+                if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && (RARC.File)Archive[prevpath] != (RARC.File)Archive[ArchiveTreeView.SelectedNode.FullPath])
+                {
+                    ArchiveTreeView.SelectedNode.Text = prevname;
+                    MessageBox.Show("There is already an item with this name in this directory", "Duplicate Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                    return;
+                }
+                Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
                 CurrentFile.Name = NameTextBox.Text;
                 CurrentFile.ID = (short)IDNumericUpDown.Value;
                 CurrentFile.FileSettings = RARC.FileAttribute.FILE | (IsCompressedCheckBox.Checked ? RARC.FileAttribute.COMPRESSED : 0) | (RARC.FileAttribute)FileSettingsGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Tag | (IsYAZ0CheckBox.Checked ? RARC.FileAttribute.YAZ0_COMPRESSED : 0);

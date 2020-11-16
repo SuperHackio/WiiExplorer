@@ -14,18 +14,20 @@ namespace WiiExplorer
 { 
     public partial class RenameForm : Form
     {
-        public RenameForm(object Item)
+        public RenameForm(TreeView treeview, RARC archive)
         {
             InitializeComponent();
             CenterToParent();
             MaximumSize = new Size(Screen.GetBounds(Location).Width, Height);
-            string OGName = ((dynamic)Item).Name;
+            Archive = archive;
+            ArchiveTreeView = treeview;
+            CurrentItem = Archive[treeview.SelectedNode.FullPath];
+            string OGName = CurrentItem.Name;
             Text = Text.Replace("[]", $"\"{OGName}\"");
-            if (!(Item is RARC.Directory))
+            if (!(CurrentItem is RARC.Directory))
             {
                 FileInfo fi = new FileInfo(OGName);
-                string[] splits = fi.Name.Split('.');
-                NameTextBox.Text = fi.Name.Replace("."+splits[splits.Length - 1], "");
+                NameTextBox.Text = Path.GetFileNameWithoutExtension(OGName);
                 ExtensionTextBox.Text = fi.Extension;
             }
             else
@@ -35,30 +37,47 @@ namespace WiiExplorer
                 NameTextBox.Text = OGName;
             }
 
-
             ForeColor = Program.ProgramColours.TextColour;
             BackColor = Program.ProgramColours.ControlBackColor;
-            NameTextBox.BackColor = ExtensionTextBox.BackColor = Program.ProgramColours.ControlBackColor;
-            NameTextBox.ForeColor = ExtensionTextBox.ForeColor = Program.ProgramColours.TextColour;
+            NameTextBox.BackColor = OKButton.BackColor = DiscardButton.BackColor = ExtensionTextBox.BackColor = Program.ProgramColours.ControlBackColor;
+            NameTextBox.ForeColor = OKButton.ForeColor = DiscardButton.ForeColor = ExtensionTextBox.ForeColor = Program.ProgramColours.TextColour;
             NameTextBox.BorderColor = ExtensionTextBox.BorderColor = Program.ProgramColours.BorderColour;
-
         }
-        bool complete = false;
 
-        private void ZoneForm_KeyDown(object sender, KeyEventArgs e)
+        dynamic CurrentItem;
+        RARC Archive;
+        TreeView ArchiveTreeView;
+
+        private void RenameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (DialogResult == DialogResult.OK)
             {
-                complete = true;
-                Close();
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                complete = false;
-                Close();
+                string prevname = ArchiveTreeView.SelectedNode.Text;
+                string prevpath = ArchiveTreeView.SelectedNode.FullPath;
+                string finalname = NameTextBox.Text + (CurrentItem is RARC.File ? ExtensionTextBox.Text : "");
+                ArchiveTreeView.SelectedNode.Text = finalname;
+                if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && Archive[prevpath] != Archive[ArchiveTreeView.SelectedNode.FullPath])
+                {
+                    ArchiveTreeView.SelectedNode.Text = prevname;
+                    MessageBox.Show("There is already an item with this name in this directory", "Duplicate Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e.Cancel = true;
+                    return;
+                }
+                Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
+                CurrentItem.Name = finalname;
             }
         }
 
-        private void RenameForm_FormClosing(object sender, FormClosingEventArgs e) => DialogResult = complete ? DialogResult.OK : DialogResult.Cancel;
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void DiscardButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
     }
 }
