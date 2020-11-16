@@ -238,15 +238,15 @@
             // Yaz0ToolStripComboBox
             // 
             this.Yaz0ToolStripComboBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.Yaz0ToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Yaz0ToolStripComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Yaz0ToolStripComboBox.Items.AddRange(new object[] {
             "Yaz0 Off",
-            "Yaz0 On",
+            "Yaz0 Strong",
             "Yaz0 Fast"});
             this.Yaz0ToolStripComboBox.Name = "Yaz0ToolStripComboBox";
-            this.Yaz0ToolStripComboBox.Size = new System.Drawing.Size(75, 23);
-            this.Yaz0ToolStripComboBox.ToolTipText = "Yaz0 Toggle\r\nIf set to Yaz0 On, the saved archive will be\r\nYaz0 Encoded. This mea" +
-    "ns smaller filesizes.\r\nYaz0 On by Default";
+            this.Yaz0ToolStripComboBox.Size = new System.Drawing.Size(85, 23);
+            this.Yaz0ToolStripComboBox.ToolTipText = resources.GetString("Yaz0ToolStripComboBox.ToolTipText");
             this.Yaz0ToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.Yaz0ToolStripComboBox_SelectedIndexChanged);
             // 
             // ItemPropertiesToolStripMenuItem

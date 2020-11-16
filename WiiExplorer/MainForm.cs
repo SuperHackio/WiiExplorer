@@ -35,6 +35,7 @@ namespace WiiExplorer
             RootNameTextBox.ContextMenu = new ContextMenu();
             ReloadTheme();
             Yaz0ToolStripComboBox.ComboBox.SetDoubleBuffered();
+            ArchiveTreeView.SetDoubleBuffered();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -89,10 +90,10 @@ namespace WiiExplorer
                                                     new Point(RightPos - 4, NodeOver.Bounds.Top - 1),
                                                     new Point(RightPos, NodeOver.Bounds.Top - 5)};
 
-
-            g.FillPolygon(Brushes.Black, LeftTriangle);
-            g.FillPolygon(Brushes.Black, RightTriangle);
-            g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
+            SolidBrush temp = new SolidBrush(Program.ProgramColours.TextColour);
+            g.FillPolygon(temp, LeftTriangle);
+            g.FillPolygon(temp, RightTriangle);
+            g.DrawLine(new Pen(Program.ProgramColours.TextColour, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
 
         }//eom
 
@@ -123,10 +124,10 @@ namespace WiiExplorer
                                                     new Point(RightPos - 4, NodeOver.Bounds.Bottom - 1),
                                                     new Point(RightPos, NodeOver.Bounds.Bottom - 5)};
 
-
-            g.FillPolygon(Brushes.Black, LeftTriangle);
-            g.FillPolygon(Brushes.Black, RightTriangle);
-            g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Bottom), new Point(RightPos, NodeOver.Bounds.Bottom));
+            SolidBrush temp = new SolidBrush(Program.ProgramColours.TextColour);
+            g.FillPolygon(temp, LeftTriangle);
+            g.FillPolygon(temp, RightTriangle);
+            g.DrawLine(new Pen(Program.ProgramColours.TextColour, 2), new Point(LeftPos, NodeOver.Bounds.Bottom), new Point(RightPos, NodeOver.Bounds.Bottom));
         }//eom
 
         private void DrawFolderTopPlaceholders(TreeNode NodeOver, TreeView Tree)
@@ -152,10 +153,10 @@ namespace WiiExplorer
                                                     new Point(RightPos - 4, NodeOver.Bounds.Top - 1),
                                                     new Point(RightPos, NodeOver.Bounds.Top - 5)};
 
-
-            g.FillPolygon(Brushes.Black, LeftTriangle);
-            g.FillPolygon(Brushes.Black, RightTriangle);
-            g.DrawLine(new System.Drawing.Pen(Color.Black, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
+            SolidBrush temp = new SolidBrush(Program.ProgramColours.TextColour);
+            g.FillPolygon(temp, LeftTriangle);
+            g.FillPolygon(temp, RightTriangle);
+            g.DrawLine(new Pen(Program.ProgramColours.TextColour, 2), new Point(LeftPos, NodeOver.Bounds.Top), new Point(RightPos, NodeOver.Bounds.Top));
 
         }//eom
         private void DrawAddToFolderPlaceholder(TreeNode NodeOver, TreeView Tree)
@@ -170,7 +171,7 @@ namespace WiiExplorer
                                                     new Point(RightPos, NodeOver.Bounds.Y + (NodeOver.Bounds.Height / 2) - 5)};
 
             this.Refresh();
-            g.FillPolygon(Brushes.Black, RightTriangle);
+            g.FillPolygon(new SolidBrush(Program.ProgramColours.TextColour), RightTriangle);
         }//eom
 
         private void SetNewNodeMap(TreeNode tnNode, bool boolBelowNode)
@@ -1163,8 +1164,8 @@ namespace WiiExplorer
                     e.Graphics.DrawRectangle(cbBorderPen, r);
                 }
             }
-            if (!Yaz0ToolStripComboBox.ComboBox.DroppedDown)
-            RootNameLabel.Focus();
+            if (!Yaz0ToolStripComboBox.ComboBox.DroppedDown && Yaz0ToolStripComboBox.Focused)
+                RootNameLabel.Focus();
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
