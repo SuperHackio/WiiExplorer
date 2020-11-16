@@ -39,14 +39,6 @@
     <ApplicationIcon>WiiExplorer.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hack.io, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Hack.io\Hack.io\bin\Debug\Hack.io.dll</HintPath>
-    </Reference>
-    <Reference Include="Hack.io.YAZ0, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Hack.io\Hack.io.YAZ0\bin\Debug\Hack.io.YAZ0.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
     </Reference>
@@ -144,6 +136,10 @@
     <ProjectReference Include="..\..\Hack.io\Hack.io.RARC\Hack.io.RARC.csproj">
       <Project>{4f4162cc-70ff-4eb9-ab34-d5ff98490c34}</Project>
       <Name>Hack.io.RARC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Hack.io\Hack.io.YAZ0\Hack.io.YAZ0.csproj">
+      <Project>{bdda5ade-2d88-483d-854c-d295ed9f8089}</Project>
+      <Name>Hack.io.YAZ0</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
