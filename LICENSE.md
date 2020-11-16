@@ -17,8 +17,9 @@ Forks must include this license, and cannot add new licenses, or modify this lic
   1. Credit to "The House" is required.
   2. Pull Requests, after being accepted, no longer belong to the creator of the Pull Request, and instead belong to "The House". In-line credit may be requested, but cannot be forced.
   3. All "Out-of-House" use of code must be public, meaning private applications are not allowed to use any code from this repository.
-  4. "The House" has the right to decline the usage of the code in other places.
-  5. Credits are to link to the main repository page, not the releases page or any other page.
-  6. Commercial use is forbidden.
+  4. All "Out-of-House" use of code must be declared to "The House" and Approved
+  5. "The House" has the right to decline the usage of the code in other places.
+  6. Credits are to link to the main repository page, not the releases page or any other page.
+  7. Commercial use is forbidden.
   <br/>
-  <br/> 
+  <br/>   
