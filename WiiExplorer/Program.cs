@@ -32,13 +32,13 @@ namespace WiiExplorer
             Application.Run(new MainForm(OpenWith[0]));
         }
 
-        public static byte Yaz0Mode
+        public static byte EncodingMode
         {
-            get => Properties.Settings.Default.Yaz0Encode;
+            get => Settings.Default.Yaz0Encode;
             set
             {
-                Properties.Settings.Default.Yaz0Encode = value;
-                Properties.Settings.Default.Save();
+                Settings.Default.Yaz0Encode = value;
+                Settings.Default.Save();
             }
         }
 

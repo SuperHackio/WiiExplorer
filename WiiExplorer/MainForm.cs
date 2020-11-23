@@ -10,13 +10,14 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Diagnostics;
 using WiiExplorer.Properties;
 using System.Reflection;
+using Hack.io.YAY0;
 
 namespace WiiExplorer
 {
     public partial class MainForm : Form
     {
-        OpenFileDialog ofd = new OpenFileDialog() { Filter = "All Supported Files|*.arc;*.szs|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|All Files|*.*" };
-        SaveFileDialog sfd = new SaveFileDialog() { Filter = "All Supported Files|*.arc;*.szs|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|All Files|*.*" };
+        OpenFileDialog ofd = new OpenFileDialog() { Filter = "All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|All Files|*.*" };
+        SaveFileDialog sfd = new SaveFileDialog() { Filter = "All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|All Files|*.*" };
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
         RARC Archive;
@@ -30,7 +31,7 @@ namespace WiiExplorer
         {
             InitializeComponent();
             CenterToScreen();
-            Yaz0ToolStripComboBox.SelectedIndex = Program.Yaz0Mode;
+            Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
             Text = $"WiiExplorer {Application.ProductVersion}";
             OpenWith = Openwith;
 
@@ -67,9 +68,15 @@ namespace WiiExplorer
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = Yaz0BackgroundWorker.IsBusy || (e.CloseReason == CloseReason.UserClosing & Edited) && MessageBox.Show("You have unsaved changes.\nAre you sure you want to quit?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No;
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => e.Cancel = EncodingBackgroundWorker.IsBusy || (e.CloseReason == CloseReason.UserClosing & Edited) && MessageBox.Show("You have unsaved changes.\nAre you sure you want to quit?", "Unsaved Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No;
 
-        private void Yaz0BackgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e) => YAZ0.Compress((string)e.Argument, Program.Yaz0Mode == 2);
+        private void EncodingBackgroundWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            if (Program.EncodingMode == 3)
+                YAY0.Compress((string)e.Argument);
+            else
+                YAZ0.Compress((string)e.Argument, Program.EncodingMode == 2);
+        }
 
         private void SetControlsEnabled(bool toggle = true, bool affectall = false)
         {
@@ -460,7 +467,7 @@ namespace WiiExplorer
             }
         }
 
-        private void Yaz0ToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e) => Program.Yaz0Mode = (byte)Yaz0ToolStripComboBox.SelectedIndex;
+        private void Yaz0ToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e) => Program.EncodingMode = (byte)Yaz0ToolStripComboBox.SelectedIndex;
 
         #region MenuStrip Managers
         private class MyRenderer : ToolStripProfessionalRenderer
@@ -1062,7 +1069,9 @@ namespace WiiExplorer
         {
             ofd.FileName = Filename;
             MainToolStripProgressBar.Value = 0;
-            Archive = YAZ0.Check(Filename) ? new RARC(YAZ0.DecompressToMemoryStream(Filename), Filename) : new RARC(Filename);
+            bool IsYaz0 = YAZ0.Check(Filename);
+            bool IsYay0 = YAY0.Check(Filename);
+            Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Filename), Filename) : new RARC(Filename));
             MainToolStripProgressBar.Value = 20;
             ArchiveTreeView.Nodes.Clear();
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
@@ -1076,41 +1085,60 @@ namespace WiiExplorer
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
             Settings.Default.PreviousOpenArchivePath = new FileInfo(Filename).DirectoryName;
             Settings.Default.Save();
+            if (IsYay0 && Program.EncodingMode != 0x03)
+                Program.EncodingMode = 0x03;
+            else if (!IsYaz0 && !IsYay0 && Program.EncodingMode != 0x00)
+                Program.EncodingMode = 0x00;
+            else if (IsYaz0 && Program.EncodingMode != 0x02)
+                Program.EncodingMode = 0x01;
+            Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
         }
 
         private void SaveArchive(string Filename)
         {
+            FileInfo fi = new FileInfo(Filename);
+            byte prevencoding = Program.EncodingMode;
+            if (fi.Extension.Equals(".szp") && Program.EncodingMode != 0x03 && MessageBox.Show("The chosen encoding type doesn't match the file extension.\nSZP files are supposed to be YAY0 Encoded, would you like to switch to YAY0 Strong?", "Encoding Mismatch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Program.EncodingMode = 0x03;
+            else if (fi.Extension.Equals(".szs") && Program.EncodingMode != 0x01 && Program.EncodingMode != 0x02 && MessageBox.Show("The chosen encoding type doesn't match the file extension.\nSZS files are supposed to be YAZ0 Encoded, would you like to switch to YAZ0 Strong?", "Encoding Mismatch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Program.EncodingMode = 0x01;
+
+            Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
             MainToolStripProgressBar.Value = 0;
             Archive.FromTreeNode(ArchiveTreeView);
             MainToolStripProgressBar.Value = 70;
             Archive.Save(Filename);
             long UncompressedFilesize = File.ReadAllBytes(Filename).Length;
-            double ETA = UncompressedFilesize * (Program.Yaz0Mode == 0x02 ? Settings.Default.ElapsedTimeFast : Settings.Default.ElapsedTimeStrong);
+            double ETA = UncompressedFilesize * (Program.EncodingMode == 0x02 ? Settings.Default.ElapsedTimeFast : (Program.EncodingMode == 0x03 ? Settings.Default.ElapsedTimeYAY0 : Settings.Default.ElapsedTimeStrong));
             Stopwatch timer = new Stopwatch();
             timer.Start();
-            if (Program.Yaz0Mode != 0)
-                Yaz0BackgroundWorker.RunWorkerAsync(Filename);
+            if (Program.EncodingMode != 0x00)
+                EncodingBackgroundWorker.RunWorkerAsync(Filename);
             SetControlsEnabled(false, true);
             ItemPropertiesToolStripMenuItem.Enabled = false;
-            while (Yaz0BackgroundWorker.IsBusy)
+            while (EncodingBackgroundWorker.IsBusy)
             {
-                MainToolStripStatusLabel.Text = $"{(Program.Yaz0Mode == 2 ? "Fast ":"")}Yaz0 Encoding, Please Wait. ({timer.Elapsed.ToString("mm\\:ss")} Elapsed, {TimeSpan.FromMilliseconds(ETA).ToString("mm\\:ss")} Estimated)";
+                MainToolStripStatusLabel.Text = $"{(Program.EncodingMode == 2 ? "Fast ":"")}{(Program.EncodingMode == 3 ? "Yay0":"Yaz0")} Encoding, Please Wait. ({timer.Elapsed.ToString("mm\\:ss")} Elapsed, {TimeSpan.FromMilliseconds(ETA).ToString("mm\\:ss")} Estimated)";
                 Application.DoEvents();
             }
             timer.Stop();
 
-            if (Program.Yaz0Mode == 0x01)
+            if (Program.EncodingMode == 0x01)
                 Settings.Default.ElapsedTimeStrong = (double)timer.ElapsedMilliseconds / (double)UncompressedFilesize;
-            else if (Program.Yaz0Mode == 0x02)
+            else if (Program.EncodingMode == 0x02)
                 Settings.Default.ElapsedTimeFast = (double)timer.ElapsedMilliseconds / (double)UncompressedFilesize;
+            else if (Program.EncodingMode == 0x03)
+                Settings.Default.ElapsedTimeYAY0 = (double)timer.ElapsedMilliseconds / (double)UncompressedFilesize;
 
             Edited = false;
             MainToolStripProgressBar.Value = 100;
-            MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.Yaz0Mode != 0 ? $" ({timer.Elapsed.ToString("mm\\:ss")} Elapsed, {(TimeSpan.FromMilliseconds(ETA).ToString("mm\\:ss").Equals(timer.Elapsed.ToString("mm\\:ss")) ? "Right on time!" : $"{TimeSpan.FromMilliseconds(ETA - timer.ElapsedMilliseconds).ToString("mm\\:ss")} {(timer.ElapsedMilliseconds < ETA ? $"Ahead." : "Behind.")}")})" : "")}";
+            MainToolStripStatusLabel.Text = $"Archive saved successfully!{(Program.EncodingMode != 0 ? $" ({timer.Elapsed.ToString("mm\\:ss")} Elapsed, {(TimeSpan.FromMilliseconds(ETA).ToString("mm\\:ss").Equals(timer.Elapsed.ToString("mm\\:ss")) ? "Right on time!" : $"{TimeSpan.FromMilliseconds(ETA - timer.ElapsedMilliseconds).ToString("mm\\:ss")} {(timer.ElapsedMilliseconds < ETA ? $"Ahead." : "Behind.")}")})" : "")}";
             SetControlsEnabled(affectall:true);
             Text = $"WiiExplorer {Application.ProductVersion} - {new FileInfo(Filename).Name}";
             Settings.Default.PreviousSaveArchivePath = new FileInfo(Filename).DirectoryName;
             Settings.Default.Save();
+            Program.EncodingMode = prevencoding;
+            Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
         }
         
         private void AddItemToRARC(string[] FileNames)

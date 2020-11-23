@@ -139,6 +139,10 @@
       <Project>{4f4162cc-70ff-4eb9-ab34-d5ff98490c34}</Project>
       <Name>Hack.io.RARC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Hack.io\Hack.io.YAY0\Hack.io.YAY0.csproj">
+      <Project>{2576022C-4A09-4A25-AFB8-9F7DF919E02C}</Project>
+      <Name>Hack.io.YAY0</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Hack.io\Hack.io.YAZ0\Hack.io.YAZ0.csproj">
       <Project>{bdda5ade-2d88-483d-854c-d295ed9f8089}</Project>
       <Name>Hack.io.YAZ0</Name>

@@ -121,6 +121,18 @@ namespace WiiExplorer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double ElapsedTimeYAY0 {
+            get {
+                return ((double)(this["ElapsedTimeYAY0"]));
+            }
+            set {
+                this["ElapsedTimeYAY0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsNeedUpgrade {
             get {

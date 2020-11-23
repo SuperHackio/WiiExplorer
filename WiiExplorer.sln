@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack.io.YAZ0", "..\Hack.io\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack.io", "..\Hack.io\Hack.io\Hack.io.csproj", "{389F751D-DB2A-4746-B3BC-88E106C361CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hack.io.YAY0", "..\Hack.io\Hack.io.YAY0\Hack.io.YAY0.csproj", "{2576022C-4A09-4A25-AFB8-9F7DF919E02C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{389F751D-DB2A-4746-B3BC-88E106C361CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{389F751D-DB2A-4746-B3BC-88E106C361CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{389F751D-DB2A-4746-B3BC-88E106C361CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2576022C-4A09-4A25-AFB8-9F7DF919E02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2576022C-4A09-4A25-AFB8-9F7DF919E02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2576022C-4A09-4A25-AFB8-9F7DF919E02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2576022C-4A09-4A25-AFB8-9F7DF919E02C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

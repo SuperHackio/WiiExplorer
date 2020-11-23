@@ -54,7 +54,6 @@
             this.MainToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.RootPanel = new System.Windows.Forms.Panel();
-            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.KeepIDsSyncedCheckBox = new System.Windows.Forms.CheckBox();
             this.RootNameLabel = new System.Windows.Forms.Label();
             this.ArchiveTreeView = new System.Windows.Forms.TreeView();
@@ -67,7 +66,8 @@
             this.ContextExportSelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Yaz0BackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.EncodingBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.RootPanel.SuspendLayout();
@@ -241,11 +241,12 @@
             this.Yaz0ToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Yaz0ToolStripComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Yaz0ToolStripComboBox.Items.AddRange(new object[] {
-            "Yaz0 Off",
+            "Off",
             "Yaz0 Strong",
-            "Yaz0 Fast"});
+            "Yaz0 Fast",
+            "Yay0 Strong"});
             this.Yaz0ToolStripComboBox.Name = "Yaz0ToolStripComboBox";
-            this.Yaz0ToolStripComboBox.Size = new System.Drawing.Size(85, 23);
+            this.Yaz0ToolStripComboBox.Size = new System.Drawing.Size(88, 23);
             this.Yaz0ToolStripComboBox.ToolTipText = resources.GetString("Yaz0ToolStripComboBox.ToolTipText");
             this.Yaz0ToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.Yaz0ToolStripComboBox_SelectedIndexChanged);
             // 
@@ -307,16 +308,6 @@
             this.RootPanel.Name = "RootPanel";
             this.RootPanel.Size = new System.Drawing.Size(464, 20);
             this.RootPanel.TabIndex = 3;
-            // 
-            // RootNameTextBox
-            // 
-            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RootNameTextBox.Enabled = false;
-            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
-            this.RootNameTextBox.Name = "RootNameTextBox";
-            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
-            this.RootNameTextBox.TabIndex = 0;
-            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
             // 
             // KeepIDsSyncedCheckBox
             // 
@@ -448,9 +439,19 @@
             this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
             this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
-            // Yaz0BackgroundWorker
+            // EncodingBackgroundWorker
             // 
-            this.Yaz0BackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Yaz0BackgroundWorker_DoWork);
+            this.EncodingBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.EncodingBackgroundWorker_DoWork);
+            // 
+            // RootNameTextBox
+            // 
+            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RootNameTextBox.Enabled = false;
+            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
+            this.RootNameTextBox.Name = "RootNameTextBox";
+            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.RootNameTextBox.TabIndex = 0;
+            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
             // 
             // MainForm
             // 
@@ -519,7 +520,7 @@
         private System.Windows.Forms.ToolStripMenuItem ContextAddFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ContextImportFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ContextExportAllToolStripMenuItem;
-        private System.ComponentModel.BackgroundWorker Yaz0BackgroundWorker;
+        private System.ComponentModel.BackgroundWorker EncodingBackgroundWorker;
         private System.Windows.Forms.ToolStripMenuItem ItemPropertiesToolStripMenuItem;
         private System.Windows.Forms.CheckBox KeepIDsSyncedCheckBox;
         private System.Windows.Forms.ToolStripMenuItem SwitchThemeToolStripMenuItem;
