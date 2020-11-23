@@ -54,6 +54,7 @@
             this.MainToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.RootPanel = new System.Windows.Forms.Panel();
+            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.KeepIDsSyncedCheckBox = new System.Windows.Forms.CheckBox();
             this.RootNameLabel = new System.Windows.Forms.Label();
             this.ArchiveTreeView = new System.Windows.Forms.TreeView();
@@ -67,7 +68,6 @@
             this.ContextExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Yaz0BackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.RootPanel.SuspendLayout();
@@ -254,8 +254,8 @@
             this.ItemPropertiesToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ItemPropertiesToolStripMenuItem.Enabled = false;
             this.ItemPropertiesToolStripMenuItem.Name = "ItemPropertiesToolStripMenuItem";
-            this.ItemPropertiesToolStripMenuItem.Size = new System.Drawing.Size(99, 23);
-            this.ItemPropertiesToolStripMenuItem.Text = "Item Properties";
+            this.ItemPropertiesToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
+            this.ItemPropertiesToolStripMenuItem.Text = "File Properties";
             this.ItemPropertiesToolStripMenuItem.Click += new System.EventHandler(this.ItemPropertiesToolStripMenuItem_Click);
             // 
             // SwitchThemeToolStripMenuItem
@@ -307,6 +307,16 @@
             this.RootPanel.Name = "RootPanel";
             this.RootPanel.Size = new System.Drawing.Size(464, 20);
             this.RootPanel.TabIndex = 3;
+            // 
+            // RootNameTextBox
+            // 
+            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RootNameTextBox.Enabled = false;
+            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
+            this.RootNameTextBox.Name = "RootNameTextBox";
+            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.RootNameTextBox.TabIndex = 0;
+            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
             // 
             // KeepIDsSyncedCheckBox
             // 
@@ -442,16 +452,6 @@
             // 
             this.Yaz0BackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Yaz0BackgroundWorker_DoWork);
             // 
-            // RootNameTextBox
-            // 
-            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RootNameTextBox.Enabled = false;
-            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
-            this.RootNameTextBox.Name = "RootNameTextBox";
-            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
-            this.RootNameTextBox.TabIndex = 0;
-            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +461,7 @@
             this.Controls.Add(this.RootPanel);
             this.Controls.Add(this.MainFormStatusStrip);
             this.Controls.Add(this.MainFormMenuStrip);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.MainFormMenuStrip;

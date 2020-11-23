@@ -82,6 +82,8 @@ namespace WiiExplorer
             {
                 MRAMRadioButton.Checked = true;
             }
+            if (!Archive.KeepFileIDsSynced && IDNumericUpDown.Value == -1)
+                IDNumericUpDown.Value = Archive.NextFreeFileID;
         }
 
         private void FilePropertyForm_FormClosing(object sender, FormClosingEventArgs e)

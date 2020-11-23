@@ -94,5 +94,41 @@ namespace WiiExplorer.Properties {
                 this["IsDarkMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.14708972953216373")]
+        public double ElapsedTimeStrong {
+            get {
+                return ((double)(this["ElapsedTimeStrong"]));
+            }
+            set {
+                this["ElapsedTimeStrong"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.0058136878654970756")]
+        public double ElapsedTimeFast {
+            get {
+                return ((double)(this["ElapsedTimeFast"]));
+            }
+            set {
+                this["ElapsedTimeFast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsNeedUpgrade {
+            get {
+                return ((bool)(this["IsNeedUpgrade"]));
+            }
+            set {
+                this["IsNeedUpgrade"] = value;
+            }
+        }
     }
 }

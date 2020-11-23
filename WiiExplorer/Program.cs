@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WiiExplorer.Properties;
+using System.Configuration;
 
 namespace WiiExplorer
 {
@@ -18,6 +20,13 @@ namespace WiiExplorer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            if (Settings.Default.IsNeedUpgrade)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.IsNeedUpgrade = false;
+                Settings.Default.Save();
+            }
+
             if (OpenWith.Length == 0)
                 OpenWith = new string[1] { null };
             Application.Run(new MainForm(OpenWith[0]));
