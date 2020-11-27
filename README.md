@@ -17,7 +17,7 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - Change File Settings
 - Export the entire archive or individual files/folders
 - Resizable window
-- Compression options (YAZ0 Strong, YAZ0 Fast, or Yaz0 Off)
+- Compression options (Off, YAZ0 Strong, YAZ0 Fast, or YAY0 Strong)
 - Known file extensions have custom icons
   - The list of known extensions is easily editable
   - Adding/Editing/Removing icons is easy (They're just .png)
@@ -27,9 +27,15 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
 - *Super Mario Galaxy*
 - *Super Mario Galaxy 2*
 - *Super Mario Sunshine*
+- *Mario Kart: Double Dash*
+- *Luigi's Mansion*
 - *The Legend of Zelda: Twilight Princess*
+- *The Legend of Zelda: The Windwaker*
+- *Pikmin*
+<br/>If your game is a JSystem Game then it probably uses the RARC format
 
 ## Previews
+These pictures are only updated when the UI recieves major changes.<br/>
 ![Kuribo.arc from Super Mario Galaxy 2](https://user-images.githubusercontent.com/44330283/99214070-1cf64500-2784-11eb-8601-e9da8f262e7f.png)
 ![Bianco Hills Scenario 0 from Super Mario Sunshine](https://user-images.githubusercontent.com/44330283/99214140-44e5a880-2784-11eb-962f-79d1dbddd9e5.png)
 ![Sequenced Music Archive from The Legend of Zelda Twilight Princess](https://user-images.githubusercontent.com/44330283/99214191-62b30d80-2784-11eb-8512-59a648d4c7b4.png)
