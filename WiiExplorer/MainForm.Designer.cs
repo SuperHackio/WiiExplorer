@@ -54,6 +54,7 @@
             this.MainToolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.MainToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.RootPanel = new System.Windows.Forms.Panel();
+            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.KeepIDsSyncedCheckBox = new System.Windows.Forms.CheckBox();
             this.RootNameLabel = new System.Windows.Forms.Label();
             this.ArchiveTreeView = new System.Windows.Forms.TreeView();
@@ -67,7 +68,6 @@
             this.ContextExportAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextReplaceSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EncodingBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.RootNameTextBox = new WiiExplorer.ColourTextBox();
             this.MainFormMenuStrip.SuspendLayout();
             this.MainFormStatusStrip.SuspendLayout();
             this.RootPanel.SuspendLayout();
@@ -309,6 +309,16 @@
             this.RootPanel.Size = new System.Drawing.Size(464, 20);
             this.RootPanel.TabIndex = 3;
             // 
+            // RootNameTextBox
+            // 
+            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RootNameTextBox.Enabled = false;
+            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
+            this.RootNameTextBox.Name = "RootNameTextBox";
+            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.RootNameTextBox.TabIndex = 0;
+            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
+            // 
             // KeepIDsSyncedCheckBox
             // 
             this.KeepIDsSyncedCheckBox.AutoSize = true;
@@ -442,16 +452,6 @@
             // EncodingBackgroundWorker
             // 
             this.EncodingBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.EncodingBackgroundWorker_DoWork);
-            // 
-            // RootNameTextBox
-            // 
-            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RootNameTextBox.Enabled = false;
-            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
-            this.RootNameTextBox.Name = "RootNameTextBox";
-            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
-            this.RootNameTextBox.TabIndex = 0;
-            this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
             // 
             // MainForm
             // 

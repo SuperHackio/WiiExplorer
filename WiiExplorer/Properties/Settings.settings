@@ -27,7 +27,7 @@
       <Value Profile="(Default)">0.0058136878654970756</Value>
     </Setting>
     <Setting Name="ElapsedTimeYAY0" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">0.003</Value>
     </Setting>
     <Setting Name="IsNeedUpgrade" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

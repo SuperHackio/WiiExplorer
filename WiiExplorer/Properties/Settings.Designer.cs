@@ -121,7 +121,7 @@ namespace WiiExplorer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.003")]
         public double ElapsedTimeYAY0 {
             get {
                 return ((double)(this["ElapsedTimeYAY0"]));
