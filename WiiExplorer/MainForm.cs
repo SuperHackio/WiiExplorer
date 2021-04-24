@@ -226,7 +226,7 @@ namespace WiiExplorer
             if (Fileofd.ShowDialog() == DialogResult.OK && Fileofd.FileName != "")
             {
                 ArchiveTreeView.SelectedNode = tmp;
-                AddItemToRARC(Fileofd.FileNames);
+                AddItemsToRARC(Fileofd.FileNames);
                 MainToolStripStatusLabel.Text = $"{Fileofd.FileNames.Length} File{(Fileofd.FileNames.Length > 1 ? "s" : "")} added.";
                 Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
                 Settings.Default.Save();
@@ -263,6 +263,7 @@ namespace WiiExplorer
 
             Edited = true;
             MainToolStripStatusLabel.Text = $"New Folder added.";
+            RenameSelectedToolStripMenuItem_Click(sender, e);
         }
 
         private void ImportFolderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -288,7 +289,7 @@ namespace WiiExplorer
                 }
 
                 ArchiveTreeView.SelectedNode = NewTreeNode;
-                RARC.Directory dir = new RARC.Directory(BFB.FileName);
+                RARC.Directory dir = new RARC.Directory(BFB.FileName, Archive);
                 int y = 2;
                 while (Archive.ItemExists(NewTreeNode.FullPath))
                 {
@@ -753,14 +754,45 @@ namespace WiiExplorer
 
         private void ArchiveTreeView_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            DoDragDrop(e.Item, DragDropEffects.Move);
+            if (e.Button == MouseButtons.Right)
+            {
+                if (!(e.Item is TreeNode TN))
+                    return;
+                object Item = Archive[TN.FullPath];
+                string TempFile = null;
+                if (Item is RARC.File file)
+                {
+                    TempFile = Path.Combine(Path.GetTempPath(), file.Name);
+                    file.Save(TempFile);
+                    DataObject data = new DataObject(DataFormats.FileDrop, new string[1] { TempFile });
+                    DoDragDrop(new DataObject(DataFormats.FileDrop, new string[1] { TempFile }), DragDropEffects.Copy);
+                    File.Delete(TempFile);
+                }
+                else if (Item is RARC.Directory dir)
+                {
+                    TempFile = Path.Combine(Path.GetTempPath(), dir.Name);
+                    dir.Export(TempFile);
+                    DataObject data = new DataObject(DataFormats.FileDrop, new string[1] { TempFile });
+                    DoDragDrop(new DataObject(DataFormats.FileDrop, new string[1] { TempFile }), DragDropEffects.Copy);
+                    Directory.Delete(TempFile, true);
+                }
+            }
+            else
+                DoDragDrop(e.Item, DragDropEffects.Move);
+
+            ArchiveTreeView.Invalidate();
         }
 
         private void ArchiveTreeView_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false) && this.NodeMap != "" && this.NodeMap != null)
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
             {
-                TreeNode MovingNode = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
+                if (string.IsNullOrWhiteSpace(NodeMap))
+                {
+                    AddItemsToRARC((string[])e.Data.GetData(DataFormats.FileDrop, false));
+                    MainToolStripStatusLabel.Text = $"{Fileofd.FileNames.Length} File{(Fileofd.FileNames.Length > 1 ? "s" : "")} added.";
+                    return;
+                }
                 string[] NodeIndexes = this.NodeMap.Split('|');
                 TreeNodeCollection InsertCollection = this.ArchiveTreeView.Nodes;
                 for (int i = 0; i < NodeIndexes.Length - 1; i++)
@@ -770,9 +802,36 @@ namespace WiiExplorer
 
                 if (InsertCollection != null)
                 {
+                    AddItemsToRARC((string[])e.Data.GetData(DataFormats.FileDrop, false), Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]), InsertCollection);
+                }
+            }
+            else if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false) && !string.IsNullOrWhiteSpace(NodeMap))
+            {
+                TreeNode MovingNode = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
+                string[] NodeIndexes = this.NodeMap.Split('|');
+                TreeNodeCollection InsertCollection = this.ArchiveTreeView.Nodes;
+                string NewPath = Archive.Root.Name;
+                for (int i = 0; i < NodeIndexes.Length - 1; i++)
+                {
+                    NewPath += "/" + InsertCollection[Int32.Parse(NodeIndexes[i])].Text;
+                    InsertCollection = InsertCollection[Int32.Parse(NodeIndexes[i])].Nodes;
+                }
+
+                if (InsertCollection != null)
+                {
+                    //We need to make sure this is a valid move
+                    NewPath += "/" + MovingNode.Text;
+                    if (Archive.ItemExists(NewPath) && !(Archive.Root.Name + "/" + MovingNode.FullPath).Equals(NewPath))
+                    {
+                        MessageBox.Show($"An item with the name \"{MovingNode.Text}\"\nalready exists at \"{NewPath}\"", "Item Name Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     InsertCollection.Insert(Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]), (TreeNode)MovingNode.Clone());
                     this.ArchiveTreeView.SelectedNode = InsertCollection[Int32.Parse(NodeIndexes[NodeIndexes.Length - 1])];
-                    Archive.MoveItem(MovingNode.FullPath, InsertCollection[Int32.Parse(NodeIndexes[NodeIndexes.Length - 1])].FullPath);
+                    string Old = MovingNode.FullPath, New = InsertCollection[Int32.Parse(NodeIndexes[NodeIndexes.Length - 1])].FullPath;
+
+                    Archive.MoveItem(Old, New);
                     MovingNode.Remove();
                 }
             }
@@ -1012,6 +1071,7 @@ namespace WiiExplorer
 
         private void ArchiveTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            NodeMap = null;
             ItemPropertiesToolStripMenuItem.Enabled = false;
             if (ArchiveTreeView.SelectedNode == null)
                 MainToolStripStatusLabel.Text = "No File Selected";
@@ -1141,38 +1201,130 @@ namespace WiiExplorer
             Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
         }
         
-        private void AddItemToRARC(string[] FileNames)
+        private void AddItemsToRARC(string[] FileNames)
         {
             for (int i = 0; i < FileNames.Length; i++)
             {
-                FileInfo fi = new FileInfo(FileNames[i]);
-                int imageindex = 2;
-                if (ArchiveImageList.Images.ContainsKey("*" + fi.Extension))
-                    imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
+                if (!File.Exists(FileNames[i]) && !Directory.Exists(FileNames[i]))
+                    continue;
+                FileAttributes attr = File.GetAttributes(FileNames[i]);
+                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    string ogname = new DirectoryInfo(FileNames[i]).Name;
+                    TreeNode NewTreeNode = new TreeNode(ogname) { ImageIndex = 0, SelectedImageIndex = 0 };
 
-                RARC.File CurrentFile = new RARC.File(Fileofd.FileNames[i]);
-                TreeNode NewTreeNode = new TreeNode(fi.Name) { ImageIndex = imageindex, SelectedImageIndex = imageindex };
+                    //SelectedNode is NULL, put the new file on the root
+                    if (ArchiveTreeView.SelectedNode == null)
+                        ArchiveTreeView.Nodes.Add(NewTreeNode);
+                    //Determine where to put it otherwise
+                    else
+                    {
+                        if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory)
+                            ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
+                        else if (ArchiveTreeView.SelectedNode.Parent == null)
+                            ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                        else
+                            ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                    }
 
-                //SelectedNode is NULL, put the new file on the root
-                if (ArchiveTreeView.SelectedNode == null)
-                    ArchiveTreeView.Nodes.Add(NewTreeNode);
-                //Determine where to put it otherwise
+                    ArchiveTreeView.SelectedNode = NewTreeNode;
+                    RARC.Directory dir = new RARC.Directory(FileNames[i], Archive);
+                    int y = 2;
+                    while (Archive.ItemExists(NewTreeNode.FullPath))
+                    {
+                        NewTreeNode.Text = ogname + $" ({y++})";
+                    }
+                    dir.Name = NewTreeNode.Text;
+                    Archive[NewTreeNode.FullPath] = dir;
+
+                    ArchiveTreeView.Nodes.Clear();
+                    ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
+                    ArchiveTreeView.SelectedNode = NewTreeNode;
+                }
                 else
                 {
-                    if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory dir)
-                        ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
-                    else if (ArchiveTreeView.SelectedNode.Parent == null)
-                        ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                    FileInfo fi = new FileInfo(FileNames[i]);
+                    int imageindex = 2;
+                    if (ArchiveImageList.Images.ContainsKey("*" + fi.Extension))
+                        imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
+
+                    RARC.File CurrentFile = new RARC.File(FileNames[i]);
+                    TreeNode NewTreeNode = new TreeNode(fi.Name) { ImageIndex = imageindex, SelectedImageIndex = imageindex };
+
+                    //SelectedNode is NULL, put the new file on the root
+                    if (ArchiveTreeView.SelectedNode == null)
+                        ArchiveTreeView.Nodes.Add(NewTreeNode);
+                    //Determine where to put it otherwise
                     else
-                        ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                    {
+                        if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory dir)
+                            ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
+                        else if (ArchiveTreeView.SelectedNode.Parent == null)
+                            ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                        else
+                            ArchiveTreeView.SelectedNode.Parent.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
+                    }
+                    int y = 2;
+                    string ogname = Path.GetFileNameWithoutExtension(FileNames[i]);
+                    string ogextension = fi.Extension;
+                    while (Archive.ItemExists(NewTreeNode.FullPath))
+                        NewTreeNode.Text = ogname+$" ({y++})"+ogextension;
+                    CurrentFile.Name = NewTreeNode.Text;
+                    Archive[NewTreeNode.FullPath] = CurrentFile;
                 }
-                int y = 2;
-                string ogname = Path.GetFileNameWithoutExtension(FileNames[i]);
-                string ogextension = fi.Extension;
-                while (Archive.ItemExists(NewTreeNode.FullPath))
-                    NewTreeNode.Text = ogname+$" ({y++})"+ogextension;
-                CurrentFile.Name = NewTreeNode.Text;
-                Archive[NewTreeNode.FullPath] = CurrentFile;
+            }
+        }
+
+        private void AddItemsToRARC(string[] FileNames, int Index, TreeNodeCollection InsertCollection)
+        {
+            for (int i = 0; i < FileNames.Length; i++)
+            {
+                if (!File.Exists(FileNames[i]) && !Directory.Exists(FileNames[i]))
+                    continue;
+
+                //detect whether its a directory or file
+                FileAttributes attr = File.GetAttributes(FileNames[i]);
+                if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    string ogname = new DirectoryInfo(FileNames[i]).Name;
+                    TreeNode NewTreeNode = new TreeNode(ogname) { ImageIndex = 0, SelectedImageIndex = 0 };
+                    
+                    InsertCollection.Insert(Index++, NewTreeNode);
+
+                    ArchiveTreeView.SelectedNode = NewTreeNode;
+                    RARC.Directory dir = new RARC.Directory(FileNames[i], Archive);
+                    int y = 2;
+                    while (Archive.ItemExists(NewTreeNode.FullPath))
+                    {
+                        NewTreeNode.Text = ogname + $" ({y++})";
+                    }
+                    dir.Name = NewTreeNode.Text;
+                    Archive[NewTreeNode.FullPath] = dir;
+
+                    dir.Parent.ReOrderDirectory(InsertCollection);
+                    ArchiveTreeView.Nodes.Clear();
+                    ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
+                    ArchiveTreeView.SelectedNode = NewTreeNode;
+                }
+                else
+                {
+                    FileInfo fi = new FileInfo(FileNames[i]);
+                    int imageindex = 2;
+                    if (ArchiveImageList.Images.ContainsKey("*" + fi.Extension))
+                        imageindex = ArchiveImageList.Images.IndexOfKey("*" + fi.Extension);
+
+                    RARC.File CurrentFile = new RARC.File(FileNames[i]);
+                    TreeNode NewTreeNode = new TreeNode(fi.Name) { ImageIndex = imageindex, SelectedImageIndex = imageindex };
+
+                    InsertCollection.Insert(Index++, NewTreeNode);
+                    int y = 2;
+                    string ogname = Path.GetFileNameWithoutExtension(FileNames[i]);
+                    string ogextension = fi.Extension;
+                    while (Archive.ItemExists(NewTreeNode.FullPath))
+                        NewTreeNode.Text = ogname + $" ({y++})" + ogextension;
+                    CurrentFile.Name = NewTreeNode.Text;
+                    Archive[NewTreeNode.FullPath] = CurrentFile;
+                }
             }
         }
 

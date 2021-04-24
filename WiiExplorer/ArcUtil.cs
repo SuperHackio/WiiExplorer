@@ -66,18 +66,28 @@ namespace WiiExplorer
             ((RARC.Directory)Arc[TN.FullPath]).SortItemsByOrder(NewFileOrder);
         }
         
-        public static TreeNode FindTreeNodeByFullPath(this TreeNodeCollection collection, string fullPath, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
+        public static TreeNode FindTreeNodeByFullPath(this TreeNodeCollection collection, string fullPath, string Root = null, StringComparison comparison = StringComparison.InvariantCultureIgnoreCase)
         {
-            var foundNode = collection.Cast<TreeNode>().FirstOrDefault(tn => string.Equals(tn.FullPath, fullPath, comparison));
+            var foundNode = collection.Cast<TreeNode>().FirstOrDefault(tn => string.Equals((Root is null ? "" : Root + "/") + tn.FullPath, fullPath, comparison));
             if (null == foundNode)
                 foreach (var childNode in collection.Cast<TreeNode>())
                 {
-                    var foundChildNode = FindTreeNodeByFullPath(childNode.Nodes, fullPath, comparison);
+                    var foundChildNode = FindTreeNodeByFullPath(childNode.Nodes, fullPath, Root, comparison);
                     if (null != foundChildNode)
                         return foundChildNode;
                 }
 
             return foundNode;
+        }
+
+        public static void ReOrderDirectory(this RARC.Directory Dir, TreeNodeCollection Nodes)
+        {
+            string[] NewFileOrder = new string[Nodes.Count];
+            for (int i = 0; i < Nodes.Count; i++)
+            {
+                NewFileOrder[i] = Nodes[i].Text;
+            }
+            Dir.SortItemsByOrder(NewFileOrder);
         }
     }
 }
