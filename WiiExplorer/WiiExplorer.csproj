@@ -77,6 +77,41 @@
     <Compile Include="FilePropertyForm.Designer.cs">
       <DependentUpon>FilePropertyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Languages\Strings.nl.Designer.cs">
+      <DependentUpon>Strings.nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.es.Designer.cs">
+      <DependentUpon>Strings.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.fr.Designer.cs">
+      <DependentUpon>Strings.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.ja.Designer.cs">
+      <DependentUpon>Strings.ja.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.sr-Cyrl.Designer.cs">
+      <DependentUpon>Strings.sr-Cyrl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.de.Designer.cs">
+      <DependentUpon>Strings.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Languages\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,10 +126,74 @@
     <Compile Include="RenameForm.Designer.cs">
       <DependentUpon>RenameForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FilePropertyForm.de.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.es.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.fr.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.ja.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.nl.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FilePropertyForm.resx">
       <DependentUpon>FilePropertyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.sr-Cyrl.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.es.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.fr.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.nl.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.ja.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.sr-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.sr-Cyrl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Languages\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.de.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.sr-Cyrl.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,7 +206,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RenameForm.de.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.es.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.fr.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.ja.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.nl.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RenameForm.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.sr-Cyrl.resx">
       <DependentUpon>RenameForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -120,7 +237,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\YAZ0TEST.arc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

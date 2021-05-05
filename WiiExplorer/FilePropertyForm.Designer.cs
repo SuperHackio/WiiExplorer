@@ -48,28 +48,18 @@
             // 
             // NameLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(12, 15);
+            resources.ApplyResources(this.NameLabel, "NameLabel");
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(35, 13);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Name";
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(53, 13);
+            resources.ApplyResources(this.NameTextBox, "NameTextBox");
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(115, 20);
-            this.NameTextBox.TabIndex = 1;
             // 
             // IDNumericUpDown
             // 
-            this.IDNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.IDNumericUpDown, "IDNumericUpDown");
             this.IDNumericUpDown.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.IDNumericUpDown.Location = new System.Drawing.Point(217, 13);
             this.IDNumericUpDown.Maximum = new decimal(new int[] {
             65534,
             0,
@@ -81,8 +71,6 @@
             0,
             -2147483648});
             this.IDNumericUpDown.Name = "IDNumericUpDown";
-            this.IDNumericUpDown.Size = new System.Drawing.Size(55, 20);
-            this.IDNumericUpDown.TabIndex = 3;
             this.IDNumericUpDown.TextValue = new decimal(new int[] {
             0,
             0,
@@ -91,123 +79,78 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 16);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "File ID";
             // 
             // FileSettingsGroupBox
             // 
-            this.FileSettingsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.FileSettingsGroupBox, "FileSettingsGroupBox");
             this.FileSettingsGroupBox.Controls.Add(this.AutoDetectSettingsButton);
             this.FileSettingsGroupBox.Controls.Add(this.DVDRadioButton);
             this.FileSettingsGroupBox.Controls.Add(this.ARAMRadioButton);
             this.FileSettingsGroupBox.Controls.Add(this.MRAMRadioButton);
             this.FileSettingsGroupBox.Controls.Add(this.IsYAZ0CheckBox);
             this.FileSettingsGroupBox.Controls.Add(this.IsCompressedCheckBox);
-            this.FileSettingsGroupBox.Location = new System.Drawing.Point(12, 39);
             this.FileSettingsGroupBox.Name = "FileSettingsGroupBox";
-            this.FileSettingsGroupBox.Size = new System.Drawing.Size(260, 137);
-            this.FileSettingsGroupBox.TabIndex = 5;
             this.FileSettingsGroupBox.TabStop = false;
-            this.FileSettingsGroupBox.Text = "File Settings";
             // 
             // AutoDetectSettingsButton
             // 
-            this.AutoDetectSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AutoDetectSettingsButton.Location = new System.Drawing.Point(206, 0);
+            resources.ApplyResources(this.AutoDetectSettingsButton, "AutoDetectSettingsButton");
             this.AutoDetectSettingsButton.Name = "AutoDetectSettingsButton";
-            this.AutoDetectSettingsButton.Size = new System.Drawing.Size(54, 23);
-            this.AutoDetectSettingsButton.TabIndex = 5;
-            this.AutoDetectSettingsButton.Text = "Auto";
             this.AutoDetectSettingsButton.UseVisualStyleBackColor = true;
             this.AutoDetectSettingsButton.Click += new System.EventHandler(this.AutoDetectSettingsButton_Click);
             // 
             // DVDRadioButton
             // 
-            this.DVDRadioButton.AutoSize = true;
-            this.DVDRadioButton.Location = new System.Drawing.Point(6, 111);
+            resources.ApplyResources(this.DVDRadioButton, "DVDRadioButton");
             this.DVDRadioButton.Name = "DVDRadioButton";
-            this.DVDRadioButton.Size = new System.Drawing.Size(94, 17);
-            this.DVDRadioButton.TabIndex = 4;
-            this.DVDRadioButton.Text = "Read Off DVD";
             this.DVDRadioButton.UseVisualStyleBackColor = true;
             // 
             // ARAMRadioButton
             // 
-            this.ARAMRadioButton.AutoSize = true;
-            this.ARAMRadioButton.Location = new System.Drawing.Point(6, 88);
+            resources.ApplyResources(this.ARAMRadioButton, "ARAMRadioButton");
             this.ARAMRadioButton.Name = "ARAMRadioButton";
-            this.ARAMRadioButton.Size = new System.Drawing.Size(253, 17);
-            this.ARAMRadioButton.TabIndex = 3;
-            this.ARAMRadioButton.Text = "Pre-Load File to Auxiliary RAM (GameCube Only)";
             this.ARAMRadioButton.UseVisualStyleBackColor = true;
             // 
             // MRAMRadioButton
             // 
-            this.MRAMRadioButton.AutoSize = true;
+            resources.ApplyResources(this.MRAMRadioButton, "MRAMRadioButton");
             this.MRAMRadioButton.Checked = true;
-            this.MRAMRadioButton.Location = new System.Drawing.Point(6, 65);
             this.MRAMRadioButton.Name = "MRAMRadioButton";
-            this.MRAMRadioButton.Size = new System.Drawing.Size(152, 17);
-            this.MRAMRadioButton.TabIndex = 2;
             this.MRAMRadioButton.TabStop = true;
-            this.MRAMRadioButton.Text = "Pre-Load File to Main RAM";
             this.MRAMRadioButton.UseVisualStyleBackColor = true;
             // 
             // IsYAZ0CheckBox
             // 
-            this.IsYAZ0CheckBox.AutoSize = true;
-            this.IsYAZ0CheckBox.Location = new System.Drawing.Point(6, 42);
+            resources.ApplyResources(this.IsYAZ0CheckBox, "IsYAZ0CheckBox");
             this.IsYAZ0CheckBox.Name = "IsYAZ0CheckBox";
-            this.IsYAZ0CheckBox.Size = new System.Drawing.Size(127, 17);
-            this.IsYAZ0CheckBox.TabIndex = 1;
-            this.IsYAZ0CheckBox.Text = "Is Compression YAZ0";
             this.IsYAZ0CheckBox.UseVisualStyleBackColor = true;
             // 
             // IsCompressedCheckBox
             // 
-            this.IsCompressedCheckBox.AutoSize = true;
-            this.IsCompressedCheckBox.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.IsCompressedCheckBox, "IsCompressedCheckBox");
             this.IsCompressedCheckBox.Name = "IsCompressedCheckBox";
-            this.IsCompressedCheckBox.Size = new System.Drawing.Size(95, 17);
-            this.IsCompressedCheckBox.TabIndex = 0;
-            this.IsCompressedCheckBox.Text = "Is Compressed";
             this.IsCompressedCheckBox.UseVisualStyleBackColor = true;
             // 
             // OKButton
             // 
-            this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.OKButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OKButton.Location = new System.Drawing.Point(217, 182);
+            resources.ApplyResources(this.OKButton, "OKButton");
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(55, 23);
-            this.OKButton.TabIndex = 6;
-            this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // DiscardButton
             // 
-            this.DiscardButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DiscardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DiscardButton.Location = new System.Drawing.Point(155, 182);
+            resources.ApplyResources(this.DiscardButton, "DiscardButton");
             this.DiscardButton.Name = "DiscardButton";
-            this.DiscardButton.Size = new System.Drawing.Size(55, 23);
-            this.DiscardButton.TabIndex = 6;
-            this.DiscardButton.Text = "Cancel";
             this.DiscardButton.UseVisualStyleBackColor = true;
             this.DiscardButton.Click += new System.EventHandler(this.DiscardButton_Click);
             // 
             // FilePropertyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 217);
             this.Controls.Add(this.DiscardButton);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.FileSettingsGroupBox);
@@ -216,9 +159,7 @@
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.NameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FilePropertyForm";
-            this.Text = "File Properties";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FilePropertyForm_FormClosing);
             this.Load += new System.EventHandler(this.FilePropertyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();

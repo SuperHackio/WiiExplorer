@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WiiExplorer.Properties.Languages;
 
 namespace WiiExplorer
 { 
@@ -19,11 +20,12 @@ namespace WiiExplorer
             InitializeComponent();
             CenterToParent();
             MaximumSize = new Size(Screen.GetBounds(Location).Width, Height);
+            MinimumSize = Size;
             Archive = archive;
             ArchiveTreeView = treeview;
             CurrentItem = Archive[treeview.SelectedNode.FullPath];
             string OGName = CurrentItem.Name;
-            Text = Text.Replace("[]", $"\"{OGName}\"");
+            Text = string.Format(Strings.RenameWindowTitle, OGName);
             if (!(CurrentItem is RARC.Directory))
             {
                 FileInfo fi = new FileInfo(OGName);
@@ -60,7 +62,7 @@ namespace WiiExplorer
                 if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && Archive[prevpath] != Archive[ArchiveTreeView.SelectedNode.FullPath])
                 {
                     ArchiveTreeView.SelectedNode.Text = prevname;
-                    MessageBox.Show("There is already an item with this name in this directory", "Duplicate Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Strings.ItemAlreadyExists, Strings.DuplicateName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     e.Cancel = true;
                     return;
                 }

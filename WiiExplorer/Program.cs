@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WiiExplorer.Properties;
 using System.Configuration;
+using System.Threading;
+using System.Globalization;
+using Hack.io.RARC;
+using Hack.io.YAZ0;
+using Hack.io.YAY0;
 
 namespace WiiExplorer
 {
@@ -26,6 +31,39 @@ namespace WiiExplorer
                 Settings.Default.IsNeedUpgrade = false;
                 Settings.Default.Save();
             }
+
+            if (OpenWith.Length > 1)
+            {
+                if ((OpenWith[0].Equals("--pack") || OpenWith[0].Equals("-p")) && File.GetAttributes(OpenWith[OpenWith.Length-1]) == FileAttributes.Directory)
+                {
+                    RARC Archive = new RARC();
+                    Archive.Import(OpenWith[OpenWith.Length - 1]);
+                    DirectoryInfo di = new DirectoryInfo(OpenWith[OpenWith.Length - 1]);
+                    string output = Path.Combine(di.Parent.FullName, di.Name + ".arc");
+                    Archive.Save(output);
+                    if (OpenWith.Any(S => S.Equals("--yaz0") || S.Equals("-yz")))
+                        YAZ0.Compress(output, OpenWith.Any(S => S.Equals("--fast") || S.Equals("-f")));
+                    else if (OpenWith.Any(S => S.Equals("--yay0") || S.Equals("-yy")))
+                        YAY0.Compress(output);
+                    return;
+                }
+                else if ((OpenWith[0].Equals("--unpack") || OpenWith[0].Equals("-u")) && File.GetAttributes(OpenWith[OpenWith.Length - 1]) == FileAttributes.Normal)
+                {
+                    bool IsYaz0 = YAZ0.Check(OpenWith[OpenWith.Length - 1]);
+                    bool IsYay0 = YAY0.Check(OpenWith[OpenWith.Length - 1]);
+                    RARC Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : new RARC(OpenWith[OpenWith.Length - 1]));
+                    string output = new FileInfo(Archive.FileName).Directory.FullName;
+                    Archive.Export(output, OpenWith.Any(S => S.Equals("--overwrite") || S.Equals("-o")));
+                    return;
+                }
+
+                for (int i = 0; i < OpenWith.Length; i++)
+                {
+                    if ((OpenWith[i].Equals("--lang") || OpenWith[i].Equals("-l")) && OpenWith.Length == i+2)
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(OpenWith[i+1]);
+                }
+            }
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ja");
 
             if (OpenWith.Length == 0)
                 OpenWith = new string[1] { null };

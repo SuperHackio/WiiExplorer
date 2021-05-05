@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WiiExplorer.Properties.Languages;
 
 namespace WiiExplorer
 {
@@ -96,7 +97,7 @@ namespace WiiExplorer
                 if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && (RARC.File)Archive[prevpath] != (RARC.File)Archive[ArchiveTreeView.SelectedNode.FullPath])
                 {
                     ArchiveTreeView.SelectedNode.Text = prevname;
-                    MessageBox.Show("There is already an item with this name in this directory", "Duplicate Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Strings.ItemAlreadyExists, Strings.DuplicateName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     e.Cancel = true;
                     return;
                 }

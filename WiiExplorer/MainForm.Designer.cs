@@ -76,20 +76,19 @@
             // 
             // MainFormMenuStrip
             // 
+            resources.ApplyResources(this.MainFormMenuStrip, "MainFormMenuStrip");
             this.MainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.EditToolStripMenuItem,
             this.Yaz0ToolStripComboBox,
             this.ItemPropertiesToolStripMenuItem,
             this.SwitchThemeToolStripMenuItem});
-            this.MainFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainFormMenuStrip.Name = "MainFormMenuStrip";
-            this.MainFormMenuStrip.Size = new System.Drawing.Size(464, 27);
-            this.MainFormMenuStrip.TabIndex = 0;
             this.MainFormMenuStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.MainFormMenuStrip_Paint);
             // 
             // FileToolStripMenuItem
             // 
+            resources.ApplyResources(this.FileToolStripMenuItem, "FileToolStripMenuItem");
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewToolStripMenuItem,
             this.NewFromFolderToolStripMenuItem,
@@ -97,55 +96,40 @@
             this.SaveToolStripMenuItem,
             this.SaveAsToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 23);
-            this.FileToolStripMenuItem.Text = "File";
             // 
             // NewToolStripMenuItem
             // 
+            resources.ApplyResources(this.NewToolStripMenuItem, "NewToolStripMenuItem");
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.NewToolStripMenuItem.Text = "New";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // NewFromFolderToolStripMenuItem
             // 
+            resources.ApplyResources(this.NewFromFolderToolStripMenuItem, "NewFromFolderToolStripMenuItem");
             this.NewFromFolderToolStripMenuItem.Name = "NewFromFolderToolStripMenuItem";
-            this.NewFromFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.N)));
-            this.NewFromFolderToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.NewFromFolderToolStripMenuItem.Text = "New From Folder";
             this.NewFromFolderToolStripMenuItem.Click += new System.EventHandler(this.NewFromFolderToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
+            resources.ApplyResources(this.OpenToolStripMenuItem, "OpenToolStripMenuItem");
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.OpenToolStripMenuItem.Text = "Open";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
-            this.SaveToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.SaveToolStripMenuItem, "SaveToolStripMenuItem");
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.SaveToolStripMenuItem.Text = "Save";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
-            this.SaveAsToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.SaveAsToolStripMenuItem, "SaveAsToolStripMenuItem");
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.SaveAsToolStripMenuItem.Text = "Save As";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
+            resources.ApplyResources(this.EditToolStripMenuItem, "EditToolStripMenuItem");
             this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddFileToolStripMenuItem,
             this.AddFolderToolStripMenuItem,
@@ -155,115 +139,80 @@
             this.ExportSelectedToolStripMenuItem,
             this.ExportAllToolStripMenuItem,
             this.ReplaceSelectedToolStripMenuItem});
-            this.EditToolStripMenuItem.Enabled = false;
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(39, 23);
-            this.EditToolStripMenuItem.Text = "Edit";
             // 
             // AddFileToolStripMenuItem
             // 
-            this.AddFileToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.AddFileToolStripMenuItem, "AddFileToolStripMenuItem");
             this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
-            this.AddFileToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
-            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.AddFileToolStripMenuItem.Text = "Add File(s)";
             this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
             // 
             // AddFolderToolStripMenuItem
             // 
-            this.AddFolderToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.AddFolderToolStripMenuItem, "AddFolderToolStripMenuItem");
             this.AddFolderToolStripMenuItem.Name = "AddFolderToolStripMenuItem";
-            this.AddFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.A)));
-            this.AddFolderToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.AddFolderToolStripMenuItem.Text = "Add Empty Folder";
             this.AddFolderToolStripMenuItem.Click += new System.EventHandler(this.AddFolderToolStripMenuItem_Click);
             // 
             // ImportFolderToolStripMenuItem
             // 
-            this.ImportFolderToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.ImportFolderToolStripMenuItem, "ImportFolderToolStripMenuItem");
             this.ImportFolderToolStripMenuItem.Name = "ImportFolderToolStripMenuItem";
-            this.ImportFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.R)));
-            this.ImportFolderToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ImportFolderToolStripMenuItem.Text = "Import Folder";
             this.ImportFolderToolStripMenuItem.Click += new System.EventHandler(this.ImportFolderToolStripMenuItem_Click);
             // 
             // DeleteSelectedToolStripMenuItem
             // 
-            this.DeleteSelectedToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.DeleteSelectedToolStripMenuItem, "DeleteSelectedToolStripMenuItem");
             this.DeleteSelectedToolStripMenuItem.Name = "DeleteSelectedToolStripMenuItem";
-            this.DeleteSelectedToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.DeleteSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.DeleteSelectedToolStripMenuItem.Text = "Delete Selected";
             this.DeleteSelectedToolStripMenuItem.Click += new System.EventHandler(this.DeleteSelectedToolStripMenuItem_Click);
             // 
             // RenameSelectedToolStripMenuItem
             // 
-            this.RenameSelectedToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.RenameSelectedToolStripMenuItem, "RenameSelectedToolStripMenuItem");
             this.RenameSelectedToolStripMenuItem.Name = "RenameSelectedToolStripMenuItem";
-            this.RenameSelectedToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.RenameSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.RenameSelectedToolStripMenuItem.Text = "Rename Selected";
             this.RenameSelectedToolStripMenuItem.Click += new System.EventHandler(this.RenameSelectedToolStripMenuItem_Click);
             // 
             // ExportSelectedToolStripMenuItem
             // 
-            this.ExportSelectedToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.ExportSelectedToolStripMenuItem, "ExportSelectedToolStripMenuItem");
             this.ExportSelectedToolStripMenuItem.Name = "ExportSelectedToolStripMenuItem";
-            this.ExportSelectedToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.ExportSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ExportSelectedToolStripMenuItem.Text = "Export Selected";
             this.ExportSelectedToolStripMenuItem.Click += new System.EventHandler(this.ExportSelectedToolStripMenuItem_Click);
             // 
             // ExportAllToolStripMenuItem
             // 
-            this.ExportAllToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.ExportAllToolStripMenuItem, "ExportAllToolStripMenuItem");
             this.ExportAllToolStripMenuItem.Name = "ExportAllToolStripMenuItem";
-            this.ExportAllToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.ExportAllToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ExportAllToolStripMenuItem.Text = "Export All";
             this.ExportAllToolStripMenuItem.Click += new System.EventHandler(this.ExportAllToolStripMenuItem_Click);
             // 
             // ReplaceSelectedToolStripMenuItem
             // 
-            this.ReplaceSelectedToolStripMenuItem.Enabled = false;
+            resources.ApplyResources(this.ReplaceSelectedToolStripMenuItem, "ReplaceSelectedToolStripMenuItem");
             this.ReplaceSelectedToolStripMenuItem.Name = "ReplaceSelectedToolStripMenuItem";
-            this.ReplaceSelectedToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.ReplaceSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
             this.ReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
             // Yaz0ToolStripComboBox
             // 
+            resources.ApplyResources(this.Yaz0ToolStripComboBox, "Yaz0ToolStripComboBox");
             this.Yaz0ToolStripComboBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Yaz0ToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Yaz0ToolStripComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Yaz0ToolStripComboBox.Items.AddRange(new object[] {
-            "Off",
-            "Yaz0 Strong",
-            "Yaz0 Fast",
-            "Yay0 Strong"});
+            resources.GetString("Yaz0ToolStripComboBox.Items"),
+            resources.GetString("Yaz0ToolStripComboBox.Items1"),
+            resources.GetString("Yaz0ToolStripComboBox.Items2"),
+            resources.GetString("Yaz0ToolStripComboBox.Items3")});
             this.Yaz0ToolStripComboBox.Name = "Yaz0ToolStripComboBox";
-            this.Yaz0ToolStripComboBox.Size = new System.Drawing.Size(88, 23);
-            this.Yaz0ToolStripComboBox.ToolTipText = resources.GetString("Yaz0ToolStripComboBox.ToolTipText");
             this.Yaz0ToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.Yaz0ToolStripComboBox_SelectedIndexChanged);
             // 
             // ItemPropertiesToolStripMenuItem
             // 
+            resources.ApplyResources(this.ItemPropertiesToolStripMenuItem, "ItemPropertiesToolStripMenuItem");
             this.ItemPropertiesToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.ItemPropertiesToolStripMenuItem.Enabled = false;
             this.ItemPropertiesToolStripMenuItem.Name = "ItemPropertiesToolStripMenuItem";
-            this.ItemPropertiesToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
-            this.ItemPropertiesToolStripMenuItem.Text = "File Properties";
             this.ItemPropertiesToolStripMenuItem.Click += new System.EventHandler(this.ItemPropertiesToolStripMenuItem_Click);
             // 
             // SwitchThemeToolStripMenuItem
             // 
+            resources.ApplyResources(this.SwitchThemeToolStripMenuItem, "SwitchThemeToolStripMenuItem");
             this.SwitchThemeToolStripMenuItem.Name = "SwitchThemeToolStripMenuItem";
-            this.SwitchThemeToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
-            this.SwitchThemeToolStripMenuItem.Text = "Switch Theme";
             this.SwitchThemeToolStripMenuItem.Click += new System.EventHandler(this.SwitchThemeToolStripMenuItem_Click);
             // 
             // ArchiveImageList
@@ -276,91 +225,61 @@
             // 
             // MainFormStatusStrip
             // 
+            resources.ApplyResources(this.MainFormStatusStrip, "MainFormStatusStrip");
             this.MainFormStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainToolStripProgressBar,
             this.MainToolStripStatusLabel});
-            this.MainFormStatusStrip.Location = new System.Drawing.Point(0, 329);
             this.MainFormStatusStrip.Name = "MainFormStatusStrip";
-            this.MainFormStatusStrip.Size = new System.Drawing.Size(464, 22);
-            this.MainFormStatusStrip.TabIndex = 2;
-            this.MainFormStatusStrip.Text = "statusStrip1";
             // 
             // MainToolStripProgressBar
             // 
+            resources.ApplyResources(this.MainToolStripProgressBar, "MainToolStripProgressBar");
             this.MainToolStripProgressBar.Name = "MainToolStripProgressBar";
-            this.MainToolStripProgressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // MainToolStripStatusLabel
             // 
+            resources.ApplyResources(this.MainToolStripStatusLabel, "MainToolStripStatusLabel");
             this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
-            this.MainToolStripStatusLabel.Size = new System.Drawing.Size(347, 17);
             this.MainToolStripStatusLabel.Spring = true;
-            this.MainToolStripStatusLabel.Text = "No File Loaded.";
-            this.MainToolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // RootPanel
             // 
+            resources.ApplyResources(this.RootPanel, "RootPanel");
             this.RootPanel.Controls.Add(this.RootNameTextBox);
             this.RootPanel.Controls.Add(this.KeepIDsSyncedCheckBox);
             this.RootPanel.Controls.Add(this.RootNameLabel);
-            this.RootPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RootPanel.Location = new System.Drawing.Point(0, 27);
             this.RootPanel.Name = "RootPanel";
-            this.RootPanel.Size = new System.Drawing.Size(464, 20);
-            this.RootPanel.TabIndex = 3;
             // 
             // RootNameTextBox
             // 
-            this.RootNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RootNameTextBox.Enabled = false;
-            this.RootNameTextBox.Location = new System.Drawing.Point(64, 0);
+            resources.ApplyResources(this.RootNameTextBox, "RootNameTextBox");
             this.RootNameTextBox.Name = "RootNameTextBox";
-            this.RootNameTextBox.Size = new System.Drawing.Size(267, 20);
-            this.RootNameTextBox.TabIndex = 0;
             this.RootNameTextBox.TextChanged += new System.EventHandler(this.RootNameTextBox_TextChanged);
             // 
             // KeepIDsSyncedCheckBox
             // 
-            this.KeepIDsSyncedCheckBox.AutoSize = true;
+            resources.ApplyResources(this.KeepIDsSyncedCheckBox, "KeepIDsSyncedCheckBox");
             this.KeepIDsSyncedCheckBox.Checked = true;
             this.KeepIDsSyncedCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.KeepIDsSyncedCheckBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.KeepIDsSyncedCheckBox.Enabled = false;
-            this.KeepIDsSyncedCheckBox.Location = new System.Drawing.Point(331, 0);
             this.KeepIDsSyncedCheckBox.Name = "KeepIDsSyncedCheckBox";
-            this.KeepIDsSyncedCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.KeepIDsSyncedCheckBox.Size = new System.Drawing.Size(133, 20);
-            this.KeepIDsSyncedCheckBox.TabIndex = 2;
-            this.KeepIDsSyncedCheckBox.Text = "Auto-Calculate File IDs";
             this.KeepIDsSyncedCheckBox.UseVisualStyleBackColor = true;
             this.KeepIDsSyncedCheckBox.CheckedChanged += new System.EventHandler(this.KeepIDsSyncedCheckBox_CheckedChanged);
             // 
             // RootNameLabel
             // 
-            this.RootNameLabel.AutoSize = true;
-            this.RootNameLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RootNameLabel.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.RootNameLabel, "RootNameLabel");
             this.RootNameLabel.Name = "RootNameLabel";
-            this.RootNameLabel.Size = new System.Drawing.Size(64, 13);
-            this.RootNameLabel.TabIndex = 1;
-            this.RootNameLabel.Text = "Root Name:";
             // 
             // ArchiveTreeView
             // 
+            resources.ApplyResources(this.ArchiveTreeView, "ArchiveTreeView");
             this.ArchiveTreeView.AllowDrop = true;
             this.ArchiveTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ArchiveTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArchiveTreeView.Enabled = false;
             this.ArchiveTreeView.FullRowSelect = true;
             this.ArchiveTreeView.HideSelection = false;
-            this.ArchiveTreeView.ImageIndex = 0;
             this.ArchiveTreeView.ImageList = this.ArchiveImageList;
-            this.ArchiveTreeView.Location = new System.Drawing.Point(0, 47);
             this.ArchiveTreeView.Name = "ArchiveTreeView";
             this.ArchiveTreeView.PathSeparator = "/";
-            this.ArchiveTreeView.SelectedImageIndex = 0;
-            this.ArchiveTreeView.Size = new System.Drawing.Size(464, 282);
-            this.ArchiveTreeView.TabIndex = 1;
             this.ArchiveTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.ArchiveTreeView_BeforeCollapse);
             this.ArchiveTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.ArchiveTreeView_BeforeExpand);
             this.ArchiveTreeView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.ArchiveTreeView_ItemDrag);
@@ -373,6 +292,7 @@
             // 
             // ArchiveContextMenuStrip
             // 
+            resources.ApplyResources(this.ArchiveContextMenuStrip, "ArchiveContextMenuStrip");
             this.ArchiveContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextAddFileToolStripMenuItem,
             this.ContextAddFolderToolStripMenuItem,
@@ -383,70 +303,53 @@
             this.ContextExportAllToolStripMenuItem,
             this.ContextReplaceSelectedToolStripMenuItem});
             this.ArchiveContextMenuStrip.Name = "ArchiveContextMenuStrip";
-            this.ArchiveContextMenuStrip.Size = new System.Drawing.Size(244, 180);
             // 
             // ContextAddFileToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextAddFileToolStripMenuItem, "ContextAddFileToolStripMenuItem");
             this.ContextAddFileToolStripMenuItem.Name = "ContextAddFileToolStripMenuItem";
-            this.ContextAddFileToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
-            this.ContextAddFileToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextAddFileToolStripMenuItem.Text = "Add File(s)";
             this.ContextAddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
             // 
             // ContextAddFolderToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextAddFolderToolStripMenuItem, "ContextAddFolderToolStripMenuItem");
             this.ContextAddFolderToolStripMenuItem.Name = "ContextAddFolderToolStripMenuItem";
-            this.ContextAddFolderToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+A";
-            this.ContextAddFolderToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextAddFolderToolStripMenuItem.Text = "Add Empty Folder";
             this.ContextAddFolderToolStripMenuItem.Click += new System.EventHandler(this.AddFolderToolStripMenuItem_Click);
             // 
             // ContextImportFolderToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextImportFolderToolStripMenuItem, "ContextImportFolderToolStripMenuItem");
             this.ContextImportFolderToolStripMenuItem.Name = "ContextImportFolderToolStripMenuItem";
-            this.ContextImportFolderToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+R";
-            this.ContextImportFolderToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextImportFolderToolStripMenuItem.Text = "Import Folder";
             this.ContextImportFolderToolStripMenuItem.Click += new System.EventHandler(this.ImportFolderToolStripMenuItem_Click);
             // 
             // ContextDeleteSelectedToolStripMenuItems
             // 
+            resources.ApplyResources(this.ContextDeleteSelectedToolStripMenuItems, "ContextDeleteSelectedToolStripMenuItems");
             this.ContextDeleteSelectedToolStripMenuItems.Name = "ContextDeleteSelectedToolStripMenuItems";
-            this.ContextDeleteSelectedToolStripMenuItems.ShortcutKeyDisplayString = "Ctrl+Del";
-            this.ContextDeleteSelectedToolStripMenuItems.Size = new System.Drawing.Size(243, 22);
-            this.ContextDeleteSelectedToolStripMenuItems.Text = "Delete Selected";
             this.ContextDeleteSelectedToolStripMenuItems.Click += new System.EventHandler(this.DeleteSelectedToolStripMenuItem_Click);
             // 
             // ContextRenameToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextRenameToolStripMenuItem, "ContextRenameToolStripMenuItem");
             this.ContextRenameToolStripMenuItem.Name = "ContextRenameToolStripMenuItem";
-            this.ContextRenameToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+R";
-            this.ContextRenameToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextRenameToolStripMenuItem.Text = "Rename Selected";
             this.ContextRenameToolStripMenuItem.Click += new System.EventHandler(this.RenameSelectedToolStripMenuItem_Click);
             // 
             // ContextExportSelectToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextExportSelectToolStripMenuItem, "ContextExportSelectToolStripMenuItem");
             this.ContextExportSelectToolStripMenuItem.Name = "ContextExportSelectToolStripMenuItem";
-            this.ContextExportSelectToolStripMenuItem.ShortcutKeyDisplayString = "Alt+S";
-            this.ContextExportSelectToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextExportSelectToolStripMenuItem.Text = "Export Selected";
             this.ContextExportSelectToolStripMenuItem.Click += new System.EventHandler(this.ExportSelectedToolStripMenuItem_Click);
             // 
             // ContextExportAllToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextExportAllToolStripMenuItem, "ContextExportAllToolStripMenuItem");
             this.ContextExportAllToolStripMenuItem.Name = "ContextExportAllToolStripMenuItem";
-            this.ContextExportAllToolStripMenuItem.ShortcutKeyDisplayString = "Alt+Shift+S";
-            this.ContextExportAllToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextExportAllToolStripMenuItem.Text = "Export All";
             this.ContextExportAllToolStripMenuItem.Click += new System.EventHandler(this.ExportAllToolStripMenuItem_Click);
             // 
             // ContextReplaceSelectedToolStripMenuItem
             // 
+            resources.ApplyResources(this.ContextReplaceSelectedToolStripMenuItem, "ContextReplaceSelectedToolStripMenuItem");
             this.ContextReplaceSelectedToolStripMenuItem.Name = "ContextReplaceSelectedToolStripMenuItem";
-            this.ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString = "Alt+R";
-            this.ContextReplaceSelectedToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.ContextReplaceSelectedToolStripMenuItem.Text = "Replace Selected";
             this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
             // EncodingBackgroundWorker
@@ -455,20 +358,16 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 351);
             this.Controls.Add(this.ArchiveTreeView);
             this.Controls.Add(this.RootPanel);
             this.Controls.Add(this.MainFormStatusStrip);
             this.Controls.Add(this.MainFormMenuStrip);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.MainFormMenuStrip;
-            this.MinimumSize = new System.Drawing.Size(480, 390);
             this.Name = "MainForm";
-            this.Text = "WiiExplorer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
