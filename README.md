@@ -22,6 +22,14 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - The list of known extensions is easily editable
   - Adding/Editing/Removing icons is easy (They're just .png)
 - Supports being the Default Application for Archive files<br/>(Open With > Choose "Another app on this PC" > Navigate to and Choose "WiiExplorer.exe". Be sure to enable "Always use this app to open .arc files")
+- Localized for 7 Languages
+  - English
+  - French
+  - Spanish
+  - German
+  - Dutch
+  - Japanese
+  - Serbian (Cyrllic)
 
 ## Known Supported Games
 - *Super Mario Galaxy*
