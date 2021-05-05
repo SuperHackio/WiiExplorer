@@ -59,7 +59,7 @@ namespace WiiExplorer
                 {
                     NewFromFolder(OpenWith);
                 }
-                else if (File.GetAttributes(OpenWith) == FileAttributes.Normal)
+                else
                     OpenArchive(OpenWith);
             }
             OpenWith = null;
