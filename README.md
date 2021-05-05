@@ -24,12 +24,12 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
 - Supports being the Default Application for Archive files<br/>(Open With > Choose "Another app on this PC" > Navigate to and Choose "WiiExplorer.exe". Be sure to enable "Always use this app to open .arc files")
 - Localized for 7 Languages
   - English
-  - French
-  - Spanish
+  - French (legomariofanatic)
+  - Spanish (legomariofanatic)
   - German
-  - Dutch
-  - Japanese
-  - Serbian (Cyrllic)
+  - Dutch (@BjornGmr)
+  - Japanese (@fon-22)
+  - Serbian (Cyrllic) (@Luma48)
 
 ## Known Supported Games
 - *Super Mario Galaxy*
