@@ -131,6 +131,9 @@
   <data name="DiscardButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>177, 182</value>
   </data>
+  <data name="&gt;&gt;NameTextBox.Type" xml:space="preserve">
+    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;DiscardButton.Name" xml:space="preserve">
     <value>DiscardButton</value>
   </data>
@@ -149,9 +152,6 @@
   </data>
   <data name="NameLabel.Text" xml:space="preserve">
     <value>Name</value>
-  </data>
-  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
   </data>
   <data name="ARAMRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 17</value>
@@ -183,12 +183,6 @@
   <data name="&gt;&gt;AutoDetectSettingsButton.Name" xml:space="preserve">
     <value>AutoDetectSettingsButton</value>
   </data>
-  <data name="&gt;&gt;DiscardButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DVDRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;ARAMRadioButton.Parent" xml:space="preserve">
     <value>FileSettingsGroupBox</value>
   </data>
@@ -219,9 +213,6 @@
   <data name="NameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="ARAMRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 88</value>
-  </data>
   <data name="MRAMRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 65</value>
   </data>
@@ -249,8 +240,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;NameTextBox.Type" xml:space="preserve">
-    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;DiscardButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -266,9 +257,6 @@
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
-  </data>
-  <data name="DVDRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="DiscardButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 23</value>
@@ -288,6 +276,9 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="&gt;&gt;IsYAZ0CheckBox.Parent" xml:space="preserve">
+    <value>FileSettingsGroupBox</value>
+  </data>
   <data name="&gt;&gt;MRAMRadioButton.Name" xml:space="preserve">
     <value>MRAMRadioButton</value>
   </data>
@@ -297,8 +288,8 @@
   <data name="&gt;&gt;DiscardButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ARAMRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -306,17 +297,17 @@
   <data name="OKButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;NameTextBox.Name" xml:space="preserve">
-    <value>NameTextBox</value>
-  </data>
   <data name="&gt;&gt;DVDRadioButton.Parent" xml:space="preserve">
     <value>FileSettingsGroupBox</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;FileSettingsGroupBox.Name" xml:space="preserve">
+    <value>FileSettingsGroupBox</value>
   </data>
-  <data name="&gt;&gt;IsYAZ0CheckBox.Name" xml:space="preserve">
-    <value>IsYAZ0CheckBox</value>
+  <data name="IsCompressedCheckBox.Text" xml:space="preserve">
+    <value>Is Compressed</value>
+  </data>
+  <data name="DiscardButton.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;IDNumericUpDown.Parent" xml:space="preserve">
     <value>$this</value>
@@ -327,17 +318,20 @@
   <data name="IDNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 20</value>
   </data>
-  <data name="&gt;&gt;FileSettingsGroupBox.Name" xml:space="preserve">
-    <value>FileSettingsGroupBox</value>
+  <data name="DVDRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;MRAMRadioButton.Parent" xml:space="preserve">
     <value>FileSettingsGroupBox</value>
   </data>
-  <data name="IsCompressedCheckBox.Text" xml:space="preserve">
-    <value>Is Compressed</value>
+  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
   </data>
   <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="AutoDetectSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 0</value>
   </data>
   <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 182</value>
@@ -350,6 +344,9 @@
   </data>
   <data name="FileSettingsGroupBox.Text" xml:space="preserve">
     <value>File Settings</value>
+  </data>
+  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 15</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -366,11 +363,14 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="IDNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 13</value>
+  <data name="ARAMRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 88</value>
   </data>
   <data name="&gt;&gt;MRAMRadioButton.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;IsYAZ0CheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -460,11 +460,11 @@
   <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;IDNumericUpDown.Type" xml:space="preserve">
-    <value>WiiExplorer.ColourNumericUpDown, WiiExplorer, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="&gt;&gt;IsCompressedCheckBox.Name" xml:space="preserve">
     <value>IsCompressedCheckBox</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FilePropertyForm</value>
   </data>
   <data name="IsCompressedCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -478,14 +478,14 @@
   <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;IsYAZ0CheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;DVDRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="&gt;&gt;IsYAZ0CheckBox.Parent" xml:space="preserve">
-    <value>FileSettingsGroupBox</value>
+  <data name="NameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="FileSettingsGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -493,8 +493,8 @@
   <data name="&gt;&gt;IsCompressedCheckBox.Parent" xml:space="preserve">
     <value>FileSettingsGroupBox</value>
   </data>
-  <data name="DiscardButton.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="&gt;&gt;NameTextBox.Name" xml:space="preserve">
+    <value>NameTextBox</value>
   </data>
   <data name="&gt;&gt;FileSettingsGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -502,8 +502,8 @@
   <data name="IsYAZ0CheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
   </data>
-  <data name="AutoDetectSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 0</value>
+  <data name="IDNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 13</value>
   </data>
   <data name="&gt;&gt;IsCompressedCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -511,8 +511,8 @@
   <data name="&gt;&gt;IDNumericUpDown.Name" xml:space="preserve">
     <value>IDNumericUpDown</value>
   </data>
-  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;IsYAZ0CheckBox.Name" xml:space="preserve">
+    <value>IsYAZ0CheckBox</value>
   </data>
   <data name="NameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -526,8 +526,8 @@
   <data name="AutoDetectSettingsButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 15</value>
+  <data name="&gt;&gt;IDNumericUpDown.Type" xml:space="preserve">
+    <value>WiiExplorer.ColourNumericUpDown, WiiExplorer, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;IsYAZ0CheckBox.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -541,8 +541,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>306, 217</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FilePropertyForm</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
     <value>NameLabel</value>
@@ -553,8 +553,8 @@
   <data name="IsCompressedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="NameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;ARAMRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ARAMRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -575,6 +575,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>nl</value>
+    <value>en</value>
   </metadata>
 </root>

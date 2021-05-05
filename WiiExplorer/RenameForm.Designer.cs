@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenameForm));
             this.InfoLabel = new System.Windows.Forms.Label();
             this.TextPanel = new System.Windows.Forms.Panel();
+            this.NameTextBox = new WiiExplorer.ColourTextBox();
+            this.ExtensionTextBox = new WiiExplorer.ColourTextBox();
             this.ExtensionLabel = new System.Windows.Forms.Label();
             this.OKButton = new System.Windows.Forms.Button();
             this.DiscardButton = new System.Windows.Forms.Button();
-            this.NameTextBox = new WiiExplorer.ColourTextBox();
-            this.ExtensionTextBox = new WiiExplorer.ColourTextBox();
             this.TextPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,18 @@
             this.TextPanel.Controls.Add(this.NameTextBox);
             this.TextPanel.Controls.Add(this.ExtensionTextBox);
             this.TextPanel.Name = "TextPanel";
+            // 
+            // NameTextBox
+            // 
+            resources.ApplyResources(this.NameTextBox, "NameTextBox");
+            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameTextBox.Name = "NameTextBox";
+            // 
+            // ExtensionTextBox
+            // 
+            resources.ApplyResources(this.ExtensionTextBox, "ExtensionTextBox");
+            this.ExtensionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ExtensionTextBox.Name = "ExtensionTextBox";
             // 
             // ExtensionLabel
             // 
@@ -70,18 +82,6 @@
             this.DiscardButton.Name = "DiscardButton";
             this.DiscardButton.UseVisualStyleBackColor = true;
             this.DiscardButton.Click += new System.EventHandler(this.DiscardButton_Click);
-            // 
-            // NameTextBox
-            // 
-            resources.ApplyResources(this.NameTextBox, "NameTextBox");
-            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NameTextBox.Name = "NameTextBox";
-            // 
-            // ExtensionTextBox
-            // 
-            resources.ApplyResources(this.ExtensionTextBox, "ExtensionTextBox");
-            this.ExtensionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ExtensionTextBox.Name = "ExtensionTextBox";
             // 
             // RenameForm
             // 

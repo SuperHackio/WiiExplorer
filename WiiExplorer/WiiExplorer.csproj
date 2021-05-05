@@ -129,6 +129,9 @@
     <EmbeddedResource Include="FilePropertyForm.de.resx">
       <DependentUpon>FilePropertyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilePropertyForm.en.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FilePropertyForm.es.resx">
       <DependentUpon>FilePropertyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FilePropertyForm.sr-Cyrl.resx">
       <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.es.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -207,6 +213,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RenameForm.de.resx">
+      <DependentUpon>RenameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameForm.en.resx">
       <DependentUpon>RenameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RenameForm.es.resx">
