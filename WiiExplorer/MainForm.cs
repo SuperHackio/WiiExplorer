@@ -53,13 +53,13 @@ namespace WiiExplorer
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (OpenWith != null)
+            if (OpenWith != null && (File.Exists(OpenWith) || Directory.Exists(OpenWith)))
             {
                 if (File.GetAttributes(OpenWith) == FileAttributes.Directory)
                 {
                     NewFromFolder(OpenWith);
                 }
-                else
+                else if (File.GetAttributes(OpenWith) == FileAttributes.Normal)
                     OpenArchive(OpenWith);
             }
             OpenWith = null;
