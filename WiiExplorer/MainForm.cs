@@ -41,8 +41,8 @@ namespace WiiExplorer
                 string[] exts = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + "ExtensionList.txt");
                 KnownExtensions.AddRange(exts);
                 for (int i = 0; i < exts.Length; i++)
-                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\Icons\\" + exts[i].Split('|')[0] + ".png"))
-                        ArchiveImageList.Images.Add(exts[i].Split('|')[1], new Bitmap(AppDomain.CurrentDomain.BaseDirectory + "\\Icons\\" + exts[i].Split('|')[0] + ".png"));
+                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Icons/" + exts[i].Split('|')[0] + ".png"))
+                        ArchiveImageList.Images.Add(exts[i].Split('|')[1], new Bitmap(AppDomain.CurrentDomain.BaseDirectory + "/Icons/" + exts[i].Split('|')[0] + ".png"));
             }
 
             RootNameTextBox.ContextMenu = new ContextMenu();
@@ -795,8 +795,9 @@ namespace WiiExplorer
                     return;
                 if (string.IsNullOrWhiteSpace(NodeMap))
                 {
-                    AddItemsToRARC((string[])e.Data.GetData(DataFormats.FileDrop, false));
-                    MainToolStripStatusLabel.Text = string.Format(Strings.AddedFilesMessage, Fileofd.FileNames.Length);
+                    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+                    AddItemsToRARC(files);
+                    MainToolStripStatusLabel.Text = string.Format(Strings.AddedFilesMessage, files.Length);
                     return;
                 }
                 string[] NodeIndexes = this.NodeMap.Split('|');
@@ -1227,6 +1228,7 @@ namespace WiiExplorer
         
         private void AddItemsToRARC(string[] FileNames)
         {
+            Edited = true;
             for (int i = 0; i < FileNames.Length; i++)
             {
                 if (!File.Exists(FileNames[i]) && !Directory.Exists(FileNames[i]))
@@ -1301,6 +1303,7 @@ namespace WiiExplorer
 
         private void AddItemsToRARC(string[] FileNames, int Index, TreeNodeCollection InsertCollection)
         {
+            Edited = true;
             for (int i = 0; i < FileNames.Length; i++)
             {
                 if (!File.Exists(FileNames[i]) && !Directory.Exists(FileNames[i]))

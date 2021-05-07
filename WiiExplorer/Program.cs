@@ -12,6 +12,7 @@ using System.Globalization;
 using Hack.io.RARC;
 using Hack.io.YAZ0;
 using Hack.io.YAY0;
+using System.Runtime.InteropServices;
 
 namespace WiiExplorer
 {
@@ -34,6 +35,12 @@ namespace WiiExplorer
 
             if (OpenWith.Length > 1)
             {
+                if ((OpenWith[0].Equals("--script") || OpenWith[0].Equals("-ss")))
+                {
+                    AttachConsole(ATTACH_PARENT_PROCESS);
+                    RunScript(OpenWith[1]);
+                    return;
+                }
                 if ((OpenWith[0].Equals("--pack") || OpenWith[0].Equals("-p")) && File.GetAttributes(OpenWith[OpenWith.Length-1]) == FileAttributes.Directory)
                 {
                     RARC Archive = new RARC();
@@ -68,6 +75,193 @@ namespace WiiExplorer
             if (OpenWith.Length == 0)
                 OpenWith = new string[1] { null };
             Application.Run(new MainForm(OpenWith[0]));
+            return;
+        }
+
+        static void RunScript(string Filename)
+        {
+            Console.WriteLine("Loading {0}...", Filename);
+            string[] Lines = File.ReadAllLines(Filename);
+            Console.WriteLine("Script Loaded.");
+            Thread.Sleep(100);
+            RARC CurrentArchive = null;
+            string ErrorMessage = "";
+            for (int i = 0; i < Lines.Length; i++)
+            {
+                if (Lines[i].StartsWith("//") || string.IsNullOrWhiteSpace(Lines[i]))
+                    continue;
+                string[] Params = Lines[i].Split(' ');
+                Console.WriteLine("Executing Line {1}: \"{0}\"", Lines[i], i);
+                switch (Params[0])
+                {
+                    case "new": //new
+                        if (CurrentArchive is null)
+                        {
+                            CurrentArchive = new RARC();
+                            CurrentArchive["Root"] = null;
+                            Console.WriteLine("New Archive Created Successfully");
+                        }
+                        else
+                        {
+                            ErrorMessage = string.Format("Could not create a new archive:\n\tAn archive is already loaded in memory!");
+                            goto Error;
+                        }
+                        break;
+                    case "open": //open <filepath>
+                        if (CurrentArchive is null)
+                        {
+                            if (Params.Length < 2)
+                            {
+                                ErrorMessage = string.Format("Incomplete Syntax - Expected\nopen <filepath>");
+                                goto Error;
+                            }
+                            if (!File.Exists(Params[1]))
+                            {
+                                ErrorMessage = string.Format("File {0} could not be found", Params[1]);
+                                goto Error;
+                            }
+                            bool IsYaz0 = YAZ0.Check(Params[1]);
+                            bool IsYay0 = YAY0.Check(Params[1]);
+                            CurrentArchive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Params[1]), Params[1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Params[1]), Params[1]) : new RARC(Params[1]));
+                            Console.WriteLine("Archive opened successfully!");
+                        }
+                        else
+                        {
+                            ErrorMessage = string.Format("Could not open the archive:\n\tAn archive is already loaded in memory!");
+                            goto Error;
+                        }
+                        break;
+                    case "save": //save [filepath]
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Save Failed! No Archive Loaded");
+                            goto Error;
+                        }
+                        CurrentArchive.Save(Params.Length == 1 ? CurrentArchive.FileName : Params[1]);
+                        Console.WriteLine("Archive saved successfully!");
+                        break;
+                    case "compress": //compress <filepath> [-yz|-yy|-yzf]
+                        if (Params.Length < 3)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\ncompress <filepath> [-yz|-yy|-yzf]");
+                            goto Error;
+                        }
+                        if (!File.Exists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("File {0} could not be found", Params[1]);
+                            goto Error;
+                        }
+                        switch (Params[2])
+                        {
+                            case "-yz":
+                            case "-yzf":
+                                Console.WriteLine("Compressing, please wait... {0}");
+                                YAZ0.Compress(Params[1], Params[2].Contains("f"));
+                                break;
+                            case "-yy":
+                                Console.WriteLine("Compressing, please wait... {0}");
+                                YAY0.Compress(Params[1]);
+                                break;
+                            default:
+                                ErrorMessage = string.Format("Encoding mode {0} doesn't exist", Params[1]);
+                                goto Error;
+                        }
+
+                        Console.WriteLine("Compress complete!");
+                        break;
+
+                    case "add": //add <filepath> <archivepath>
+                        if (Params.Length < 3)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nadd <filepath> <archivepath>");
+                            goto Error;
+                        }
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Add failed! No archive loaded");
+                            goto Error;
+                        }
+                        if (!File.Exists(Params[1]) && !Directory.Exists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("File or Directory {0} could not be found", Params[1]);
+                            goto Error;
+                        }
+                        if (CurrentArchive.ItemExists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("An item already exists at {0}", Params[1]);
+                            goto Error;
+                        }
+                        if (File.GetAttributes(Params[1]) == FileAttributes.Directory)
+                        {
+                            CurrentArchive[Params[2]] = new RARC.Directory(Params[1], CurrentArchive);
+                            Console.WriteLine("Folder {0} imported successfully", Params[1]);
+                        }
+                        else
+                        {
+                            CurrentArchive[Params[2]] = new RARC.File(Params[1]);
+                            Console.WriteLine("File {0} added successfully", Params[1]);
+                        }
+                        break;
+
+                    case "delete": //delete <archivepath>
+                        if (Params.Length < 2)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\ndelete <archivepath>");
+                            goto Error;
+                        }
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Delete failed! No archive loaded");
+                            goto Error;
+                        }
+                        if (!CurrentArchive.ItemExists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("Can't delete the non-existant item {0}", Params[1]);
+                            goto Error;
+                        }
+
+                        CurrentArchive[Params[1]] = null;
+                        Console.WriteLine("Deleted {0} successfully", Params[1]);
+                        break;
+
+                    case "move": //move <archivepath> <archivepath>
+                        if (Params.Length < 3)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nmove <archivepath> <archivepath>");
+                            goto Error;
+                        }
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Move failed! No archive loaded");
+                            goto Error;
+                        }
+                        if (!CurrentArchive.ItemExists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("Can't move a non-existant item {0}", Params[1]);
+                            goto Error;
+                        }
+                        if (CurrentArchive.ItemExists(Params[2]))
+                        {
+                            ErrorMessage = string.Format("An item already exists at {0}", Params[1]);
+                            goto Error;
+                        }
+
+                        CurrentArchive.MoveItem(Params[1], Params[2]);
+                        Console.WriteLine("Moved {0} to {1} successfully", Params[1], Params[2]);
+                        break;
+                    default:
+                        ErrorMessage = string.Format("Invalid Command {0}", Params[0]);
+                        goto Error;
+                }
+                Console.WriteLine();
+            }
+
+            return;
+
+        Error:
+            Console.WriteLine(ErrorMessage);
+            Thread.Sleep(1000);
+            return;
         }
 
         public static byte EncodingMode
@@ -87,5 +281,9 @@ namespace WiiExplorer
             public static Color TextColour => Settings.Default.IsDarkMode ? Color.FromArgb(241, 241, 241) : Color.FromArgb(0, 0, 0);
             public static Color BorderColour => Settings.Default.IsDarkMode ? Color.FromArgb(50, 50, 50) : Color.Gray;
         }
+
+        [DllImport("kernel32.dll")]
+        static extern bool AttachConsole(int dwProcessId);
+        private const int ATTACH_PARENT_PROCESS = -1;
     }
 }
