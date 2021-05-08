@@ -134,7 +134,7 @@
     <value>Дупликат имена</value>
   </data>
   <data name="EncodingMessage" xml:space="preserve">
-    <value>({0} кодирање, молим вас сачекајте. (1} Протекло, {2} Процењено)</value>
+    <value>({0} кодирање, молим вас сачекајте. {1} Протекло, {2} Процењено)</value>
   </data>
   <data name="EncodingMismatch" xml:space="preserve">
     <value>Кодирање неусклађености</value>

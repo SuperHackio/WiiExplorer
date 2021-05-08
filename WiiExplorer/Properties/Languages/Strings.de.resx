@@ -134,7 +134,7 @@ Sicher, dass du es ersetzen möchtest?</value>
     <value>Doppelter Name</value>
   </data>
   <data name="EncodingMessage" xml:space="preserve">
-    <value>({0} encodieren, bitte warten. (1} Verstrichen, {2} Geschätzt)</value>
+    <value>({0} encodieren, bitte warten. {1} Verstrichen, {2} Geschätzt)</value>
   </data>
   <data name="EncodingMismatch" xml:space="preserve">
     <value>Unpassende Encodierung</value>
