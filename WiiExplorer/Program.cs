@@ -224,20 +224,22 @@ namespace WiiExplorer
                         Console.WriteLine("Deleted {0} successfully", Params[1]);
                         break;
 
+                    case "rename":
                     case "move": //move <archivepath> <archivepath>
+                        string func = Params[0].Equals("rename") ? "Renamed" : "Moved";
                         if (Params.Length < 3)
                         {
-                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nmove <archivepath> <archivepath>");
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\n{0} <archivepath> <archivepath>", Params[0]);
                             goto Error;
                         }
                         if (CurrentArchive is null)
                         {
-                            ErrorMessage = string.Format("Move failed! No archive loaded");
+                            ErrorMessage = string.Format("{0} failed! No archive loaded", Params[0]);
                             goto Error;
                         }
                         if (!CurrentArchive.ItemExists(Params[1]))
                         {
-                            ErrorMessage = string.Format("Can't move a non-existant item {0}", Params[1]);
+                            ErrorMessage = string.Format("Can't {1} a non-existant item {0}", Params[1], func);
                             goto Error;
                         }
                         if (CurrentArchive.ItemExists(Params[2]))
@@ -247,7 +249,96 @@ namespace WiiExplorer
                         }
 
                         CurrentArchive.MoveItem(Params[1], Params[2]);
-                        Console.WriteLine("Moved {0} to {1} successfully", Params[1], Params[2]);
+                        Console.WriteLine("{2} {0} to {1} successfully", Params[1], Params[2], func);
+                        break;
+
+                    case "edit": //edit <archivepath> <Parameter[]>
+                        if (Params.Length < 3)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nedit <archivepath> <parameter[]>\nParameters include:\n-id <new id>\n-setcompressed <-yz>\n-loadmain\n-loadaux\n-loaddvd\n-auto");
+                            goto Error;
+                        }
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Edit failed! No archive loaded");
+                            goto Error;
+                        }
+                        object getitem = CurrentArchive[Params[1]];
+                        if (getitem is RARC.Directory)
+                        {
+                            ErrorMessage = string.Format("Edit failed! Cannot change properties of folders!");
+                            goto Error;
+                        }
+                        if (getitem is RARC.File file)
+                        {
+                            bool mram = true, aram = false, dvd = false, compressed = false, compressedyaz0 = false;
+                            for (int x = 2; x < Params.Length; x++)
+                            {
+                                switch (Params[x])
+                                {
+                                    case "-id":
+                                        if (CurrentArchive.KeepFileIDsSynced)
+                                        {
+                                            ErrorMessage = string.Format("Edit failed! Cannot change File ID because the Archive is set to Automatically calculate file ID's", Params[x]);
+                                            goto Error;
+                                        }
+                                        if (short.TryParse(Params[++x], out short newid))
+                                            file.ID = newid;
+                                        else
+                                        {
+                                            ErrorMessage = string.Format("Edit failed! Could not parse {0} as a int16 (short)", Params[x]);
+                                            goto Error;
+                                        }
+                                        break;
+                                    case "-setcompressed":
+                                        if (x + 1 != Params.Length - 1 && Params[x + 1].Equals("-yz"))
+                                            compressedyaz0 = true;
+                                        compressed = true;
+                                        break;
+                                    case "-loadmain":
+                                        mram = true;
+                                        aram = false;
+                                        dvd = false;
+                                        break;
+                                    case "-loadaux":
+                                        mram = false;
+                                        aram = true;
+                                        dvd = false;
+                                        break;
+                                    case "loaddvd":
+                                        mram = false;
+                                        aram = false;
+                                        dvd = true;
+                                        break;
+                                    case "auto":
+                                        if (file.FileData[0] == 0x59 && file.FileData[1] == 0x61 && file.FileData[2] == 0x7A && file.FileData[3] == 0x30)
+                                        {
+                                            compressed = true;
+                                            compressedyaz0 = true;
+                                        }
+                                        if (file.Name.Contains(".rel"))
+                                        {
+                                            mram = false;
+                                            aram = true;
+                                            dvd = false;
+                                        }
+                                        else
+                                        {
+                                            mram = true;
+                                            aram = false;
+                                            dvd = false;
+                                        }
+                                        if (!CurrentArchive.KeepFileIDsSynced && file.ID == -1)
+                                            file.ID = CurrentArchive.NextFreeFileID;
+                                        break;
+                                    default:
+                                        ErrorMessage = string.Format("Edit failed! Unknown file property {0}", Params[x]);
+                                        goto Error;
+                                }
+                            }
+                            RARC.FileAttribute loadattribute = mram ? RARC.FileAttribute.PRELOAD_TO_MRAM : (aram ? RARC.FileAttribute.PRELOAD_TO_ARAM : (dvd ? RARC.FileAttribute.LOAD_FROM_DVD : 0));
+                            file.FileSettings = RARC.FileAttribute.FILE | (compressed ? RARC.FileAttribute.COMPRESSED : 0) | loadattribute | (compressedyaz0 ? RARC.FileAttribute.YAZ0_COMPRESSED : 0);
+                        }                        
                         break;
                     default:
                         ErrorMessage = string.Format("Invalid Command {0}", Params[0]);
