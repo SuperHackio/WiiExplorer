@@ -38,7 +38,10 @@ namespace WiiExplorer
                 if ((OpenWith[0].Equals("--script") || OpenWith[0].Equals("-ss")))
                 {
                     AttachConsole(ATTACH_PARENT_PROCESS);
-                    RunScript(OpenWith[1]);
+                    List<string> Parameters = new List<string>();
+                    for (int i = 2; i < OpenWith.Length; i++)
+                        Parameters.Add(OpenWith[i]);
+                    RunScript(OpenWith[1], Parameters.ToArray());
                     return;
                 }
                 if ((OpenWith[0].Equals("--pack") || OpenWith[0].Equals("-p")) && File.GetAttributes(OpenWith[OpenWith.Length-1]) == FileAttributes.Directory)
@@ -78,7 +81,7 @@ namespace WiiExplorer
             return;
         }
 
-        static void RunScript(string Filename)
+        static void RunScript(string Filename, string[] parameters)
         {
             Console.WriteLine("Loading {0}...", Filename);
             string[] Lines = File.ReadAllLines(Filename);
@@ -90,7 +93,8 @@ namespace WiiExplorer
             {
                 if (Lines[i].StartsWith("//") || string.IsNullOrWhiteSpace(Lines[i]))
                     continue;
-                string[] Params = Lines[i].Split(' ');
+                string Line = string.Format(Lines[i], parameters);
+                string[] Params = Line.Split(' ');
                 Console.WriteLine("Executing Line {1}: \"{0}\"", Lines[i], i);
                 switch (Params[0])
                 {
