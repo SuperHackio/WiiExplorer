@@ -174,10 +174,12 @@ namespace WiiExplorer
                         Console.WriteLine("Compress complete!");
                         break;
 
+                    case "replace":
                     case "add": //add <filepath> <archivepath>
+                        string func = Params[0].Equals("replace") ? "replaced" : "added";
                         if (Params.Length < 3)
                         {
-                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nadd <filepath> <archivepath>");
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\n{0} <filepath> <archivepath>", Params[0]);
                             goto Error;
                         }
                         if (CurrentArchive is null)
@@ -192,18 +194,25 @@ namespace WiiExplorer
                         }
                         if (CurrentArchive.ItemExists(Params[1]))
                         {
-                            ErrorMessage = string.Format("An item already exists at {0}", Params[1]);
-                            goto Error;
+                            if (Params[0].Equals("replace"))
+                            {
+                                CurrentArchive[Params[1]] = null;
+                            }
+                            else
+                            {
+                                ErrorMessage = string.Format("An item already exists at {0}", Params[1]);
+                                goto Error;
+                            }
                         }
                         if (File.GetAttributes(Params[1]) == FileAttributes.Directory)
                         {
                             CurrentArchive[Params[2]] = new RARC.Directory(Params[1], CurrentArchive);
-                            Console.WriteLine("Folder {0} imported successfully", Params[1]);
+                            Console.WriteLine("Folder {0} {1} successfully", Params[1], func);
                         }
                         else
                         {
                             CurrentArchive[Params[2]] = new RARC.File(Params[1]);
-                            Console.WriteLine("File {0} added successfully", Params[1]);
+                            Console.WriteLine("File {0} {1} successfully", Params[1], func);
                         }
                         break;
 
@@ -230,7 +239,7 @@ namespace WiiExplorer
 
                     case "rename":
                     case "move": //move <archivepath> <archivepath>
-                        string func = Params[0].Equals("rename") ? "Renamed" : "Moved";
+                        func = Params[0].Equals("rename") ? "Renamed" : "Moved";
                         if (Params.Length < 3)
                         {
                             ErrorMessage = string.Format("Incomplete Syntax - Expected\n{0} <archivepath> <archivepath>", Params[0]);
@@ -256,6 +265,41 @@ namespace WiiExplorer
                         Console.WriteLine("{2} {0} to {1} successfully", Params[1], Params[2], func);
                         break;
 
+                    case "extract": //extract <archivepath> <filepath> [-o]
+                        if (Params.Length < 3)
+                        {
+                            ErrorMessage = string.Format("Incomplete Syntax - Expected\nextract <archivepath> <filepath>");
+                            goto Error;
+                        }
+                        if (CurrentArchive is null)
+                        {
+                            ErrorMessage = string.Format("Extract failed! No archive loaded");
+                            goto Error;
+                        }
+                        if (!CurrentArchive.ItemExists(Params[1]))
+                        {
+                            ErrorMessage = string.Format("Can't extract the non-existant item {0}", Params[1]);
+                            goto Error;
+                        }
+                        if (CurrentArchive[Params[1]] is RARC.File efile)
+                        {
+                            if (File.Exists(Params[2]) && !Params.Contains("-o"))
+                            {
+                                ErrorMessage = string.Format("There is already a file on your system at {0}, consider adding the -o parameter if you want to overwrite it", Params[2]);
+                                goto Error;
+                            }
+                            efile.Save(Params[2]);
+                        }
+                        else if (CurrentArchive[Params[1]] is RARC.Directory edir)
+                        {
+                            if (Directory.Exists(Params[2]) && !Params.Contains("-o"))
+                            {
+                                ErrorMessage = string.Format("There is already a file on your system at {0}, consider adding the -o parameter if you want to overwrite it", Params[2]);
+                                goto Error;
+                            }
+                            edir.Export(Params[2]);
+                        }
+                        break;
                     case "edit": //edit <archivepath> <Parameter[]>
                         if (Params.Length < 3)
                         {
