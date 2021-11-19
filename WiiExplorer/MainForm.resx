@@ -117,425 +117,191 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContextRenameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rename Selected</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ItemPropertiesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="RootPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 27</value>
-  </data>
-  <data name="&gt;&gt;ImportFolderToolStripMenuItem.Name" xml:space="preserve">
-    <value>ImportFolderToolStripMenuItem</value>
-  </data>
-  <data name="AddFolderToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ContextExportAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export All</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save As</value>
-  </data>
-  <data name="&gt;&gt;OpenToolStripMenuItem.Name" xml:space="preserve">
-    <value>OpenToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Name" xml:space="preserve">
-    <value>KeepIDsSyncedCheckBox</value>
-  </data>
-  <data name="&gt;&gt;ExportSelectedToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="KeepIDsSyncedCheckBox.Text" xml:space="preserve">
-    <value>Auto-Calculate File IDs</value>
-  </data>
-  <data name="ContextAddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="ContextImportFolderToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Shift+R</value>
-  </data>
-  <data name="&gt;&gt;ContextReplaceSelectedToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextReplaceSelectedToolStripMenuItem</value>
-  </data>
-  <data name="ArchiveTreeView.SelectedImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
-  </data>
-  <data name="&gt;&gt;ContextDeleteSelectedToolStripMenuItems.Name" xml:space="preserve">
-    <value>ContextDeleteSelectedToolStripMenuItems</value>
-  </data>
-  <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export All</value>
-  </data>
-  <data name="ExportAllToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;ContextExportSelectToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextExportSelectToolStripMenuItem</value>
-  </data>
-  <data name="Yaz0ToolStripComboBox.Items1" xml:space="preserve">
-    <value>Yaz0 Strong</value>
-  </data>
-  <data name="&gt;&gt;RootNameLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;SaveAsToolStripMenuItem.Name" xml:space="preserve">
-    <value>SaveAsToolStripMenuItem</value>
-  </data>
-  <data name="ReplaceSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;MainFormMenuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
+  <metadata name="MainFormMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 17</value>
+  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SaveAsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+S</value>
-  </data>
   <data name="NewToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
   </data>
-  <data name="RootPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 20</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
   </data>
-  <data name="&gt;&gt;EncodingBackgroundWorker.Name" xml:space="preserve">
-    <value>EncodingBackgroundWorker</value>
+  <data name="NewToolStripMenuItem.Text" xml:space="preserve">
+    <value>New</value>
   </data>
-  <data name="KeepIDsSyncedCheckBox.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
+  <data name="NewFromFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+N</value>
   </data>
-  <data name="ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+R</value>
+  <data name="NewFromFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
   </data>
-  <data name="&gt;&gt;ContextAddFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>New From Folder</value>
   </data>
-  <data name="RootNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="OpenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+O</value>
   </data>
-  <data name="ContextExportSelectToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+S</value>
-  </data>
-  <data name="&gt;&gt;MainFormMenuStrip.Name" xml:space="preserve">
-    <value>MainFormMenuStrip</value>
-  </data>
-  <data name="ContextImportFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="ArchiveTreeView.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>WiiExplorer</value>
-  </data>
-  <data name="&gt;&gt;ReplaceSelectedToolStripMenuItem.Name" xml:space="preserve">
-    <value>ReplaceSelectedToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ArchiveContextMenuStrip.Name" xml:space="preserve">
-    <value>ArchiveContextMenuStrip</value>
-  </data>
-  <data name="&gt;&gt;MainFormStatusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;RootPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;RootNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Yaz0ToolStripComboBox.Name" xml:space="preserve">
-    <value>Yaz0ToolStripComboBox</value>
-  </data>
-  <data name="ArchiveTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ItemPropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 23</value>
-  </data>
-  <data name="&gt;&gt;RootNameTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ContextDeleteSelectedToolStripMenuItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="RootNameLabel.Text" xml:space="preserve">
-    <value>Root Name:</value>
+  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
   </data>
   <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
     <value>Open</value>
   </data>
-  <data name="ArchiveImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
-        DgAAAk1TRnQBSQFMAgEBAwEAAYQBAwGoAQMBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABEAMAAQEBAAEgBgABEJoAAwwEEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEW
-        AxABFgMEAQVLAAEBAwYBCAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEK
-        AwMBBAsAAQEDBgEIAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEKAwMBBBQAA18B8wKu
-        AasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKv
-        Aa0B/wMQARZEAAMEAQUDJAE2A0QBeQNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNK
-        AYsDRwGCAzMBUgMLAQ8DBAEFAyQBNgNEAXkDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNF
-        AX8DKQE/AwMBBBAAAq4BqwX/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gX/AxABFkQA
-        Ax0BKgEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/
-        AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/A1IBqQM1AVgDHQEq
-        AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAET
-        AbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wNLAY4DFAEbAwABAQwAAq0BqwH/A/wB/wP7Af8D+wH/
-        A/sB/wP7Af8D+wH/A/sB/wP7Af8D+wH/A/sF/wMQARZFAAETAbUB/wEAAZ0C/wEAARMBtQH/AQIBtQL/
-        AQEBtQL/AQABtAL/AQABswL/AQABsQL/AQABrwL/AQABrQL/AQABqwL/AQABqwL/AQABuwHlAf8BAAGr
-        Av8BAAETAbUB/wNIAYgBAAETAbUB/wEAARMBtQH/AQABnAL/AQ4BugL/AQABswL/AQABsgL/AQABsQL/
-        AQABsAL/AQABrwL/AQABrQL/AQABqwL/AQABEwG1Af8DVAGvAzYBWQMbASYMAAKtAasB/wH6AvgB/wH5
-        AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgF/wMQARZFAAET
-        AbUB/wEAAaEC/wEAARMBtQH/ARUBvgL/ARQBvgL/ARMBvQL/AQ8BuwL/AQkBuQL/AQMBtgL/AQABtAL/
-        AQABsgL/AQABsAL/AQABvQHlAf8BAAGwAv8BAAETAbUB/wNLAZABAAETAbUB/wEAAZoC/wEAARMBtQH/
-        AQABEwG1Af8BDgG6Av8BDAG5Av8BCgG4Av8BBQG2Av8BAQG0Av8BAAGzAv8BAAGxAv8BAAG+AeUB/wEA
-        ARMBtQH/A0wBkQMUARsMAAKtAasB/wP2Af8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2
-        Bf8DEAEWRQABEwG1Af8BAAGpAv8BAAETAbUB/wGHAcgC/wGGAccC/wGDAcYC/wEiAcMC/wEdAcEC/wEW
-        Ab4C/wEQAbsC/wELAbkC/wEGAbcC/wEAAcAB5QH/AQMBtQL/AQABEwG1Af8DSwGQAQABEwG1Af8BAAGn
-        Av8BAAGdAv8BAAETAbUB/wEiAcMC/wEdAcAC/wEbAcAC/wEXAb4C/wEQAbsC/wEOAboC/wEKAbgC/wEA
-        AcIB5QH/AQABEwG1Af8DVAGvAzUBWAMDAQQIAAKtAasB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0
-        AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMF/wMQARZFAAETAbUB/wEAAbAC/wEAARMBtQH/
-        AZoB0QL/AZgBzwL/AZYBzwL/AZABywL/AYsBygL/AYQBxgL/ASEBwwL/ARoBvwL/ARUBvgL/AQABwwHl
-        Af8BEAG7Av8BAAETAbUB/wNLAZABAAETAbUB/wEAAa8C/wEAAa8C/wEAAZoC/wEAARMBtQH/AY4BygL/
-        AYkByAL/AYQBxQL/ASIBwwL/AR0BwAL/ARkBvwL/AQABwwHlAf8BEAG7Av8BAAETAbUB/wNMAZEDEwEa
-        CAACrQGrAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLx
-        Af8B8gLxBf8DEAEWRQABEwG1Af8BAAG5Av8BAAETAbUB/wGsAdgC/wGtAdkC/wGpAdcC/wGkAdUC/wGe
-        AdIC/wGVAc0C/wGQAcsC/wGKAckC/wGEAcYC/wEAAcYB5QH/ASIBwwL/AQABEwG1Af8DSwGPAQABEwG1
-        Af8BBwG3Av8BBwG3Av8BAAGoAv8BAAETAbUB/wGgAdEC/wGcAc8C/wGXAc0C/wGSAcwC/wGLAcgC/wGH
-        AccC/wEAAckB5QH/ASIBwwL/AQABEwG1Af8DVAGvAzUBWAgAAq0BqwH/Ae4B7wHuAf8C7wHuAf8C7wHu
-        Af8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuBf8DEAEWRQABEwG1Af8BFQHC
-        Av8BAAETAbUB/wG+AeEC/wG+AeEC/wG5Ad4C/wG1AdwC/wGvAdkC/wGpAdcC/wGiAdMC/wGaAc8C/wGX
-        Ac4C/wEAAcwB5QH/AY4BygL/AQABEwG1Af8DRAF8AQABEwG1Af8BHQHAAv8BHQHAAv8BHQHAAv8BAAGh
-        Av8BAAETAbUB/wGtAdcC/wGoAdUC/wGjAdIC/wGeAdAC/wGZAc4C/wEAAcwB5QH/AZIBzAL/AZIBzAL/
-        AQABEwG1Af8DQgF1CAACrQGrAf8B7ALrAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLs
-        Af8B7QLsAf8B7QLsAf8B7QLsBf8DEAEWRQABEwG1Af8BiAHMAv8BAAETAbUt/wEAARMBtQH/AyUBNwEA
-        ARMBtQH/AZABywL/AZABywL/AZABywL/AQUBtgL/AQABEwG1Af8B7AH1Hv8BAAETAbUB/wMuAUcIAAKt
-        AasB/wHqAekB6AH/AesB6gHpAf8B6wHqAekB/wHrAeoB6QH/AesB6gHpAf8B6wHqAekB/wHrAeoB6QH/
-        AeoB6QHnAf8B6gHpAegB/wHpAegB5wX/AxABFkUAARMBtQH/AZ8B1QL/ARoBwwL/AQABEwG1Af8BAAET
-        AbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/
-        AQABEwG1Af8BAAETAbUB/wMqAUADBAEFAQABEwG1Af8BqAHVAv8BoAHRAv8BqAHVAv8BqAHVAv8BAAGr
-        Av8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEA
-        ARMBtQH/A0ABcQMHAQoIAAKtAasB/wLnAeYB/wLoAecB/wLoAecB/wLoAecB/wLoAecB/wLoAecB/wHm
-        AecB5QH/AssBygH/AqcBpQH/AqcBpAX/AwoBDUUAARMBtQH/AbUB3wL/AbUB3wL/AbQB3gL/AbUB3gL/
-        AbMB3QL/AbMB3Rb/AQABEwG1Af8DKgFAAwQBBQUAARMBtQH/Ab4B3wL/Ab4B3wL/AbsB3QL/Ab4B3wL/
-        AbsB3QL/AbsB3RL/AQABEwG1Af8DKwFCAwcBCgMAAQEMAAKuAasB/wHkAeMB4gH/AeYB5QHkAf8B5gHl
-        AeQB/wHmAeUB5AH/AeYB5QHkAf8B5gHlAeQB/wHkAeMB4gH/AqcBpQH/AfMC8gX/A1QBrkkAARMBtQH/
-        AccB5gL/AccB5gL/AccB5gL/AccB5gL/AccB5gb/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1
-        Af8BAAETAbUB/wMdASoDBAEFAwIBAwUAARMBtQH/Ac0B5gL/Ac0B5gL/Ac0B5gL/Ac0B5gL/Ac0B5gb/
-        AQABEwG1Af8BAAETAbUB/wEAARMBtQH/AQABEwG1Af8DHQEqAwQBBRQAAq4BqwH/AeIB4QHgAf8B5AHj
-        AeIB/wHkAeMB4gH/AeQB4wHiAf8B5AHjAeIB/wHkAeMB4gH/AeIB4QHgAf8CpwGkBf8DVAGuTQABEwG1
-        Ff8BAAETAbUB/wMrAUIDBwEKAwMBBAMDAQQDAgEDAwABAQ0AARMBtRX/AQABEwG1Af8DKwFCAwcBCgMD
-        AQQDAgEDAwABARgAAq8BrSH/A1QBrlAAAwEBAgEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEAARMBtQH/
-        AQABEwG1Af8DHQEqAwQBBQMCAQMcAAMBAQIBAAETAbUB/wEAARMBtQH/AQABEwG1Af8BAAETAbUB/wEA
-        ARMBtQH/Ax0BKgMEAQWgAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wHA
-        AQECAAGAAQEBgAEHAcABAQUAAQMBwAEBBQABAQHAAQEFAAEBAcABAQUAAQEBwAEBBgABwAEBBgABwAEB
-        BgABwAEBBgABwAEBBgABwAEBBgABwAEBAwABAQEAAQEBwAEDAwABAQEAAQcBwAEHAwABBwEAAQ8BwAEP
-        AwABfwEAA/8YAAs=
-</value>
-  </data>
-  <data name="DeleteSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="MainFormStatusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rename Selected</value>
-  </data>
-  <data name="RootNameTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="DeleteSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Del</value>
-  </data>
-  <data name="EditToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="ContextExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="ContextAddFileToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+A</value>
-  </data>
-  <data name="&gt;&gt;ExportSelectedToolStripMenuItem.Name" xml:space="preserve">
-    <value>ExportSelectedToolStripMenuItem</value>
-  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SaveToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;ContextExportSelectToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RenameSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+R</value>
-  </data>
-  <data name="MainToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="ContextDeleteSelectedToolStripMenuItems.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Del</value>
-  </data>
-  <data name="&gt;&gt;MainFormStatusStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="RootNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ArchiveTreeView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 47</value>
-  </data>
-  <data name="ExportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="KeepIDsSyncedCheckBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="&gt;&gt;EditToolStripMenuItem.Name" xml:space="preserve">
-    <value>EditToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;AddFileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Yaz0ToolStripComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AddFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Empty Folder</value>
-  </data>
-  <data name="&gt;&gt;ArchiveContextMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RenameSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="ExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="&gt;&gt;EditToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ArchiveImageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Yaz0ToolStripComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="ImportFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Import Folder</value>
-  </data>
-  <data name="&gt;&gt;MainFormMenuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RootNameTextBox.Name" xml:space="preserve">
-    <value>RootNameTextBox</value>
-  </data>
-  <data name="&gt;&gt;RootPanel.Name" xml:space="preserve">
-    <value>RootPanel</value>
-  </data>
-  <data name="ContextAddFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add File(s)</value>
-  </data>
-  <data name="ContextRenameToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+R</value>
-  </data>
-  <data name="&gt;&gt;FileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainFormMenuStrip.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ContextReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="&gt;&gt;ItemPropertiesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="&gt;&gt;AddFolderToolStripMenuItem.Name" xml:space="preserve">
-    <value>AddFolderToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ArchiveTreeView.Name" xml:space="preserve">
-    <value>ArchiveTreeView</value>
-  </data>
-  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ContextImportFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImportFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
-  </data>
-  <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Replace Selected</value>
-  </data>
-  <data name="&gt;&gt;ContextRenameToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>480, 390</value>
-  </data>
-  <data name="&gt;&gt;DeleteSelectedToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="&gt;&gt;KeepIDsSyncedCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="SaveToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
-  <data name="RootNameTextBox.Enabled" type="System.Boolean, mscorlib">
+  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+S</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 22</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 23</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add File(s)</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+A</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Empty Folder</value>
+  </data>
+  <data name="ImportFolderToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ImportFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+R</value>
+  </data>
+  <data name="ImportFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ImportFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import Folder</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Del</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+R</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rename Selected</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+S</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export Selected</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Shift+S</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export All</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+R</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Replace Selected</value>
+  </data>
+  <data name="EditToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 23</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Yaz0ToolStripComboBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;ContextAddFileToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextAddFileToolStripMenuItem</value>
+  <data name="Yaz0ToolStripComboBox.Items" xml:space="preserve">
+    <value>Off</value>
   </data>
-  <data name="&gt;&gt;RootNameTextBox.Parent" xml:space="preserve">
-    <value>RootPanel</value>
+  <data name="Yaz0ToolStripComboBox.Items1" xml:space="preserve">
+    <value>Yaz0 Strong</value>
   </data>
-  <data name="MainToolStripStatusLabel.Text" xml:space="preserve">
-    <value>No File Loaded.</value>
+  <data name="Yaz0ToolStripComboBox.Items2" xml:space="preserve">
+    <value>Yaz0 Fast</value>
   </data>
-  <data name="ArchiveContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 180</value>
+  <data name="Yaz0ToolStripComboBox.Items3" xml:space="preserve">
+    <value>Yay0 Strong</value>
   </data>
-  <data name="RootNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;ContextAddFolderToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextAddFolderToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;MainFormStatusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Parent" xml:space="preserve">
-    <value>RootPanel</value>
-  </data>
-  <data name="MainFormStatusStrip.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="ImportFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+R</value>
+  <data name="Yaz0ToolStripComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
   </data>
   <data name="Yaz0ToolStripComboBox.ToolTipText" xml:space="preserve">
     <value>Compression Settings
@@ -547,179 +313,401 @@ If set to Yay0, the saved archive will be Yay0 Encoded.
 
 Yaz0 Strong is Default</value>
   </data>
-  <data name="&gt;&gt;AddFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExportAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>ExportAllToolStripMenuItem</value>
-  </data>
-  <data name="ImportFolderToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+  <data name="ItemPropertiesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;NewFromFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ItemPropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 23</value>
   </data>
-  <data name="RootNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="KeepIDsSyncedCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SwitchThemeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Switch Theme</value>
-  </data>
-  <data name="Yaz0ToolStripComboBox.Items" xml:space="preserve">
-    <value>Off</value>
-  </data>
-  <data name="&gt;&gt;MainToolStripProgressBar.Name" xml:space="preserve">
-    <value>MainToolStripProgressBar</value>
-  </data>
-  <data name="&gt;&gt;SwitchThemeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RootPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ContextDeleteSelectedToolStripMenuItems.Text" xml:space="preserve">
-    <value>Delete Selected</value>
-  </data>
-  <data name="ExportSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="MainToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 17</value>
-  </data>
-  <data name="RootNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="OpenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+O</value>
-  </data>
-  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;ExportAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SaveToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="RootPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="ReplaceSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+R</value>
-  </data>
-  <data name="DeleteSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="&gt;&gt;ArchiveTreeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileToolStripMenuItem.Name" xml:space="preserve">
-    <value>FileToolStripMenuItem</value>
-  </data>
-  <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>New From Folder</value>
-  </data>
-  <data name="MainFormStatusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 22</value>
-  </data>
-  <data name="&gt;&gt;NewToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ArchiveTreeView.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Yaz0ToolStripComboBox.Items2" xml:space="preserve">
-    <value>Yaz0 Fast</value>
-  </data>
-  <data name="ContextAddFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Empty Folder</value>
-  </data>
-  <data name="ArchiveTreeView.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="ItemPropertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>File Properties</value>
   </data>
   <data name="SwitchThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 23</value>
   </data>
-  <data name="ExportSelectedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+S</value>
+  <data name="SwitchThemeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Switch Theme</value>
   </data>
-  <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export Selected</value>
+  <data name="MainFormMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete Selected</value>
+  <data name="MainFormMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 27</value>
   </data>
+  <data name="MainFormMenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MainFormMenuStrip.Name" xml:space="preserve">
+    <value>MainFormMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;MainFormMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainFormMenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainFormMenuStrip.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="ArchiveImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>555, 17</value>
+  </metadata>
+  <data name="ArchiveImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
+        DgAAAk1TRnQBSQFMAgEBAwEAAcQBAwHEAQMBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABEAMAAQEBAAEgBgABEJoAAwwEEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEW
+        AxABFgMEAQVLAAEBAwYBCAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEK
+        AwMBBAsAAQEDBgEIAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEKAwMBBBQAA18B8wKu
+        AasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKv
+        Aa0B/wMQARZEAAMEAQUDJAE2A0QBeQNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNK
+        AYsDRwGCAzMBUgMLAQ8DBAEFAyQBNgNEAXkDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNF
+        AX8DKQE/AwMBBBAAAq4BqwX/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gX/AxABFkQA
+        Ax0BKgEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/
+        AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/A1IBqQM1AVgDHQEq
+        AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAER
+        AbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wNLAY4DFAEbAwABAQwAAq0BqwH/A/wB/wP7Af8D+wH/
+        A/sB/wP7Af8D+wH/A/sB/wP7Af8D+wH/A/sF/wMQARZFAAERAbUB/wEAAZ0C/wEAAREBtQH/AQABtQL/
+        AQABtQL/AQABtAL/AQABswL/AQABsQL/AQABrwL/AQABrQL/AQABqwL/AQABqwL/AQABuwHlAf8BAAGr
+        Av8BAAERAbUB/wNIAYgBAAERAbUB/wEAAREBtQH/AQABnAL/AQwBugL/AQABswL/AQABsgL/AQABsQL/
+        AQABsAL/AQABrwL/AQABrQL/AQABqwL/AQABEQG1Af8DVAGvAzYBWQMbASYMAAKtAasB/wH6AvgB/wH5
+        AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgB/wH5AvgF/wMQARZFAAER
+        AbUB/wEAAaEC/wEAAREBtQH/ARMBvgL/ARIBvgL/AREBvQL/AQ0BuwL/AQcBuQL/AQEBtgL/AQABtAL/
+        AQABsgL/AQABsAL/AQABvQHlAf8BAAGwAv8BAAERAbUB/wNLAZABAAERAbUB/wEAAZoC/wEAAREBtQH/
+        AQABEQG1Af8BDAG6Av8BCgG5Av8BCAG4Av8BAwG2Av8BAAG0Av8BAAGzAv8BAAGxAv8BAAG+AeUB/wEA
+        AREBtQH/A0wBkQMUARsMAAKtAasB/wP2Af8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2
+        Bf8DEAEWRQABEQG1Af8BAAGpAv8BAAERAbUB/wGHAcgC/wGGAccC/wGDAcYC/wEgAcMC/wEbAcEC/wEU
+        Ab4C/wEOAbsC/wEJAbkC/wEEAbcC/wEAAcAB5QH/AQEBtQL/AQABEQG1Af8DSwGQAQABEQG1Af8BAAGn
+        Av8BAAGdAv8BAAERAbUB/wEgAcMC/wEbAcAC/wEZAcAC/wEVAb4C/wEOAbsC/wEMAboC/wEIAbgC/wEA
+        AcIB5QH/AQABEQG1Af8DVAGvAzUBWAMDAQQIAAKtAasB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0
+        AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMB/wL0AfMF/wMQARZFAAERAbUB/wEAAbAC/wEAAREBtQH/
+        AZoB0QL/AZgBzwL/AZYBzwL/AZABywL/AYsBygL/AYQBxgL/AR8BwwL/ARgBvwL/ARMBvgL/AQABwwHl
+        Af8BDgG7Av8BAAERAbUB/wNLAZABAAERAbUB/wEAAa8C/wEAAa8C/wEAAZoC/wEAAREBtQH/AY4BygL/
+        AYkByAL/AYQBxQL/ASABwwL/ARsBwAL/ARcBvwL/AQABwwHlAf8BDgG7Av8BAAERAbUB/wNMAZEDEwEa
+        CAACrQGrAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLxAf8B8gLx
+        Af8B8gLxBf8DEAEWRQABEQG1Af8BAAG5Av8BAAERAbUB/wGsAdgC/wGtAdkC/wGpAdcC/wGkAdUC/wGe
+        AdIC/wGVAc0C/wGQAcsC/wGKAckC/wGEAcYC/wEAAcYB5QH/ASABwwL/AQABEQG1Af8DSwGPAQABEQG1
+        Af8BBQG3Av8BBQG3Av8BAAGoAv8BAAERAbUB/wGgAdEC/wGcAc8C/wGXAc0C/wGSAcwC/wGLAcgC/wGH
+        AccC/wEAAckB5QH/ASABwwL/AQABEQG1Af8DVAGvAzUBWAgAAq0BqwH/Ae4B7wHuAf8C7wHuAf8C7wHu
+        Af8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuAf8C7wHuBf8DEAEWRQABEQG1Af8BEwHC
+        Av8BAAERAbUB/wG+AeEC/wG+AeEC/wG5Ad4C/wG1AdwC/wGvAdkC/wGpAdcC/wGiAdMC/wGaAc8C/wGX
+        Ac4C/wEAAcwB5QH/AY4BygL/AQABEQG1Af8DRAF8AQABEQG1Af8BGwHAAv8BGwHAAv8BGwHAAv8BAAGh
+        Av8BAAERAbUB/wGtAdcC/wGoAdUC/wGjAdIC/wGeAdAC/wGZAc4C/wEAAcwB5QH/AZIBzAL/AZIBzAL/
+        AQABEQG1Af8DQgF1CAACrQGrAf8B7ALrAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLsAf8B7QLs
+        Af8B7QLsAf8B7QLsAf8B7QLsBf8DEAEWRQABEQG1Af8BiAHMAv8BAAERAbUt/wEAAREBtQH/AyUBNwEA
+        AREBtQH/AZABywL/AZABywL/AZABywL/AQMBtgL/AQABEQG1Af8B7AH1Hv8BAAERAbUB/wMuAUcIAAKt
+        AasB/wHqAekB6AH/AesB6gHpAf8B6wHqAekB/wHrAeoB6QH/AesB6gHpAf8B6wHqAekB/wHrAeoB6QH/
+        AeoB6QHnAf8B6gHpAegB/wHpAegB5wX/AxABFkUAAREBtQH/AZ8B1QL/ARgBwwL/AQABEQG1Af8BAAER
+        AbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/
+        AQABEQG1Af8BAAERAbUB/wMqAUADBAEFAQABEQG1Af8BqAHVAv8BoAHRAv8BqAHVAv8BqAHVAv8BAAGr
+        Av8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEA
+        AREBtQH/A0ABcQMHAQoIAAKtAasB/wLnAeYB/wLoAecB/wLoAecB/wLoAecB/wLoAecB/wLoAecB/wHm
+        AecB5QH/AssBygH/AqcBpQH/AqcBpAX/AwoBDUUAAREBtQH/AbUB3wL/AbUB3wL/AbQB3gL/AbUB3gL/
+        AbMB3QL/AbMB3Rb/AQABEQG1Af8DKgFAAwQBBQUAAREBtQH/Ab4B3wL/Ab4B3wL/AbsB3QL/Ab4B3wL/
+        AbsB3QL/AbsB3RL/AQABEQG1Af8DKwFCAwcBCgMAAQEMAAKuAasB/wHkAeMB4gH/AeYB5QHkAf8B5gHl
+        AeQB/wHmAeUB5AH/AeYB5QHkAf8B5gHlAeQB/wHkAeMB4gH/AqcBpQH/AfMC8gX/A1QBrkkAAREBtQH/
+        AccB5gL/AccB5gL/AccB5gL/AccB5gL/AccB5gb/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1
+        Af8BAAERAbUB/wMdASoDBAEFAwIBAwUAAREBtQH/Ac0B5gL/Ac0B5gL/Ac0B5gL/Ac0B5gL/Ac0B5gb/
+        AQABEQG1Af8BAAERAbUB/wEAAREBtQH/AQABEQG1Af8DHQEqAwQBBRQAAq4BqwH/AeIB4QHgAf8B5AHj
+        AeIB/wHkAeMB4gH/AeQB4wHiAf8B5AHjAeIB/wHkAeMB4gH/AeIB4QHgAf8CpwGkBf8DVAGuTQABEQG1
+        Ff8BAAERAbUB/wMrAUIDBwEKAwMBBAMDAQQDAgEDAwABAQ0AAREBtRX/AQABEQG1Af8DKwFCAwcBCgMD
+        AQQDAgEDAwABARgAAq8BrSH/A1QBrlAAAwEBAgEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEAAREBtQH/
+        AQABEQG1Af8DHQEqAwQBBQMCAQMcAAMBAQIBAAERAbUB/wEAAREBtQH/AQABEQG1Af8BAAERAbUB/wEA
+        AREBtQH/Ax0BKgMEAQWgAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wHA
+        AQECAAGAAQEBgAEHAcABAQUAAQMBwAEBBQABAQHAAQEFAAEBAcABAQUAAQEBwAEBBgABwAEBBgABwAEB
+        BgABwAEBBgABwAEBBgABwAEBBgABwAEBAwABAQEAAQEBwAEDAwABAQEAAQcBwAEHAwABBwEAAQ8BwAEP
+        AwABfwEAA/8CAAs=
+</value>
+  </data>
+  <metadata name="MainFormStatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>389, 17</value>
+  </metadata>
   <data name="MainToolStripProgressBar.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 16</value>
   </data>
-  <data name="RootNameLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="MainToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 17</value>
+  </data>
+  <data name="MainToolStripStatusLabel.Text" xml:space="preserve">
+    <value>No File Loaded.</value>
+  </data>
+  <data name="MainToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="MainFormStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 329</value>
+  </data>
+  <data name="MainFormStatusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 22</value>
+  </data>
+  <data name="MainFormStatusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="MainFormStatusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;MainFormStatusStrip.Name" xml:space="preserve">
+    <value>MainFormStatusStrip</value>
+  </data>
+  <data name="&gt;&gt;MainFormStatusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainFormStatusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainFormStatusStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RootNameTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="RootNameTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="RootNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 0</value>
+  </data>
+  <data name="RootNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 20</value>
+  </data>
+  <data name="RootNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;RootNameTextBox.Name" xml:space="preserve">
+    <value>RootNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;RootNameTextBox.Type" xml:space="preserve">
+    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;RootNameTextBox.Parent" xml:space="preserve">
+    <value>RootPanel</value>
+  </data>
+  <data name="&gt;&gt;RootNameTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="KeepIDsSyncedCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="AddFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+A</value>
-  </data>
-  <data name="AddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ContextExportSelectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export Selected</value>
-  </data>
-  <data name="&gt;&gt;NewToolStripMenuItem.Name" xml:space="preserve">
-    <value>NewToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;SwitchThemeToolStripMenuItem.Name" xml:space="preserve">
-    <value>SwitchThemeToolStripMenuItem</value>
+  <data name="KeepIDsSyncedCheckBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="KeepIDsSyncedCheckBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;ContextRenameToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextRenameToolStripMenuItem</value>
+  <data name="KeepIDsSyncedCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="AddFileToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="KeepIDsSyncedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>331, 0</value>
   </data>
-  <data name="&gt;&gt;ItemPropertiesToolStripMenuItem.Name" xml:space="preserve">
-    <value>ItemPropertiesToolStripMenuItem</value>
+  <data name="KeepIDsSyncedCheckBox.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
-  <data name="&gt;&gt;MainToolStripStatusLabel.Name" xml:space="preserve">
-    <value>MainToolStripStatusLabel</value>
+  <data name="KeepIDsSyncedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 20</value>
   </data>
-  <data name="ExportAllToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+Shift+S</value>
+  <data name="KeepIDsSyncedCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="ReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
+  <data name="KeepIDsSyncedCheckBox.Text" xml:space="preserve">
+    <value>Auto-Calculate File IDs</value>
   </data>
-  <data name="&gt;&gt;MainToolStripProgressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Name" xml:space="preserve">
+    <value>KeepIDsSyncedCheckBox</value>
+  </data>
+  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;KeepIDsSyncedCheckBox.Parent" xml:space="preserve">
+    <value>RootPanel</value>
+  </data>
+  <data name="&gt;&gt;KeepIDsSyncedCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RootNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RootNameLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="RootNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="RootNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="RootNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="RootNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RootNameLabel.Text" xml:space="preserve">
+    <value>Root Name:</value>
+  </data>
+  <data name="&gt;&gt;RootNameLabel.Name" xml:space="preserve">
+    <value>RootNameLabel</value>
+  </data>
+  <data name="&gt;&gt;RootNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RootNameLabel.Parent" xml:space="preserve">
+    <value>RootPanel</value>
+  </data>
+  <data name="&gt;&gt;RootNameLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RootPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="RootPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="RootPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 20</value>
+  </data>
+  <data name="RootPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;RootPanel.Name" xml:space="preserve">
+    <value>RootPanel</value>
+  </data>
+  <data name="&gt;&gt;RootPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RootPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RootPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ArchiveTreeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ArchiveTreeView.ImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ArchiveTreeView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 47</value>
+  </data>
+  <data name="ArchiveTreeView.SelectedImageIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="ArchiveTreeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>464, 282</value>
   </data>
-  <data name="&gt;&gt;ContextImportFolderToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextImportFolderToolStripMenuItem</value>
+  <data name="ArchiveTreeView.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="KeepIDsSyncedCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;ArchiveTreeView.Name" xml:space="preserve">
+    <value>ArchiveTreeView</value>
   </data>
-  <data name="NewToolStripMenuItem.Text" xml:space="preserve">
-    <value>New</value>
+  <data name="&gt;&gt;ArchiveTreeView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OpenToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ArchiveTreeView.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;ArchiveImageList.Name" xml:space="preserve">
-    <value>ArchiveImageList</value>
+  <data name="&gt;&gt;ArchiveTreeView.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="RootNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 20</value>
+  <metadata name="ArchiveContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>699, 17</value>
+  </metadata>
+  <data name="ContextAddFileToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="ContextAddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextAddFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add File(s)</value>
+  </data>
+  <data name="ContextAddFolderToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+A</value>
+  </data>
+  <data name="ContextAddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextAddFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add Empty Folder</value>
+  </data>
+  <data name="ContextImportFolderToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Shift+R</value>
+  </data>
+  <data name="ContextImportFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextImportFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Import Folder</value>
+  </data>
+  <data name="ContextDeleteSelectedToolStripMenuItems.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+Del</value>
+  </data>
+  <data name="ContextDeleteSelectedToolStripMenuItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextDeleteSelectedToolStripMenuItems.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="ContextRenameToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+R</value>
+  </data>
+  <data name="ContextRenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextRenameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rename Selected</value>
+  </data>
+  <data name="ContextExportSelectToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+S</value>
+  </data>
+  <data name="ContextExportSelectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextExportSelectToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export Selected</value>
+  </data>
+  <data name="ContextExportAllToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+Shift+S</value>
+  </data>
+  <data name="ContextExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextExportAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export All</value>
+  </data>
+  <data name="ContextReplaceSelectedToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+R</value>
+  </data>
+  <data name="ContextReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="ContextReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Replace Selected</value>
+  </data>
+  <data name="ArchiveContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 180</value>
+  </data>
+  <data name="&gt;&gt;ArchiveContextMenuStrip.Name" xml:space="preserve">
+    <value>ArchiveContextMenuStrip</value>
+  </data>
+  <data name="&gt;&gt;ArchiveContextMenuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="EncodingBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>464, 351</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -797,187 +785,196 @@ Yaz0 Strong is Default</value>
         gAPAAAADwAAAA8AAAAPgAA//8AAf//////8=
 </value>
   </data>
-  <data name="MainFormMenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>480, 390</value>
   </data>
-  <data name="NewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>WiiExplorer</value>
   </data>
-  <data name="&gt;&gt;RootPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;FileToolStripMenuItem.Name" xml:space="preserve">
+    <value>FileToolStripMenuItem</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;SaveToolStripMenuItem.Name" xml:space="preserve">
-    <value>SaveToolStripMenuItem</value>
-  </data>
-  <data name="ContextAddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="KeepIDsSyncedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 0</value>
-  </data>
-  <data name="NewFromFolderToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+N</value>
-  </data>
-  <data name="&gt;&gt;RenameSelectedToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;FileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="AddFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add File(s)</value>
+  <data name="&gt;&gt;NewToolStripMenuItem.Name" xml:space="preserve">
+    <value>NewToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;RootPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ContextAddFileToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;NewToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ImportFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;ContextExportAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>ContextExportAllToolStripMenuItem</value>
-  </data>
-  <data name="Yaz0ToolStripComboBox.Items3" xml:space="preserve">
-    <value>Yay0 Strong</value>
-  </data>
-  <data name="MainFormMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 27</value>
-  </data>
-  <data name="MainFormStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 329</value>
-  </data>
-  <data name="AddFileToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+A</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>464, 351</value>
-  </data>
-  <data name="&gt;&gt;RootNameLabel.Parent" xml:space="preserve">
-    <value>RootPanel</value>
-  </data>
-  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 23</value>
-  </data>
-  <data name="&gt;&gt;RootNameTextBox.Type" xml:space="preserve">
-    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.4.5.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="RenameSelectedToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;AddFileToolStripMenuItem.Name" xml:space="preserve">
-    <value>AddFileToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;NewFromFolderToolStripMenuItem.Name" xml:space="preserve">
     <value>NewFromFolderToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;ReplaceSelectedToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;NewFromFolderToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="RootNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 0</value>
+  <data name="&gt;&gt;OpenToolStripMenuItem.Name" xml:space="preserve">
+    <value>OpenToolStripMenuItem</value>
   </data>
-  <data name="KeepIDsSyncedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 20</value>
-  </data>
-  <data name="ContextImportFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Import Folder</value>
-  </data>
-  <data name="&gt;&gt;MainFormStatusStrip.Name" xml:space="preserve">
-    <value>MainFormStatusStrip</value>
-  </data>
-  <data name="RootNameLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="&gt;&gt;DeleteSelectedToolStripMenuItem.Name" xml:space="preserve">
-    <value>DeleteSelectedToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ContextDeleteSelectedToolStripMenuItems.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
+  <data name="&gt;&gt;SaveToolStripMenuItem.Name" xml:space="preserve">
+    <value>SaveToolStripMenuItem</value>
   </data>
-  <data name="ContextAddFolderToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+Shift+A</value>
-  </data>
-  <data name="&gt;&gt;ContextExportAllToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SaveToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="MainFormMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ContextExportAllToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+Shift+S</value>
+  <data name="&gt;&gt;SaveAsToolStripMenuItem.Name" xml:space="preserve">
+    <value>SaveAsToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;SaveAsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ContextReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Replace Selected</value>
+  <data name="&gt;&gt;EditToolStripMenuItem.Name" xml:space="preserve">
+    <value>EditToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;EncodingBackgroundWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;EditToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MainToolStripStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;AddFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddFileToolStripMenuItem</value>
   </data>
-  <data name="ItemPropertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>File Properties</value>
+  <data name="&gt;&gt;AddFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ArchiveTreeView.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;AddFolderToolStripMenuItem.Name" xml:space="preserve">
+    <value>AddFolderToolStripMenuItem</value>
   </data>
-  <data name="AddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
+  <data name="&gt;&gt;AddFolderToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;RootNameLabel.Name" xml:space="preserve">
-    <value>RootNameLabel</value>
+  <data name="&gt;&gt;ImportFolderToolStripMenuItem.Name" xml:space="preserve">
+    <value>ImportFolderToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;ContextReplaceSelectedToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ImportFolderToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteSelectedToolStripMenuItem.Name" xml:space="preserve">
+    <value>DeleteSelectedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;DeleteSelectedToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RenameSelectedToolStripMenuItem.Name" xml:space="preserve">
     <value>RenameSelectedToolStripMenuItem</value>
   </data>
-  <data name="KeepIDsSyncedCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;RenameSelectedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 23</value>
+  <data name="&gt;&gt;ExportSelectedToolStripMenuItem.Name" xml:space="preserve">
+    <value>ExportSelectedToolStripMenuItem</value>
   </data>
-  <data name="NewFromFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 22</value>
+  <data name="&gt;&gt;ExportSelectedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ContextRenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
+  <data name="&gt;&gt;ExportAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>ExportAllToolStripMenuItem</value>
   </data>
-  <data name="ContextExportSelectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
+  <data name="&gt;&gt;ExportAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="MainFormStatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>389, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ArchiveContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>699, 17</value>
-  </metadata>
-  <metadata name="ArchiveImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>555, 17</value>
-  </metadata>
-  <metadata name="MainFormMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>225, 17</value>
-  </metadata>
-  <metadata name="EncodingBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="&gt;&gt;ReplaceSelectedToolStripMenuItem.Name" xml:space="preserve">
+    <value>ReplaceSelectedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ReplaceSelectedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Yaz0ToolStripComboBox.Name" xml:space="preserve">
+    <value>Yaz0ToolStripComboBox</value>
+  </data>
+  <data name="&gt;&gt;Yaz0ToolStripComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemPropertiesToolStripMenuItem.Name" xml:space="preserve">
+    <value>ItemPropertiesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ItemPropertiesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SwitchThemeToolStripMenuItem.Name" xml:space="preserve">
+    <value>SwitchThemeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;SwitchThemeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ArchiveImageList.Name" xml:space="preserve">
+    <value>ArchiveImageList</value>
+  </data>
+  <data name="&gt;&gt;ArchiveImageList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainToolStripProgressBar.Name" xml:space="preserve">
+    <value>MainToolStripProgressBar</value>
+  </data>
+  <data name="&gt;&gt;MainToolStripProgressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainToolStripStatusLabel.Name" xml:space="preserve">
+    <value>MainToolStripStatusLabel</value>
+  </data>
+  <data name="&gt;&gt;MainToolStripStatusLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextAddFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextAddFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextAddFileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextAddFolderToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextAddFolderToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextAddFolderToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextImportFolderToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextImportFolderToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextImportFolderToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextDeleteSelectedToolStripMenuItems.Name" xml:space="preserve">
+    <value>ContextDeleteSelectedToolStripMenuItems</value>
+  </data>
+  <data name="&gt;&gt;ContextDeleteSelectedToolStripMenuItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextRenameToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextRenameToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextRenameToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextExportSelectToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextExportSelectToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextExportSelectToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextExportAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextExportAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextExportAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContextReplaceSelectedToolStripMenuItem.Name" xml:space="preserve">
+    <value>ContextReplaceSelectedToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ContextReplaceSelectedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EncodingBackgroundWorker.Name" xml:space="preserve">
+    <value>EncodingBackgroundWorker</value>
+  </data>
+  <data name="&gt;&gt;EncodingBackgroundWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

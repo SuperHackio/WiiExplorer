@@ -272,6 +272,10 @@
       <Project>{bdda5ade-2d88-483d-854c-d295ed9f8089}</Project>
       <Name>Hack.io.YAZ0</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Hack.io\Hack.io\Hack.io.csproj">
+      <Project>{389F751D-DB2A-4746-B3BC-88E106C361CE}</Project>
+      <Name>Hack.io</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">

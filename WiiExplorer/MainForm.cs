@@ -221,7 +221,7 @@ namespace WiiExplorer
             if (Fileofd.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(Fileofd.FileName))
             {
                 ArchiveTreeView.SelectedNode = tmp;
-                AddItemsToRARC(Fileofd.FileNames);
+                AddItemsToArchive(Fileofd.FileNames);
                 MainToolStripStatusLabel.Text = string.Format(Strings.AddedFilesMessage, Fileofd.FileNames.Length);
                 Settings.Default.PreviousAddFilePath = new FileInfo(Fileofd.FileName).DirectoryName;
                 Settings.Default.Save();
@@ -796,7 +796,7 @@ namespace WiiExplorer
                 if (string.IsNullOrWhiteSpace(NodeMap))
                 {
                     string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-                    AddItemsToRARC(files);
+                    AddItemsToArchive(files);
                     MainToolStripStatusLabel.Text = string.Format(Strings.AddedFilesMessage, files.Length);
                     return;
                 }
@@ -809,7 +809,7 @@ namespace WiiExplorer
 
                 if (InsertCollection != null)
                 {
-                    AddItemsToRARC((string[])e.Data.GetData(DataFormats.FileDrop, false), Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]), InsertCollection);
+                    AddItemsToArchive((string[])e.Data.GetData(DataFormats.FileDrop, false), Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]), InsertCollection);
                 }
             }
             else if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false) && !string.IsNullOrWhiteSpace(NodeMap))
@@ -1177,6 +1177,14 @@ namespace WiiExplorer
             else if (IsYaz0 && Program.EncodingMode != 0x02)
                 Program.EncodingMode = 0x01;
             Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
+
+            //bool IsU8()
+            //{
+            //    FileStream arc = new FileStream(Filename, FileMode.Open);
+            //    bool Check = arc.ReadString(4) == ;
+            //    arc.Close();
+            //    return Check;
+            //}
         }
 
         private void SaveArchive(string Filename)
@@ -1226,7 +1234,7 @@ namespace WiiExplorer
             Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
         }
         
-        private void AddItemsToRARC(string[] FileNames)
+        private void AddItemsToArchive(string[] FileNames)
         {
             Edited = true;
             for (int i = 0; i < FileNames.Length; i++)
@@ -1301,7 +1309,7 @@ namespace WiiExplorer
             }
         }
 
-        private void AddItemsToRARC(string[] FileNames, int Index, TreeNodeCollection InsertCollection)
+        private void AddItemsToArchive(string[] FileNames, int Index, TreeNodeCollection InsertCollection)
         {
             Edited = true;
             for (int i = 0; i < FileNames.Length; i++)

@@ -76,19 +76,18 @@
             // 
             // MainFormMenuStrip
             // 
-            resources.ApplyResources(this.MainFormMenuStrip, "MainFormMenuStrip");
             this.MainFormMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.EditToolStripMenuItem,
             this.Yaz0ToolStripComboBox,
             this.ItemPropertiesToolStripMenuItem,
             this.SwitchThemeToolStripMenuItem});
+            resources.ApplyResources(this.MainFormMenuStrip, "MainFormMenuStrip");
             this.MainFormMenuStrip.Name = "MainFormMenuStrip";
             this.MainFormMenuStrip.Paint += new System.Windows.Forms.PaintEventHandler(this.MainFormMenuStrip_Paint);
             // 
             // FileToolStripMenuItem
             // 
-            resources.ApplyResources(this.FileToolStripMenuItem, "FileToolStripMenuItem");
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewToolStripMenuItem,
             this.NewFromFolderToolStripMenuItem,
@@ -96,23 +95,24 @@
             this.SaveToolStripMenuItem,
             this.SaveAsToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            resources.ApplyResources(this.FileToolStripMenuItem, "FileToolStripMenuItem");
             // 
             // NewToolStripMenuItem
             // 
-            resources.ApplyResources(this.NewToolStripMenuItem, "NewToolStripMenuItem");
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
+            resources.ApplyResources(this.NewToolStripMenuItem, "NewToolStripMenuItem");
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // NewFromFolderToolStripMenuItem
             // 
-            resources.ApplyResources(this.NewFromFolderToolStripMenuItem, "NewFromFolderToolStripMenuItem");
             this.NewFromFolderToolStripMenuItem.Name = "NewFromFolderToolStripMenuItem";
+            resources.ApplyResources(this.NewFromFolderToolStripMenuItem, "NewFromFolderToolStripMenuItem");
             this.NewFromFolderToolStripMenuItem.Click += new System.EventHandler(this.NewFromFolderToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
-            resources.ApplyResources(this.OpenToolStripMenuItem, "OpenToolStripMenuItem");
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
+            resources.ApplyResources(this.OpenToolStripMenuItem, "OpenToolStripMenuItem");
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
@@ -129,7 +129,6 @@
             // 
             // EditToolStripMenuItem
             // 
-            resources.ApplyResources(this.EditToolStripMenuItem, "EditToolStripMenuItem");
             this.EditToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddFileToolStripMenuItem,
             this.AddFolderToolStripMenuItem,
@@ -139,6 +138,7 @@
             this.ExportSelectedToolStripMenuItem,
             this.ExportAllToolStripMenuItem,
             this.ReplaceSelectedToolStripMenuItem});
+            resources.ApplyResources(this.EditToolStripMenuItem, "EditToolStripMenuItem");
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
             // 
             // AddFileToolStripMenuItem
@@ -191,9 +191,9 @@
             // 
             // Yaz0ToolStripComboBox
             // 
-            resources.ApplyResources(this.Yaz0ToolStripComboBox, "Yaz0ToolStripComboBox");
             this.Yaz0ToolStripComboBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.Yaz0ToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.Yaz0ToolStripComboBox, "Yaz0ToolStripComboBox");
             this.Yaz0ToolStripComboBox.Items.AddRange(new object[] {
             resources.GetString("Yaz0ToolStripComboBox.Items"),
             resources.GetString("Yaz0ToolStripComboBox.Items1"),
@@ -204,15 +204,15 @@
             // 
             // ItemPropertiesToolStripMenuItem
             // 
-            resources.ApplyResources(this.ItemPropertiesToolStripMenuItem, "ItemPropertiesToolStripMenuItem");
             this.ItemPropertiesToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.ItemPropertiesToolStripMenuItem, "ItemPropertiesToolStripMenuItem");
             this.ItemPropertiesToolStripMenuItem.Name = "ItemPropertiesToolStripMenuItem";
             this.ItemPropertiesToolStripMenuItem.Click += new System.EventHandler(this.ItemPropertiesToolStripMenuItem_Click);
             // 
             // SwitchThemeToolStripMenuItem
             // 
-            resources.ApplyResources(this.SwitchThemeToolStripMenuItem, "SwitchThemeToolStripMenuItem");
             this.SwitchThemeToolStripMenuItem.Name = "SwitchThemeToolStripMenuItem";
+            resources.ApplyResources(this.SwitchThemeToolStripMenuItem, "SwitchThemeToolStripMenuItem");
             this.SwitchThemeToolStripMenuItem.Click += new System.EventHandler(this.SwitchThemeToolStripMenuItem_Click);
             // 
             // ArchiveImageList
@@ -225,29 +225,29 @@
             // 
             // MainFormStatusStrip
             // 
-            resources.ApplyResources(this.MainFormStatusStrip, "MainFormStatusStrip");
             this.MainFormStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainToolStripProgressBar,
             this.MainToolStripStatusLabel});
+            resources.ApplyResources(this.MainFormStatusStrip, "MainFormStatusStrip");
             this.MainFormStatusStrip.Name = "MainFormStatusStrip";
             // 
             // MainToolStripProgressBar
             // 
-            resources.ApplyResources(this.MainToolStripProgressBar, "MainToolStripProgressBar");
             this.MainToolStripProgressBar.Name = "MainToolStripProgressBar";
+            resources.ApplyResources(this.MainToolStripProgressBar, "MainToolStripProgressBar");
             // 
             // MainToolStripStatusLabel
             // 
-            resources.ApplyResources(this.MainToolStripStatusLabel, "MainToolStripStatusLabel");
             this.MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
+            resources.ApplyResources(this.MainToolStripStatusLabel, "MainToolStripStatusLabel");
             this.MainToolStripStatusLabel.Spring = true;
             // 
             // RootPanel
             // 
-            resources.ApplyResources(this.RootPanel, "RootPanel");
             this.RootPanel.Controls.Add(this.RootNameTextBox);
             this.RootPanel.Controls.Add(this.KeepIDsSyncedCheckBox);
             this.RootPanel.Controls.Add(this.RootNameLabel);
+            resources.ApplyResources(this.RootPanel, "RootPanel");
             this.RootPanel.Name = "RootPanel";
             // 
             // RootNameTextBox
@@ -272,9 +272,9 @@
             // 
             // ArchiveTreeView
             // 
-            resources.ApplyResources(this.ArchiveTreeView, "ArchiveTreeView");
             this.ArchiveTreeView.AllowDrop = true;
             this.ArchiveTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.ArchiveTreeView, "ArchiveTreeView");
             this.ArchiveTreeView.FullRowSelect = true;
             this.ArchiveTreeView.HideSelection = false;
             this.ArchiveTreeView.ImageList = this.ArchiveImageList;
@@ -292,7 +292,6 @@
             // 
             // ArchiveContextMenuStrip
             // 
-            resources.ApplyResources(this.ArchiveContextMenuStrip, "ArchiveContextMenuStrip");
             this.ArchiveContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ContextAddFileToolStripMenuItem,
             this.ContextAddFolderToolStripMenuItem,
@@ -303,53 +302,54 @@
             this.ContextExportAllToolStripMenuItem,
             this.ContextReplaceSelectedToolStripMenuItem});
             this.ArchiveContextMenuStrip.Name = "ArchiveContextMenuStrip";
+            resources.ApplyResources(this.ArchiveContextMenuStrip, "ArchiveContextMenuStrip");
             // 
             // ContextAddFileToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextAddFileToolStripMenuItem, "ContextAddFileToolStripMenuItem");
             this.ContextAddFileToolStripMenuItem.Name = "ContextAddFileToolStripMenuItem";
+            resources.ApplyResources(this.ContextAddFileToolStripMenuItem, "ContextAddFileToolStripMenuItem");
             this.ContextAddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
             // 
             // ContextAddFolderToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextAddFolderToolStripMenuItem, "ContextAddFolderToolStripMenuItem");
             this.ContextAddFolderToolStripMenuItem.Name = "ContextAddFolderToolStripMenuItem";
+            resources.ApplyResources(this.ContextAddFolderToolStripMenuItem, "ContextAddFolderToolStripMenuItem");
             this.ContextAddFolderToolStripMenuItem.Click += new System.EventHandler(this.AddFolderToolStripMenuItem_Click);
             // 
             // ContextImportFolderToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextImportFolderToolStripMenuItem, "ContextImportFolderToolStripMenuItem");
             this.ContextImportFolderToolStripMenuItem.Name = "ContextImportFolderToolStripMenuItem";
+            resources.ApplyResources(this.ContextImportFolderToolStripMenuItem, "ContextImportFolderToolStripMenuItem");
             this.ContextImportFolderToolStripMenuItem.Click += new System.EventHandler(this.ImportFolderToolStripMenuItem_Click);
             // 
             // ContextDeleteSelectedToolStripMenuItems
             // 
-            resources.ApplyResources(this.ContextDeleteSelectedToolStripMenuItems, "ContextDeleteSelectedToolStripMenuItems");
             this.ContextDeleteSelectedToolStripMenuItems.Name = "ContextDeleteSelectedToolStripMenuItems";
+            resources.ApplyResources(this.ContextDeleteSelectedToolStripMenuItems, "ContextDeleteSelectedToolStripMenuItems");
             this.ContextDeleteSelectedToolStripMenuItems.Click += new System.EventHandler(this.DeleteSelectedToolStripMenuItem_Click);
             // 
             // ContextRenameToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextRenameToolStripMenuItem, "ContextRenameToolStripMenuItem");
             this.ContextRenameToolStripMenuItem.Name = "ContextRenameToolStripMenuItem";
+            resources.ApplyResources(this.ContextRenameToolStripMenuItem, "ContextRenameToolStripMenuItem");
             this.ContextRenameToolStripMenuItem.Click += new System.EventHandler(this.RenameSelectedToolStripMenuItem_Click);
             // 
             // ContextExportSelectToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextExportSelectToolStripMenuItem, "ContextExportSelectToolStripMenuItem");
             this.ContextExportSelectToolStripMenuItem.Name = "ContextExportSelectToolStripMenuItem";
+            resources.ApplyResources(this.ContextExportSelectToolStripMenuItem, "ContextExportSelectToolStripMenuItem");
             this.ContextExportSelectToolStripMenuItem.Click += new System.EventHandler(this.ExportSelectedToolStripMenuItem_Click);
             // 
             // ContextExportAllToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextExportAllToolStripMenuItem, "ContextExportAllToolStripMenuItem");
             this.ContextExportAllToolStripMenuItem.Name = "ContextExportAllToolStripMenuItem";
+            resources.ApplyResources(this.ContextExportAllToolStripMenuItem, "ContextExportAllToolStripMenuItem");
             this.ContextExportAllToolStripMenuItem.Click += new System.EventHandler(this.ExportAllToolStripMenuItem_Click);
             // 
             // ContextReplaceSelectedToolStripMenuItem
             // 
-            resources.ApplyResources(this.ContextReplaceSelectedToolStripMenuItem, "ContextReplaceSelectedToolStripMenuItem");
             this.ContextReplaceSelectedToolStripMenuItem.Name = "ContextReplaceSelectedToolStripMenuItem";
+            resources.ApplyResources(this.ContextReplaceSelectedToolStripMenuItem, "ContextReplaceSelectedToolStripMenuItem");
             this.ContextReplaceSelectedToolStripMenuItem.Click += new System.EventHandler(this.ReplaceSelectedToolStripMenuItem_Click);
             // 
             // EncodingBackgroundWorker
