@@ -179,6 +179,15 @@ namespace WiiExplorer.Properties.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The chosen file is not supported.
+        /// </summary>
+        internal static string InvalidFile {
+            get {
+                return ResourceManager.GetString("InvalidFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is already an item with this name in this directory.
         /// </summary>
         internal static string ItemAlreadyExists {

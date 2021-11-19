@@ -222,4 +222,7 @@ Les fichiers SZS sont censés être encodés en YAZ0. Voulez-vous changer pour �
   <data name="Question" xml:space="preserve">
     <value>Question</value>
   </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Le fichier choisi n'est pas pris en charge</value>
+  </data>
 </root>

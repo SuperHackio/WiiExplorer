@@ -1214,8 +1214,13 @@ namespace WiiExplorer
             bool IsYay0 = YAY0.Check(Filename);
             if (IsU8())
                 Archive = IsYaz0 ? new U8(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new U8(YAY0.DecompressToMemoryStream(Filename), Filename) : new U8(Filename));
-            else
+            else if (IsRARC())
                 Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Filename), Filename) : new RARC(Filename));
+            else
+            {
+                MessageBox.Show(Strings.InvalidFile, Strings.Warning, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             MainToolStripProgressBar.Value = 20;
             ArchiveTreeView.Nodes.Clear();
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
@@ -1262,6 +1267,25 @@ namespace WiiExplorer
                     arc = new FileStream(Filename, FileMode.Open);
                 }
                 bool Check = arc.ReadString(4) == U8.Magic;
+                arc.Close();
+                return Check;
+            }
+            bool IsRARC()
+            {
+                Stream arc;
+                if (IsYaz0)
+                {
+                    arc = YAZ0.DecompressToMemoryStream(Filename);
+                }
+                else if (IsYay0)
+                {
+                    arc = YAY0.DecompressToMemoryStream(Filename);
+                }
+                else
+                {
+                    arc = new FileStream(Filename, FileMode.Open);
+                }
+                bool Check = arc.ReadString(4) == RARC.Magic;
                 arc.Close();
                 return Check;
             }

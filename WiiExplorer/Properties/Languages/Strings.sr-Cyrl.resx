@@ -222,4 +222,7 @@ SZS датотеке треба да буду YAZ0 Кодирано, да ли �
   <data name="Question" xml:space="preserve">
     <value>Питање</value>
   </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Изабрана датотека није подржана</value>
+  </data>
 </root>

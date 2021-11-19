@@ -222,4 +222,7 @@ Sicher, dass du eine andere Datei öffnen möchtest?</value>
   <data name="Question" xml:space="preserve">
     <value>Frage</value>
   </data>
+  <data name="InvalidFile" xml:space="preserve">
+    <value>Die ausgewählte Datei wird nicht unterstützt</value>
+  </data>
 </root>
