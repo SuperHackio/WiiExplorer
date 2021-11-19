@@ -1,4 +1,5 @@
 ﻿using Hack.io.RARC;
+using Hack.io.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace WiiExplorer
 { 
     public partial class RenameForm : Form
     {
-        public RenameForm(TreeView treeview, RARC archive)
+        public RenameForm(TreeView treeview, Archive archive)
         {
             InitializeComponent();
             CenterToParent();
@@ -48,7 +49,7 @@ namespace WiiExplorer
         }
 
         dynamic CurrentItem;
-        RARC Archive;
+        Archive Archive;
         TreeView ArchiveTreeView;
 
         private void RenameForm_FormClosing(object sender, FormClosingEventArgs e)

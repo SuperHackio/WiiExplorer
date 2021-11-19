@@ -216,4 +216,10 @@ Se supone que los archivos SZS están codificados en YAZ0. ¿Quieres cambiar a �
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - Renombrar «{0}»</value>
   </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>Elija el formato de archivo</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
 </root>

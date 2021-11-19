@@ -12,6 +12,9 @@ using WiiExplorer.Properties;
 using System.Reflection;
 using Hack.io.YAY0;
 using WiiExplorer.Properties.Languages;
+using Hack.io.U8;
+using Hack.io;
+using Hack.io.Util;
 
 namespace WiiExplorer
 {
@@ -21,7 +24,7 @@ namespace WiiExplorer
         SaveFileDialog sfd = new SaveFileDialog() { Filter = Strings.OpenFileFilter };
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
-        RARC Archive;
+        Archive Archive;
         bool Edited = false;
         static List<string> KnownExtensions = new List<string>
         {
@@ -49,6 +52,18 @@ namespace WiiExplorer
             ReloadTheme();
             Yaz0ToolStripComboBox.ComboBox.SetDoubleBuffered();
             ArchiveTreeView.SetDoubleBuffered();
+        }
+
+        public override string Text
+        {
+            get
+            {
+                return base.Text;
+            }
+            set
+            {
+                base.Text = value + (Archive is null ? "" : (Archive is U8 ? " (U8)":" (RARC)"));
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -99,7 +114,8 @@ namespace WiiExplorer
             ImportFolderToolStripMenuItem.Enabled = toggle;
             ArchiveTreeView.Enabled = toggle;
             RootNameTextBox.Enabled = toggle;
-            KeepIDsSyncedCheckBox.Enabled = toggle;
+            if (Archive is RARC)
+                KeepIDsSyncedCheckBox.Enabled = toggle;
             SaveToolStripMenuItem.Enabled = toggle;
             SaveAsToolStripMenuItem.Enabled = toggle;
 
@@ -121,9 +137,9 @@ namespace WiiExplorer
 
         private void KeepIDsSyncedCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (Archive != null)
+            if (Archive != null && Archive is RARC r)
             {
-                Archive.KeepFileIDsSynced = KeepIDsSyncedCheckBox.Checked;
+                r.KeepFileIDsSynced = KeepIDsSyncedCheckBox.Checked;
                 Edited = true;
             }
         }
@@ -155,11 +171,34 @@ namespace WiiExplorer
         {
             if (Edited && MessageBox.Show(Strings.UnsavedChangesNewFile, Strings.Warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 return;
-            Archive = new RARC() { KeepFileIDsSynced = true };
+            MessageBoxManager.Register();
+            MessageBoxManager.No = "RARC";
+            MessageBoxManager.Yes = "U8";
+            DialogResult dr = MessageBox.Show(Strings.ChooseFormatMessage, Strings.Question, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.Cancel)
+                return;
+            if (dr == DialogResult.Yes)
+            {
+                Archive = new U8();
+            }
+            else
+            {
+                Archive = new RARC() { KeepFileIDsSynced = true };
+            }
+            MessageBoxManager.Unregister();
             ArchiveTreeView.Nodes.Clear();
             Archive[Strings.NewArchive.Replace(" ","")] = null;
             RootNameTextBox.Text = Archive.Root.Name;
-            KeepIDsSyncedCheckBox.Checked = Archive.KeepFileIDsSynced;
+            if (Archive is RARC r)
+            {
+                KeepIDsSyncedCheckBox.Checked = r.KeepFileIDsSynced;
+                KeepIDsSyncedCheckBox.Enabled = true;
+            }
+            else
+            {
+                KeepIDsSyncedCheckBox.Checked =
+                KeepIDsSyncedCheckBox.Enabled = false;
+            }
 
             Edited = false;
             SetControlsEnabled();
@@ -275,7 +314,7 @@ namespace WiiExplorer
                 //Determine where to put it otherwise
                 else
                 {
-                    if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.Directory)
+                    if (Archive[ArchiveTreeView.SelectedNode.FullPath] is ArchiveDirectory)
                         ArchiveTreeView.SelectedNode.Nodes.Add(NewTreeNode);
                     else if (ArchiveTreeView.SelectedNode.Parent == null)
                         ArchiveTreeView.Nodes.Insert(ArchiveTreeView.SelectedNode.Index + 1, NewTreeNode);
@@ -284,7 +323,15 @@ namespace WiiExplorer
                 }
 
                 ArchiveTreeView.SelectedNode = NewTreeNode;
-                RARC.Directory dir = new RARC.Directory(BFB.FileName, Archive);
+                ArchiveDirectory dir;
+                if (Archive is RARC r)
+                {
+                    dir = new RARC.Directory(BFB.FileName, r);
+                }
+                else
+                {
+                    dir = new ArchiveDirectory(BFB.FileName, Archive); //U8 just uses the default base class
+                }
                 int y = 2;
                 while (Archive.ItemExists(NewTreeNode.FullPath))
                 {
@@ -442,12 +489,12 @@ namespace WiiExplorer
 
         private void ItemPropertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ArchiveTreeView.SelectedNode is null)
+            if (ArchiveTreeView.SelectedNode is null || Archive is U8)
             {
                 ItemPropertiesToolStripMenuItem.Enabled = false;
                 return;
             }
-            FilePropertyForm FPF = new FilePropertyForm(ArchiveTreeView, Archive);
+            FilePropertyForm FPF = new FilePropertyForm(ArchiveTreeView, Archive as RARC);
             if (FPF.ShowDialog() == DialogResult.OK)
             {
                 if (Archive[ArchiveTreeView.SelectedNode.FullPath] is RARC.File file)
@@ -1138,7 +1185,16 @@ namespace WiiExplorer
             Archive.Import(foldername);
             ArchiveTreeView.Nodes.Clear();
             RootNameTextBox.Text = Archive.Root.Name;
-            KeepIDsSyncedCheckBox.Checked = Archive.KeepFileIDsSynced;
+            if (Archive is RARC r)
+            {
+                KeepIDsSyncedCheckBox.Checked = r.KeepFileIDsSynced;
+                KeepIDsSyncedCheckBox.Enabled = true;
+            }
+            else
+            {
+                KeepIDsSyncedCheckBox.Checked =
+                KeepIDsSyncedCheckBox.Enabled = false;
+            }
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
             Settings.Default.PreviousAddFilePath = new DirectoryInfo(foldername).Parent.FullName;
             Settings.Default.Save();
@@ -1156,12 +1212,24 @@ namespace WiiExplorer
             MainToolStripProgressBar.Value = 0;
             bool IsYaz0 = YAZ0.Check(Filename);
             bool IsYay0 = YAY0.Check(Filename);
-            Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Filename), Filename) : new RARC(Filename));
+            if (IsU8())
+                Archive = IsYaz0 ? new U8(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new U8(YAY0.DecompressToMemoryStream(Filename), Filename) : new U8(Filename));
+            else
+                Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Filename), Filename) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Filename), Filename) : new RARC(Filename));
             MainToolStripProgressBar.Value = 20;
             ArchiveTreeView.Nodes.Clear();
             ArchiveTreeView.Nodes.AddRange(Archive.ToTreeNode(0, ArchiveImageList));
             RootNameTextBox.Text = Archive.Root.Name;
-            KeepIDsSyncedCheckBox.Checked = Archive.KeepFileIDsSynced;
+            if (Archive is RARC r)
+            {
+                KeepIDsSyncedCheckBox.Checked = r.KeepFileIDsSynced;
+                KeepIDsSyncedCheckBox.Enabled = true;
+            }
+            else
+            {
+                KeepIDsSyncedCheckBox.Checked = false;
+                KeepIDsSyncedCheckBox.Enabled = false;
+            }
             Edited = false;
             SetControlsEnabled();
             MainToolStripProgressBar.Value = 100;
@@ -1178,13 +1246,25 @@ namespace WiiExplorer
                 Program.EncodingMode = 0x01;
             Yaz0ToolStripComboBox.SelectedIndex = Program.EncodingMode;
 
-            //bool IsU8()
-            //{
-            //    FileStream arc = new FileStream(Filename, FileMode.Open);
-            //    bool Check = arc.ReadString(4) == ;
-            //    arc.Close();
-            //    return Check;
-            //}
+            bool IsU8()
+            {
+                Stream arc;
+                if (IsYaz0)
+                {
+                    arc = YAZ0.DecompressToMemoryStream(Filename);
+                }
+                else if (IsYay0)
+                {
+                    arc = YAY0.DecompressToMemoryStream(Filename);
+                }
+                else
+                {
+                    arc = new FileStream(Filename, FileMode.Open);
+                }
+                bool Check = arc.ReadString(4) == U8.Magic;
+                arc.Close();
+                return Check;
+            }
         }
 
         private void SaveArchive(string Filename)
@@ -1262,7 +1342,15 @@ namespace WiiExplorer
                     }
 
                     ArchiveTreeView.SelectedNode = NewTreeNode;
-                    RARC.Directory dir = new RARC.Directory(FileNames[i], Archive);
+                    ArchiveDirectory dir;
+                    if (Archive is RARC r)
+                    {
+                        dir = new RARC.Directory(FileNames[i], r);
+                    }
+                    else
+                    {
+                        dir = new ArchiveDirectory(FileNames[i], Archive); //U8 just uses the default base class
+                    }
                     int y = 2;
                     while (Archive.ItemExists(NewTreeNode.FullPath))
                     {
@@ -1327,7 +1415,15 @@ namespace WiiExplorer
                     InsertCollection.Insert(Index++, NewTreeNode);
 
                     ArchiveTreeView.SelectedNode = NewTreeNode;
-                    RARC.Directory dir = new RARC.Directory(FileNames[i], Archive);
+                    ArchiveDirectory dir;
+                    if (Archive is RARC r)
+                    {
+                        dir = new RARC.Directory(FileNames[i], r);
+                    }
+                    else
+                    {
+                        dir = new ArchiveDirectory(FileNames[i], Archive); //U8 just uses the default base class
+                    }
                     int y = 2;
                     while (Archive.ItemExists(NewTreeNode.FullPath))
                     {

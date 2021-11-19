@@ -176,7 +176,7 @@ Are you sure you want to replace it?</value>
     <value>New Folder</value>
   </data>
   <data name="OpenFileFilter" xml:space="preserve">
-    <value>All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|All Files|*.*</value>
+    <value>All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|U8 Archives|*.szs|All Files|*.*</value>
   </data>
   <data name="RemoveItemMessage" xml:space="preserve">
     <value>"{0}" has been removed.</value>
@@ -215,5 +215,11 @@ Are you sure you want to open another file?</value>
   </data>
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - Rename "{0}"</value>
+  </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>Choose archive format</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
   </data>
 </root>

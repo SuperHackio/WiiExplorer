@@ -216,4 +216,10 @@ SZS датотеке треба да буду YAZ0 Кодирано, да ли �
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - Преименовати "{0}"</value>
   </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>Изаберите формат архиве</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Питање</value>
+  </data>
 </root>

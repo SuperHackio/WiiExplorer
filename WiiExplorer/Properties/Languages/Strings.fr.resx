@@ -216,4 +216,10 @@ Les fichiers SZS sont censés être encodés en YAZ0. Voulez-vous changer pour �
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - Renommer « {0} »</value>
   </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>Choisissez le format d'archivage</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Question</value>
+  </data>
 </root>

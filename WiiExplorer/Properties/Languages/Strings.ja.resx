@@ -216,4 +216,10 @@ SZSファイルはYaZ0エンコードに対応しています,YaZ0強力に変�
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - 名前変更 "{0}"</value>
   </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>アーカイブ形式を選択してください</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>質問</value>
+  </data>
 </root>

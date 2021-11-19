@@ -216,4 +216,10 @@ Sicher, dass du eine andere Datei öffnen möchtest?</value>
   <data name="RenameWindowTitle" xml:space="preserve">
     <value>WiiExplorer - „{0}“ Umbenennen</value>
   </data>
+  <data name="ChooseFormatMessage" xml:space="preserve">
+    <value>Archivformat wählen</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Frage</value>
+  </data>
 </root>

@@ -9,7 +9,10 @@ using WiiExplorer.Properties;
 using System.Configuration;
 using System.Threading;
 using System.Globalization;
+using Hack.io;
+using Hack.io.Util;
 using Hack.io.RARC;
+using Hack.io.U8;
 using Hack.io.YAZ0;
 using Hack.io.YAY0;
 using System.Runtime.InteropServices;
@@ -46,7 +49,7 @@ namespace WiiExplorer
                 }
                 if ((OpenWith[0].Equals("--pack") || OpenWith[0].Equals("-p")) && File.GetAttributes(OpenWith[OpenWith.Length-1]) == FileAttributes.Directory)
                 {
-                    RARC Archive = new RARC();
+                    Archive Archive = OpenWith.Any(S => S.ToLower().Equals("-u8")) ? (Archive)new U8() : new RARC();
                     Archive.Import(OpenWith[OpenWith.Length - 1]);
                     DirectoryInfo di = new DirectoryInfo(OpenWith[OpenWith.Length - 1]);
                     string output = Path.Combine(di.Parent.FullName, di.Name + ".arc");
@@ -61,10 +64,34 @@ namespace WiiExplorer
                 {
                     bool IsYaz0 = YAZ0.Check(OpenWith[OpenWith.Length - 1]);
                     bool IsYay0 = YAY0.Check(OpenWith[OpenWith.Length - 1]);
-                    RARC Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : new RARC(OpenWith[OpenWith.Length - 1]));
+                    Archive Archive;
+                    if (IsU8())
+                        Archive = IsYaz0 ? new U8(YAZ0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : (IsYay0 ? new U8(YAY0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : new U8(OpenWith[OpenWith.Length - 1]));
+                    else
+                        Archive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]), OpenWith[OpenWith.Length - 1]) : new RARC(OpenWith[OpenWith.Length - 1]));
                     string output = new FileInfo(Archive.FileName).Directory.FullName;
                     Archive.Export(output, OpenWith.Any(S => S.Equals("--overwrite") || S.Equals("-o")));
                     return;
+
+                    bool IsU8()
+                    {
+                        Stream arc;
+                        if (IsYaz0)
+                        {
+                            arc = YAZ0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]);
+                        }
+                        else if (IsYay0)
+                        {
+                            arc = YAY0.DecompressToMemoryStream(OpenWith[OpenWith.Length - 1]);
+                        }
+                        else
+                        {
+                            arc = new FileStream(OpenWith[OpenWith.Length - 1], FileMode.Open);
+                        }
+                        bool Check = arc.ReadString(4) == U8.Magic;
+                        arc.Close();
+                        return Check;
+                    }
                 }
 
                 for (int i = 0; i < OpenWith.Length; i++)
@@ -73,7 +100,7 @@ namespace WiiExplorer
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(OpenWith[i+1]);
                 }
             }
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("ja");
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es");
 
             if (OpenWith.Length == 0)
                 OpenWith = new string[1] { null };
@@ -87,7 +114,7 @@ namespace WiiExplorer
             string[] Lines = File.ReadAllLines(Filename);
             Console.WriteLine("Script Loaded.");
             Thread.Sleep(100);
-            RARC CurrentArchive = null;
+            Archive CurrentArchive = null;
             string ErrorMessage = "";
             for (int i = 0; i < Lines.Length; i++)
             {
@@ -101,7 +128,10 @@ namespace WiiExplorer
                     case "new": //new
                         if (CurrentArchive is null)
                         {
-                            CurrentArchive = new RARC();
+                            if (Params.Contains("-u8"))
+                                CurrentArchive = new U8();
+                            else
+                                CurrentArchive = new RARC();
                             CurrentArchive["Root"] = null;
                             Console.WriteLine("New Archive Created Successfully");
                         }
@@ -126,8 +156,31 @@ namespace WiiExplorer
                             }
                             bool IsYaz0 = YAZ0.Check(Params[1]);
                             bool IsYay0 = YAY0.Check(Params[1]);
-                            CurrentArchive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Params[1]), Params[1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Params[1]), Params[1]) : new RARC(Params[1]));
+                            if (IsU8())
+                                CurrentArchive = IsYaz0 ? new U8(YAZ0.DecompressToMemoryStream(Params[1]), Params[1]) : (IsYay0 ? new U8(YAY0.DecompressToMemoryStream(Params[1]), Params[1]) : new U8(Params[1]));
+                            else
+                                CurrentArchive = IsYaz0 ? new RARC(YAZ0.DecompressToMemoryStream(Params[1]), Params[1]) : (IsYay0 ? new RARC(YAY0.DecompressToMemoryStream(Params[1]), Params[1]) : new RARC(Params[1]));
                             Console.WriteLine("Archive opened successfully!");
+                            
+                            bool IsU8()
+                            {
+                                Stream arc;
+                                if (IsYaz0)
+                                {
+                                    arc = YAZ0.DecompressToMemoryStream(Params[1]);
+                                }
+                                else if (IsYay0)
+                                {
+                                    arc = YAY0.DecompressToMemoryStream(Params[1]);
+                                }
+                                else
+                                {
+                                    arc = new FileStream(Params[1], FileMode.Open);
+                                }
+                                bool Check = arc.ReadString(4) == U8.Magic;
+                                arc.Close();
+                                return Check;
+                            }
                         }
                         else
                         {
@@ -206,7 +259,10 @@ namespace WiiExplorer
                         }
                         if (File.GetAttributes(Params[1]) == FileAttributes.Directory)
                         {
-                            CurrentArchive[Params[2]] = new RARC.Directory(Params[1], CurrentArchive);
+                            if (CurrentArchive is RARC rrr)
+                                CurrentArchive[Params[2]] = new RARC.Directory(Params[1], rrr);
+                            else
+                                CurrentArchive[Params[2]] = new ArchiveDirectory(Params[1], CurrentArchive);
                             Console.WriteLine("Folder {0} {1} successfully", Params[1], func);
                         }
                         else
@@ -325,9 +381,14 @@ namespace WiiExplorer
                                 switch (Params[x])
                                 {
                                     case "-id":
-                                        if (CurrentArchive.KeepFileIDsSynced)
+                                        if (CurrentArchive is RARC r && r.KeepFileIDsSynced)
                                         {
                                             ErrorMessage = string.Format("Edit failed! Cannot change File ID because the Archive is set to Automatically calculate file ID's", Params[x]);
+                                            goto Error;
+                                        }
+                                        else if (CurrentArchive is U8)
+                                        {
+                                            ErrorMessage = string.Format("Edit failed! Cannot change File ID because U8 archives do not have file Id's", Params[x]);
                                             goto Error;
                                         }
                                         if (short.TryParse(Params[++x], out short newid))
@@ -376,8 +437,8 @@ namespace WiiExplorer
                                             aram = false;
                                             dvd = false;
                                         }
-                                        if (!CurrentArchive.KeepFileIDsSynced && file.ID == -1)
-                                            file.ID = CurrentArchive.NextFreeFileID;
+                                        if (CurrentArchive is RARC rr && !rr.KeepFileIDsSynced && file.ID == -1)
+                                            file.ID = rr.NextFreeFileID;
                                         break;
                                     default:
                                         ErrorMessage = string.Format("Edit failed! Unknown file property {0}", Params[x]);

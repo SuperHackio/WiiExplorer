@@ -88,6 +88,15 @@ namespace WiiExplorer.Properties.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose archive format.
+        /// </summary>
+        internal static string ChooseFormatMessage {
+            get {
+                return ResourceManager.GetString("ChooseFormatMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The directory already exists.
         ///Are you sure you want to replace it?.
         /// </summary>
@@ -233,11 +242,20 @@ namespace WiiExplorer.Properties.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|All Files|*.*.
+        ///   Looks up a localized string similar to All Supported Files|*.arc;*.szs;*.szp|Revolution Archives|*.arc|YAZ0 Identified Revolution Archives|*.szs|YAY0 Identified Revolution Archives|*.szp|U8 Archives|*.szs|All Files|*.*.
         /// </summary>
         internal static string OpenFileFilter {
             get {
                 return ResourceManager.GetString("OpenFileFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        internal static string Question {
+            get {
+                return ResourceManager.GetString("Question", resourceCulture);
             }
         }
         
