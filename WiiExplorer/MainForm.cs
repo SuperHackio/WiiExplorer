@@ -1181,7 +1181,21 @@ namespace WiiExplorer
 
         private void NewFromFolder(string foldername)
         {
-            Archive = new RARC();
+            MessageBoxManager.Register();
+            MessageBoxManager.No = "RARC";
+            MessageBoxManager.Yes = "U8";
+            DialogResult dr = MessageBox.Show(Strings.ChooseFormatMessage, Strings.Question, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.Cancel)
+                return;
+            if (dr == DialogResult.Yes)
+            {
+                Archive = new U8();
+            }
+            else
+            {
+                Archive = new RARC() { KeepFileIDsSynced = true };
+            }
+            MessageBoxManager.Unregister();
             Archive.Import(foldername);
             ArchiveTreeView.Nodes.Clear();
             RootNameTextBox.Text = Archive.Root.Name;

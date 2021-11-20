@@ -49,7 +49,7 @@ namespace WiiExplorer
                 }
                 if ((OpenWith[0].Equals("--pack") || OpenWith[0].Equals("-p")) && File.GetAttributes(OpenWith[OpenWith.Length-1]) == FileAttributes.Directory)
                 {
-                    Archive Archive = OpenWith.Any(S => S.ToLower().Equals("-u8")) ? (Archive)new U8() : new RARC();
+                    dynamic Archive = OpenWith.Any(S => S.ToLower().Equals("-u8")) ? (Archive)new U8() : new RARC();
                     Archive.Import(OpenWith[OpenWith.Length - 1]);
                     DirectoryInfo di = new DirectoryInfo(OpenWith[OpenWith.Length - 1]);
                     string output = Path.Combine(di.Parent.FullName, di.Name + ".arc");
