@@ -44,6 +44,12 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - *Pikmin*
 - __U8__
   - *Mario Kart Wii*
+  - *The Legend of Zelda: Skyward Sword*
+  - *Sonic Colors*
+  - *Mario & Sonic at the London 2012 Olympic Games*
+  - *Metroid Other M*
+  - *Super Paper Mario*
+  - *Rodea the Sky Soldier*
 
 
 <br/>If your game is a JSystem Game then it probably uses the RARC format
