@@ -44,6 +44,12 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - *Pikmin*
 - __U8__
   - *Mario Kart Wii*
+  - *The Legend of Zelda: Skyward Sword*
+  - *Sonic Colors*
+  - *Mario & Sonic at the London 2012 Olympic Games*
+  - *Metroid Other M*
+  - *Super Paper Mario*
+  - *Rodea the Sky Soldier*
 
 
 <br/>If your game is a JSystem Game then it probably uses the RARC format
@@ -56,4 +62,4 @@ These pictures are only updated when the UI recieves major changes.<br/>
 ![Sequenced Music Archive from The Legend of Zelda Twilight Princess](https://user-images.githubusercontent.com/44330283/99214191-62b30d80-2784-11eb-8512-59a648d4c7b4.png)
 ![Sorting Demonstration](https://user-images.githubusercontent.com/44330283/99215254-3baa0b00-2787-11eb-9c9c-65aff535f4fa.gif)
 ![File Properties Demonstration](https://user-images.githubusercontent.com/44330283/99215453-cc80e680-2787-11eb-82c6-9da74fb0bb8a.png)
-![Luigi Circuit from Mario Kart Wii](https://user-images.githubusercontent.com/44330283/142704625-4b04021c-82b6-40f0-a032-c735a19fe7ea.png)
+![Luigi Circuit from Mario Kart Wii](https://user-images.githubusercontent.com/44330283/142714006-183d99e6-8728-43f2-97ce-7dbe814a90a2.png)
