@@ -384,7 +384,12 @@ namespace WiiExplorer
             MainToolStripStatusLabel.Text = string.Format(Strings.RenameItemMessage, tmp, RN.NameTextBox.Text + RN.ExtensionTextBox.Text);
         }
 
-        private void ExportSelectedToolStripMenuItem_Click(object sender, EventArgs e) => ExportArchiveFile(Archive[ArchiveTreeView.SelectedNode.FullPath]);
+        private void ExportSelectedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ArchiveTreeView.SelectedNode == null)
+                return;
+            ExportArchiveFile(Archive[ArchiveTreeView.SelectedNode.FullPath]);
+        }
 
         private void ExportAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
