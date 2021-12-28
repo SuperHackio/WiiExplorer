@@ -22,14 +22,15 @@ Powered by the [Hack.io Libraries](https://github.com/SuperHackio/Hack.io)
   - The list of known extensions is easily editable
   - Adding/Editing/Removing icons is easy (They're just .png)
 - Supports being the Default Application for Archive files<br/>(Open With > Choose "Another app on this PC" > Navigate to and Choose "WiiExplorer.exe". Be sure to enable "Always use this app to open .arc files")
-- Localized for 7 Languages
+- Localized for 8 Languages
   - English
-  - French (legomariofanatic)
+  - French (legomariofanatic and Bussun)
   - Spanish (legomariofanatic)
   - German
   - Dutch (@BjornGmr)
   - Japanese (@fon-22)
   - Serbian (Cyrllic) (@Luma48)
+  - Bulgarian (@Bussun)
 - Supports both RARC and U8 formats
 
 ## Known Supported Games
