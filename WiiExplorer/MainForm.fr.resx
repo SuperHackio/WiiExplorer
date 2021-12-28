@@ -128,7 +128,7 @@
     <value>254, 22</value>
   </data>
   <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nouveau du dossier</value>
+    <value>Créer à partir d'un dossier</value>
   </data>
   <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 22</value>
@@ -176,31 +176,31 @@
     <value>252, 22</value>
   </data>
   <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Supprimir sélectionnée</value>
+    <value>Supprimer la sélection</value>
   </data>
   <data name="RenameSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
   <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Renommer sélectionnée</value>
+    <value>Renommer la sélection</value>
   </data>
   <data name="ExportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
   <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exporter sélectionnée</value>
+    <value>Exporter la sélection</value>
   </data>
   <data name="ExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
   <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exporter tous</value>
+    <value>Tout exporter</value>
   </data>
   <data name="ReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
   <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remplacer sélectionnée</value>
+    <value>Remplacer la sélection</value>
   </data>
   <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 23</value>
@@ -230,14 +230,14 @@
     <value>101, 23</value>
   </data>
   <data name="SwitchThemeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Changer thème</value>
+    <value>Changer de thème</value>
   </data>
   <data name="ArchiveImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
-        DgAAAk1TRnQBSQFMAgEBAwEAAXgBAwF4AQMBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        DgAAAk1TRnQBSQFMAgEBAwEAAXgBAwGAAQMBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEJoAAwwEEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEWAxABFgMQARYDEAEW
         AxABFgMEAQVLAAEBAwYBCAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEK
         AwMBBAsAAQEDBgEIAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DBwEKAwMBBBQAA18B8wKu
@@ -298,7 +298,7 @@
         AQgBtQH/Ax0BKgMEAQWgAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wHA
         AQECAAGAAQEBgAEHAcABAQUAAQMBwAEBBQABAQHAAQEFAAEBAcABAQUAAQEBwAEBBgABwAEBBgABwAEB
         BgABwAEBBgABwAEBBgABwAEBBgABwAEBAwABAQEAAQEBwAEDAwABAQEAAQcBwAEHAwABBwEAAQ8BwAEP
-        AwABfwEAA/8CAAs=
+        AwABfwEAA/8YAAs=
 </value>
   </data>
   <data name="MainToolStripStatusLabel.Text" xml:space="preserve">

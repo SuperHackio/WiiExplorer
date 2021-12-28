@@ -173,10 +173,10 @@
     <value>133, 17</value>
   </data>
   <data name="IsYAZ0CheckBox.Text" xml:space="preserve">
-    <value>Est compression YAZ0</value>
+    <value>Compression YAZ0 ?</value>
   </data>
   <data name="IsCompressedCheckBox.Text" xml:space="preserve">
-    <value>Est compressé</value>
+    <value>Est compressé ?</value>
   </data>
   <data name="FileSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>353, 137</value>
@@ -191,7 +191,7 @@
     <value>66, 23</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
-    <value>Accepter</value>
+    <value>OK</value>
   </data>
   <data name="DiscardButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 182</value>

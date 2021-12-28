@@ -140,7 +140,7 @@
     <value>277, 64</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
-    <value>Accepter</value>
+    <value>OK</value>
   </data>
   <data name="DiscardButton.Text" xml:space="preserve">
     <value>Annuler</value>
