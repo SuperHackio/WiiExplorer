@@ -155,28 +155,28 @@
     <value>79, 17</value>
   </data>
   <data name="DVDRadioButton.Text" xml:space="preserve">
-    <value>Lire le DVD</value>
+    <value>Charger à partir du DVD</value>
   </data>
   <data name="ARAMRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>339, 17</value>
   </data>
   <data name="ARAMRadioButton.Text" xml:space="preserve">
-    <value>Précharge le fichier à RAM auxiliaire (uniquement pour GameCube)</value>
+    <value>Précharge le fichier dans la RAM auxiliaire (GameCube uniquement)</value>
   </data>
   <data name="MRAMRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 17</value>
   </data>
   <data name="MRAMRadioButton.Text" xml:space="preserve">
-    <value>Précharge le fichier à RAM principal</value>
+    <value>Précharge le fichier dans la RAM principale</value>
   </data>
   <data name="IsYAZ0CheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
   </data>
   <data name="IsYAZ0CheckBox.Text" xml:space="preserve">
-    <value>Est compression YAZ0</value>
+    <value>Compression YAZ0 ?</value>
   </data>
   <data name="IsCompressedCheckBox.Text" xml:space="preserve">
-    <value>Est compressé</value>
+    <value>Est compressé ?</value>
   </data>
   <data name="FileSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>353, 137</value>
@@ -191,7 +191,7 @@
     <value>66, 23</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
-    <value>Accepter</value>
+    <value>OK</value>
   </data>
   <data name="DiscardButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 182</value>

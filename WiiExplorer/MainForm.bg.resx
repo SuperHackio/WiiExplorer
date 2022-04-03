@@ -117,56 +117,75 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="ArchiveImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABG
+        DgAAAk1TRnQBSQFMAgEBAwIAAQQBCAEEARABAAEQAQAE/wEhARAI/wFCAU0BNgcAATYDAAEoAwABQAMA
+        ARADAAEBAQABIAYAARCaAAMMARADEQEWAxEBFgMRARYDEQEWAxEBFgMRARYDEQEWAxEBFgMRARYDEQEW
+        AxEBFgMEAQVIAAQBAwYBCAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCAEK
+        AwMBBAgABAEDBgEIAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCAEKAwMBBBQAA2AB8wKu
+        AasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKtAasB/wKv
+        Aa0B/wMRARZEAAMEAQUDJQE2A0QBeQNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNK
+        AYsDRwGCAzMBUgMMAQ8DBAEFAyUBNgNEAXkDSgGLA0oBiwNKAYsDSgGLA0oBiwNKAYsDSgGLA0oBiwNG
+        AX8DKgE/AwMBBBAAAq4BqwX/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gH/A/4B/wP+Af8D/gX/AxEBFkQA
+        Ax4BKgEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/
+        AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/A1MBqQM2AVgDHgEq
+        AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEP
+        AbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wNMAY4DFAEbBAEMAAKtAasB/wP8Af8D+wH/A/sB/wP7
+        Af8D+wH/A/sB/wP7Af8D+wH/A/sB/wP7Bf8DEQEWRQABDwG1Af8BAAGdAv8BAAEPAbUB/wEAAbUC/wEA
+        AbUC/wEAAbQC/wEAAbMC/wEAAbEC/wEAAa8C/wEAAa0C/wEAAasC/wEAAasC/wEAAbsB5QH/AQABqwL/
+        AQABDwG1Af8DSQGIAQABDwG1Af8BAAEPAbUB/wEAAZwC/wEKAboC/wEAAbMC/wEAAbIC/wEAAbEC/wEA
+        AbAC/wEAAa8C/wEAAa0C/wEAAasC/wEAAQ8BtQH/A1UBrwM2AVkDGwEmDAACrQGrAf8B+gL4Af8B+QL4
+        Af8B+QL4Af8B+QL4Af8B+QL4Af8B+QL4Af8B+QL4Af8B+QL4Af8B+QL4Af8B+QL4Bf8DEQEWRQABDwG1
+        Af8BAAGhAv8BAAEPAbUB/wERAb4C/wEQAb4C/wEPAb0C/wELAbsC/wEFAbkC/wEAAbYC/wEAAbQC/wEA
+        AbIC/wEAAbAC/wEAAb0B5QH/AQABsAL/AQABDwG1Af8DTAGQAQABDwG1Af8BAAGaAv8BAAEPAbUB/wEA
+        AQ8BtQH/AQoBugL/AQgBuQL/AQYBuAL/AQEBtgL/AQABtAL/AQABswL/AQABsQL/AQABvgHlAf8BAAEP
+        AbUB/wNMAZEDFAEbDAACrQGrAf8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2Af8D9gH/A/YB/wP2Af8D9gX/
+        AxEBFkUAAQ8BtQH/AQABqQL/AQABDwG1Af8BhwHIAv8BhgHHAv8BgwHGAv8BHgHDAv8BGQHBAv8BEgG+
+        Av8BDAG7Av8BBwG5Av8BAgG3Av8BAAHAAeUB/wEAAbUC/wEAAQ8BtQH/A0wBkAEAAQ8BtQH/AQABpwL/
+        AQABnQL/AQABDwG1Af8BHgHDAv8BGQHAAv8BFwHAAv8BEwG+Av8BDAG7Av8BCgG6Av8BBgG4Av8BAAHC
+        AeUB/wEAAQ8BtQH/A1UBrwM2AVgDAwEECAACrQGrAf8C9AHzAf8C9AHzAf8C9AHzAf8C9AHzAf8C9AHz
+        Af8C9AHzAf8C9AHzAf8C9AHzAf8C9AHzAf8C9AHzBf8DEQEWRQABDwG1Af8BAAGwAv8BAAEPAbUB/wGa
+        AdEC/wGYAc8C/wGWAc8C/wGQAcsC/wGLAcoC/wGEAcYC/wEdAcMC/wEWAb8C/wERAb4C/wEAAcMB5QH/
+        AQwBuwL/AQABDwG1Af8DTAGQAQABDwG1Af8BAAGvAv8BAAGvAv8BAAGaAv8BAAEPAbUB/wGOAcoC/wGJ
+        AcgC/wGEAcUC/wEeAcMC/wEZAcAC/wEVAb8C/wEAAcMB5QH/AQwBuwL/AQABDwG1Af8DTAGRAxMBGggA
+        Aq0BqwH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/AfIC8QH/
+        AfIC8QX/AxEBFkUAAQ8BtQH/AQABuQL/AQABDwG1Af8BrAHYAv8BrQHZAv8BqQHXAv8BpAHVAv8BngHS
+        Av8BlQHNAv8BkAHLAv8BigHJAv8BhAHGAv8BAAHGAeUB/wEeAcMC/wEAAQ8BtQH/A0sBjwEAAQ8BtQH/
+        AQMBtwL/AQMBtwL/AQABqAL/AQABDwG1Af8BoAHRAv8BnAHPAv8BlwHNAv8BkgHMAv8BiwHIAv8BhwHH
+        Av8BAAHJAeUB/wEeAcMC/wEAAQ8BtQH/A1UBrwM2AVgIAAKtAasB/wHuAe8B7gH/Au8B7gH/Au8B7gH/
+        Au8B7gH/Au8B7gH/Au8B7gH/Au8B7gH/Au8B7gH/Au8B7gH/Au8B7gX/AxEBFkUAAQ8BtQH/AREBwgL/
+        AQABDwG1Af8BvgHhAv8BvgHhAv8BuQHeAv8BtQHcAv8BrwHZAv8BqQHXAv8BogHTAv8BmgHPAv8BlwHO
+        Av8BAAHMAeUB/wGOAcoC/wEAAQ8BtQH/A0UBfAEAAQ8BtQH/ARkBwAL/ARkBwAL/ARkBwAL/AQABoQL/
+        AQABDwG1Af8BrQHXAv8BqAHVAv8BowHSAv8BngHQAv8BmQHOAv8BAAHMAeUB/wGSAcwC/wGSAcwC/wEA
+        AQ8BtQH/A0IBdQgAAq0BqwH/AewC6wH/Ae0C7AH/Ae0C7AH/Ae0C7AH/Ae0C7AH/Ae0C7AH/Ae0C7AH/
+        Ae0C7AH/Ae0C7AH/Ae0C7AX/AxEBFkUAAQ8BtQH/AYgBzAL/AQABDwG1Lf8BAAEPAbUB/wMlATcBAAEP
+        AbUB/wGQAcsC/wGQAcsC/wGQAcsC/wEBAbYC/wEAAQ8BtQH/AewB9R7/AQABDwG1Af8DLgFHCAACrQGr
+        Af8B6gHpAegB/wHrAeoB6QH/AesB6gHpAf8B6wHqAekB/wHrAeoB6QH/AesB6gHpAf8B6wHqAekB/wHq
+        AekB5wH/AeoB6QHoAf8B6QHoAecF/wMRARZFAAEPAbUB/wGfAdUC/wEWAcMC/wEAAQ8BtQH/AQABDwG1
+        Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEA
+        AQ8BtQH/AQABDwG1Af8DKgFAAwQBBQEAAQ8BtQH/AagB1QL/AaAB0QL/AagB1QL/AagB1QL/AQABqwL/
+        AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEP
+        AbUB/wNAAXEDCAEKCAACrQGrAf8C5wHmAf8C6AHnAf8C6AHnAf8C6AHnAf8C6AHnAf8C6AHnAf8B5gHn
+        AeUB/wLLAcoB/wKnAaUB/wKnAaQF/wMKAQ1FAAEPAbUB/wG1Ad8C/wG1Ad8C/wG0Ad4C/wG1Ad4C/wGz
+        Ad0C/wGzAd0W/wEAAQ8BtQH/AyoBQAMEAQUFAAEPAbUB/wG+Ad8C/wG+Ad8C/wG7Ad0C/wG+Ad8C/wG7
+        Ad0C/wG7Ad0S/wEAAQ8BtQH/AysBQgMIAQoEAQwAAq4BqwH/AeQB4wHiAf8B5gHlAeQB/wHmAeUB5AH/
+        AeYB5QHkAf8B5gHlAeQB/wHmAeUB5AH/AeQB4wHiAf8CpwGlAf8B8wLyBf8DVQGuSQABDwG1Af8BxwHm
+        Av8BxwHmAv8BxwHmAv8BxwHmAv8BxwHmBv8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEA
+        AQ8BtQH/Ax4BKgMEAQUDAgEDBQABDwG1Af8BzQHmAv8BzQHmAv8BzQHmAv8BzQHmAv8BzQHmBv8BAAEP
+        AbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wMeASoDBAEFFAACrgGrAf8B4gHhAeAB/wHkAeMB4gH/
+        AeQB4wHiAf8B5AHjAeIB/wHkAeMB4gH/AeQB4wHiAf8B4gHhAeAB/wKnAaQF/wNVAa5NAAEPAbUV/wEA
+        AQ8BtQH/AysBQgMIAQoDAwEEAwMBBAMCAQMEAQ0AAQ8BtRX/AQABDwG1Af8DKwFCAwgBCgMDAQQDAgED
+        BAEYAAKvAa0h/wNVAa5QAAQCAQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wMe
+        ASoDBAEFAwIBAxwABAIBAAEPAbUB/wEAAQ8BtQH/AQABDwG1Af8BAAEPAbUB/wEAAQ8BtQH/Ax4BKgME
+        AQWgAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wHAAQECAAGAAQEBgAEH
+        AcABAQUAAQMBwAEBBQABAQHAAQEFAAEBAcABAQUAAQEBwAEBBgABwAEBBgABwAEBBgABwAEBBgABwAEB
+        BgABwAEBBgABwAEBAwABAQEAAQEBwAEDAwABAQEAAQcBwAEHAwABBwEAAQ8BwAEPAwABfwEAA/8YAAs=
+</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="OKButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>324, 99</value>
-  </data>
-  <data name="ExtensionLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="ExtensionLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;NameTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DiscardButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DiscardButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ExtensionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 9</value>
-  </data>
-  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
-    <value>OKButton</value>
-  </data>
-  <data name="&gt;&gt;NameTextBox.Parent" xml:space="preserve">
-    <value>TextPanel</value>
-  </data>
-  <data name="TextPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 34</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA
@@ -243,173 +262,76 @@
         gAPAAAADwAAAA8AAAAPgAA//8AAf//////8=
 </value>
   </data>
-  <data name="&gt;&gt;ExtensionTextBox.Type" xml:space="preserve">
-    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="AddFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Добави файл(ове)</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DiscardButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="AddFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Добави празна папка</value>
   </data>
-  <data name="&gt;&gt;ExtensionLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Изтрий селекцията</value>
   </data>
-  <data name="InfoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>Редактирай</value>
   </data>
-  <data name="&gt;&gt;DiscardButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Експортирай всички</value>
   </data>
-  <data name="InfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Експортирай избрани файлове</value>
   </data>
-  <data name="ExtensionLabel.Text" xml:space="preserve">
-    <value>Extension</value>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Файл</value>
   </data>
-  <data name="NameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="ImportFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Импортирай папка</value>
   </data>
-  <data name="&gt;&gt;TextPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ItemPropertiesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Свойства на файл</value>
   </data>
-  <data name="InfoLabel.Text" xml:space="preserve">
-    <value>Type the new name, then press Enter</value>
+  <data name="KeepIDsSyncedCheckBox.Text" xml:space="preserve">
+    <value>Авто изчисление на файлове ID</value>
   </data>
-  <data name="TextPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="MainToolStripStatusLabel.Text" xml:space="preserve">
+    <value>Няма зареден файл</value>
   </data>
-  <data name="&gt;&gt;TextPanel.Name" xml:space="preserve">
-    <value>TextPanel</value>
+  <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Създай от съществуваща папка</value>
   </data>
-  <data name="ExtensionTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+  <data name="NewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ново</value>
   </data>
-  <data name="ExtensionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отвори</value>
   </data>
-  <data name="ExtensionTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Преименувай избрани файлове</value>
   </data>
-  <data name="&gt;&gt;ExtensionTextBox.Name" xml:space="preserve">
-    <value>ExtensionTextBox</value>
+  <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Замени избрани файлове</value>
   </data>
-  <data name="&gt;&gt;ExtensionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="RootNameLabel.Text" xml:space="preserve">
+    <value>Корен име:</value>
   </data>
-  <data name="ExtensionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 21</value>
+  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Запази като</value>
   </data>
-  <data name="&gt;&gt;ExtensionLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Запази</value>
   </data>
-  <data name="DiscardButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="SwitchThemeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Промени тема</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>WiiExplorer - Rename []</value>
+  <data name="Yaz0ToolStripComboBox.Items" xml:space="preserve">
+    <value>Деактивиран</value>
   </data>
-  <data name="TextPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="Yaz0ToolStripComboBox.Items1" xml:space="preserve">
+    <value>Силен YAZ0</value>
   </data>
-  <data name="DiscardButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="Yaz0ToolStripComboBox.Items2" xml:space="preserve">
+    <value>Бърз YAZ0</value>
   </data>
-  <data name="&gt;&gt;InfoLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="Yaz0ToolStripComboBox.Items3" xml:space="preserve">
+    <value>Силен YAY0</value>
   </data>
-  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NameTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="InfoLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="NameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 20</value>
-  </data>
-  <data name="&gt;&gt;TextPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TextPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.Parent" xml:space="preserve">
-    <value>TextPanel</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Name" xml:space="preserve">
-    <value>InfoLabel</value>
-  </data>
-  <data name="ExtensionTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>RenameForm</value>
-  </data>
-  <data name="&gt;&gt;ExtensionTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="OKButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="InfoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 22</value>
-  </data>
-  <data name="&gt;&gt;NameTextBox.Name" xml:space="preserve">
-    <value>NameTextBox</value>
-  </data>
-  <data name="&gt;&gt;ExtensionLabel.Name" xml:space="preserve">
-    <value>ExtensionLabel</value>
-  </data>
-  <data name="&gt;&gt;NameTextBox.Type" xml:space="preserve">
-    <value>WiiExplorer.ColourTextBox, WiiExplorer, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 64</value>
-  </data>
-  <data name="DiscardButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 64</value>
-  </data>
-  <data name="InfoLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;InfoLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DiscardButton.Name" xml:space="preserve">
-    <value>DiscardButton</value>
-  </data>
-  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="ExtensionTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="TextPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 20</value>
-  </data>
-  <data name="DiscardButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DiscardButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>340, 138</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
-  </metadata>
 </root>

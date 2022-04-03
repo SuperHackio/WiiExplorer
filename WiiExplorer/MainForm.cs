@@ -24,6 +24,7 @@ namespace WiiExplorer
         SaveFileDialog sfd = new SaveFileDialog() { Filter = Strings.OpenFileFilter };
         OpenFileDialog Fileofd = new OpenFileDialog() { Multiselect = true };
         SaveFileDialog Exportsfd = new SaveFileDialog();
+        FolderBrowserDialog ExportFBD = new FolderBrowserDialog() { ShowNewFolderButton = true };
         Archive Archive;
         bool Edited = false;
         static List<string> KnownExtensions = new List<string>
@@ -393,15 +394,16 @@ namespace WiiExplorer
 
         private void ExportAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exportsfd.Filter = "Directory|directory";
-            Exportsfd.FileName = RootNameTextBox.Text;
-            if (Exportsfd.ShowDialog() == DialogResult.OK && Exportsfd.FileName != "")
+            //Exportsfd.Filter = "Directory|directory";
+            //Exportsfd.FileName = RootNameTextBox.Text;
+            ExportFBD.SelectedPath = Settings.Default.PreviousExportPath;
+            if (ExportFBD.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(ExportFBD.SelectedPath))
             {
                 MainToolStripProgressBar.Value = 0;
-                Archive.Export(new DirectoryInfo(Exportsfd.FileName).Parent.FullName, true);
+                Archive.Export(ExportFBD.SelectedPath, true);
                 MainToolStripProgressBar.Value = 100;
                 MainToolStripStatusLabel.Text = string.Format(Strings.ExportAllMessage, Archive.Root.Name);
-                Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
+                Settings.Default.PreviousExportPath = ExportFBD.SelectedPath;
                 Settings.Default.Save();
             }
         }
@@ -1507,22 +1509,18 @@ namespace WiiExplorer
             if (Item == null)
                 return;
 
-            Exportsfd.FileName = Item.Name;
+            ExportFBD.SelectedPath = Item.Name;
             if (Item is RARC.Directory)
             {
-                Exportsfd.Filter = "Directory|directory";
+                //Exportsfd.Filter = "Directory|directory";
 
-                if (Exportsfd.ShowDialog() == DialogResult.OK && Exportsfd.FileName != "")
+                if (ExportFBD.ShowDialog() == DialogResult.OK && ExportFBD.SelectedPath != "")
                 {
-                    if (Directory.Exists(Exportsfd.FileName) && MessageBox.Show(Strings.DirectoryExists, Strings.Warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
-                        return;
-                    else if (Directory.Exists(Exportsfd.FileName))
-                        Directory.Delete(Exportsfd.FileName, true);
-                    
-                    Directory.CreateDirectory(Exportsfd.FileName);
-                    Item.Export(Exportsfd.FileName);
+                    FileInfoEx.CreateDirectoryIfNotExist(ExportFBD.SelectedPath);
+
+                    Item.Export(ExportFBD.SelectedPath);
                     MainToolStripStatusLabel.Text = string.Format(Strings.ItemSavedMessage, Item.Name);
-                    Settings.Default.PreviousExportPath = new DirectoryInfo(Exportsfd.FileName).Parent.FullName;
+                    Settings.Default.PreviousExportPath = new DirectoryInfo(ExportFBD.SelectedPath).Parent.FullName;
                     Settings.Default.Save();
                 }
             }
