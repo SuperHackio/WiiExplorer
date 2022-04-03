@@ -100,7 +100,9 @@ namespace WiiExplorer
                         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(OpenWith[i+1]);
                 }
             }
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("es");
+#if DEBUG
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("bg");
+#endif
 
             if (OpenWith.Length == 0)
                 OpenWith = new string[1] { null };
