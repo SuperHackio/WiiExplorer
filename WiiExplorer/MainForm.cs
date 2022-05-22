@@ -809,7 +809,7 @@ namespace WiiExplorer
                     return;
                 object Item = Archive[TN.FullPath];
                 string TempFile = null;
-                if (Item is RARC.File file)
+                if (Item is ArchiveFile file)
                 {
                     TempFile = Path.Combine(Path.GetTempPath(), file.Name);
                     file.Save(TempFile);
@@ -817,7 +817,7 @@ namespace WiiExplorer
                     DoDragDrop(new DataObject(DataFormats.FileDrop, new string[1] { TempFile }), DragDropEffects.Copy);
                     File.Delete(TempFile);
                 }
-                else if (Item is RARC.Directory dir)
+                else if (Item is ArchiveDirectory dir)
                 {
                     TempFile = Path.Combine(Path.GetTempPath(), dir.Name);
                     dir.Export(TempFile);
