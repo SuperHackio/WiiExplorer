@@ -1,301 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3711A74A-B9FB-4C8F-A7AB-E1198ACB19B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WiiExplorer</RootNamespace>
-    <AssemblyName>WiiExplorer</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <LangVersion>7.3</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net8.0-windows10.0.17763.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <ApplicationIcon>WiiExplorer.ico</ApplicationIcon>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0.0.0</Version>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.0\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ArcUtil.cs" />
-    <Compile Include="Extra Controls\ColourComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extra Controls\ColourNumericUpDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extra Controls\ColourTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FilePropertyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FilePropertyForm.Designer.cs">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.nl.Designer.cs">
-      <DependentUpon>Strings.nl.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.es.Designer.cs">
-      <DependentUpon>Strings.es.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.fr.Designer.cs">
-      <DependentUpon>Strings.fr.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.ja.Designer.cs">
-      <DependentUpon>Strings.ja.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.sr-Cyrl.Designer.cs">
-      <DependentUpon>Strings.sr-Cyrl.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.de.Designer.cs">
-      <DependentUpon>Strings.de.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Languages\Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RenameForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RenameForm.Designer.cs">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FilePropertyForm.bg.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.de.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.en.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.es.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.fr.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.ja.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.nl.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FilePropertyForm.sr-Cyrl.resx">
-      <DependentUpon>FilePropertyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.bg.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.en.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.es.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.fr.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.ja.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.nl.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.nl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.nl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.ja.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.ja.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.sr-Cyrl.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.sr-Cyrl.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.de.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Languages\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.de.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.sr-Cyrl.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="RenameForm.bg.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.de.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.en.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.es.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.fr.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.ja.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.nl.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RenameForm.sr-Cyrl.resx">
-      <DependentUpon>RenameForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FolderOpen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\FolderClosed.png" />
-  </ItemGroup>
+
   <ItemGroup>
     <Content Include="WiiExplorer.ico" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\Hack.io\Hack.io.RARC\Hack.io.RARC.csproj">
-      <Project>{4f4162cc-70ff-4eb9-ab34-d5ff98490c34}</Project>
-      <Name>Hack.io.RARC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Hack.io\Hack.io.U8\Hack.io.U8.csproj">
-      <Project>{A611837C-0849-4133-AC82-04CEA27F81E4}</Project>
-      <Name>Hack.io.U8</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Hack.io\Hack.io.YAY0\Hack.io.YAY0.csproj">
-      <Project>{2576022C-4A09-4A25-AFB8-9F7DF919E02C}</Project>
-      <Name>Hack.io.YAY0</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Hack.io\Hack.io.YAZ0\Hack.io.YAZ0.csproj">
-      <Project>{bdda5ade-2d88-483d-854c-d295ed9f8089}</Project>
-      <Name>Hack.io.YAZ0</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Hack.io\Hack.io\Hack.io.csproj">
-      <Project>{389F751D-DB2A-4746-B3BC-88E106C361CE}</Project>
-      <Name>Hack.io</Name>
-    </ProjectReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="System.IO.Hashing" Version="9.0.4" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild">
-    <ItemGroup>
-      <MoveToLibFolder Include="$(OutputPath)*.dll ; $(OutputPath)*.pdb ; $(OutputPath)*.xml" />
-    </ItemGroup>
-    <Move SourceFiles="@(MoveToLibFolder)" DestinationFolder="$(OutputPath)lib" OverwriteReadOnlyFiles="true" />
-  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Hack.io\Hack.io.RARC\Hack.io.RARC.csproj" />
+    <ProjectReference Include="..\..\Hack.io\Hack.io.U8\Hack.io.U8.csproj" />
+    <ProjectReference Include="..\..\Hack.io\Hack.io.YAY0\Hack.io.YAY0.csproj" />
+    <ProjectReference Include="..\..\Hack.io\Hack.io.YAZ0\Hack.io.YAZ0.csproj" />
+    <ProjectReference Include="..\..\Hack.io\Hack.io\Hack.io.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ExtensionData\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Update="UI\MainForm.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <None Update="ExtensionData\ExtensionList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,5 @@
+﻿1.6.0.0
+
+#Required
+#Notes
+- Update to .NET 8.0

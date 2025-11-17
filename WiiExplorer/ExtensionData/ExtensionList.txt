@@ -1,0 +1,115 @@
+# Filetypes that appear in multiple games with different purposes
+Binary AI Speed|AIParam.bas
+SMG Compressed Binary Music Sequence|smg*.szs
+Binary Mii Shading|course.bms
+
+# Archives
+Resource Archive|*.arc
+Yaz0 Encoded File|*.szs
+Lempel-Ziv Encoded File|*.LZ
+Lempel-Ziv-7 Encoded File|*.lz7
+Revolution Kart Competition|*.rkc
+ASH Encoded File|*.ash
+
+# Models
+Classic Model Data|*.mdl
+Binary Model Data|*.bmd
+Binary Display List|*.bdl
+Nintendo KCollision|*.kcl
+Nintendo GameCube Collision|*.col
+SMG Collision Codes|*.pa
+Binary Curve Keyframes|*.bck
+Binary Texture Keys|*.btk
+Binary Register Keys|*.brk
+Binary Texture Pattern|*.btp
+Binary Palette Keys|*.bpk
+Binary Visiblilty Animation|*.bva
+Binary Animation Table|*.banmt
+Binary Model|*.brmdl
+Inverse Kinematics Parameter|*.ikp
+
+# Textures
+Binary Texture Image|*.bti
+Texture Pallete|*.tpl
+Binary Revolution Texture|*.brtex
+Binary Revolution Palette|*.brplt
+Binary Texture Image Environment|*.btiEnv
+Binary Texture Image Material|*.btiMat
+Joint Photographic Experts Group|*.jpg
+
+# Text
+Message Binary Table|*.msbt
+Message Binary Flows|*.msbf
+Binary Messages|*.bmg
+Plain text|*.txt
+
+# Sounds
+Binary Music Sequence|*.bms
+Binary Action Sound|*.bas
+Chord Information Table|*.cit
+Wave System|*.ws
+Instrument Bank|*.bnk
+Binary Sound Table|*.bst
+Binary Sound Table Names|*.bstn
+Binary Sound Collection|*.bsc
+Binary Melody Table|*.bmt
+Binary Melody|*.bme
+Binary Remix Sequence|*.brs
+Controller Speaker Wave|*.csw
+Binary Controller Speaker Table|*.bct
+Binary Wave|*.bwav
+Binary Revolution Sequence|*.brseq
+Binary Revolution Sound Archive|*.brsar
+Binary Revolution Animation Sound Data|*.brasd
+Pulse Code Modulation|*.pcm
+Musical Instrument Digital Interface|*.mid
+
+# Layouts
+Binary Revolution Layout|*.brlyt
+Binary Revolution Layout Animation|*.brlan
+Binary Font|*.bfn
+Binary Revolution Font|*.brfnt
+Binary Revolution Bitmap Font|*.brfna
+Binary Layout|*.blo
+Binary Revolution Control|*.brctr
+TrueType Collection|*.ttc
+
+# Cameras
+SMG Binary Camera Data|*.bcam
+SMG Binary Camera Animation|*.canm
+Binary Camera Parameter|*.bcp
+
+# Particles
+Single JParticle|*.jpa
+JParticle Archive|*.jpc
+Binary Revolution Effect|*.breff
+Binary Revolution Effect Textures|*.breft
+Binary Light|*.blight
+Binary Light Map|*.blmap
+
+# Posteffect
+Binary Bloom|*.bblm
+Binary Depth Of Field|*.bdof
+Binary Fog|*.bfg
+
+# Misc
+Misc Data|*.dat
+Comma Seperated Values|*.csv
+Binary Comma Seperated Values|*.bcsv
+Binary Revolution Resources|*.brres
+Data Table|*.tbl
+Binary File|*.bin
+Kart Map|*.kmp
+Binary Mii Material|*.bmm
+SMG Ghost Data|*.gst
+SMG Replay Data|*.pad
+Binary AI Action|*.baa
+Kart Rank Time|*.krt
+Kart Rumble|*.krm
+Kart Minigame|*.kmg
+Kart WiFi Banner|*.kwb
+Revolution Kart Ghost Data|*.rkg
+SEL|*.sel
+
+# ToDo
+# Wii Menu: .zsd, .znd
