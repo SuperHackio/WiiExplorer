@@ -331,7 +331,7 @@
     <value>150, 23</value>
   </data>
   <data name="ThemeToolStripComboBox.ToolTipText" xml:space="preserve">
-    <value>Changes the program's visuals.</value>
+    <value>Changes the program's visuals</value>
   </data>
   <data name="PaddingToolStripColorComboBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -540,7 +540,7 @@ Default is Auto-Select Encoding</value>
     <value>347, 17</value>
   </data>
   <data name="MainToolStripStatusLabel.Text" xml:space="preserve">
-    <value>No File Loaded.</value>
+    <value>No File Loaded</value>
   </data>
   <data name="MainToolStripStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

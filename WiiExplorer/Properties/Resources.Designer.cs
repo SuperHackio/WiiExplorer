@@ -459,7 +459,7 @@ namespace WiiExplorer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No selection..
+        ///   Looks up a localized string similar to No selection.
         /// </summary>
         internal static string StatusStrip_NoSelection {
             get {

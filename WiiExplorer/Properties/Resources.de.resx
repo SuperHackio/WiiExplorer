@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,186 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FileFilter_SupportedArchives" xml:space="preserve">
-    <value>All Supported Files|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive|*.arc|YAZ0 Identified Archive|*.szs|YAY0 Identified Archive|*.szp|U8 Archive|*.szs;*.carc;*.app|Audio Archive File|*.szs;*.aaf|All Files|*.*</value>
+    <value>Alle unterstützten Datein|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Ressource Archiv|*.arc|YAZ0 identifiziertes Archiv|*.szs|YAY0 identifiziertes Archiv|*.szp|U8 Archiv|*.szs;*.carc;*.app|Audio Archiv Datei|*.szs;*.aaf|Alle Dateien|*.*</value>
   </data>
   <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
-    <value>Update Required</value>
+    <value>Update benötigt</value>
   </data>
   <data name="MessageBoxMsg_MandatoryUpdateNotice" xml:space="preserve">
-    <value>An update for WiiExplorer is available. To continue using WiiExplorer, please update to the latest version.
+    <value>Ein Update für WiiExplorer ist verfügbar. Um WiiExplorer weiterhin nutzen zu können, bitte auf die neueste Version updaten.
 
 {0}
 
 {1}</value>
-    <comment>{0} is replaced by Github URL
-{1} is replaced with Release Notes</comment>
   </data>
   <data name="MessageBoxTitle_UpdateAvailable" xml:space="preserve">
-    <value>Update Available</value>
+    <value>Update verfügbar</value>
   </data>
   <data name="MessageBoxMsg_OptionalUpdateNotice" xml:space="preserve">
-    <value>An update for WiiExplorer is available!
+    <value>Ein Update für WiiExplorer ist verfügbar!
 
 {0}
 
 {1}</value>
-    <comment>{0} replaced with Github URL
-{1} is replaced with Release Notes</comment>
   </data>
   <data name="String_ReleaseInformation" xml:space="preserve">
-    <value>Release information</value>
+    <value>Veröffentlichungsinformation</value>
   </data>
   <data name="String_Version" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="MessageBoxTitle_ConfirmAction" xml:space="preserve">
-    <value>Confirm Action</value>
+    <value>Aktion bestätigen</value>
   </data>
   <data name="MessageBoxMsg_UnsavedChangesNotice" xml:space="preserve">
-    <value>You have unsaved changes, are you sure you want to proceed?</value>
+    <value>Es gibt ungespeicherte Änderungen, trotzdem fortfahren?</value>
   </data>
   <data name="MessageBoxMsg_NotSupportedArchiveFormat" xml:space="preserve">
-    <value>The file you tried to open is not supported.</value>
+    <value>Die geöffnete Datei wird nicht unterstützt.</value>
   </data>
   <data name="MessageBoxTitle_ArchiveReadError" xml:space="preserve">
-    <value>Archive read error</value>
+    <value>Lesefehler beim Archiv</value>
   </data>
   <data name="MessageBoxMsg_ArchiveFormatReadError" xml:space="preserve">
-    <value>Failed to open the archive as {0}:
+    <value>Konnte das Archiv nicht als {0} öffnen:
 {1}
 
 {2}</value>
   </data>
   <data name="MessageBoxTitle_EncodingMismatch" xml:space="preserve">
-    <value>Encoding Mismatch</value>
+    <value>Enkodierung nicht übereinstimmend</value>
   </data>
   <data name="MessageBoxMsg_SZPMismatch" xml:space="preserve">
-    <value>The chosen encoding type doesn't match the file extension.
-SZP files are supposed to be YAY0 Encoded, would you like to switch to YAY0 Strong?</value>
+    <value>Die ausgewählte Enkodierung passt nicht zur Dateierweiterung.
+SZP Dateien müssen YAY0 enkodiert sein. Zur YAY0 Enkodierung wechseln?</value>
   </data>
   <data name="MessageBoxMsg_SZSMismatch" xml:space="preserve">
-    <value>The chosen encoding type doesn't match the file extension.
-SZS files are supposed to be YAZ0 Encoded, would you like to switch to YAZ0 Strong?</value>
+    <value>Die ausgewählte Enkodierung passt nicht zur Dateierweiterung.
+SZS Dateien müssen YAZ0 enkodiert sein. Zur YAZ0 Enkodierung wechseln?</value>
   </data>
   <data name="StatusStrip_SaveComplete" xml:space="preserve">
-    <value>Save Complete!</value>
+    <value>Speichern abgeschlossen!</value>
   </data>
   <data name="MessageBoxTitle_Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>Warnung</value>
   </data>
   <data name="StatusStrip_ArchiveLoadedSuccessfully" xml:space="preserve">
-    <value>Archive loaded successfully! [{0} file(s) total]</value>
-    <comment>{0} replaced with a number</comment>
+    <value>Archiv erfolgreich geladen! [Insgesamt {0} Dateien]</value>
   </data>
   <data name="MessageBoxMsg_ExportDirectoryOverwriteWarning" xml:space="preserve">
-    <value>The output directory already exists!
+    <value>Das Ausgabeverzeichnis existiert bereits!
 "{0}"
-Some of the contents may be overwritten.
+Einige Inhalte könnten überschrieben werden.
 
-Proceed?</value>
-    <comment>{0} is replaced with a Folder Path</comment>
+Trotzdem fortfahren?</value>
   </data>
   <data name="FileFilter_AllFiles" xml:space="preserve">
-    <value>All Files|*.*</value>
+    <value>Alle Dateien|*.*</value>
   </data>
   <data name="MessageBoxMsg_CancelCompression" xml:space="preserve">
-    <value>Cancel Compresion?</value>
+    <value>Komprimierung abbrechen?</value>
   </data>
   <data name="StatusStrip_RenamedItem" xml:space="preserve">
-    <value>Renamed "{0}" to "{1}"</value>
-    <comment>{0} is replaced with the original filename
-{1} is replaced with the new filename</comment>
+    <value>"{0}" nach "{1}" umbenannt</value>
   </data>
   <data name="MessageBoxTitle_Information" xml:space="preserve">
     <value>Information</value>
   </data>
   <data name="MessageBoxMsg_DragDropUseRightClickHint" xml:space="preserve">
-    <value>If you are trying to drag an item onto your desktop,
-use the Right Mouse Button to do so.</value>
-    <comment>Translate "Right Mouse Button" to whatever the secondary mouse button is called.</comment>
+    <value>Nutze die rechte Maustaste, um eine
+Datei auf den Desktop zu ziehen.</value>
   </data>
   <data name="MessageBoxTitle_ItemNameConflict" xml:space="preserve">
-    <value>Item Name Conflict</value>
+    <value>Dateinamenskonflikt</value>
   </data>
   <data name="MessageBoxMsg_ItemWithTheSameNameError" xml:space="preserve">
-    <value>An item with the name "{0}"
-already exists at "{1}"</value>
-    <comment>{0} is replaced with a string
-{1} is replaced with a string</comment>
+    <value>Eine Datei mit dem Namen "{0}"
+existiert bereits unter "{1}"</value>
   </data>
   <data name="StatusStrip_NoSelection" xml:space="preserve">
-    <value>No selection</value>
+    <value>Keine Auswahl</value>
   </data>
   <data name="StatusStrip_SelectedFolderStats" xml:space="preserve">
-    <value>{0} - {1} files, {2} subfolders</value>
-    <comment>{0} is replaced with the selected folder name
-{1} is replaced with a number saying how many files are inside the selected folder
-{2} is replaced with a number saying how many folders are inside the selected folder</comment>
+    <value>{0} - {1} Dateien, {2} Unterordner</value>
   </data>
   <data name="StatusStrip_SelectedFileStats" xml:space="preserve">
-    <value>{0} - {1} bytes. [CRC: {2}]</value>
-    <comment>{0} is replaced with the selected folder name
-{1} is replaced with a number saying how large the selected file is (in bytes)
-{2} is replaced with a CRC32 hash of the file's data</comment>
+    <value>{0} - {1} Bytes. [CRC: {2}]</value>
   </data>
   <data name="InvalidOperationException_ProcessExitedWithCode" xml:space="preserve">
-    <value>Process exited with code {0}</value>
-    <comment>{0} replaced with a process exit code (number)</comment>
+    <value>Prozess geschlossen mit Code {0}</value>
   </data>
   <data name="MessageBoxTitle_UserCompressionExecuteError" xml:space="preserve">
-    <value>User-Compression Execute Error</value>
+    <value>Ausführungsfehler bei Nutzer-Kompression</value>
   </data>
   <data name="MessageBoxMsg_UserCompressionExecuteFailure" xml:space="preserve">
-    <value>An exception occured trying to execute the following command:\n\n{0}\n\n{1}</value>
-    <comment>{0} and {1} are replaced by strings</comment>
+    <value>Ein Fehler ist beim Ausführen des folgenden Befehls aufgetreten:\n\n{0}\n\n{1}</value>
   </data>
   <data name="MessageBoxMsg_UserCompressionParseFailure" xml:space="preserve">
-    <value>An exception occured trying to parse the following command:\n\n{0}\n\n{1}</value>
-    <comment>{0} and {1} are replaced with strings</comment>
+    <value>Ein Fehler ist beim Parsen des folgenden Befehls aufgetreten:\n\n{0}\n\n{1}</value>
   </data>
   <data name="StatusStrip_InProgressCompression" xml:space="preserve">
-    <value>[{0}] Compressing: {1}%</value>
-    <comment>{0} replaced with the name of the encoding
-{1} replaced with a number</comment>
+    <value>Komprimiere [{0}]: {1}%</value>
   </data>
   <data name="StatusStrip_CompressionCancelled" xml:space="preserve">
-    <value>Compression Cancelled. (Saved without compression.)</value>
+    <value>Komprimierung abgebrochen (ohne Komprimierung gespeichert)</value>
   </data>
   <data name="StatusStrip_SaveCompleteCompression" xml:space="preserve">
-    <value>Save Complete! [{0}% ratio in {1}]</value>
-    <comment>{0} is replaced with a number
-{1} is replaced with a Timestamp</comment>
+    <value>Speichern abgeschlossen! [{0}% Verhältnis in {1}]</value>
   </data>
   <data name="CompressionName_Off" xml:space="preserve">
-    <value>Off</value>
-    <comment>Compression Disabled</comment>
+    <value>Aus</value>
   </data>
   <data name="CompressionName_YAZ0Strong" xml:space="preserve">
-    <value>Yaz0 Strong</value>
+    <value>Yaz0 Stark</value>
   </data>
   <data name="CompressionName_YAZ0Fast" xml:space="preserve">
-    <value>Yaz0 Fast</value>
+    <value>Yaz0 Schnell</value>
   </data>
   <data name="CompressionName_YAZ0Official" xml:space="preserve">
-    <value>Yaz0 Official</value>
+    <value>Yaz0 Offiziell</value>
   </data>
   <data name="CompressionName_YAY0Strong" xml:space="preserve">
-    <value>Yay0 Strong</value>
+    <value>Yay0 Stark</value>
   </data>
   <data name="String_NewArchiveRootName" xml:space="preserve">
-    <value>NewArchive</value>
-    <comment>Make sure the translated text does not have spaces</comment>
+    <value>NeuesArchiv</value>
   </data>
   <data name="String_NewArchiveGuide" xml:space="preserve">
-    <value>Select an Archive Format on the left.</value>
+    <value>Wähle links ein Archivformat aus.</value>
   </data>
   <data name="ArchiveFormat_JSystemRARC_Name" xml:space="preserve">
-    <value>JSystem Archive</value>
+    <value>JSystem Archiv</value>
   </data>
   <data name="ArchiveFormat_JSystemRARC_Description" xml:space="preserve">
-    <value>The archive format used in JSystem
+    <value>Das in JSystem genutzte Archivformat
 
-Supported games include:
+Unterstützte Spiele:
 - Pikmin
 - Luigi's Mansion
 - Super Mario Sunshine
@@ -309,34 +283,30 @@ Supported games include:
     Twilight Princess
 - Super Mario Galaxy
 - Super Mario Galaxy 2</value>
-    <comment>Translate Game names according to the name of the game in the region the language belongs to.
-For example, "Super Mario Galaxy" becomes "Super Mario Wii" for Korean.</comment>
   </data>
   <data name="ArchiveFormat_JSystemAAF_Name" xml:space="preserve">
     <value>JSystem AAF</value>
   </data>
   <data name="ArchiveFormat_JSystemAAF_Description" xml:space="preserve">
-    <value>A JSystem audio archive used for storing a select few files
+    <value>Ein JSystem Audio Archiv zum Speichern spezieller Dateien
 
-Supported games include:
+Unterstützte Spiele:
 - Super Mario Galaxy
 - Super Mario Galaxy 2</value>
-    <comment>Translate Game names according to the name of the game in the region the language belongs to.
-For example, "Super Mario Galaxy" becomes "Super Mario Wii" for Korean.</comment>
   </data>
   <data name="ArchiveFormat_NW4RArchive_Name" xml:space="preserve">
-    <value>NW4R Archive</value>
+    <value>NW4R Archiv</value>
   </data>
   <data name="ArchiveFormat_NW4RArchive_Description" xml:space="preserve">
-    <value>The archive format used in NW4R
+    <value>Das in NW4R genutzte Archivformat
 
-Supported games include:
+Unterstützte Spiele:
 - Super Paper Mario
 - Mario Kart Wii
 - Metroid: Other M
 - Sonic Colors [Wii]
-- Mario and Sonic at the
-    London 2012 Olympic Games
+- Mario und Sonic bei den
+    Olympischen Spielen London 2012
 - The Legend of Zelda:
     Skyward Sword
 - Rodea the Sky Soldier</value>
