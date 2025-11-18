@@ -136,7 +136,7 @@
     <value>38, 3</value>
   </data>
   <data name="NameColorTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 20</value>
+    <value>193, 20</value>
   </data>
   <data name="NameColorTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -212,7 +212,7 @@
     <value>40, 3</value>
   </data>
   <data name="FileIDColorNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>50, 20</value>
   </data>
   <data name="FileIDColorNumericUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -284,7 +284,7 @@
     <value>329, 25</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>230</value>
+    <value>234</value>
   </data>
   <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
     <value>2</value>
@@ -378,6 +378,7 @@
   </data>
   <data name="HashLabel.Text" xml:space="preserve">
     <value>CRC: {0}</value>
+    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;HashLabel.Name" xml:space="preserve">
     <value>HashLabel</value>

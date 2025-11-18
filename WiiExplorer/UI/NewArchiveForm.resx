@@ -117,198 +117,168 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;SelectionSplitContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SelectionSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="DescriptionTextLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SelectionSplitContainer.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SelectionSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="FormatListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="FormatListView.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 9.75pt, style=Bold, Underline</value>
-  </data>
-  <data name="FormatListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="FormatListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 293</value>
-  </data>
   <data name="FormatListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;FormatListView.Name" xml:space="preserve">
-    <value>FormatListView</value>
+  <data name="&gt;&gt;DescriptionTextLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;FormatListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="DescriptionTextLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 271</value>
   </data>
   <data name="&gt;&gt;FormatListView.Parent" xml:space="preserve">
     <value>SelectionSplitContainer.Panel1</value>
   </data>
+  <data name="DescriptionTextLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="SelectionSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 293</value>
+  </data>
+  <data name="&gt;&gt;SelectButton.Name" xml:space="preserve">
+    <value>SelectButton</value>
+  </data>
+  <data name="&gt;&gt;DescriptionTextLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Name" xml:space="preserve">
+    <value>SelectionSplitContainer.Panel2</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>450, 352</value>
+  </data>
+  <data name="SelectionSplitContainer.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Name" xml:space="preserve">
+    <value>SelectionSplitContainer</value>
+  </data>
+  <data name="SelectButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 20</value>
+  </data>
+  <data name="DescriptionTextLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DescriptionHeaderLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;DescriptionHeaderLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DescriptionHeaderLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;DescriptionTextLabel.Parent" xml:space="preserve">
+    <value>SelectionSplitContainer.Panel2</value>
+  </data>
+  <data name="FormatListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="SelectButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Parent" xml:space="preserve">
+    <value>SelectionSplitContainer</value>
+  </data>
+  <data name="DescriptionHeaderLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 11.25pt, style=Underline</value>
+  </data>
   <data name="&gt;&gt;FormatListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Name" xml:space="preserve">
-    <value>SelectionSplitContainer.Panel1</value>
+  <data name="&gt;&gt;FormatListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;DescriptionHeaderLabel.Parent" xml:space="preserve">
+    <value>SelectionSplitContainer.Panel2</value>
   </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Parent" xml:space="preserve">
-    <value>SelectionSplitContainer</value>
+  <data name="SelectButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
-  <data name="DescriptionTextLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;SelectionSplitContainer.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="FormatListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;DescriptionHeaderLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FormatListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 293</value>
   </data>
   <data name="DescriptionTextLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 10pt</value>
   </data>
-  <data name="DescriptionTextLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 22</value>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>WiiExplorer - Select Archive Format</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Name" xml:space="preserve">
+    <value>SelectionSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;SelectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FormatListView.Name" xml:space="preserve">
+    <value>FormatListView</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="DescriptionTextLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 1, 0</value>
   </data>
-  <data name="DescriptionTextLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 271</value>
-  </data>
-  <data name="DescriptionTextLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;DescriptionTextLabel.Name" xml:space="preserve">
     <value>DescriptionTextLabel</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextLabel.Parent" xml:space="preserve">
-    <value>SelectionSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;DescriptionTextLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="DescriptionHeaderLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="DescriptionHeaderLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Consolas, 11.25pt, style=Underline</value>
-  </data>
-  <data name="DescriptionHeaderLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="DescriptionHeaderLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 22</value>
-  </data>
-  <data name="DescriptionHeaderLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="DescriptionHeaderLabel.Text" xml:space="preserve">
     <value>Format Description</value>
   </data>
-  <data name="DescriptionHeaderLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="DescriptionHeaderLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;DescriptionHeaderLabel.Name" xml:space="preserve">
-    <value>DescriptionHeaderLabel</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>NewArchiveForm</value>
   </data>
-  <data name="&gt;&gt;DescriptionHeaderLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DescriptionHeaderLabel.Parent" xml:space="preserve">
-    <value>SelectionSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;DescriptionHeaderLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Name" xml:space="preserve">
-    <value>SelectionSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Parent" xml:space="preserve">
     <value>SelectionSplitContainer</value>
   </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SelectionSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 293</value>
-  </data>
-  <data name="SelectionSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="SelectionSplitContainer.SplitterWidth" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SelectionSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Name" xml:space="preserve">
-    <value>SelectionSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SelectionSplitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SelectButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="SelectButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="SelectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 293</value>
-  </data>
-  <data name="SelectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 20</value>
-  </data>
-  <data name="SelectButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SelectButton.Text" xml:space="preserve">
-    <value>Select</value>
-  </data>
-  <data name="&gt;&gt;SelectButton.Name" xml:space="preserve">
-    <value>SelectButton</value>
-  </data>
-  <data name="&gt;&gt;SelectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SelectButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;SelectButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="DescriptionHeaderLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 22</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>434, 313</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="SelectionSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
+    <value>150</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -386,16 +356,46 @@
         gAPAAAADwAAAA8AAAAPgAA//8AAf//////8=
 </value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>431, 352</value>
+  <data name="SelectionSplitContainer.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>WiiExplorer - Select Archive Format</value>
+  <data name="SelectionSplitContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>NewArchiveForm</value>
+  <data name="&gt;&gt;SelectButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SelectButton.Text" xml:space="preserve">
+    <value>Select</value>
   </data>
+  <data name="FormatListView.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Consolas, 9.75pt, style=Bold, Underline</value>
+  </data>
+  <data name="SelectButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 293</value>
+  </data>
+  <data name="&gt;&gt;SelectButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="SelectionSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;DescriptionHeaderLabel.Name" xml:space="preserve">
+    <value>DescriptionHeaderLabel</value>
+  </data>
+  <data name="SelectButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SelectionSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;SelectionSplitContainer.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DescriptionHeaderLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

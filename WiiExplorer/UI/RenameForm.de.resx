@@ -127,6 +127,6 @@
     <value>Erweiterung</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WiiExplorer - [] umbenennen</value>
+    <value>WiiExplorer - „{0}“ umbenennen</value>
   </data>
 </root>

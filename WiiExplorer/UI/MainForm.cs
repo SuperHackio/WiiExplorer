@@ -267,7 +267,7 @@ public partial class MainForm : Form
         MainToolStripProgressBar.Value = 70;
         FileUtil.SaveFile(Filepath, Archive.Save);
         Archive.FileName = Filepath;
-        Text = $"WiiExplorer {Application.ProductVersion} - {fi.Name}";
+        Text = $"WiiExplorer {UpdateInformation.ApplicationVersion} - {fi.Name}";
 
         if (PaddingToolStripColorComboBox.SelectedIndex == 1 || PaddingToolStripColorComboBox.SelectedIndex == 3)
             ArcUtil.PadFile(Filepath, PaddingToolStripColorComboBox.SelectedIndex == 3 ? 32 : 16);
@@ -297,7 +297,7 @@ public partial class MainForm : Form
 
     private bool NewArchive(string? SourceFolder)
     {
-        string FailureMessage = "Failed to create new archive.";
+        string FailureMessage = Properties.Resources.MessageBoxMsg_FailedToCreateNewArchive;
 
         NewArchiveForm NAF = new();
         if (NAF.ShowDialog() != DialogResult.OK)
@@ -305,7 +305,7 @@ public partial class MainForm : Form
         Archive? arc = NAF.GetNewArchive();
         if (arc is null)
         {
-            MessageBox.Show(FailureMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(FailureMessage, Properties.Resources.MessageBoxTitle_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
 
@@ -314,7 +314,7 @@ public partial class MainForm : Form
 
         if (!InitializeArchive(arc, FailureMessage))
             return false;
-        Text = $"WiiExplorer {Application.ProductVersion} - New Archive";
+        Text = $"WiiExplorer {UpdateInformation.ApplicationVersion} - {Properties.Resources.String_NewArchive}";
         return true;
     }
 
@@ -538,10 +538,8 @@ public partial class MainForm : Form
         if (Archive is null || string.IsNullOrWhiteSpace(Archive.FileName))
         {
             //ArchiveSFD.InitialDirectory = Settings.Default.PreviousSaveArchivePath;
-            if (ArchiveSFD.ShowDialog() == DialogResult.OK && ArchiveSFD.FileName != "")
+            if (ArchiveSFD.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(ArchiveSFD.FileName))
                 Save(ArchiveSFD.FileName);
-            else
-                return;
         }
         else
             Save(Archive.FileName);
@@ -550,7 +548,7 @@ public partial class MainForm : Form
     private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
     {
         //ArchiveSFD.InitialDirectory = Settings.Default.PreviousSaveArchivePath;
-        if (ArchiveSFD.ShowDialog() == DialogResult.OK && ArchiveSFD.FileName != "")
+        if (ArchiveSFD.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(ArchiveSFD.FileName))
             Save(ArchiveSFD.FileName);
     }
 
@@ -561,14 +559,8 @@ public partial class MainForm : Form
         if (FileOFD.ShowDialog() == DialogResult.OK)
             InsertItemsToArchive(FileOFD.FileNames, ArchiveTreeView.SelectedNode);
     }
-
+    // The function names do not match their implementations
     private void AddFolderToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (FBD.ShowDialog() == DialogResult.OK)
-            InsertItemsToArchive([FBD.SelectedPath], ArchiveTreeView.SelectedNode);
-    }
-
-    private void CreateEmptyFolderToolStripMenuItem_Click(object sender, EventArgs e)
     {
         if (Archive is null || Archive.Root is null) // Second case should be impossible
             return;
@@ -580,6 +572,12 @@ public partial class MainForm : Form
         InsertItemToTreeView(ArchiveTreeView.SelectedNode, NewTreeNode, NewDir);
         ArchiveTreeView.SelectedNode = NewTreeNode;
         RenameSelectedToolStripMenuItem_Click(sender, e);
+    }
+    // The function names do not match their implementations.
+    private void CreateEmptyFolderToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (FBD.ShowDialog() == DialogResult.OK)
+            InsertItemsToArchive([FBD.SelectedPath], ArchiveTreeView.SelectedNode);
     }
 
     private void DeleteSelectedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -957,7 +955,7 @@ public partial class MainForm : Form
                 }
                 string[] NodeIndexes = NodeMap.Split('|');
                 TreeNodeCollection InsertCollection = ArchiveTreeView.Nodes;
-                TreeNode? target;
+                TreeNode? target = null;
                 for (int i = 0; i < NodeIndexes.Length - 1; i++)
                 {
                     target = InsertCollection[int.Parse(NodeIndexes[i])];
@@ -969,8 +967,15 @@ public partial class MainForm : Form
                     int idx = int.Parse(NodeIndexes[^1]);
                     if (idx == InsertCollection.Count)
                     {
-                        TreeNode n = InsertCollection[idx - 1];
-                        InsertItemsToArchive(DiscPaths, n.Parent, NoInsertDir: NodeIndexes.Length == 1);
+                        if (InsertCollection.Count == 0)
+                        {
+                            InsertItemsToArchive(DiscPaths, target, NoInsertDir: NodeIndexes.Length == 1);
+                        }
+                        else
+                        {
+                            TreeNode n = InsertCollection[idx - 1];
+                            InsertItemsToArchive(DiscPaths, n.Parent, NoInsertDir: NodeIndexes.Length == 1);
+                        }
                     }
                     else if (idx > 0)
                     {

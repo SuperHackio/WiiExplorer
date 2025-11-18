@@ -35,7 +35,7 @@ public partial class RenameForm : Form
             ExtensionLabel.Enabled = false;
             NameColorTextBox.Text = OGName;
         }
-
+        Text = string.Format(Text, OGName);
         DialogResult = DialogResult.Cancel;
         ProgramColors.ReloadTheme(this);
     }

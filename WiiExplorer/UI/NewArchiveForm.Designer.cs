@@ -47,10 +47,12 @@
             // 
             // SelectionSplitContainer.Panel1
             // 
+            resources.ApplyResources(SelectionSplitContainer.Panel1, "SelectionSplitContainer.Panel1");
             SelectionSplitContainer.Panel1.Controls.Add(FormatListView);
             // 
             // SelectionSplitContainer.Panel2
             // 
+            resources.ApplyResources(SelectionSplitContainer.Panel2, "SelectionSplitContainer.Panel2");
             SelectionSplitContainer.Panel2.Controls.Add(DescriptionTextLabel);
             SelectionSplitContainer.Panel2.Controls.Add(DescriptionHeaderLabel);
             // 

@@ -474,7 +474,7 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>WiiExplorer - Rename []</value>
+    <value>WiiExplorer - Rename "{0}"</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RenameForm</value>

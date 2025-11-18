@@ -186,7 +186,7 @@ SZS Dateien müssen YAZ0 enkodiert sein. Zur YAZ0 Enkodierung wechseln?</value>
   </data>
   <data name="MessageBoxMsg_ExportDirectoryOverwriteWarning" xml:space="preserve">
     <value>Das Ausgabeverzeichnis existiert bereits!
-"{0}"
+„{0}“
 Einige Inhalte könnten überschrieben werden.
 
 Trotzdem fortfahren?</value>
@@ -198,7 +198,7 @@ Trotzdem fortfahren?</value>
     <value>Komprimierung abbrechen?</value>
   </data>
   <data name="StatusStrip_RenamedItem" xml:space="preserve">
-    <value>"{0}" nach "{1}" umbenannt</value>
+    <value>„{0}“ nach „{1}“ umbenannt</value>
   </data>
   <data name="MessageBoxTitle_Information" xml:space="preserve">
     <value>Information</value>
@@ -211,8 +211,8 @@ Datei auf den Desktop zu ziehen.</value>
     <value>Dateinamenskonflikt</value>
   </data>
   <data name="MessageBoxMsg_ItemWithTheSameNameError" xml:space="preserve">
-    <value>Eine Datei mit dem Namen "{0}"
-existiert bereits unter "{1}"</value>
+    <value>Eine Datei mit dem Namen „{0}“
+existiert bereits unter „{1}“</value>
   </data>
   <data name="StatusStrip_NoSelection" xml:space="preserve">
     <value>Keine Auswahl</value>
@@ -305,10 +305,16 @@ Unterstützte Spiele:
 - Mario Kart Wii
 - Metroid: Other M
 - Sonic Colors [Wii]
-- Mario und Sonic bei den
+- Mario &amp;&amp; Sonic bei den
     Olympischen Spielen London 2012
 - The Legend of Zelda:
     Skyward Sword
 - Rodea the Sky Soldier</value>
+  </data>
+  <data name="String_NewArchive" xml:space="preserve">
+    <value>Neues Archiv</value>
+  </data>
+  <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
+    <value>Fehler beim Erstellen eines neuen Archivs.</value>
   </data>
 </root>

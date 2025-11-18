@@ -259,6 +259,15 @@ namespace WiiExplorer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to create new archive..
+        /// </summary>
+        internal static string MessageBoxMsg_FailedToCreateNewArchive {
+            get {
+                return ResourceManager.GetString("MessageBoxMsg_FailedToCreateNewArchive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An item with the name &quot;{0}&quot;
         ///already exists at &quot;{1}&quot;.
         /// </summary>
@@ -509,6 +518,15 @@ namespace WiiExplorer.Properties {
         internal static string StatusStrip_SelectedFolderStats {
             get {
                 return ResourceManager.GetString("StatusStrip_SelectedFolderStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Archive.
+        /// </summary>
+        internal static string String_NewArchive {
+            get {
+                return ResourceManager.GetString("String_NewArchive", resourceCulture);
             }
         }
         

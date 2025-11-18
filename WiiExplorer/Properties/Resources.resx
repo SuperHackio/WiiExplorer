@@ -341,4 +341,10 @@ Supported games include:
     Skyward Sword
 - Rodea the Sky Soldier</value>
   </data>
+  <data name="String_NewArchive" xml:space="preserve">
+    <value>New Archive</value>
+  </data>
+  <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
+    <value>Failed to create new archive.</value>
+  </data>
 </root>
