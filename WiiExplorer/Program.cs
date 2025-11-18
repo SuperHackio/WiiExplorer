@@ -1,4 +1,5 @@
 using DarkModeForms;
+using System.Globalization;
 
 namespace WiiExplorer;
 
@@ -8,7 +9,7 @@ internal static class Program
     public static string USER_COMPRESSION_PATH => GetFromAppPath("Compression.txt");
     public const string UPDATEALERT_URL = "https://raw.githubusercontent.com/SuperHackio/WiiExplorer/master/WiiExplorer/UpdateAlert.txt";
     public const string GIT_RELEASE_URL = "https://github.com/SuperHackio/WiiExplorer/releases";
-    public const string SUPPORTED_ARCHIVES_FILTER = "All Supported Files|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive|*.arc|YAZ0 Identified Archive|*.szs|YAY0 Identified Archive|*.szp|U8 Archive|*.szs;*.carc;*.app|Audio Archive File|*.szs;*.aaf|All Files|*.*";
+    public static readonly string SUPPORTED_ARCHIVES_FILTER = Properties.Resources.FileFilter_SupportedArchives;
 
     public static Settings Settings { get; private set; } = new(SETTINGS_PATH);
     public static bool IsGameFileLittleEndian { get; set; } = false;
@@ -27,14 +28,15 @@ internal static class Program
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
 
+        CultureInfo culture = new("de");
+        Thread.CurrentThread.CurrentCulture = culture;
+        Thread.CurrentThread.CurrentUICulture = culture;
+
         UpdateInfo = UpdateInformation.IsUpdateExist(UPDATEALERT_URL);
-        if (UpdateInfo is not null && UpdateInfo.Value.IsNewer())
+        if (UpdateInfo is not null && UpdateInfo.Value.IsNewer() && UpdateInfo.Value.IsUpdateRequired)
         {
-            if (UpdateInfo.Value.IsUpdateRequired)
-            {
-                MessageBox.Show($"An update for WiiExplorer is available. To continue using WiiExplorer, please update to the latest version.\n\n{GIT_RELEASE_URL}", "Update Required", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -5;
-            }
+            MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_MandatoryUpdateNotice, GIT_RELEASE_URL, UpdateInfo.ToString()), Properties.Resources.MessageBoxTitle_UpdateRequired, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return -5;
         }
 
         if (args.Any(A => A.Equals("-le")))
@@ -44,7 +46,15 @@ internal static class Program
         }
 
         if (args.Length > 1) //If it's greater than 1 even after removing the -le arg, do cmd stuff
+        {
+            if (UpdateInfo is not null && UpdateInfo.Value.IsNewer())
+                Console.WriteLine(Properties.Resources.MessageBoxMsg_OptionalUpdateNotice, GIT_RELEASE_URL, UpdateInfo.ToString());
+
             return CommandLineFunction.Execute(args);
+        }
+
+        if (UpdateInfo is not null && UpdateInfo.Value.IsNewer()) // Don't need to check if it's required, as the program will end execution early if so.
+            MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_OptionalUpdateNotice, GIT_RELEASE_URL, UpdateInfo.ToString()), Properties.Resources.MessageBoxTitle_UpdateAvailable, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         Editor = new(args);
         ReloadTheme();

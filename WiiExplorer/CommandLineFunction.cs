@@ -28,6 +28,7 @@ internal static class CommandLineFunction
 
 
         // WiiExplorer command line but proper this time!
+        // Does not support localization
 
         // Use US Numbers
         CultureInfo.CurrentCulture = new("", false);

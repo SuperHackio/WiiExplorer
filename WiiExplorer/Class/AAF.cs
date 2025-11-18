@@ -17,7 +17,9 @@ public class AAF : Archive
         string name;
         do
         {
-            name = Strm.ReadString(4, Encoding.ASCII);
+            Span<char> cr = Strm.ReadString(4, Encoding.ASCII).ToCharArray();
+            StreamUtil.ApplyEndian(cr, true);
+            name = cr.ToString();
             uint Start, End;
             MemoryStream ms;
 
@@ -110,7 +112,7 @@ public class AAF : Archive
             FileDatas.Add(ms);
         }
         ;
-        Strm.WriteString(OPENER, Encoding.ASCII, null);
+        Strm.WriteMagic(OPENER);
         long FilePointer = HeaderSize;
         for (int i = 0; i < ArchiveFiles.Count; i++)
         {
@@ -118,19 +120,19 @@ public class AAF : Archive
             switch (AF.Extension)
             {
                 case ".bst":
-                    Strm.WriteString("bst ", Encoding.ASCII, null);
+                    Strm.WriteMagic("bst ");
                     Strm.WriteUInt32((uint)FilePointer);
                     FilePointer += FileDatas[i].Length;
                     Strm.WriteUInt32((uint)FilePointer);
                     break;
                 case ".bstn":
-                    Strm.WriteString("bstn", Encoding.ASCII, null);
+                    Strm.WriteMagic("bstn");
                     Strm.WriteUInt32((uint)FilePointer);
                     FilePointer += FileDatas[i].Length;
                     Strm.WriteUInt32((uint)FilePointer);
                     break;
                 case ".bsc":
-                    Strm.WriteString("bsc ", Encoding.ASCII, null);
+                    Strm.WriteMagic("bsc ");
                     Strm.WriteUInt32((uint)FilePointer);
                     FilePointer += FileDatas[i].Length;
                     Strm.WriteUInt32((uint)FilePointer);
@@ -140,12 +142,12 @@ public class AAF : Archive
                     string[] namesplit = NameNoExtension.Split('_');
                     uint Unk1 = 0; // I know we can default to Zero for this
                     uint Unk2 = 0;
-                    if (namesplit.Length == 2)
-                        _ = uint.TryParse(namesplit[1], System.Globalization.NumberStyles.HexNumber, null, out Unk1) & uint.TryParse(namesplit[0], out Unk2); // Single '&' is not a mistake
-                    else if (namesplit.Length == 1)
-                        _ = uint.TryParse(namesplit[0], out Unk2);
+                    if (namesplit.Length == 3)
+                        _ = uint.TryParse(namesplit[2], System.Globalization.NumberStyles.HexNumber, null, out Unk1) & uint.TryParse(namesplit[1], out Unk2); // Single '&' is not a mistake
+                    else if (namesplit.Length == 2)
+                        _ = uint.TryParse(namesplit[1], out Unk2);
 
-                    Strm.WriteString("ws  ", Encoding.ASCII, null);
+                    Strm.WriteMagic("ws  ");
                     Strm.WriteUInt32(Unk2);
                     Strm.WriteUInt32((uint)FilePointer);
                     FilePointer += FileDatas[i].Length;
@@ -155,10 +157,10 @@ public class AAF : Archive
                     string NameNoExtension2 = AF.Name[..^AF.Extension.Length];
                     string[] namesplit2 = NameNoExtension2.Split('_');
                     uint Unk3 = 0;
-                    if (namesplit2.Length == 1)
-                        _ = uint.TryParse(namesplit2[0], out Unk3);
+                    if (namesplit2.Length == 2)
+                        _ = uint.TryParse(namesplit2[1], out Unk3);
 
-                    Strm.WriteString("bnk ", Encoding.ASCII, null);
+                    Strm.WriteMagic("bnk ");
                     Strm.WriteUInt32(Unk3);
                     Strm.WriteUInt32((uint)FilePointer);
                     FilePointer += FileDatas[i].Length;
@@ -167,7 +169,7 @@ public class AAF : Archive
                     throw new InvalidOperationException("This should be impossible...");
             }
         }
-        Strm.WriteString(CLOSER, Encoding.ASCII, null);
+        Strm.WriteMagic(CLOSER);
         for (int i = 0; i < FileDatas.Count; i++)
             Strm.Write(FileDatas[i].ToArray());
         Strm.PadTo(16);

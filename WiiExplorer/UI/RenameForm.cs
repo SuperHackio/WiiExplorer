@@ -46,12 +46,10 @@ public partial class RenameForm : Form
         {
             case Keys.Escape:
                 Close();
-                break;
+                return true;
             default:
                 return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        return true;
     }
 
     private void SubmitButton_Click(object sender, EventArgs e)
@@ -62,30 +60,31 @@ public partial class RenameForm : Form
 
     private void RenameForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-        if (DialogResult == DialogResult.OK)
-        {
-            string prevname = ArchiveTreeView.SelectedNode.Text;
-            string prevpath = ArchiveTreeView.SelectedNode.FullPath;
-            string ext = ExtensionColorTextBox.Text;
-            if (ExtensionColorTextBox.Enabled && ext.Length > 0 && !ext.StartsWith('.'))
-                ext = '.' + ext;
-            string finalname = NameColorTextBox.Text + (CurrentItem is ArchiveFile ? ext : "");
-            ArchiveTreeView.SelectedNode.Text = finalname;
-            if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && Archive[prevpath] != Archive[ArchiveTreeView.SelectedNode.FullPath])
-            {
-                ArchiveTreeView.SelectedNode.Text = prevname;
-                //MessageBox.Show(Strings.ItemAlreadyExists, Strings.DuplicateName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-                return;
-            }
-            Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
-            CurrentItem.Name = finalname;
+        if (DialogResult != DialogResult.OK)
+            return; // don't bother doing anything else
 
-            if (ExtensionColorTextBox.Enabled)
-            {
-                int imgidx = ArcUtil.IndexOfExtensionImageOrDefault(ext, ArchiveTreeView.ImageList);
-                ArchiveTreeView.SelectedNode.ImageIndex = ArchiveTreeView.SelectedNode.SelectedImageIndex = imgidx;
-            }
+        string prevname = ArchiveTreeView.SelectedNode.Text;
+        string prevpath = ArchiveTreeView.SelectedNode.FullPath;
+        string ext = ExtensionColorTextBox.Text;
+        if (ExtensionColorTextBox.Enabled && ext.Length > 0 && !ext.StartsWith('.'))
+            ext = '.' + ext;
+        string finalname = NameColorTextBox.Text + (CurrentItem is ArchiveFile ? ext : "");
+        ArchiveTreeView.SelectedNode.Text = finalname;
+        if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && Archive[prevpath] != Archive[ArchiveTreeView.SelectedNode.FullPath])
+        {
+            string existingpath = ArchiveTreeView.SelectedNode.FullPath;
+            ArchiveTreeView.SelectedNode.Text = prevname;
+            MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_ItemWithTheSameNameError, finalname, existingpath), Properties.Resources.MessageBoxTitle_ItemNameConflict, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = true;
+            return;
+        }
+        Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
+        CurrentItem.Name = finalname;
+
+        if (ExtensionColorTextBox.Enabled)
+        {
+            int imgidx = ArcUtil.IndexOfExtensionImageOrDefault(finalname, ArchiveTreeView.ImageList);
+            ArchiveTreeView.SelectedNode.ImageIndex = ArchiveTreeView.SelectedNode.SelectedImageIndex = imgidx;
         }
     }
 

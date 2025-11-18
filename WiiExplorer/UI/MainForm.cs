@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Text.RegularExpressions;
 using WiiExplorer.Class;
 
 namespace WiiExplorer;
@@ -26,13 +27,13 @@ public partial class MainForm : Form
     private static string[] KnownExtensions = [];
     private static readonly List<(string LocalizeName, Func<byte[], BackgroundWorker?, byte[]>? Function)> BuiltInCompressions =
     [
-        ("Off", null),
+        (Properties.Resources.CompressionName_Off, null),
 
-        ("Yaz0 Strong", (src, bgw) => YAZ0.Compress_Strong(src, bgw)),
-        ("Yaz0 Fast", (src, bgw) => YAZ0.Compress_Fast(src, bgw)),
-        ("Yaz0 Official", (src, bgw) => YAZ0.Compress_Official(src, bgw)),
+        (Properties.Resources.CompressionName_YAZ0Strong, (src, bgw) => YAZ0.Compress_Strong(src, bgw)),
+        (Properties.Resources.CompressionName_YAZ0Fast, (src, bgw) => YAZ0.Compress_Fast(src, bgw)),
+        (Properties.Resources.CompressionName_YAZ0Official, (src, bgw) => YAZ0.Compress_Official(src, bgw)),
 
-        ("Yay0 Strong", YAY0.Compress), // Love how this one fits without a lambda but the others don't lol
+        (Properties.Resources.CompressionName_YAY0Strong, YAY0.Compress), // Love how this one fits without a lambda but the others don't lol
     ];
     private static readonly List<(string LocalizeName, string CommandFormat)> UserCompressions = [];
 
@@ -55,7 +56,7 @@ public partial class MainForm : Form
             U8 => "(U8)",
             RARC => "(RARC)",
             AAF => "(AAF)",
-            _ => "<UNKNOWN>"
+            _ => "<???>"
         };
     }
 
@@ -203,7 +204,7 @@ public partial class MainForm : Form
         loadarc ??= TryReadFormat<U8>();
         loadarc ??= TryReadFormat<AAF>();
 
-        if (!InitializeArchive(loadarc, "The file you tried to open is not supported."))
+        if (!InitializeArchive(loadarc, Properties.Resources.MessageBoxMsg_NotSupportedArchiveFormat))
             return;
 
         if (loadarc is not null)
@@ -236,7 +237,7 @@ public partial class MainForm : Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to open the archive as {new T().GetType()}:\n{ex.Message}\n\n{ex.StackTrace ?? ""}", "Read Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_ArchiveFormatReadError, new T().GetType(), ex.Message, ex.StackTrace ?? ""), Properties.Resources.MessageBoxTitle_ArchiveReadError, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -253,9 +254,11 @@ public partial class MainForm : Form
         if (AutoYaz0ToolStripColorComboBox.SelectedIndex > 0)
         {
             // TODO: Messagebox Messages
-            if (fi.Extension.Equals(".szp") && Yaz0ToolStripComboBox.SelectedIndex != 0x03 && MessageBox.Show("TODO", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                Yaz0ToolStripComboBox.SelectedIndex = 0x03;
-            else if (fi.Extension.Equals(".szs") && Yaz0ToolStripComboBox.SelectedIndex != 0x01 && Yaz0ToolStripComboBox.SelectedIndex != 0x02 && MessageBox.Show("TODO", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (fi.Extension.Equals(".szp") && Yaz0ToolStripComboBox.SelectedIndex != 0x04 && MessageBox.Show(Properties.Resources.MessageBoxMsg_SZPMismatch, Properties.Resources.MessageBoxTitle_EncodingMismatch, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Yaz0ToolStripComboBox.SelectedIndex = 0x04;
+            else if (fi.Extension.Equals(".szs") &&
+                Yaz0ToolStripComboBox.SelectedIndex != 0x01 && Yaz0ToolStripComboBox.SelectedIndex != 0x02 && Yaz0ToolStripComboBox.SelectedIndex != 0x03 &&
+                MessageBox.Show(Properties.Resources.MessageBoxMsg_SZSMismatch, Properties.Resources.MessageBoxTitle_EncodingMismatch, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 Yaz0ToolStripComboBox.SelectedIndex = 0x01;
         }
 
@@ -275,7 +278,7 @@ public partial class MainForm : Form
             MainToolStripProgressBar.Value = 0;
         }
         else
-            MainToolStripStatusLabel.Text = "Save Complete!";
+            MainToolStripStatusLabel.Text = Properties.Resources.StatusStrip_SaveComplete;
 
         SetControlsEnabled(false, true);
         FilePropertiesToolStripMenuItem.Enabled = false;
@@ -319,11 +322,12 @@ public partial class MainForm : Form
     {
         if (archive is null)
         {
-            MessageBox.Show(FailureMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(FailureMessage, Properties.Resources.MessageBoxTitle_Warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return false;
         }
         if (archive.Root is null)
         {
+            // Should this get localized??
             MessageBox.Show("If you are seeing this, Congratulations!\nI have no idea how you made this happen...\n\nArchive has no Root", "Bruh moment?", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
@@ -339,7 +343,7 @@ public partial class MainForm : Form
         MainToolStripProgressBar.Value = 100;
 
         int Count = Archive.TotalFileCount; // Do it here so we don't need to do it twice, as that would be taxing for large archives
-        MainToolStripStatusLabel.Text = string.Format("Archive loaded successfully! [{0} file(s) total]", Count);
+        MainToolStripStatusLabel.Text = string.Format(Properties.Resources.StatusStrip_ArchiveLoadedSuccessfully, Count);
         FilePropertiesToolStripMenuItem.Enabled = false;
         DeleteSelectedToolStripMenuItem.Enabled = ContextDeleteSelectedToolStripMenuItem.Enabled = false;
         RenameSelectedToolStripMenuItem.Enabled = ContextRenameToolStripMenuItem.Enabled = false;
@@ -374,7 +378,7 @@ public partial class MainForm : Form
             {
                 FileInfo fi = new(Current);
                 ogname = fi.Name;
-                imgidx = ArcUtil.IndexOfExtensionImageOrDefault(fi.Extension, ArchiveTreeView.ImageList);
+                imgidx = ArcUtil.IndexOfExtensionImageOrDefault(fi.Name, ArchiveTreeView.ImageList);
                 NewItem = ArcUtil.CreateNewFile(Archive);
             }
             if (NewItem is null)
@@ -454,7 +458,7 @@ public partial class MainForm : Form
             Directory.CreateDirectory(path);
         else
         {
-            if (MessageBox.Show($"The output directory already exists!\n\"{path}\"\nSome of the contents may be overwritten.\n\nProceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            if (MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_ExportDirectoryOverwriteWarning, path), Properties.Resources.MessageBoxTitle_Warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 return;
         }
         AD.Export(path);
@@ -469,28 +473,20 @@ public partial class MainForm : Form
         FileUtil.SaveFile(OutputPath, AF.Save);
     }
 
-    private static string GetKnownExtensionFilter(string Extension)
-    {
-        if (Extension.Length == 0)
-            return KnownExtensions[0];
-        for (int i = 0; i < KnownExtensions.Length; i++)
-        {
-            string[] Splitter = KnownExtensions[i].Split('|');
-            if (Splitter.Length != 2 || Splitter[1].Length == 0)
-                continue;
-            if (Extension.Equals(Splitter[1][1..]))
-                return KnownExtensions[i];
-        }
-
-        return "All Files|*.*";
-    }
-
     #region Form
     private void RootNameTextBox_TextChanged(object sender, EventArgs e)
     {
-        if (Archive is null || Archive.Root is null)
+        if (Archive?.Root is null)
             return;
         Archive.Root.Name = RootNameTextBox.Text;
+        Program.IsUnsavedChanges = true;
+    }
+
+    private void KeepIDsSyncedCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+        if (Archive is not RARC rarc)
+            return;
+        rarc.KeepFileIDsSynced = KeepIDsSyncedCheckBox.Checked;
         Program.IsUnsavedChanges = true;
     }
 
@@ -498,7 +494,7 @@ public partial class MainForm : Form
     {
         if (EncodingBackgroundWorker.IsBusy)
         {
-            if (MessageBox.Show("Cancel Compresion?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(Properties.Resources.MessageBoxMsg_CancelCompression, Properties.Resources.MessageBoxTitle_ConfirmAction, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 EncodingBackgroundWorker.CancelAsync();
             e.Cancel = true;
             return;
@@ -607,7 +603,7 @@ public partial class MainForm : Form
         if (RN.ShowDialog() != DialogResult.OK)
             return;
 
-        MainToolStripStatusLabel.Text = $"Renamed \"{tmp}\" to \"{ArchiveTreeView.SelectedNode.Text}\"";
+        MainToolStripStatusLabel.Text = string.Format(Properties.Resources.StatusStrip_RenamedItem, tmp, ArchiveTreeView.SelectedNode.Text);
     }
 
     private void ReplaceSelectedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -648,7 +644,7 @@ public partial class MainForm : Form
                 UpdateTreeViewNodeWithUniqueName(Working, NewItem);
                 Archive[Working.FullPath] = NewItem;
 
-                int imgidx = ArcUtil.IndexOfExtensionImageOrDefault(info.Extension, ArchiveTreeView.ImageList);
+                int imgidx = ArcUtil.IndexOfExtensionImageOrDefault(info.Name, ArchiveTreeView.ImageList);
                 Working.ImageIndex = Working.SelectedImageIndex = imgidx;
             }
         }
@@ -673,7 +669,7 @@ public partial class MainForm : Form
         else if (Item is ArchiveFile af)
         {
             FileSFD.FileName = af.Name;
-            FileSFD.Filter = GetKnownExtensionFilter(af.Extension ?? "");
+            FileSFD.Filter = GetKnownExtensionFilter(af.Name ?? "");
             if (FileSFD.ShowDialog() == DialogResult.OK && !string.IsNullOrWhiteSpace(FileSFD.FileName))
                 ExportFile(Path, FileSFD.FileName);
         }
@@ -924,7 +920,7 @@ public partial class MainForm : Form
         {
             var x = DoDragDrop(e.Item, DragDropEffects.Move);
             if (x == DragDropEffects.None)
-                MessageBox.Show("If you are trying to drag an item onto your desktop,\nuse the Right Mouse Button to do so.","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Properties.Resources.MessageBoxMsg_DragDropUseRightClickHint, Properties.Resources.MessageBoxTitle_Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         ArchiveTreeView.Refresh();
@@ -1019,7 +1015,7 @@ public partial class MainForm : Form
                 NewPath += "/" + MovingNode.Text;
                 if (Archive.ItemExists(NewPath) && !(Archive.Root.Name + "/" + MovingNode.FullPath).Equals(NewPath))
                 {
-                    MessageBox.Show($"An item with the name \"{MovingNode.Text}\"\nalready exists at \"{NewPath}\"", "Item Name Conflict", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_ItemWithTheSameNameError, MovingNode.Text, NewPath), Properties.Resources.MessageBoxTitle_ItemNameConflict, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -1057,7 +1053,7 @@ public partial class MainForm : Form
         else
             DragHeldCounter++;
 
-        MainToolStripStatusLabel.Text = NodeOver?.Text ?? "NONE";
+        //MainToolStripStatusLabel.Text = NodeOver?.Text ?? "NONE";
 
         // A bit long, but to summarize, process the following code only if the nodeover is null
         // and either the nodeover is not the same thing as nodemoving UNLESS nodeover happens
@@ -1270,7 +1266,7 @@ public partial class MainForm : Form
             RenameSelectedToolStripMenuItem.Enabled = ContextRenameToolStripMenuItem.Enabled = false;
             ReplaceSelectedToolStripMenuItem.Enabled = ContextReplaceSelectedToolStripMenuItem.Enabled = false;
             ExportSelectedToolStripMenuItem.Enabled = ContextExportSelectedToolStripMenuItem.Enabled = false;
-            MainToolStripStatusLabel.Text = "No selection.";
+            MainToolStripStatusLabel.Text = Properties.Resources.StatusStrip_NoSelection;
         }
     }
 
@@ -1301,11 +1297,11 @@ public partial class MainForm : Form
 
         if (Archive[ArchiveTreeView.SelectedNode.FullPath] is ArchiveDirectory dir)
         {
-            MainToolStripStatusLabel.Text = string.Format("{0} - {1} files, {2} subfolders", dir.Name, dir.Items.Count(i => i.Value is ArchiveFile), dir.Items.Count(i => i.Value is ArchiveDirectory));
+            MainToolStripStatusLabel.Text = string.Format(Properties.Resources.StatusStrip_SelectedFolderStats, dir.Name, dir.Items.Count(i => i.Value is ArchiveFile), dir.Items.Count(i => i.Value is ArchiveDirectory));
         }
         else if (Archive[ArchiveTreeView.SelectedNode.FullPath] is ArchiveFile file)
         {
-            MainToolStripStatusLabel.Text = string.Format("{0} - {1} bytes. [CRC: {2}]", file.Name, file.Length, HashUtil.CalcCRC32(file.FileData).ToString("X8"));
+            MainToolStripStatusLabel.Text = string.Format(Properties.Resources.StatusStrip_SelectedFileStats, file.Name, file.Length, HashUtil.CalcCRC32(file.FileData).ToString("X8"));
             if (file is RARC.File)
                 FilePropertiesToolStripMenuItem.Enabled = true;
         }
@@ -1371,15 +1367,13 @@ public partial class MainForm : Form
                     }
                 }
                 if (process.ExitCode != 0)
-                    throw new InvalidOperationException($"Process exited with code {process.ExitCode}");
+                    throw new InvalidOperationException(string.Format(Properties.Resources.InvalidOperationException_ProcessExitedWithCode, process.ExitCode));
                 CompressedSize = File.ReadAllBytes(Filepath).Length;
             }
             catch (Exception ex)
             {
-                if (command is not null)
-                    MessageBox.Show($"An exception occured trying to execute the following command:\n\n{command}\n\n{ex.Message}", "User-Compression Execute Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show($"An exception occured trying to parse the following command:\n\n{UserCompressions[idx].CommandFormat}\n\n{ex.Message}", "User-Compression Parse Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = command is not null ? string.Format(Properties.Resources.MessageBoxMsg_UserCompressionExecuteFailure, command, ex.Message) : string.Format(Properties.Resources.MessageBoxMsg_UserCompressionParseFailure, UserCompressions[idx].CommandFormat, ex.Message);
+                MessageBox.Show(msg, Properties.Resources.MessageBoxTitle_UserCompressionExecuteError, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Cancel = true;
             }
             finally
@@ -1400,19 +1394,32 @@ public partial class MainForm : Form
 
     private void EncodingBackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
     {
-        //MainToolStripStatusLabel.Text = string.Format("{0} encoding", (Yaz0ToolStripComboBox.SelectedIndex == 2 ? $"Fast " : "") + (Yaz0ToolStripComboBox.SelectedIndex == 3 ? "Yay0" : "Yaz0"), timer.Elapsed.ToString("mm\\:ss"), TimeSpan.FromMilliseconds(ETA).ToString("mm\\:ss"));
-        MainToolStripStatusLabel.Text = $"[{Yaz0ToolStripComboBox.Text}] Compressing: {e.ProgressPercentage}%";
+        MainToolStripStatusLabel.Text = string.Format(Properties.Resources.StatusStrip_InProgressCompression, Yaz0ToolStripComboBox.Text, e.ProgressPercentage);
         MainToolStripProgressBar.Value = e.ProgressPercentage;
     }
 
     private void EncodingBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
     {
-        if (e.Cancelled)
-            MainToolStripStatusLabel.Text = "Compression Cancelled. (Saved without compression.)";
-        else
-            MainToolStripStatusLabel.Text = $"Save Complete! [{e.Result}% ratio in {EncodingTimer}]";
+        MainToolStripStatusLabel.Text = e.Cancelled
+            ? Properties.Resources.StatusStrip_CompressionCancelled
+            : string.Format(Properties.Resources.StatusStrip_SaveCompleteCompression, e.Result, EncodingTimer);
     }
     #endregion
 
-    private static bool IsDiscardChanges() => MessageBox.Show("You have Unsaved Changes, are you sure you want to proceed?", "Confirm Action", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+    private static string GetKnownExtensionFilter(string Extension)
+    {
+        if (!Extension.Contains('.')) // No periods = no extensions
+            return KnownExtensions[0];
+
+        for (int i = 1; i < KnownExtensions.Length; i++) // Skip Extensionless file
+        {
+            string[] Splitter = KnownExtensions[i].Split('|');
+            if (Splitter.Length > 1 & Splitter[1].Length != 0 && Regex.IsMatch(Extension, StringUtil.WildCardToRegex(Splitter[1])))
+                return KnownExtensions[i];
+        }
+
+        return Properties.Resources.FileFilter_AllFiles;
+    }
+
+    private static bool IsDiscardChanges() => MessageBox.Show(Properties.Resources.MessageBoxMsg_UnsavedChangesNotice, Properties.Resources.MessageBoxTitle_ConfirmAction, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
 }

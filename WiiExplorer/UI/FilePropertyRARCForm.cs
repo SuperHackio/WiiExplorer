@@ -1,7 +1,5 @@
 ﻿using DarkModeForms;
 using Hack.io.RARC;
-using Microsoft.VisualBasic;
-using System.Windows.Forms;
 
 namespace WiiExplorer;
 
@@ -46,25 +44,28 @@ public partial class FilePropertyRARCForm : Form
 
     private void FilePropertyRARCForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-        if (DialogResult == DialogResult.OK)
+        if (DialogResult != DialogResult.OK)
+            return; // don't bother doing anything else
+
+        string prevname = ArchiveTreeView.SelectedNode.Text;
+        string prevpath = ArchiveTreeView.SelectedNode.FullPath;
+        ArchiveTreeView.SelectedNode.Text = NameColorTextBox.Text;
+        if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && (RARC.File?)Archive[prevpath] != (RARC.File?)Archive[ArchiveTreeView.SelectedNode.FullPath])
         {
-            string prevname = ArchiveTreeView.SelectedNode.Text;
-            string prevpath = ArchiveTreeView.SelectedNode.FullPath;
-            ArchiveTreeView.SelectedNode.Text = NameColorTextBox.Text;
-            if (Archive.ItemExists(ArchiveTreeView.SelectedNode.FullPath) && (RARC.File?)Archive[prevpath] != (RARC.File?)Archive[ArchiveTreeView.SelectedNode.FullPath])
-            {
-                ArchiveTreeView.SelectedNode.Text = prevname;
-                MessageBox.Show("TODO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-                return;
-            }
-            Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
-            CurrentFile.Name = NameColorTextBox.Text;
-            CurrentFile.ID = (short)FileIDColorNumericUpDown.Value;
-            var a = FileSettingsGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            if (a is not null && a.Tag is not null)
-                CurrentFile.FileSettings = RARC.FileAttribute.FILE | (IsCompressedCheckBox.Checked ? RARC.FileAttribute.COMPRESSED : 0) | (RARC.FileAttribute)a.Tag | (IsYAZ0CheckBox.Checked ? RARC.FileAttribute.YAZ0_COMPRESSED : 0);
+            string existingpath = ArchiveTreeView.SelectedNode.FullPath;
+            ArchiveTreeView.SelectedNode.Text = prevname;
+            MessageBox.Show(string.Format(Properties.Resources.MessageBoxMsg_ItemWithTheSameNameError, NameColorTextBox.Text, existingpath), Properties.Resources.MessageBoxTitle_ItemNameConflict, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = true;
+            return;
         }
+        Archive.MoveItem(prevpath, ArchiveTreeView.SelectedNode.FullPath);
+        CurrentFile.Name = NameColorTextBox.Text;
+        CurrentFile.ID = (short)FileIDColorNumericUpDown.Value;
+        if (FileSettingsGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked) is RadioButton rb && rb.Tag is RARC.FileAttribute attr)
+            CurrentFile.FileSettings = RARC.FileAttribute.FILE | (IsCompressedCheckBox.Checked ? RARC.FileAttribute.COMPRESSED : 0) | attr | (IsYAZ0CheckBox.Checked ? RARC.FileAttribute.YAZ0_COMPRESSED : 0);
+
+        int imgidx = ArcUtil.IndexOfExtensionImageOrDefault(NameColorTextBox.Text, ArchiveTreeView.ImageList);
+        ArchiveTreeView.SelectedNode.ImageIndex = ArchiveTreeView.SelectedNode.SelectedImageIndex = imgidx;
     }
 
     private void OKButton_Click(object sender, EventArgs e)
@@ -101,11 +102,9 @@ public partial class FilePropertyRARCForm : Form
         {
             case Keys.Escape:
                 Close();
-                break;
+                return true;
             default:
                 return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        return true;
     }
 }

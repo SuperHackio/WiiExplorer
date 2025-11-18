@@ -81,7 +81,7 @@ public static class ArcUtil
                 {
                     if (file.Extension?.Equals(exts[x]) ?? false)
                     {
-                        int FormatIdx = IndexOfExtensionImageOrDefault(file.Extension, ImageListing);
+                        int FormatIdx = IndexOfExtensionImageOrDefault(file.Name, ImageListing);
                         Final.Nodes.Add(new TreeNode(file.Name) { Tag = file, ImageIndex = FormatIdx, SelectedImageIndex = FormatIdx });
                     }
                 }

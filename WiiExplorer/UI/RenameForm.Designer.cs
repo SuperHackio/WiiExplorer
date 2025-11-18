@@ -48,40 +48,26 @@
             // 
             // NameColorTextBox
             // 
-            NameColorTextBox.Dock = DockStyle.Bottom;
-            NameColorTextBox.Location = new Point(1, 34);
+            resources.ApplyResources(NameColorTextBox, "NameColorTextBox");
             NameColorTextBox.Name = "NameColorTextBox";
-            NameColorTextBox.Size = new Size(295, 20);
-            NameColorTextBox.TabIndex = 0;
             // 
             // ExtensionColorTextBox
             // 
-            ExtensionColorTextBox.Dock = DockStyle.Bottom;
-            ExtensionColorTextBox.Location = new Point(0, 34);
+            resources.ApplyResources(ExtensionColorTextBox, "ExtensionColorTextBox");
             ExtensionColorTextBox.Name = "ExtensionColorTextBox";
-            ExtensionColorTextBox.Size = new Size(77, 20);
-            ExtensionColorTextBox.TabIndex = 1;
             // 
             // SubmitButton
             // 
-            SubmitButton.Dock = DockStyle.Fill;
-            SubmitButton.FlatStyle = FlatStyle.Flat;
-            SubmitButton.Location = new Point(0, 0);
+            resources.ApplyResources(SubmitButton, "SubmitButton");
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(376, 25);
-            SubmitButton.TabIndex = 2;
-            SubmitButton.Text = "OK";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
+            resources.ApplyResources(splitContainer1, "splitContainer1");
             splitContainer1.FixedPanel = FixedPanel.Panel2;
-            splitContainer1.IsSplitterFixed = true;
-            splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
@@ -90,69 +76,44 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(SubmitButton);
-            splitContainer1.Size = new Size(376, 83);
-            splitContainer1.SplitterDistance = 54;
-            splitContainer1.TabIndex = 11;
             // 
             // splitContainer2
             // 
-            splitContainer2.Dock = DockStyle.Fill;
+            resources.ApplyResources(splitContainer2, "splitContainer2");
             splitContainer2.FixedPanel = FixedPanel.Panel2;
-            splitContainer2.IsSplitterFixed = true;
-            splitContainer2.Location = new Point(0, 0);
             splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
             splitContainer2.Panel1.Controls.Add(NameLabel);
             splitContainer2.Panel1.Controls.Add(NameColorTextBox);
-            splitContainer2.Panel1.Padding = new Padding(1, 0, 0, 0);
+            resources.ApplyResources(splitContainer2.Panel1, "splitContainer2.Panel1");
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(ExtensionLabel);
             splitContainer2.Panel2.Controls.Add(ExtensionColorTextBox);
-            splitContainer2.Panel2.Padding = new Padding(0, 0, 1, 0);
-            splitContainer2.Size = new Size(376, 54);
-            splitContainer2.SplitterDistance = 296;
-            splitContainer2.SplitterWidth = 2;
-            splitContainer2.TabIndex = 11;
+            resources.ApplyResources(splitContainer2.Panel2, "splitContainer2.Panel2");
             // 
             // NameLabel
             // 
-            NameLabel.Dock = DockStyle.Fill;
-            NameLabel.Location = new Point(1, 0);
+            resources.ApplyResources(NameLabel, "NameLabel");
             NameLabel.Name = "NameLabel";
-            NameLabel.Padding = new Padding(0, 10, 0, 0);
-            NameLabel.Size = new Size(295, 34);
-            NameLabel.TabIndex = 11;
-            NameLabel.Text = "Type the new name, then press Enter";
-            NameLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // ExtensionLabel
             // 
-            ExtensionLabel.Dock = DockStyle.Fill;
-            ExtensionLabel.Location = new Point(0, 0);
+            resources.ApplyResources(ExtensionLabel, "ExtensionLabel");
             ExtensionLabel.Name = "ExtensionLabel";
-            ExtensionLabel.Padding = new Padding(0, 10, 0, 0);
-            ExtensionLabel.Size = new Size(77, 34);
-            ExtensionLabel.TabIndex = 11;
-            ExtensionLabel.Text = "Extension";
-            ExtensionLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // RenameForm
             // 
             AcceptButton = SubmitButton;
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(376, 83);
             Controls.Add(splitContainer1);
-            Font = new Font("Microsoft Sans Serif", 8.25F);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "RenameForm";
-            Text = "WiiExplorer - Rename []";
             FormClosing += RenameForm_FormClosing;
             Shown += RenameForm_Shown;
             splitContainer1.Panel1.ResumeLayout(false);

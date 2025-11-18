@@ -2,9 +2,9 @@
 using Hack.io.Class;
 using Hack.io.RARC;
 using Hack.io.U8;
-using Microsoft.VisualBasic.Devices;
 using System.Reflection;
 using WiiExplorer.Class;
+using WiiExplorer.Properties;
 
 namespace WiiExplorer;
 
@@ -12,10 +12,10 @@ public partial class NewArchiveForm : Form
 {
     private readonly static Dictionary<string, (Type t, string d, bool s)> ArchiveFormats = new()
     {
-        { "JSystem Archive", (typeof(RARC), "The archive format used in JSystem\r\n\r\nSupported games include:\r\n- Pikmin\r\n- Luigi's Mansion\r\n- Super Mario Sunshine\r\n- The Legend of Zelda:\r\n    The Wind Waker\r\n- Mario Kart: Double Dash!!\r\n- Donkey Kong Jungle Beat\r\n- The Legend of Zelda:\r\n    Twilight Princess\r\n- Super Mario Galaxy\r\n- Super Mario Galaxy 2", false) },
-        { "JSystem AAF", (typeof(AAF), "A JSystem audio archive used for storing a select few files\r\n\r\nSupported games include:\r\n- Super Mario Galaxy\r\n- Super Mario Galaxy 2", true) },
+        { Resources.ArchiveFormat_JSystemRARC_Name, (typeof(RARC), Resources.ArchiveFormat_JSystemRARC_Description, false) },
+        { Resources.ArchiveFormat_JSystemAAF_Name, (typeof(AAF), Resources.ArchiveFormat_JSystemAAF_Description, true) },
 
-        { "NW4R Archive", (typeof(U8), "The archive format used in NW4R\r\n\r\nSupported games include:\r\n- Super Paper Mario\r\n- Mario Kart Wii\r\n- Metroid: Other M\r\n- Sonic Colors [Wii]\r\n- Mario and Sonic at the\r\n    London 2012 Olympic Games\r\n- The Legend of Zelda:\r\n    Skyward Sword\r\n- Rodea the Sky Soldier", false) },
+        { Resources.ArchiveFormat_NW4RArchive_Name, (typeof(U8), Resources.ArchiveFormat_NW4RArchive_Description, false) },
     };
 
     public NewArchiveForm()
@@ -28,8 +28,13 @@ public partial class NewArchiveForm : Form
 
         ProgramColors.ReloadTheme(this);
 
-        Keyboard key = new(); // Does this work on Mac/Linux??
-        bool IsShiftDown = key.ShiftKeyDown;
+        bool IsShiftDown = false;
+
+#if WINDOWS
+        Microsoft.VisualBasic.Devices.Keyboard key = new(); // Windows Only, apparently
+        IsShiftDown = key.ShiftKeyDown;
+#endif
+
         foreach (string item in ArchiveFormats.Keys)
         {
             if (ArchiveFormats[item].s && !IsShiftDown)
@@ -48,12 +53,10 @@ public partial class NewArchiveForm : Form
         {
             case Keys.Escape:
                 Close();
-                break;
+                return true;
             default:
                 return base.ProcessCmdKey(ref msg, keyData);
         }
-
-        return true;
     }
 
     private void FormatListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +64,7 @@ public partial class NewArchiveForm : Form
         if (FormatListView.SelectedItems.Count == 0)
         {
             SelectButton.Enabled = false;
-            DescriptionTextLabel.Text = "Select an Archive Format on the left.";
+            DescriptionTextLabel.Text = Resources.String_NewArchiveGuide;
             return;
         }
 
@@ -97,7 +100,7 @@ public partial class NewArchiveForm : Form
         Archive? arc = (Archive?)ctor.Invoke([]);
         if (arc is null)
             return null;
-        arc["NewArchive"] = null;
+        arc[Resources.String_NewArchiveRootName] = null;
         return arc;
     }
 }

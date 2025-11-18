@@ -54,14 +54,17 @@
 
         public override readonly string ToString()
         {
+            // Unfortunately, the patch notes will always be in english
             string v = Notes.Count > 0 ? "\n\n" : "";
             for (int i = 0; i < Notes.Count; i++)
                 v += Notes[i] + Environment.NewLine;
 
+            string header = Properties.Resources.String_ReleaseInformation;
+            string verstr = Properties.Resources.String_Version;
             return
                 $"""
-                ---- Release information ----
-                Version {Version.Major}.{Version.Minor}.{Version.MajorRevision}.{Version.Build}{v}
+                ---- {header} ----
+                {verstr} {Version.Major}.{Version.Minor}.{Version.MajorRevision}.{Version.Build}{v}
                 -----------------------------
                 """;
         }

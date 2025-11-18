@@ -57,7 +57,7 @@ internal class Settings : ILoadSaveFile
 
     public void Load(Stream Strm)
     {
-        StreamUtil.PushEndianLittle();
+        StreamUtil.PushEndianBig();
         try
         {
             FileUtil.ExceptionOnBadMagic(Strm, MAGIC);
@@ -82,14 +82,17 @@ internal class Settings : ILoadSaveFile
             Save(DiskAccess);
             DiskAccess.Close();
         }
-        StreamUtil.PopEndian();
+        finally
+        {
+            StreamUtil.PopEndian();
+        }
     }
 
     public void Save(Stream Strm)
     {
-        StreamUtil.PushEndianLittle();
+        StreamUtil.PushEndianBig();
 
-        Strm.WriteString(MAGIC, Encoding.ASCII, null);
+        Strm.WriteMagic(MAGIC);
         Strm.WriteString(SETTINGSVERSION_LATEST, Encoding.ASCII, null);
 
         Strm.WriteInt32(ThemeIndex);
