@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FileFilter_SupportedArchives" xml:space="preserve">
+    <value>Archivos compatibles|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive |*.arc|Archivo identificado YAZ0|*.szs|Archivo identificado YAY0|*.szp|Archivo U8|*.szs;*.carc;*.app|Archivo de audio|*.szs;*.aaf|Todos los archivos|*.*</value>
+    <comment>Epic translator moment.</comment>
+  </data>
+  <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
+    <value>Actualización requerida</value>
+  </data>
+  <data name="MessageBoxMsg_MandatoryUpdateNotice" xml:space="preserve">
+    <value>Hay una actualización disponible para WiiExplorer. Para seguir usando la aplicación, actualiza a la última versión.
+
+{0}
+
+{1}</value>
+    <comment>No please was added</comment>
+  </data>
+  <data name="MessageBoxTitle_UpdateAvailable" xml:space="preserve">
+    <value>Actualización disponible</value>
+  </data>
+  <data name="MessageBoxMsg_OptionalUpdateNotice" xml:space="preserve">
+    <value>¡Una actualización para WiiExplorer está disponible!
+
+{0}
+
+{1}</value>
+  </data>
+  <data name="String_ReleaseInformation" xml:space="preserve">
+    <value>Notas de la versión</value>
+  </data>
+  <data name="String_Version" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="MessageBoxTitle_ConfirmAction" xml:space="preserve">
+    <value>Confirmar acción</value>
+  </data>
+  <data name="MessageBoxMsg_UnsavedChangesNotice" xml:space="preserve">
+    <value>Tienes cambios sin guardar ¿Estás seguro de que quieres continuar?</value>
+  </data>
+  <data name="MessageBoxMsg_NotSupportedArchiveFormat" xml:space="preserve">
+    <value>El archivo que intentas abrir no es soportado.</value>
+  </data>
+  <data name="MessageBoxTitle_ArchiveReadError" xml:space="preserve">
+    <value>Error de lectura del archivo</value>
+  </data>
+  <data name="MessageBoxMsg_ArchiveFormatReadError" xml:space="preserve">
+    <value>Error al abrir el archivo como {0}:
+{1}
+
+{2}</value>
+  </data>
+  <data name="MessageBoxTitle_EncodingMismatch" xml:space="preserve">
+    <value>Error en el tipo de compresión</value>
+  </data>
+  <data name="MessageBoxMsg_SZPMismatch" xml:space="preserve">
+    <value>El tipo de compresión elegida no coincide con la extensión del archivo. Los archivos SZP se supone que deben estar codificados en YAY0 ¿Quieres cambiar a YAY0 Fuerte?</value>
+  </data>
+  <data name="MessageBoxMsg_SZSMismatch" xml:space="preserve">
+    <value>El tipo de compresión elegida no coincide con la extensión del archivo. Los archivos SZS se supone que deben estar codificados en YAZ0, ¿quieres cambiar a YAZ0 Fuerte?</value>
+  </data>
+  <data name="StatusStrip_SaveComplete" xml:space="preserve">
+    <value>¡Guardado completado!</value>
+  </data>
+  <data name="MessageBoxTitle_Warning" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="StatusStrip_ArchiveLoadedSuccessfully" xml:space="preserve">
+    <value>¡Archivo cargado con éxito! [{0} archivo(s) en total]</value>
+  </data>
+  <data name="MessageBoxMsg_ExportDirectoryOverwriteWarning" xml:space="preserve">
+    <value>La carpeta de destino ya existe!
+"{0}"
+Algunos de los archivos contenidos pueden ser sobrescritos.
+
+¿Desea continuar?</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Todos los archivos|*.*</value>
+  </data>
+  <data name="MessageBoxMsg_CancelCompression" xml:space="preserve">
+    <value>¿Cancelar compresión?</value>
+  </data>
+  <data name="StatusStrip_RenamedItem" xml:space="preserve">
+    <value>Renombrado "{0}" a "{1}"</value>
+  </data>
+  <data name="MessageBoxTitle_Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="MessageBoxMsg_DragDropUseRightClickHint" xml:space="preserve">
+    <value>Si estás intentando arrastrar un elemento a tu escritorio, usa el click derecho del ratón.</value>
+  </data>
+  <data name="MessageBoxTitle_ItemNameConflict" xml:space="preserve">
+    <value>Conflicto con el nombre el elemento</value>
+  </data>
+  <data name="MessageBoxMsg_ItemWithTheSameNameError" xml:space="preserve">
+    <value>Un elemento con el nombre "{0}" ya existe en "{1}"</value>
+  </data>
+  <data name="StatusStrip_NoSelection" xml:space="preserve">
+    <value>Nada seleccionado</value>
+  </data>
+  <data name="StatusStrip_SelectedFolderStats" xml:space="preserve">
+    <value>{0} - {1} archivos, {2} subcarpetas</value>
+  </data>
+  <data name="StatusStrip_SelectedFileStats" xml:space="preserve">
+    <value>{0} - {1} bytes. [CRC: {2}]</value>
+    <comment>Ehh…</comment>
+  </data>
+  <data name="InvalidOperationException_ProcessExitedWithCode" xml:space="preserve">
+    <value>El proceso terminó con el código {0}</value>
+  </data>
+  <data name="MessageBoxTitle_UserCompressionExecuteError" xml:space="preserve">
+    <value>Error en la compresión especificada por el usuario</value>
+    <comment>I have no idea of how to translate this without translator</comment>
+  </data>
+  <data name="MessageBoxMsg_UserCompressionExecuteFailure" xml:space="preserve">
+    <value>Ocurrió un error al intentar ejecutar el siguiente comando:\n\n{0}\n\n{1}</value>
+  </data>
+  <data name="MessageBoxMsg_UserCompressionParseFailure" xml:space="preserve">
+    <value>Ocurrió un error al intentar analizar el siguiente comando:\n\n{0}\n\n{1}</value>
+  </data>
+  <data name="StatusStrip_InProgressCompression" xml:space="preserve">
+    <value>[{0}] Comprimiendo: {1}%</value>
+  </data>
+  <data name="StatusStrip_CompressionCancelled" xml:space="preserve">
+    <value>Compresión cancelada. (Guardado sin compresión)</value>
+  </data>
+  <data name="StatusStrip_SaveCompleteCompression" xml:space="preserve">
+    <value>¡Guardado completado! [razón de compresión de {0}% en {1}]</value>
+    <comment>ratio?</comment>
+  </data>
+  <data name="CompressionName_Off" xml:space="preserve">
+    <value>Sin compresión</value>
+  </data>
+  <data name="CompressionName_YAZ0Strong" xml:space="preserve">
+    <value>Yaz0 Fuerte</value>
+  </data>
+  <data name="CompressionName_YAZ0Fast" xml:space="preserve">
+    <value>Yaz0 Rápido</value>
+  </data>
+  <data name="CompressionName_YAZ0Official" xml:space="preserve">
+    <value>Yaz0 Oficial</value>
+  </data>
+  <data name="CompressionName_YAY0Strong" xml:space="preserve">
+    <value>Yay0 Fuerte</value>
+  </data>
+  <data name="String_NewArchiveRootName" xml:space="preserve">
+    <value>ArchivoNuevo</value>
+  </data>
+  <data name="String_NewArchiveGuide" xml:space="preserve">
+    <value>Selecciona un formato de archivo a la izquierda</value>
+  </data>
+  <data name="ArchiveFormat_JSystemRARC_Name" xml:space="preserve">
+    <value>Archivo Jsystem</value>
+  </data>
+  <data name="ArchiveFormat_JSystemRARC_Description" xml:space="preserve">
+    <value>El formato de archivo usado en JSystem
+
+Entre los juegos compatibles se incluyen:
+- Pikmin
+- Luigi's Mansion
+- Super Mario Sunshine
+- The Legend of Zelda: The Wind Waker
+- Mario Kart: Double Dash!!
+- Donkey Kong Jungle Beat
+- The Legend of Zelda: Twilight Princess
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+    <comment>Pretty sure they'r called the same way</comment>
+  </data>
+  <data name="ArchiveFormat_JSystemAAF_Name" xml:space="preserve">
+    <value>JSystem AAF</value>
+    <comment>No idea</comment>
+  </data>
+  <data name="ArchiveFormat_JSystemAAF_Description" xml:space="preserve">
+    <value>Un archivo de audio de JSystem para guardar algunos archivos
+
+Entre los juegos compatibles se incluyen:
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+  </data>
+  <data name="ArchiveFormat_NW4RArchive_Name" xml:space="preserve">
+    <value>Archivo NW4R</value>
+  </data>
+  <data name="ArchiveFormat_NW4RArchive_Description" xml:space="preserve">
+    <value>El formato de archivo utilizado en NW4R
+
+Entre los juegos compatibles se incluyen:
+- Super Paper Mario
+- Mario Kart Wii
+- Metroid: Other M
+- Sonic Colors [Wii]
+- Mario y Sonic en los Juegos Olímpicos de Londres 2012
+- The Legend of Zelda: Skyward Sword
+- Rodea the Sky Soldier</value>
+  </data>
+  <data name="String_NewArchive" xml:space="preserve">
+    <value>Archivo nuevo</value>
+  </data>
+  <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
+    <value>Error al crear un nuevo archivo.</value>
+  </data>
+</root>

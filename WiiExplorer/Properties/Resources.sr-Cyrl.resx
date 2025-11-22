@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FileFilter_SupportedArchives" xml:space="preserve">
+    <value>Све подржане датотеке|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Архива ресурса|*.arc|YAZ0 Идентификована архива|*.szs|YAY0 Идентификована архива|*.szp|U8 архива|*.szs;*.carc;*.app|Датотека аудио архиве|*.szs;*.aaf|Све датотеке|*.*</value>
+  </data>
+  <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
+    <value>Потребно је ажурирање</value>
+  </data>
+  <data name="MessageBoxMsg_MandatoryUpdateNotice" xml:space="preserve">
+    <value>Доступно је ажурирање за WiiExplorer. Да бисте наставили да користите WiiExplorer, ажурирајте га на најновију верзију.
+
+{0}
+
+{1}</value>
+  </data>
+  <data name="MessageBoxTitle_UpdateAvailable" xml:space="preserve">
+    <value>Ажурирање је доступно</value>
+  </data>
+  <data name="MessageBoxMsg_OptionalUpdateNotice" xml:space="preserve">
+    <value>Доступно је ажурирање за WiiExplorer!
+
+{0}
+
+{1}</value>
+  </data>
+  <data name="String_ReleaseInformation" xml:space="preserve">
+    <value>Информације о издању</value>
+  </data>
+  <data name="String_Version" xml:space="preserve">
+    <value>верзија</value>
+  </data>
+  <data name="MessageBoxTitle_ConfirmAction" xml:space="preserve">
+    <value>Потврдите акцију</value>
+  </data>
+  <data name="MessageBoxMsg_UnsavedChangesNotice" xml:space="preserve">
+    <value>Имате несачуване измене, да ли сте сигурни да желите да наставите?</value>
+  </data>
+  <data name="MessageBoxMsg_NotSupportedArchiveFormat" xml:space="preserve">
+    <value>Датотека коју сте покушали да отворите није подржана.</value>
+  </data>
+  <data name="MessageBoxTitle_ArchiveReadError" xml:space="preserve">
+    <value>Грешка читања архиве</value>
+  </data>
+  <data name="MessageBoxMsg_ArchiveFormatReadError" xml:space="preserve">
+    <value>Није успело отварање архиве као {0}:
+{1}
+
+{2}</value>
+  </data>
+  <data name="MessageBoxTitle_EncodingMismatch" xml:space="preserve">
+    <value>неусклађеност кодирања</value>
+  </data>
+  <data name="MessageBoxMsg_SZPMismatch" xml:space="preserve">
+    <value>Изабрани тип кодирања не одговара екстензији датотеке.
+SZP датотеке би требало да буду YAY0 кодиране, да ли желите да пређете на YAY0 Strong?</value>
+  </data>
+  <data name="MessageBoxMsg_SZSMismatch" xml:space="preserve">
+    <value>Изабрани тип кодирања не одговара екстензији датотеке.
+SZS датотеке би требало да буду YAZ0 кодиране, да ли желите да пређете на YAZ0 Strong?</value>
+  </data>
+  <data name="StatusStrip_SaveComplete" xml:space="preserve">
+    <value>caчување завршено!</value>
+  </data>
+  <data name="MessageBoxTitle_Warning" xml:space="preserve">
+    <value>Упозорење</value>
+  </data>
+  <data name="StatusStrip_ArchiveLoadedSuccessfully" xml:space="preserve">
+    <value>Архива је успешно учитана! [Укупно датотека: {0}]</value>
+  </data>
+  <data name="MessageBoxMsg_ExportDirectoryOverwriteWarning" xml:space="preserve">
+    <value>Излазни директоријум већ постоји!
+"{0}"
+Неки од садржаја могу бити пребрисани.
+
+Желите ли да наставите?</value>
+  </data>
+  <data name="FileFilter_AllFiles" xml:space="preserve">
+    <value>Све датотеке|*.*</value>
+  </data>
+  <data name="MessageBoxMsg_CancelCompression" xml:space="preserve">
+    <value>Отказати компресију?</value>
+  </data>
+  <data name="StatusStrip_RenamedItem" xml:space="preserve">
+    <value>Преименовано из „{0}“ у „{1}“</value>
+  </data>
+  <data name="MessageBoxTitle_Information" xml:space="preserve">
+    <value>Информацијe</value>
+  </data>
+  <data name="MessageBoxMsg_DragDropUseRightClickHint" xml:space="preserve">
+    <value>Ако покушавате да превучете ставку на радну површину, користите десни тастер миша да бисте то урадили.</value>
+  </data>
+  <data name="MessageBoxTitle_ItemNameConflict" xml:space="preserve">
+    <value>Конфликт имена ставке</value>
+  </data>
+  <data name="MessageBoxMsg_ItemWithTheSameNameError" xml:space="preserve">
+    <value>Ставка са именом „{0}“
+већ постоји на адреси „{1}“</value>
+  </data>
+  <data name="StatusStrip_NoSelection" xml:space="preserve">
+    <value>Нема избора</value>
+  </data>
+  <data name="StatusStrip_SelectedFolderStats" xml:space="preserve">
+    <value>{0} - {1} датотека, {2} поддиректоријум</value>
+  </data>
+  <data name="StatusStrip_SelectedFileStats" xml:space="preserve">
+    <value>{0} - {1} бајтова. [CRC: {2}]</value>
+  </data>
+  <data name="InvalidOperationException_ProcessExitedWithCode" xml:space="preserve">
+    <value>Процес је завршен са кодом {0}</value>
+  </data>
+  <data name="MessageBoxTitle_UserCompressionExecuteError" xml:space="preserve">
+    <value>Грешка при извршавању корисничке компресије</value>
+  </data>
+  <data name="MessageBoxMsg_UserCompressionExecuteFailure" xml:space="preserve">
+    <value>Дошло је до изузетка при покушају извршавања следеће команде:\n\n{0}\n\n{1}</value>
+  </data>
+  <data name="MessageBoxMsg_UserCompressionParseFailure" xml:space="preserve">
+    <value>Дошло је до изузетка при покушају анализе следеће команде:\n\n{0}\n\n{1}</value>
+  </data>
+  <data name="StatusStrip_InProgressCompression" xml:space="preserve">
+    <value>[{0}] Компресија: {1}%</value>
+  </data>
+  <data name="StatusStrip_CompressionCancelled" xml:space="preserve">
+    <value>Компресија отказана. (Сачувано без компресије.)</value>
+  </data>
+  <data name="StatusStrip_SaveCompleteCompression" xml:space="preserve">
+    <value>Чување завршено! [{0}% однос у {1}]</value>
+  </data>
+  <data name="CompressionName_Off" xml:space="preserve">
+    <value>искључи</value>
+  </data>
+  <data name="CompressionName_YAZ0Strong" xml:space="preserve">
+    <value>Yaz0 Jak</value>
+  </data>
+  <data name="CompressionName_YAZ0Fast" xml:space="preserve">
+    <value>Yaz0 Brz</value>
+  </data>
+  <data name="CompressionName_YAZ0Official" xml:space="preserve">
+    <value>Yaz0 Службено</value>
+  </data>
+  <data name="CompressionName_YAY0Strong" xml:space="preserve">
+    <value>Yay0 Jak</value>
+  </data>
+  <data name="String_NewArchiveRootName" xml:space="preserve">
+    <value>нова архива</value>
+  </data>
+  <data name="String_NewArchiveGuide" xml:space="preserve">
+    <value>Изаберите формат архиве са леве стране.</value>
+  </data>
+  <data name="ArchiveFormat_JSystemRARC_Name" xml:space="preserve">
+    <value>ЈsystemАрцхиве</value>
+  </data>
+  <data name="ArchiveFormat_JSystemRARC_Description" xml:space="preserve">
+    <value>Формат архиве који се користи у JSystem-у
+
+Подржане игре укључују:
+- Pikmin
+- Luigi's Mansion
+- Super Mario Sunshine
+- The Legend of Zelda:
+The Wind Waker
+- Mario Kart: Double Dash!!
+- Donkey Kong Jungle Beat
+- The Legend of Zelda:
+Twilight Princess
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+  </data>
+  <data name="ArchiveFormat_JSystemAAF_Name" xml:space="preserve">
+    <value>JSystem AAF</value>
+  </data>
+  <data name="ArchiveFormat_JSystemAAF_Description" xml:space="preserve">
+    <value>JSystem аудио архива која се користи за чување неколико одабраних датотека
+
+Подржане игре укључују:
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+  </data>
+  <data name="ArchiveFormat_NW4RArchive_Name" xml:space="preserve">
+    <value>NW4R архива</value>
+  </data>
+  <data name="ArchiveFormat_NW4RArchive_Description" xml:space="preserve">
+    <value>Формат архиве који се користи у NW4R
+
+Подржане игре укључују:
+- Super Paper Mario
+- Mario Kart Wii
+- Metroid: Other M
+- Sonic Colors [Wii]
+- Mario and Sonic at the London Olympic Games 2012
+- The Legend of Zelda:
+Skyward Sword
+- Rodea the Sky Soldier</value>
+  </data>
+  <data name="String_NewArchive" xml:space="preserve">
+    <value>нова архива</value>
+  </data>
+  <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
+    <value>Није успело креирање нове архиве.</value>
+  </data>
+</root>

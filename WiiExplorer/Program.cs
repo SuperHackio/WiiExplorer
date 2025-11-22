@@ -28,7 +28,7 @@ internal static class Program
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
 
-        CultureInfo culture = new("de");
+        CultureInfo culture = new("sr-Cyrl");
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
 

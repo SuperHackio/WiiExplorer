@@ -78,7 +78,7 @@ public partial class MainForm : Form
         AutoYaz0ToolStripColorComboBox.ComboBox.SetDoubleBuffered();
         ArchiveTreeView.SetDoubleBuffered();
 
-        if (Program.Settings.CompressionIndex >= Yaz0ToolStripComboBox.Items.Count)
+        if (Program.Settings.CompressionIndex >= Yaz0ToolStripComboBox.Items.Count || Program.Settings.CompressionIndex < 0)
             Program.Settings.CompressionIndex = 0; // Reset it
 
         Yaz0ToolStripComboBox.SelectedIndex = Program.Settings.CompressionIndex;

@@ -136,7 +136,7 @@
     <value>38, 3</value>
   </data>
   <data name="NameColorTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 20</value>
+    <value>203, 20</value>
   </data>
   <data name="NameColorTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -212,7 +212,7 @@
     <value>40, 3</value>
   </data>
   <data name="FileIDColorNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>40, 20</value>
   </data>
   <data name="FileIDColorNumericUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -284,7 +284,7 @@
     <value>329, 25</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>234</value>
+    <value>244</value>
   </data>
   <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
     <value>2</value>
@@ -546,7 +546,8 @@
     <value>3</value>
   </data>
   <data name="AutoButton.Text" xml:space="preserve">
-    <value>Auto</value>
+    <value>Automático</value>
+    <comment>Translate as "Automatic"</comment>
   </data>
   <data name="&gt;&gt;AutoButton.Name" xml:space="preserve">
     <value>AutoButton</value>

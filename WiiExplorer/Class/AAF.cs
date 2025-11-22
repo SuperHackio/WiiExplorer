@@ -45,14 +45,9 @@ public class AAF : Archive
                         Offset1 = Strm.ReadInt32(),
                         Unk3 = Strm.ReadInt32();
 
+                    uint Size1 = SizeFromFileOffset(Strm, Offset1, 4, 32);
                     ArchiveFile f2 = new();
-                    long PausePos1 = Strm.Position;
-                    Strm.Position = Offset1 + 4;
-                    uint Size1 = Strm.ReadUInt32();
-                    Size1 += (uint)StreamUtil.CalculatePaddingLength(Size1, 32);
-                    Strm.Position = Offset1;
                     ms = StreamUtil.CreateStreamSlice(Strm, Offset1, Size1);
-                    Strm.Position = PausePos1;
                     f2.Load(ms);
                     this[$"WSYS_{WSysFileID:000}_{Unk3:X8}.{name.TrimEnd()}"] = f2;
                     break;
@@ -76,6 +71,17 @@ public class AAF : Archive
         } while (!name.Equals(CLOSER));
         if (Root is not null)
             Root.Name = "";
+
+        static uint SizeFromFileOffset(Stream Strm, long FileOffset, int OffsetInFile, int? SizePad)
+        {
+            long PausePos = Strm.Position;
+            Strm.Position = FileOffset + OffsetInFile;
+            uint Size = Strm.ReadUInt32();
+            if (SizePad is int p)
+                Size += (uint)StreamUtil.CalculatePaddingLength(Size, p);
+            Strm.Position = PausePos;
+            return Size;
+        }
     }
 
     protected override void Write(Stream Strm)

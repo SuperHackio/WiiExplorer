@@ -290,6 +290,7 @@
   </data>
   <data name="Yaz0ToolStripComboBox.Items" xml:space="preserve">
     <value>Off</value>
+    <comment>Translating as "Disabled" also works</comment>
   </data>
   <data name="Yaz0ToolStripComboBox.Items1" xml:space="preserve">
     <value>Yaz0 Strong</value>
