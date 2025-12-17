@@ -118,160 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FileFilter_SupportedArchives" xml:space="preserve">
-    <value>Todos os ficheiros supportados|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf;*.baa|Arquivo de Recursos|*.arc|Arquivo YAZ0|*.szs|Arquivo YAY0|*.szp|Arquivo U8|*.szs;*.carc;*.app|Arquivo de Ficheiro de Audio|*.szs;*.aaf;*.baa|Todos os ficheiros|*.*</value>
+    <value>Alle ondersteunde bestanden|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive|*.arc|YAZ0 Identified Archive|*.szs|YAY0 Identified Archive|*.szp|U8 Archive|*.szs;*.carc;*.app|Audio Archive File|*.szs;*. aaf|Alle bestanden|*.*</value>
   </data>
   <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
-    <value>Atualização Necessária</value>
+    <value>Update vereist</value>
   </data>
   <data name="MessageBoxMsg_MandatoryUpdateNotice" xml:space="preserve">
-    <value>Uma atualização para o WiiExplorer está disponiver. Para continuar a utilizar WiiExplorer, por favor atualiza para a versão mais recente.
+    <value>Er is een update voor WiiExplorer beschikbaar. Om WiiExplorer te kunnen blijven gebruiken, moet u updaten naar de nieuwste versie.
 
 {0}
 
 {1}</value>
   </data>
   <data name="MessageBoxTitle_UpdateAvailable" xml:space="preserve">
-    <value>Atualização Disponível</value>
+    <value>Update beschikbaar</value>
   </data>
   <data name="MessageBoxMsg_OptionalUpdateNotice" xml:space="preserve">
-    <value>Uma atualização para o WiiExplorer está disponiver!
+    <value>Er is een update voor WiiExplorer beschikbaar!
 
 {0}
 
 {1}</value>
   </data>
   <data name="String_ReleaseInformation" xml:space="preserve">
-    <value>Informação do Lançamento</value>
+    <value>Informatie over de release</value>
   </data>
   <data name="String_Version" xml:space="preserve">
-    <value>Versão</value>
+    <value>Versie</value>
   </data>
   <data name="MessageBoxTitle_ConfirmAction" xml:space="preserve">
-    <value>Comfirmar Ação</value>
+    <value>Bevestig actie</value>
   </data>
   <data name="MessageBoxMsg_UnsavedChangesNotice" xml:space="preserve">
-    <value>Tens mudanças neste ficheiro por guardar, de certeza que queres continuar?</value>
+    <value>Je hebt ongeslagen wijzigingen, wil je echt doorgaan?</value>
   </data>
   <data name="MessageBoxMsg_NotSupportedArchiveFormat" xml:space="preserve">
-    <value>Este ficheiro não é suportado.</value>
+    <value>Het bestand dat u probeerde te openen, wordt niet ondersteund.</value>
   </data>
   <data name="MessageBoxTitle_ArchiveReadError" xml:space="preserve">
-    <value>Erro ao ler o arquivo</value>
+    <value>Archief leesfout</value>
   </data>
   <data name="MessageBoxMsg_ArchiveFormatReadError" xml:space="preserve">
-    <value>Erro ao ler o arquivo como {0}:
+    <value>Kan het archief niet openen als {0}:
 {1}
 
 {2}</value>
   </data>
   <data name="MessageBoxTitle_EncodingMismatch" xml:space="preserve">
-    <value>Compressão Incorreta</value>
+    <value>Codering niet overeenkomen</value>
   </data>
   <data name="MessageBoxMsg_SZPMismatch" xml:space="preserve">
-    <value>O tipo de compressão escolhida não corresponde à extenção do ficheiro.
-Arquivos SZP devem ser comprimidos com YAY0, gostarias de mudar o tipo de compressão para YAY0 Forte?</value>
+    <value>Het gekozen coderingstype komt niet overeen met de bestandsextensie.
+SZP-bestanden moeten YAY0-gecodeerd zijn. Wilt u overschakelen naar YAY0 Strong?</value>
   </data>
   <data name="MessageBoxMsg_SZSMismatch" xml:space="preserve">
-    <value>O tipo de compressão escolhida não corresponde à extenção do ficheiro.
-Arquivos SZS devem ser comprimidos com YAZ0, gostarias de mudar o tipo de compressão para YAZ0 Forte?</value>
+    <value>Het gekozen coderingstype komt niet overeen met de bestandsextensie.
+SZS-bestanden moeten YAZ0-gecodeerd zijn. Wilt u overschakelen naar YAZ0 Strong?</value>
   </data>
   <data name="StatusStrip_SaveComplete" xml:space="preserve">
-    <value>Arquivo Guardado</value>
+    <value>Opslaan voltooid!</value>
   </data>
   <data name="MessageBoxTitle_Warning" xml:space="preserve">
-    <value>Aviso</value>
+    <value>Waarschuwing</value>
   </data>
   <data name="StatusStrip_ArchiveLoadedSuccessfully" xml:space="preserve">
-    <value>Arquivo carregado com sucesso! [{0} ficheiros(s) no total]</value>
+    <value>Archief succesvol geladen! [{0} bestand(en) in totaal]</value>
   </data>
   <data name="MessageBoxMsg_ExportDirectoryOverwriteWarning" xml:space="preserve">
-    <value>A pasta de exportação já existe!
-"{0}"
-Alguns dos ficheiros desta pasta podem ser substituídos.
+    <value>De uitvoermap bestaat al!
+“{0}”
+Sommige inhoud kan worden overschreven.
 
-Proceed?</value>
+Doorgaan?</value>
   </data>
   <data name="FileFilter_AllFiles" xml:space="preserve">
-    <value>Todos os Ficheiros|*.*</value>
+    <value>Alle bestanden|*.*</value>
   </data>
   <data name="MessageBoxMsg_CancelCompression" xml:space="preserve">
-    <value>Cancelar Compressão?</value>
+    <value>Compressie annuleren?</value>
   </data>
   <data name="StatusStrip_RenamedItem" xml:space="preserve">
-    <value>"{0}" foi renomeado para "{1}"</value>
+    <value>Hernoemd van “{0}” naar “{1}”</value>
   </data>
   <data name="MessageBoxTitle_Information" xml:space="preserve">
-    <value>Informação</value>
+    <value>Informatie over de release</value>
   </data>
   <data name="MessageBoxMsg_DragDropUseRightClickHint" xml:space="preserve">
-    <value>Se estás a tentar arrastar um ficheiro para o teu ambiente de trabalho,
-utiliza o botão direito do teu rato.</value>
+    <value>Als u een item naar uw bureaublad wilt slepen,
+gebruik dan de rechtermuisknop.</value>
   </data>
   <data name="MessageBoxTitle_ItemNameConflict" xml:space="preserve">
-    <value>Confilto entre Nomes de Ficheiros</value>
+    <value>Conflict met itemnaam</value>
   </data>
   <data name="MessageBoxMsg_ItemWithTheSameNameError" xml:space="preserve">
-    <value>Um ficheiro com o nome "{0}"
-já existe em "{1}"</value>
+    <value>Een item met de naam “{0}”
+bestaat al op “{1}”</value>
   </data>
   <data name="StatusStrip_NoSelection" xml:space="preserve">
-    <value>No selection</value>
+    <value>Geen selectie</value>
   </data>
   <data name="StatusStrip_SelectedFolderStats" xml:space="preserve">
-    <value>{0} - {1} ficheiros, {2} subpastas</value>
+    <value>{0} - {1} bestanden, {2} submappen</value>
   </data>
   <data name="StatusStrip_SelectedFileStats" xml:space="preserve">
     <value>{0} - {1} bytes. [CRC: {2}]</value>
   </data>
   <data name="InvalidOperationException_ProcessExitedWithCode" xml:space="preserve">
-    <value>O processo for encerrado com o código {0}</value>
+    <value>Proces beëindigd met code {0}</value>
   </data>
   <data name="MessageBoxTitle_UserCompressionExecuteError" xml:space="preserve">
-    <value>Erro de Execução de Compressão</value>
+    <value>Gebruiker-compressie uitvoeringsfout</value>
   </data>
   <data name="MessageBoxMsg_UserCompressionExecuteFailure" xml:space="preserve">
-    <value>Um error ocorreu ao executar o comando seguinte:\n\n{0}\n\n{1}</value>
+    <value>Er is een fout opgetreden bij het uitvoeren van de volgende command:\n\n{0}\n\n{1}</value>
   </data>
   <data name="MessageBoxMsg_UserCompressionParseFailure" xml:space="preserve">
-    <value>Um error ocorreu ao ler o comando seguinte:\n\n{0}\n\n{1}</value>
+    <value>Er is een fout opgetreden bij het parseren van de volgende opdracht:\n\n{0}\n\n{1}</value>
   </data>
   <data name="StatusStrip_InProgressCompression" xml:space="preserve">
-    <value>Comprimindo [{0}]: {1}%</value>
+    <value>[{0}] Comprimeren: {1}%</value>
   </data>
   <data name="StatusStrip_CompressionCancelled" xml:space="preserve">
-    <value>Compressão Cancelada. (Guardado sem compressão.)</value>
+    <value>Compressie geannuleerd. (Opgeslagen zonder compressie.)</value>
   </data>
   <data name="StatusStrip_SaveCompleteCompression" xml:space="preserve">
-    <value>Arquivo Guardado! [{0}% em {1}]</value>
+    <value>Opslaan voltooid! [{0}% ratio in {1}]</value>
   </data>
   <data name="CompressionName_Off" xml:space="preserve">
-    <value>Desligado</value>
+    <value>uitschakelen</value>
   </data>
   <data name="CompressionName_YAZ0Strong" xml:space="preserve">
-    <value>Yaz0 Forte</value>
+    <value>Yaz0 Sterk</value>
   </data>
   <data name="CompressionName_YAZ0Fast" xml:space="preserve">
-    <value>Yaz0 Rápido</value>
+    <value>Yaz0 Snel</value>
   </data>
   <data name="CompressionName_YAZ0Official" xml:space="preserve">
-    <value>Yaz0 Oficial</value>
+    <value>Yaz0 Officieel</value>
   </data>
   <data name="CompressionName_YAY0Strong" xml:space="preserve">
-    <value>Yay0 Forte</value>
+    <value>Yay0 Sterk</value>
   </data>
   <data name="String_NewArchiveRootName" xml:space="preserve">
-    <value>NovoArquivo</value>
+    <value>NieuwArchief</value>
   </data>
   <data name="String_NewArchiveGuide" xml:space="preserve">
-    <value>Seleciona um Formato de Arquivo à esquerda.</value>
+    <value>Selecteer links een archiefformaat.</value>
   </data>
   <data name="ArchiveFormat_JSystemRARC_Name" xml:space="preserve">
-    <value>Archivo JSystem</value>
+    <value>JSystem Archief</value>
   </data>
   <data name="ArchiveFormat_JSystemRARC_Description" xml:space="preserve">
-    <value>O formato de arquivo usado em JSystem
+    <value>Het archiefformaat dat in JSystem wordt gebruikt
 
-Alguns jogos suportados:
+Ondersteunde games zijn onder andere:
 - Pikmin
 - Luigi's Mansion
 - Super Mario Sunshine
@@ -288,33 +288,33 @@ Alguns jogos suportados:
     <value>JSystem AAF</value>
   </data>
   <data name="ArchiveFormat_JSystemAAF_Description" xml:space="preserve">
-    <value>Um arquivo de áudio usado em JSystem que contêm alguns ficheiros específicos.
+    <value>Een JSystem-audioarchief dat wordt gebruikt voor het opslaan van een select aantal bestanden.
 
-Alguns jogos suportados:
+Ondersteunde games zijn onder andere:
 - Super Mario Galaxy
 - Super Mario Galaxy 2</value>
   </data>
   <data name="ArchiveFormat_NW4RArchive_Name" xml:space="preserve">
-    <value>Arquivo NW4R</value>
+    <value>NW4R Archief</value>
   </data>
   <data name="ArchiveFormat_NW4RArchive_Description" xml:space="preserve">
-    <value>O formato de arquivo usado em NW4R
+    <value>Het archiefformaat dat wordt gebruikt in NW4R
 
-Alguns jogos suportados:
+Ondersteunde games zijn onder andere:
 - Super Paper Mario
 - Mario Kart Wii
 - Metroid: Other M
-- Sonic Colours [Wii]
-- Mario &amp; Sonic nos
-    Jogos Olímpicos de Londres 2012
+- Sonic Colors [Wii]
+- Mario en Sonic op de
+    Olympische Spelen van Londen 2012
 - The Legend of Zelda:
     Skyward Sword
 - Rodea the Sky Soldier</value>
   </data>
   <data name="String_NewArchive" xml:space="preserve">
-    <value>Novo Arquivo</value>
+    <value>NieuwArchief</value>
   </data>
   <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
-    <value>Falha ao criar novo arquivo.</value>
+    <value>Kan geen nieuw archief aanmaken.</value>
   </data>
 </root>
