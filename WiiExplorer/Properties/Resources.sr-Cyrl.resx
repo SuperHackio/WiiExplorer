@@ -315,4 +315,14 @@ Skyward Sword
   <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
     <value>Није успело креирање нове архиве.</value>
   </data>
+  <data name="ArchiveFormat_JSystemBAA_Name" xml:space="preserve">
+    <value>JSystem BAA</value>
+  </data>
+  <data name="ArchiveFormat_JSystemBAA_Description" xml:space="preserve">
+    <value>JSystem аудио архива која се користи за чување неколико одабраних датотека
+
+Подржане игре укључују:
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+  </data>
 </root>

@@ -1,7 +1,8 @@
 {
   "profiles": {
     "WiiExplorer": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-lang nl-NL"
     }
   }
 }

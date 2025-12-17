@@ -119,39 +119,32 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="FormatListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 293</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SelectionSplitContainer.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
+    <value>191, 293</value>
   </data>
   <data name="DescriptionTextLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 271</value>
+    <value>360, 271</value>
   </data>
   <data name="DescriptionHeaderLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 22</value>
+    <value>360, 22</value>
   </data>
   <data name="DescriptionHeaderLabel.Text" xml:space="preserve">
     <value>Formaatbeschrijving</value>
   </data>
-  <data name="SelectionSplitContainer.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
   <data name="SelectionSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 293</value>
+    <value>554, 293</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SelectionSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>168</value>
+    <value>191</value>
   </data>
   <data name="SelectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 20</value>
+    <value>554, 20</value>
   </data>
   <data name="SelectButton.Text" xml:space="preserve">
     <value>Selecteer</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>487, 313</value>
+    <value>554, 313</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -228,6 +221,9 @@
         AAPAAAADwAAAA4AAgAOAAMADgADwP4AA8H+AAPg/gADwP4AA8H+AAPg/gADwP4AA8H+AAPg/gADAA4AA
         gAPAAAADwAAAA8AAAAPgAA//8AAf//////8=
 </value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>570, 352</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>WiiExplorer - Selecteer archiefformaat</value>

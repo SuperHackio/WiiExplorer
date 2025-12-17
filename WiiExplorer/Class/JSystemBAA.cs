@@ -98,7 +98,7 @@ public class JSystemBAA : Archive
                     }
                     break;
                 default:
-                    //throw new NotSupportedException($"A file with subfile format {name} is not supported.");
+                    throw new NotSupportedException($"A file with subfile format {name} is not supported.");
                     filekey = "";
                     ms = null;
                     continue;

@@ -317,4 +317,14 @@ Unterstützte Spiele:
   <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
     <value>Fehler beim Erstellen eines neuen Archivs.</value>
   </data>
+  <data name="ArchiveFormat_JSystemBAA_Name" xml:space="preserve">
+    <value>JSystem BAA</value>
+  </data>
+  <data name="ArchiveFormat_JSystemBAA_Description" xml:space="preserve">
+    <value>Ein JSystem Audio Archiv zum Speichern spezieller Dateien
+
+Unterstützte Spiele:
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+  </data>
 </root>

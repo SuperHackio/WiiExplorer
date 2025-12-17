@@ -83,6 +83,28 @@ namespace WiiExplorer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A JSystem audio archive used for storing a select few files
+        ///
+        ///Supported games include:
+        ///- Super Mario Galaxy
+        ///- Super Mario Galaxy 2.
+        /// </summary>
+        internal static string ArchiveFormat_JSystemBAA_Description {
+            get {
+                return ResourceManager.GetString("ArchiveFormat_JSystemBAA_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JSystem BAA.
+        /// </summary>
+        internal static string ArchiveFormat_JSystemBAA_Name {
+            get {
+                return ResourceManager.GetString("ArchiveFormat_JSystemBAA_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The archive format used in JSystem
         ///
         ///Supported games include:

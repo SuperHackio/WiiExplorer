@@ -347,4 +347,16 @@ Supported games include:
   <data name="MessageBoxMsg_FailedToCreateNewArchive" xml:space="preserve">
     <value>Failed to create new archive.</value>
   </data>
+  <data name="ArchiveFormat_JSystemBAA_Name" xml:space="preserve">
+    <value>JSystem BAA</value>
+  </data>
+  <data name="ArchiveFormat_JSystemBAA_Description" xml:space="preserve">
+    <value>A JSystem audio archive used for storing a select few files
+
+Supported games include:
+- Super Mario Galaxy
+- Super Mario Galaxy 2</value>
+    <comment>Translate Game names according to the name of the game in the region the language belongs to.
+For example, "Super Mario Galaxy" becomes "Super Mario Wii" for Korean.</comment>
+  </data>
 </root>

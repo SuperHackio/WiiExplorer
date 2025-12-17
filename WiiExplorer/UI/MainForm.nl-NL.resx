@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,44 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NewToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nieuw</value>
-  </data>
-  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Openen</value>
-  </data>
-  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Opslaan</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Opslaan als</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 23</value>
   </data>
   <data name="FileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Bestand</value>
   </data>
-  <data name="AddFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bestand(en) toevoegen</value>
-  </data>
-  <data name="AddFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lege map toevoegen</value>
-  </data>
-  <data name="CreateEmptyFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Map importeren</value>
-  </data>
-  <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items verwijderen</value>
-  </data>
-  <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items hernoemen</value>
-  </data>
-  <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items vervangen</value>
-  </data>
-  <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items exporteren</value>
-  </data>
-  <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alles exporteren</value>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 23</value>
   </data>
   <data name="EditToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Bewerken</value>
@@ -174,14 +145,107 @@
   <data name="Yaz0ToolStripComboBox.Items4" xml:space="preserve">
     <value>Yay0 Sterk</value>
   </data>
+  <data name="FilePropertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 23</value>
+  </data>
   <data name="FilePropertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>Bestandseigenschappen</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 23</value>
+  </data>
+  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Instellingen</value>
+  </data>
+  <data name="MainFormMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 27</value>
+  </data>
+  <data name="NewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 22</value>
+  </data>
+  <data name="NewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nieuw</value>
+  </data>
+  <data name="NewFromFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 22</value>
+  </data>
+  <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nieuw uit map</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 22</value>
+  </data>
+  <data name="OpenToolStripMenuItem.Text" xml:space="preserve">
+    <value>Openen</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 22</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 22</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opslaan als</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="AddFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bestand(en) toevoegen</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="AddFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lege map toevoegen</value>
+  </data>
+  <data name="CreateEmptyFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="CreateEmptyFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Map importeren</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="DeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items verwijderen</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="RenameSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items hernoemen</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items vervangen</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ExportSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items exporteren</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ExportAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alles exporteren</value>
   </data>
   <data name="ThemeToolStripComboBox.Items" xml:space="preserve">
     <value>Licht Thema</value>
   </data>
   <data name="ThemeToolStripComboBox.Items1" xml:space="preserve">
     <value>Donker Thema</value>
+  </data>
+  <data name="ThemeToolStripComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
   </data>
   <data name="ThemeToolStripComboBox.ToolTipText" xml:space="preserve">
     <value>Wijzigt de beelden van het programma</value>
@@ -201,6 +265,9 @@
   <data name="PaddingToolStripColorComboBox.Items4" xml:space="preserve">
     <value>32 na codering</value>
   </data>
+  <data name="PaddingToolStripColorComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
+  </data>
   <data name="PaddingToolStripColorComboBox.ToolTipText" xml:space="preserve">
     <value>Opvul-instelling:
 Geen opvulling - Er wordt geen extra opvulling toegevoegd aan het archief.
@@ -217,6 +284,9 @@ De standaardinstelling is Geen opvulling.</value>
   <data name="AutoYaz0ToolStripColorComboBox.Items1" xml:space="preserve">
     <value>Automatisch codering selecteren</value>
   </data>
+  <data name="AutoYaz0ToolStripColorComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 23</value>
+  </data>
   <data name="AutoYaz0ToolStripColorComboBox.ToolTipText" xml:space="preserve">
     <value>Bepaalt of het programma automatisch zal proberen te
 bepalen welke codering
@@ -224,43 +294,173 @@ het huidige bestand moet gebruiken.
 
 De standaardinstelling is Codering automatisch selecteren</value>
   </data>
-  <data name="SettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Instellingen</value>
+  <data name="RootPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 20</value>
+  </data>
+  <data name="RootNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 0</value>
+  </data>
+  <data name="RootNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 20</value>
+  </data>
+  <data name="KeepIDsSyncedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 0</value>
+  </data>
+  <data name="KeepIDsSyncedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
   </data>
   <data name="KeepIDsSyncedCheckBox.Text" xml:space="preserve">
     <value>Bestands-ID's automatisch berekenen</value>
   </data>
+  <data name="RootNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
   <data name="RootNameLabel.Text" xml:space="preserve">
     <value>Wortelnaam:</value>
   </data>
-  <data name="ContextAddFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Bestand(en) toevoegen</value>
+  <data name="MainFormStatusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 22</value>
   </data>
-  <data name="ContextAddFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lege map toevoegen</value>
-  </data>
-  <data name="ContextCreateEmptyFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Map importeren</value>
-  </data>
-  <data name="ContextDeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items verwijderen</value>
-  </data>
-  <data name="ContextRenameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items hernoemen</value>
-  </data>
-  <data name="ContextReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items vervangen</value>
-  </data>
-  <data name="ContextExportSelectedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Geselecteerde items exporteren</value>
-  </data>
-  <data name="ContextExportAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alles exporteren</value>
+  <data name="MainToolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 17</value>
   </data>
   <data name="MainToolStripStatusLabel.Text" xml:space="preserve">
     <value>Geen bestand geladen</value>
   </data>
-  <data name="NewFromFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nieuw uit map</value>
+  <data name="ArchiveTreeView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 282</value>
+  </data>
+  <data name="ArchiveContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 180</value>
+  </data>
+  <data name="ContextAddFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextAddFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bestand(en) toevoegen</value>
+  </data>
+  <data name="ContextAddFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextAddFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lege map toevoegen</value>
+  </data>
+  <data name="ContextCreateEmptyFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextCreateEmptyFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Map importeren</value>
+  </data>
+  <data name="ContextDeleteSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextDeleteSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items verwijderen</value>
+  </data>
+  <data name="ContextRenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextRenameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items hernoemen</value>
+  </data>
+  <data name="ContextReplaceSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextReplaceSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items vervangen</value>
+  </data>
+  <data name="ContextExportSelectedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextExportSelectedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geselecteerde items exporteren</value>
+  </data>
+  <data name="ContextExportAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 22</value>
+  </data>
+  <data name="ContextExportAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Alles exporteren</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>474, 351</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAwAAAAwAAAAUAAAAFAAAAAsAAAADAAAABAAAAA0AAAAUAAAAFAAAAA0AAAAEAAAAAwAA
+        AAsAAAAUAAAAFAAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAMAAAAKAAAAD0AAAA9AAAALQAAABwAAAAeAAAAMAAAAD8AAAA/AAAAMAAA
+        AB4AAAAcAAAALQAAAD0AAAA9AAAAKAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABSCcV2km4Zv/5uGb/94Z1WnAAAARQAAAEeXhnTDsJyH/7Gd
+        iP+aiXbDAAAARwAAAEV4aVWnm4Zv/5uGb/+CcV2kAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFKCNdv++qpf/vqqX/6CNdf+ei3T/nIly/8q2
+        ov+3o47/p5N9/5iEbP+dinP/n4x1/6CNdv++qpf/vqqX/6CNdv8AAAAUAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALppJ9/9O+q//Tvqv/ppJ9/62Y
+        g/+qloH/ybWh/7ejjv+olH7/mIRt/6mVf/+umoX/ppJ9/9O+q//Tvqv/ppJ9/wAAAAwAAAAAAAAAAAAA
+        AAAAAAAEAAAADQAAABUAAAAWAAAAFgAAABYAAAAWAAAAFgAAABYAAAAWAAAAFgAAABmZiHWUrJiD/6yY
+        g/+ejHiKAAAABgAAABbItKD/t6OO/6iUfv+ZhW7/Vkk8OwAAAAemk36FrJiD/6yYg/+lkX2OAAAAAwAA
+        AAAAAAAAAAAAAwAAABQAAAAuAAAAPwAAAEMAAABDAAAAQwAAAEMAAABDAAAAQwAAAEMAAABDAAAAQwAA
+        AEMAAABDAAAAPwAAAC4AAAAVAAAAG8ezoP+3o47/qJR+/5mFbv9gUkRKAAAACAAAAAUAAAADAAAAAQAA
+        AAAAAAAAAAAAAAAAAAQAAAAUAAAAMpaCcMWqlYD/qZWA/6mVgP+plYD/qZWA/6mVgP+plYD/qZWA/6mV
+        gP+plYD/qZWA/6qVgP+rloH/lINxwgAAADQAAAAwybWh/7ejjv+olH7/mYVu/09DN1cAAAAiAAAAHwAA
+        ABwAAAAQAAAABAAAAAAAAAAAAAAADQAAAC6QfWvBy7qn/+DSwP/f0b//39C//9/Qv//f0L//39C//9/Q
+        v//f0L//39C//9/Qv//f0L//4NG//9fHtf+xnoj/jHppvS8qJGHArJj/sp6J/6eTff+diHH/aVxOj0k/
+        NWhNRjtsWE1BbQAAACwAAAANAAAAAAAAAAAAAAAVkoBswcS0n//WyLT/08Wx/9PEsP/TxLD/08Sw/9PE
+        sP/TxLD/08Sw/9PEsP/TxLD/08Sw/9PEsP/TxLD/2su5/93OvP/Arpn/oYx2/6GNdv+ijXf/o454/6OP
+        eP+jj3j/o454/6OOd/+jj3j/k4FtwwAAABUAAAAAAAAABAAAAB6mjHL/8uzg/+7n3P/t5tr/7Oba/+zm
+        2v/s5tr/7Oba/+zm2v/s5tr/7Oba/+zm2v/s5tr/6+Xa/+rk2v/o4tb/18u5/9XIs//f0L//39G//+DR
+        v//g0b//4NG//+DRv//g0b//39C+//jz6v+finP/AAAAFgAAAAAAAAANAAAAMLGLZ/+ph2f/p4Vm/6eF
+        Zf+nhWX/p4Vl/6eFZf+nhWX/p4Vl/6eFZf+nhWX/p4Vl/6aFZv+khWf/nYNp/8O0pP/t597/3NPD/9PE
+        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
+        wf/h08H/4dLB/+HSwP/69Oz/moVt/wAAABYAAAAAAAAAAAAAABWyjGj/qoho/6iHaP+oh2j/qIdo/6iH
+        aP+oh2j/qIdo/6iHaP+oh2j/qIdo/6iHaP+niGn/pIhr/56Gbv+8q5X/3s+9/9vLuf/TxLH/08Sw/9PE
+        sP/TxLD/08Sw/9PEsP/SxLD/0sOw//Dq4f+chnD/AAAAFQAAAAAAAAAAAAAADaaNc//99ez/49O//+LS
+        v//i0r//4tK//+LSv//i0r//4tK//+LSv//i0r//4tK//+LSv//i0r//4NG//9XIs//Xy7n/5+HV/+jj
+        2P/o49n/6OPZ/+jj2f/o49n/6OPZ/+jj2f/p5Nr/7Oje/6CLdP8AAAANAAAAAAAAAAAAAAAEn4t0s8W1
+        of/WyLX/08Wy/9PEsP/SxLD/0sSw/9LEsP/SxLD/0sSw/9LEsP/SxLD/0sSw/9LEsP/TxLD/29LC/+zl
+        3P/Guaj/q5iB/6yZgv+smYL/rJmC/6yZgv+smYL/rJmC/6yZg/+unIX/oY14tAAAAAQAAAAAAAAAAAAA
+        AAAAAAADoYx4rsCxnP/r5tz/6eTa/+nk2v/p5Nr/6eTa/+nk2v/p5Nr/6eTa/+nk2v/p5Nr/6eTa/+nk
+        2v/c1cj/sp+M/5+Kd6sAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAEqJJ/sKuWgP+qlX//qpV//6qVf/+qlX//qpV//6qVf/+qlX//qpV//6qV
+        f/+qlX//qpV//6uWgf+okn+wAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA//////////////////4YYf/+AAH//gAB//4YYf//+H/wABh/4AAIP8AA
+        AAPAAAADwAAAA4AAgAOAAMADgADwP4AA8H+AAPg/gADwP4AA8H+AAPg/gADwP4AA8H+AAPg/gADAA4AA
+        gAPAAAADwAAAA8AAAAPgAA//8AAf//////8=
+</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>490, 390</value>
   </data>
 </root>

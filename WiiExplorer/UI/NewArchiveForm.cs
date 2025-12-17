@@ -13,7 +13,7 @@ public partial class NewArchiveForm : Form
     private readonly static Dictionary<string, (Type t, string d, bool s)> ArchiveFormats = new()
     {
         { Resources.ArchiveFormat_JSystemRARC_Name, (typeof(RARC), Resources.ArchiveFormat_JSystemRARC_Description, false) },
-        { Resources.ArchiveFormat_JSystemAAF_Name, (typeof(JSystemBAA), Resources.ArchiveFormat_JSystemAAF_Description, true) },
+        { Resources.ArchiveFormat_JSystemBAA_Name, (typeof(JSystemBAA), Resources.ArchiveFormat_JSystemBAA_Description, true) },
 
         { Resources.ArchiveFormat_NW4RArchive_Name, (typeof(U8), Resources.ArchiveFormat_NW4RArchive_Description, false) },
     };
