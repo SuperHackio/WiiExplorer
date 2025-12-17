@@ -28,9 +28,28 @@ internal static class Program
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
 
-        CultureInfo culture = new("sr-Cyrl");
-        Thread.CurrentThread.CurrentCulture = culture;
-        Thread.CurrentThread.CurrentUICulture = culture;
+        int idx;
+        if ((idx = Array.IndexOf(args, "-lang")) >= 0 && idx + 1 != args.Length) // User specified language region
+        {
+            string langcode = args[idx + 1];
+            try
+            {
+                CultureInfo culture = new(langcode);
+                Thread.CurrentThread.CurrentCulture = culture;
+                Thread.CurrentThread.CurrentUICulture = culture;
+            }
+            catch (CultureNotFoundException)
+            {
+                // Localization sheets have already gone out so adding an error message here isn't possible :(
+            }
+            finally
+            {
+                List<string> Ihatethis = [];
+                Ihatethis.AddRange(args[0..idx]);
+                Ihatethis.AddRange(args[(idx + 2)..args.Length]);
+                args = [.. Ihatethis];
+            }
+        }
 
         UpdateInfo = UpdateInformation.IsUpdateExist(UPDATEALERT_URL);
         if (UpdateInfo is not null && UpdateInfo.Value.IsNewer() && UpdateInfo.Value.IsUpdateRequired)

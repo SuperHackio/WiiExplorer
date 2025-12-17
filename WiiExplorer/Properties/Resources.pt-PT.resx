@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FileFilter_SupportedArchives" xml:space="preserve">
-    <value>Todos os ficheiros supportados|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Arquivo de Recursos|*.arc|Arquivo YAZ0|*.szs|Arquivo YAY0|*.szp|Arquivo U8|*.szs;*.carc;*.app|Arquivo de Ficheiro de Audio|*.szs;*.aaf|Todos os ficheiros|*.*</value>
+    <value>Todos os ficheiros supportados|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf;*.baa|Arquivo de Recursos|*.arc|Arquivo YAZ0|*.szs|Arquivo YAY0|*.szp|Arquivo U8|*.szs;*.carc;*.app|Arquivo de Ficheiro de Audio|*.szs;*.aaf;*.baa|Todos os ficheiros|*.*</value>
   </data>
   <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
     <value>Atualização Necessária</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FileFilter_SupportedArchives" xml:space="preserve">
-    <value>Све подржане датотеке|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Архива ресурса|*.arc|YAZ0 Идентификована архива|*.szs|YAY0 Идентификована архива|*.szp|U8 архива|*.szs;*.carc;*.app|Датотека аудио архиве|*.szs;*.aaf|Све датотеке|*.*</value>
+    <value>Све подржане датотеке|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf;*.baa|Архива ресурса|*.arc|YAZ0 Идентификована архива|*.szs|YAY0 Идентификована архива|*.szp|U8 архива|*.szs;*.carc;*.app|Датотека аудио архиве|*.szs;*.aaf;*.baa|Све датотеке|*.*</value>
   </data>
   <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">
     <value>Потребно је ажурирање</value>

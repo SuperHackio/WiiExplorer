@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FileFilter_SupportedArchives" xml:space="preserve">
-    <value>Archivos compatibles|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive |*.arc|Archivo identificado YAZ0|*.szs|Archivo identificado YAY0|*.szp|Archivo U8|*.szs;*.carc;*.app|Archivo de audio|*.szs;*.aaf|Todos los archivos|*.*</value>
+    <value>Archivos compatibles|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf;*.baa|Resource Archive |*.arc|Archivo identificado YAZ0|*.szs|Archivo identificado YAY0|*.szp|Archivo U8|*.szs;*.carc;*.app|Archivo de audio|*.szs;*.aaf;*.baa|Todos los archivos|*.*</value>
     <comment>Epic translator moment.</comment>
   </data>
   <data name="MessageBoxTitle_UpdateRequired" xml:space="preserve">

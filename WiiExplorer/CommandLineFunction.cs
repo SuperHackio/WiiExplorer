@@ -187,7 +187,7 @@ internal static class CommandLineFunction
                             newarc = new U8();
                             break;
                         case "aaf":
-                            newarc = new AAF();
+                            newarc = new JSystemBAA();
                             break;
                         default:
                             return OnTaskError('n', 2, $"Unknown Archive format \"{args[3]}\"");
@@ -364,7 +364,7 @@ internal static class CommandLineFunction
             int encodingselection = -1;
             loadarc ??= TryReadFormat<RARC>();
             loadarc ??= TryReadFormat<U8>();
-            loadarc ??= TryReadFormat<AAF>();
+            loadarc ??= TryReadFormat<JSystemBAA>();
             return loadarc;
 
             T? TryReadFormat<T>() where T : class, ILoadSaveFile, new()

@@ -55,7 +55,7 @@ public partial class MainForm : Form
             null => "",
             U8 => "(U8)",
             RARC => "(RARC)",
-            AAF => "(AAF)",
+            JSystemBAA => "(BAA)",
             _ => "<???>"
         };
     }
@@ -202,7 +202,7 @@ public partial class MainForm : Form
         int encodingselection = -1;
         loadarc ??= TryReadFormat<RARC>();
         loadarc ??= TryReadFormat<U8>();
-        loadarc ??= TryReadFormat<AAF>();
+        loadarc ??= TryReadFormat<JSystemBAA>();
 
         if (!InitializeArchive(loadarc, Properties.Resources.MessageBoxMsg_NotSupportedArchiveFormat))
             return;

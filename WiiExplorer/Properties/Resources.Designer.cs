@@ -197,7 +197,7 @@ namespace WiiExplorer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All Supported Files|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf|Resource Archive|*.arc|YAZ0 Identified Archive|*.szs|YAY0 Identified Archive|*.szp|U8 Archive|*.szs;*.carc;*.app|Audio Archive File|*.szs;*.aaf|All Files|*.*.
+        ///   Looks up a localized string similar to All Supported Files|*.arc;*.szs;*.szp;*.carc;*.app;*.aaf;*.baa|Resource Archive|*.arc|YAZ0 Identified Archive|*.szs|YAY0 Identified Archive|*.szp|U8 Archive|*.szs;*.carc;*.app|Audio Archive File|*.szs;*.aaf;*.baa|All Files|*.*.
         /// </summary>
         internal static string FileFilter_SupportedArchives {
             get {
