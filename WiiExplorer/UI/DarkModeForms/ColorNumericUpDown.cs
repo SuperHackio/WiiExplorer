@@ -39,6 +39,7 @@ public class ColorNumericUpDown : NumericUpDown
     public Valuechanged2 ValueChange2 = static e => { };
 
     private decimal _textval;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public decimal TextValue
     {
         get
