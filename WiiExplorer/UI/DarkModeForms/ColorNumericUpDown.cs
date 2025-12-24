@@ -39,17 +39,11 @@ public class ColorNumericUpDown : NumericUpDown
     public Valuechanged2 ValueChange2 = static e => { };
 
     private decimal _textval;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public decimal TextValue
     {
-        get
-        {
-            return _textval;
-        }
-        set
-        {
-            _textval = Math.Min(Math.Max(Minimum, value), Maximum);
-            Value = _textval;
-        }
+        get => _textval;
+        set => Value = _textval = Math.Min(Math.Max(Minimum, value), Maximum);
     }
 
     protected override void OnValueChanged(EventArgs e)

@@ -63,6 +63,13 @@ Binary Revolution Sound Archive|*.brsar
 Binary Revolution Animation Sound Data|*.brasd
 Pulse Code Modulation|*.pcm
 Musical Instrument Digital Interface|*.mid
+BMS Archive|*.barc
+Streamed Music Table|*.stm
+Binary Streamed Files Table|*.bsft
+SFX Parameters|*.se
+DSP Filters|*.dsp
+Binary Audio Archive Container|*.baac
+Binary FX Config Archive|*.bfca
 
 # Layouts
 Binary Revolution Layout|*.brlyt

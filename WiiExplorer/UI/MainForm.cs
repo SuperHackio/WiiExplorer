@@ -35,7 +35,7 @@ public partial class MainForm : Form
 
         (Properties.Resources.CompressionName_YAY0Strong, YAY0.Compress), // Love how this one fits without a lambda but the others don't lol
     ];
-    private static readonly List<(string LocalizeName, string CommandFormat)> UserCompressions = [];
+    private static readonly List<(string LocalizeName, string ProgramPath, string CommandFormat)> UserCompressions = [];
 
     // For the tree view dragging
     private string? NodeMap;
@@ -177,10 +177,10 @@ public partial class MainForm : Form
                 continue;
 
             string[] comp = Compression.Split(';', StringSplitOptions.RemoveEmptyEntries);
-            if (comp.Length < 2 || comp[0].Length <= 0 || comp[1].Length <= 0)
+            if (comp.Length < 3 || comp[0].Length <= 0 || comp[1].Length <= 0)
                 continue;
 
-            UserCompressions.Add((comp[0], comp[1]));
+            UserCompressions.Add((comp[0], comp[1], comp[2]));
         }
 
         for (int i = 0; i < UserCompressions.Count; i++)
@@ -1350,15 +1350,16 @@ public partial class MainForm : Form
         else
         {
             // User compressions... which I have no idea if this works on MacOS or Linux...
-            string ProcessExeName = "cmd.exe";
-            string ProcessPreCommand = "/c";
-            string command = "";
             int idx = CompressionMode - BuiltInCompressions.Count;
+            string ProcessExeName = UserCompressions[idx].ProgramPath;
+            string command = "";
             try
             {
+                if (!File.Exists(ProcessExeName))
+                    throw new FileNotFoundException("File not found", ProcessExeName);
                 OriginalSize = File.ReadAllBytes(Filepath).Length;
                 command = string.Format(UserCompressions[idx].CommandFormat, Filepath);
-                ProcessStartInfo psi = new(ProcessExeName, ProcessPreCommand + " " + command);
+                ProcessStartInfo psi = new(ProcessExeName,  command);
                 EncodingTimer.Start();
                 Process? process = Process.Start(psi) ?? throw new NullReferenceException();
                 while (!process.HasExited)
