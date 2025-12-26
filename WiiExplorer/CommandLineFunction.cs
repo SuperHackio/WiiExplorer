@@ -72,7 +72,7 @@ internal static class CommandLineFunction
                 case "-d": // -d <Input Archive Path> <Output Folder Path>          - Exports the archive contents to this folder. The archive root is created inside.
                     CurrentJob.Enqueue([args[i], args[++i], args[++i]]);
                     break;
-                case "-p": // -p <Input Archive Path> <Padding>                     - Pads the input file to the provided padding. Can be any number but the most common are 16 and 32.
+                case "-p": // -p <Input Archive Path> <Padding>                     -   
                     CurrentJob.Enqueue([args[i], args[++i], args[++i]]);
                     break;
                 default:
@@ -186,7 +186,7 @@ internal static class CommandLineFunction
                         case "u8":
                             newarc = new U8();
                             break;
-                        case "aaf":
+                        case "baa":
                             newarc = new JSystemBAA();
                             break;
                         default:

@@ -546,7 +546,7 @@
     <value>3</value>
   </data>
   <data name="AutoButton.Text" xml:space="preserve">
-    <value>Automático</value>
+    <value>Auto</value>
     <comment>Translate as "Automatic"</comment>
   </data>
   <data name="&gt;&gt;AutoButton.Name" xml:space="preserve">
