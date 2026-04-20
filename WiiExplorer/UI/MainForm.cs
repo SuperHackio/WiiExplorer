@@ -555,6 +555,12 @@ public partial class MainForm : Form
 
     private void AddFileToolStripMenuItem_Click(object sender, EventArgs e)
     {
+        if (ActiveControl is TextBox tb)
+        {
+            tb.SelectAll();
+            return;
+        }
+
         FileOFD.Multiselect = true;
         if (FileOFD.ShowDialog() == DialogResult.OK)
             InsertItemsToArchive(FileOFD.FileNames, ArchiveTreeView.SelectedNode);

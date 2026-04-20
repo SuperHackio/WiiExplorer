@@ -91,7 +91,6 @@
             FileIDColorNumericUpDown.Maximum = new decimal(new int[] { 65534, 0, 0, 0 });
             FileIDColorNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
             FileIDColorNumericUpDown.Name = "FileIDColorNumericUpDown";
-            FileIDColorNumericUpDown.TextValue = new decimal(new int[] { 0, 0, 0, 0 });
             // 
             // FileIDLabel
             // 

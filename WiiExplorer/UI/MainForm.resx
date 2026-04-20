@@ -290,7 +290,6 @@
   </data>
   <data name="Yaz0ToolStripComboBox.Items" xml:space="preserve">
     <value>Off</value>
-    <comment>Translating as "Disabled" also works</comment>
   </data>
   <data name="Yaz0ToolStripComboBox.Items1" xml:space="preserve">
     <value>Yaz0 Strong</value>
@@ -401,7 +400,6 @@ Default is Auto-Select Encoding</value>
   </data>
   <data name="MainFormMenuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;MainFormMenuStrip.Name" xml:space="preserve">
     <value>MainFormMenuStrip</value>
@@ -558,7 +556,6 @@ Default is Auto-Select Encoding</value>
   </data>
   <data name="MainFormStatusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;MainFormStatusStrip.Name" xml:space="preserve">
     <value>MainFormStatusStrip</value>
@@ -776,7 +773,6 @@ Default is Auto-Select Encoding</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>WiiExplorer</value>
-    <comment>@Invariant</comment>
   </data>
   <data name="&gt;&gt;FileToolStripMenuItem.Name" xml:space="preserve">
     <value>FileToolStripMenuItem</value>
