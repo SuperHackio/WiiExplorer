@@ -86,7 +86,7 @@ public partial class MainForm : Form
         AutoYaz0ToolStripColorComboBox.SelectedIndex = Program.Settings.AutoHandleCompression ? 1 : 0;
 
         Text = "WiiExplorer - " + UpdateInformation.ApplicationVersion;
-        ThemeToolStripComboBox.SelectedIndex = Program.Settings.ThemeIndex; //Default to Light for the funny
+        ThemeToolStripComboBox.SelectedIndex = Math.Clamp(Program.Settings.ThemeIndex, 0, 1); //Default to Light for the funny
         ProgramColors.IsDarkMode = ThemeToolStripComboBox.SelectedIndex == 1;
 
         ReloadTreeViewIcons();
@@ -1365,7 +1365,7 @@ public partial class MainForm : Form
                     throw new FileNotFoundException("File not found", ProcessExeName);
                 OriginalSize = File.ReadAllBytes(Filepath).Length;
                 command = string.Format(UserCompressions[idx].CommandFormat, Filepath);
-                ProcessStartInfo psi = new(ProcessExeName,  command);
+                ProcessStartInfo psi = new(ProcessExeName, command);
                 EncodingTimer.Start();
                 Process? process = Process.Start(psi) ?? throw new NullReferenceException();
                 while (!process.HasExited)
